@@ -28,6 +28,7 @@ button {
   user-select: none;
   vertical-align: middle;
   white-space: nowrap;
+  margin-bottom: $base-input-margin-bottom;
 
   &:hover,
   &:focus {

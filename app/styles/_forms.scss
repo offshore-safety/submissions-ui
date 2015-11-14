@@ -16,7 +16,7 @@ input {
   input, textarea {
     @include appearance(none);
     margin-top: 25px;
-    margin-bottom: 10px;
+    margin-bottom: $base-input-margin-bottom;
     border: none;
     border-bottom: 1px solid $extra-light-grey;
     width: 100%;
@@ -38,12 +38,17 @@ input {
 
   input {
     height: $base-input-height;
+
+    ~ .highlight {
+      bottom: $base-input-margin-bottom;
+    }
   }
 
   textarea {
     min-height: $base-input-height;
+    resize: vertical;
     ~ .highlight {
-      bottom: 14px;
+      bottom: $base-input-margin-bottom + 4px;
     }
   }
 
