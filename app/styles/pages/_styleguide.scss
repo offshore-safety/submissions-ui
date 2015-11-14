@@ -19,6 +19,16 @@
     }
   }
 
+  .petroleum, .greenhouse-gas, .disabled-radio {
+    @include span-columns(12);
+  }
+
+  @include media($desktop) {
+    .petroleum, .greenhouse-gas, .disabled-radio {
+      @include span-columns(4);
+    }
+  }
+
   .textarea {
     @include span-columns(12);
   }

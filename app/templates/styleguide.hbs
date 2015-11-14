@@ -18,43 +18,64 @@
 
   <section>
     <header>
-      <h2>Buttons</h2>
-    </header>
-    <button>I'm a regular button!</button>
-    <button class="primary">I'm the primary button!</button>
-    <button class="warning">I'm a warning button?</button>
-  </section>
-
-  <section>
-    <header>
       <h2>Forms</h2>
     </header>
     <div>
       <div class="input-group text">
         <input id="text-input" type="text" required="true" />
-        <span class="highlight" />
         <label for="text-input">Text Input</label>
+        <span class="highlight" />
       </div>
       <div class="input-group number">
         <input id="number-input" type="number" />
-        <span class="highlight" />
         <label for="number-input">Number Input</label>
+        <span class="highlight" />
       </div>
       <div class="input-group email">
         <input id="email-input" type="email" />
-        <span class="highlight" />
         <label for="email-input">Email Input</label>
+        <span class="highlight" />
       </div>
       <div class="input-group date">
         <input id="date-input" type="date" />
-        <span class="highlight" />
         <label for="date-input">Date Input</label>
+        <span class="highlight" />
       </div>
     </div>
     <div class="input-group textarea">
       <textarea id="textarea-input" rows="3" />
-      <span class="highlight" />
       <label for="textarea-input">Textarea Input</label>
+      <span class="highlight" />
     </div>
+
+    <div>
+      <h3>What type of radio button would you like to choose?</h3>
+      <ul>
+        <li class="radio-group petroleum">
+          <input id="radio-input1" type="radio" name="selector" />
+          <label for="radio-input1">Petroleum Activity</label>
+          <div class="check"></div>
+        </li>
+        <li class="radio-group greenhouse-gas">
+          <input id="radio-input2" type="radio" name="selector" />
+          <label for="radio-input2">Gas Activity</label>
+          <div class="check"></div>
+        </li>
+        <li class="radio-group disabled-radio">
+          <input id="radio-input3" type="radio" name="selector" disabled />
+          <label for="radio-input3">Disabled</label>
+          <div class="check"></div>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <section>
+    <header>
+      <h2>Buttons</h2>
+    </header>
+    <button>I'm a regular button!</button>
+    <button class="primary">I'm the primary button!</button>
+    <button class="warning">I'm a warning button?</button>
   </section>
 </div>
