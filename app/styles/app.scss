@@ -13,3 +13,7 @@
 @import "tables";
 
 @import "pages/pages";
+
+body {
+  background: $base-background-color;
+}
