@@ -36,6 +36,14 @@ input {
     }
   }
 
+  input:required {
+    ~label {
+      &:after {
+        content: ' *';
+      }
+    }
+  }
+
   input {
     height: $base-input-height;
 
