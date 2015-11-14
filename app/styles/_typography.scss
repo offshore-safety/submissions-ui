@@ -1,0 +1,55 @@
+body {
+  color: $base-font-color;
+  font-family: $base-font-family;
+  font-size: $base-font-size;
+  font-weight: $base-font-weight;
+  line-height: $base-line-height;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: $heading-font-family;
+  line-height: $heading-line-height;
+  font-weight: $heading-font-weight;
+  margin: 0 0 $small-spacing;
+}
+
+$min-width: 20em;
+$max-width: 60em;
+h1 {
+  @include fluid-type($min-width, $max-width, $base-font-size*2, $base-font-size*3);
+}
+
+h2 {
+  @include fluid-type($min-width, $max-width, $base-font-size*1.625, $base-font-size*2.25);
+}
+
+h3 {
+  @include fluid-type($min-width, $max-width, $base-font-size*1.375, $base-font-size*1.75);
+}
+
+h4 {
+  font-size: $base-font-size * 1.2;
+}
+
+h5 {
+  font-size: $base-font-size * 1.125;
+}
+
+h6 {
+  font-size: $base-font-size;
+}
+
+p {
+  margin: 0 0 $small-spacing;
+}
+
+a {
+  color: $action-color;
+  transition: color $base-transition-duration $base-transition-easing;
+
+  &:active,
+  &:focus,
+  &:hover {
+    color: shade($action-color, 25%);
+  }
+}

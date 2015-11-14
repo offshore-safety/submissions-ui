@@ -1,2 +1,7 @@
 $nopsema-orange: #F58220;
-$nopsema-blue: #3468A1;
+$nopsema-blue: #2C67A0;
+$nopsema-grey: #6B6D70;
+$light-grey: lighten($nopsema-grey, 30%);
+$extra-light-grey: lighten($nopsema-grey, 40%);
+$off-white: #EEEEEE;
+$grey-mask: transparentize($nopsema-grey, 0.6);

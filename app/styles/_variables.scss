@@ -1,0 +1,34 @@
+$base-font-family: 'Houschka Pro', 'Helvetica Neue', 'Helvetica', sans-serif;
+$heading-font-family: $base-font-family;
+
+$base-font-weight: 300;
+$button-font-weight: 500;
+$heading-font-weight: 300;
+
+$base-font-size: 1em;
+$heading-font-size: $base-font-size;
+
+$base-line-height: 1.5;
+$heading-line-height: 1.2;
+$base-spacing: $base-line-height * 1em;
+$small-spacing: $base-spacing / 2;
+
+$base-input-height: 35px;
+
+$base-font-color: black;
+$base-background-color: $off-white;
+
+$action-color: $nopsema-blue;
+$error-color: $nopsema-orange;
+
+$base-border-radius: 2px;
+
+$base-transition-duration: 150ms;
+$base-transition-easing: ease;
+
+$base-shadow-depth: 5px;
+$shadow-color: $grey-mask;
+
+$desktop-width: em(860);
+
+$desktop: new-breakpoint(min-width $desktop-width);

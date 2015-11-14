@@ -1,0 +1,29 @@
+.stylesheet-page {
+  @include outer-container;
+
+  section {
+    @include as-card;
+    @include clearfix;
+    margin-bottom: 30px;
+    padding: 10px;
+  }
+
+  .text, .number, .email, .date {
+    @include span-columns(12);
+  }
+
+  @include media($desktop) {
+    .text, .number, .email, .date {
+      @include span-columns(6);
+      @include omega(2n);
+    }
+  }
+
+  .textarea {
+    @include span-columns(12);
+  }
+
+  button {
+    margin-right: 10px;
+  }
+}

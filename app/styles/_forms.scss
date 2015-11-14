@@ -1,0 +1,60 @@
+input {
+  font-family: $base-font-family;
+}
+
+.input-group {
+  position: relative;
+
+  label {
+    position: absolute;
+    top: 0;
+    display: block;
+    color: $nopsema-grey;
+    transition: color $base-transition-duration $base-transition-easing;
+  }
+
+  input, textarea {
+    @include appearance(none);
+    margin-top: 25px;
+    margin-bottom: 10px;
+    border: none;
+    border-bottom: 1px solid $extra-light-grey;
+    width: 100%;
+    font-size: $base-font-size * 1.5;
+    font-weight: $base-font-weight;
+
+    &:focus {
+      outline: none;
+
+      ~label {
+        color: $nopsema-orange;
+      }
+
+      ~ .highlight {
+        transform: scaleX(1);
+      }
+    }
+  }
+
+  input {
+    height: $base-input-height;
+  }
+
+  textarea {
+    min-height: $base-input-height;
+    ~ .highlight {
+      bottom: 14px;
+    }
+  }
+
+  .highlight {
+    display: block;
+    position: absolute;
+    bottom: 10px;
+    height: 3px;
+    width: 100%;
+    background-color: $nopsema-orange;
+    transform: scaleX(0);
+    transition: transform $base-transition-duration $base-transition-easing;
+  }
+}

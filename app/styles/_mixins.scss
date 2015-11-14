@@ -1,3 +1,15 @@
+@mixin shadow-depth1 {
+  box-shadow: 0 0 $base-shadow-depth 0 $shadow-color;
+}
+
+@mixin shadow-depth2 {
+  box-shadow: 0 0 $base-shadow-depth*1.5 0 $shadow-color;
+}
+
+@mixin shadow-depth3 {
+  box-shadow: 0 0 $base-shadow-depth*2.5 0 $shadow-color;
+}
+
 @mixin responsive-square($percentage: 100%) {
   width: $percentage;
   padding-bottom: $percentage;
@@ -29,9 +41,38 @@
 }
 
 @mixin as-card {
+  @include shadow-depth1;
   background-color: white;
   border: 1px solid #DDD;
-  border-bottom: 1px solid grey;
-  border-radius: 3px;
-  box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.2);
+  border-bottom: 1px solid $extra-light-grey;
+  border-radius: $base-border-radius;
+
+  transition: all $base-transition-duration $base-transition-easing;
+}
+
+@function strip-unit($value) {
+  @return $value / ($value * 0 + 1);
+}
+
+@mixin fluid-type($min-vw, $max-vw, $min-font-size, $max-font-size) {
+  $u1: unit($min-vw);
+  $u2: unit($max-vw);
+  $u3: unit($min-font-size);
+  $u4: unit($max-font-size);
+
+  @if $u1 == $u2 and $u1 == $u3 and $u1 == $u4 {
+    & {
+      font-size: $min-font-size;
+
+      @media screen and (min-width: $min-vw) {
+        font-size: calc(#{$min-font-size} + #{strip-unit($max-font-size - $min-font-size)} * ((100vw - #{$min-vw}) / #{strip-unit($max-vw - $min-vw)}));
+      }
+
+      @media screen and (min-width: $max-vw) {
+        font-size: $max-font-size;
+      }
+    }
+  } @else {
+    @error "Detected mixed units. Please use the same units for all parameters.";
+  }
 }

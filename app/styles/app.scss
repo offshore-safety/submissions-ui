@@ -1,8 +1,10 @@
 @import "bourbon";
 @import "neat";
 
-@import "mixins";
 @import "colors";
+@import "variables";
+@import "mixins";
+
 @import "typography";
 @import "layout";
 @import "buttons";
@@ -10,4 +12,4 @@
 @import "lists";
 @import "tables";
 
-@import "variables";
+@import "pages/pages";
