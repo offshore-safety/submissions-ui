@@ -30,12 +30,12 @@
     }
   }
 
-  .petroleum, .greenhouse-gas, .disabled-radio, .disabled-checked-radio {
+  .petroleum, .greenhouse-gas, .disabled-radio, .disabled-checked-radio, .activity-type {
     @include span-columns(12);
   }
 
   @include media($desktop) {
-    .petroleum, .greenhouse-gas, .disabled-radio, .disabled-checked-radio {
+    .petroleum, .greenhouse-gas, .disabled-radio, .disabled-checked-radio, .activity-type {
       @include span-columns(6);
       @include omega(2n);
     }
