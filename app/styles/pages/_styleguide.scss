@@ -30,7 +30,10 @@
     }
   }
 
-  .petroleum, .greenhouse-gas, .disabled-radio {
+  .petroleum, .greenhouse-gas, .disabled-radio, .disabled-checked-radio {
+    @include span-columns(6);
+    @include omega(2n);
+  }
     @include span-columns(12);
   }
 

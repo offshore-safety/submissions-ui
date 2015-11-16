@@ -151,7 +151,16 @@ input {
       top: 5px;
       left: 5px;
       margin: auto;
-      transition: background 0.25s linear;
+      transition: background $base-transition-duration $base-transition-easing;
     }
+  }
+}
+
+.select-group {
+  select {
+    width: 100%;
+    @include appearance(none);
+    height: $base-input-height;
+    border-radius: $base-border-radius;
   }
 }
