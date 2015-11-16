@@ -31,15 +31,24 @@
   }
 
   .petroleum, .greenhouse-gas, .disabled-radio, .disabled-checked-radio {
-    @include span-columns(6);
-    @include omega(2n);
-  }
     @include span-columns(12);
   }
 
   @include media($desktop) {
-    .petroleum, .greenhouse-gas, .disabled-radio {
-      @include span-columns(4);
+    .petroleum, .greenhouse-gas, .disabled-radio, .disabled-checked-radio {
+      @include span-columns(6);
+      @include omega(2n);
+    }
+  }
+
+  .single, .multiple {
+    @include span-columns(12);
+  }
+
+    @include media($desktop) {
+    .single, .multiple {
+      @include span-columns(6);
+      @include omega(2n);
     }
   }
 
