@@ -1,3 +1,6 @@
+$checked-color: $nopsema-orange;
+$disabled-opacity: 0.5;
+
 input, textarea, select {
   font-family: $base-font-family;
   font-size: $base-input-font-size;
@@ -113,7 +116,7 @@ input, textarea, select {
       }
 
       ~ .check {
-        opacity: $disabled-opacity; 
+        opacity: $disabled-opacity;
 
         &:before {
           opacity: $disabled-opacity;
@@ -162,5 +165,96 @@ input, textarea, select {
     @include appearance(none);
     height: $base-input-height;
     border-radius: $base-border-radius;
+  }
+}
+
+.checkbox-group {
+  position: relative;
+  margin-bottom: $base-input-margin-bottom;
+
+  input[type=checkbox] {
+    position: absolute;
+    display: block;
+    @include appearance(none);
+    height: 0;
+    width: 0;
+
+    &:focus {
+      ~ label {
+        border: 1px dashed $light-grey;
+      }
+    }
+
+    &:checked, &:active {
+      ~ label {
+        color: $checked-color;
+      }
+
+      ~ .check {
+        border-color: $checked-color;
+
+        &:before {
+          opacity: 1;
+        }
+      }
+
+      &:disabled {
+        ~ .check {
+          &:before {
+            opacity: 1;
+          }
+        }
+      }
+    }
+
+    &:disabled {
+      ~ label {
+        opacity: $disabled-opacity;
+        cursor: not-allowed;
+      }
+
+      ~ .check {
+        opacity: $disabled-opacity;
+
+        &:before {
+          opacity: 0;
+        }
+      }
+    }
+  }
+
+  label {
+    position: relative;
+    padding: 10px 10px 10px 60px;
+    font-size: $base-input-font-size;
+    cursor: pointer;
+    transition: color $base-transition-duration $base-transition-easing;
+    z-index: 9;
+  }
+
+  .check {
+    position: absolute;
+    border: 5px solid $nopsema-grey;
+    width: 35px;
+    height: 35px;
+    top: 0px;
+    left: 10px;
+    transition: border-color $base-transition-duration $base-transition-easing;
+
+    &::before {
+      display: block;
+      position: absolute;
+      opacity: 0;
+      content: '\f00c';
+      font-size: 1.5*$base-font-size;
+      font-family: FontAwesome;
+      color: $checked-color;
+      height: 16px;
+      width: 16px;
+      top: -4px;
+      left: 2px;
+      margin: auto;
+      transition: opacity $base-transition-duration $base-transition-easing;
+    }
   }
 }
