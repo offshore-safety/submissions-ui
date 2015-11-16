@@ -119,7 +119,7 @@ input, textarea, select {
         opacity: $disabled-opacity;
 
         &:before {
-          opacity: $disabled-opacity;
+          opacity: 1;
         }
       }
     }
