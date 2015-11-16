@@ -83,14 +83,9 @@ input {
     height: 0;
     width: 0;
 
-    $focused-color: $nopsema-blue;
     &:focus {
       ~ label {
-        color: $focused-color;
-      }
-
-      ~ .check {
-        border-color: $focused-color;
+        border: 1px dashed $light-grey;
       }
     }
 
@@ -128,7 +123,7 @@ input {
 
   label {
     position: relative;
-    padding-left: 60px;
+    padding: 10px 10px 10px 60px;
     font-size: $base-input-font-size;
     cursor: pointer;
     transition: color $base-transition-duration $base-transition-easing;
