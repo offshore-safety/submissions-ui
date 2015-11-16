@@ -1,5 +1,7 @@
-input {
+input, textarea, select {
   font-family: $base-font-family;
+  font-size: $base-input-font-size;
+  font-weight: $base-font-weight;
 }
 
 .input-group {
@@ -20,8 +22,6 @@ input {
     border: none;
     border-bottom: 1px solid $extra-light-grey;
     width: 100%;
-    font-size: $base-input-font-size;
-    font-weight: $base-font-weight;
     background-color: $off-white;
 
     &:focus {
