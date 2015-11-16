@@ -20,36 +20,45 @@
     <header>
       <h2>Forms</h2>
     </header>
-    <div>
-      <div class="input-group text">
-        <input id="text-input" type="text" required="true" />
-        <label for="text-input">Text Input</label>
+    <section>
+      <header>
+        <h3>Text Inputs</h3>
+      </header>
+      <div>
+        <div class="input-group text">
+          <input id="text-input" type="text" required="true" />
+          <label for="text-input">Text Input</label>
+          <span class="highlight" />
+        </div>
+        <div class="input-group number">
+          <input id="number-input" type="number" />
+          <label for="number-input">Number Input</label>
+          <span class="highlight" />
+        </div>
+        <div class="input-group email">
+          <input id="email-input" type="email" />
+          <label for="email-input">Email Input</label>
+          <span class="highlight" />
+        </div>
+        <div class="input-group date">
+          <input id="date-input" type="date" />
+          <label for="date-input">Date Input</label>
+          <span class="highlight" />
+        </div>
+      </div>
+    </section>
+    <section>
+      <div class="input-group textarea">
+        <textarea id="textarea-input" rows="3" />
+        <label for="textarea-input">Textarea Input</label>
         <span class="highlight" />
       </div>
-      <div class="input-group number">
-        <input id="number-input" type="number" />
-        <label for="number-input">Number Input</label>
-        <span class="highlight" />
-      </div>
-      <div class="input-group email">
-        <input id="email-input" type="email" />
-        <label for="email-input">Email Input</label>
-        <span class="highlight" />
-      </div>
-      <div class="input-group date">
-        <input id="date-input" type="date" />
-        <label for="date-input">Date Input</label>
-        <span class="highlight" />
-      </div>
-    </div>
-    <div class="input-group textarea">
-      <textarea id="textarea-input" rows="3" />
-      <label for="textarea-input">Textarea Input</label>
-      <span class="highlight" />
-    </div>
+    </section>
 
-    <div>
-      <h3>What type of radio button would you like to choose?</h3>
+    <section>
+      <header>
+        <h3>Radio Inputs</h3>
+      </header>
       <ul>
         <li class="radio-group petroleum">
           <input id="radio-input1" type="radio" name="selector" />
@@ -67,7 +76,27 @@
           <div class="check"></div>
         </li>
       </ul>
-    </div>
+    </section>
+
+    <section>
+      <header>
+        <h3>Selection</h3>
+      </header>
+      <div>
+        <div class="select-group">
+          <label for="select-input" /> Single-select
+          <select id="select-input">
+            <option></option>
+          </select>
+        </div>
+        <div class="select-group">
+          <label for="multi-select-input" /> Multi-select
+          <select id="multi-select-input">
+            <option></option>
+          </select>
+        </div>
+      </div>
+    </section>
   </section>
 
   <section>

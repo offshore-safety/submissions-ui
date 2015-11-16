@@ -2,10 +2,13 @@
   @include outer-container;
 
   section {
-    @include as-card;
     @include clearfix;
     margin-bottom: 30px;
-    padding: 10px;
+  }
+
+  > section {
+    @include as-card;
+    padding: 20px;
   }
 
   .primary {
