@@ -6,6 +6,16 @@
   }
 }
 
+@mixin primary-button {
+  @include button-color($action-color);
+}
+
+
+@mixin warning-button {
+  @include button-color($error-color);
+}
+
+
 #{$all-button-inputs},
 button {
   @include appearance(none);
@@ -43,13 +53,5 @@ button {
   &:disabled {
     cursor: not-allowed;
     opacity: 0.5;
-  }
-
-  &.primary {
-    @include button-color($action-color);
-  }
-
-  &.warning {
-    @include button-color($error-color);
   }
 }

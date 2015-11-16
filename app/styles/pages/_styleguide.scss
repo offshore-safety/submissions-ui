@@ -8,6 +8,14 @@
     padding: 10px;
   }
 
+  .primary {
+    @include primary-button;
+  }
+
+  .warning {
+    @include warning-button;
+  }
+
   .text, .number, .email, .date {
     @include span-columns(12);
   }
