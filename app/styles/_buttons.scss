@@ -7,7 +7,7 @@
 }
 
 @mixin primary-button {
-  @include button-color($action-color);
+  @include button-color($primary-color);
 }
 
 

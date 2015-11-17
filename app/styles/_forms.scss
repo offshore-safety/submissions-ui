@@ -1,4 +1,4 @@
-$checked-color: $nopsema-orange;
+$checked-color: $primary-color;
 $disabled-opacity: 0.5;
 $input-border-bottom: 2px;
 $select-font-size: 0.8em;
@@ -37,7 +37,7 @@ input, textarea, select {
       outline: none;
 
       ~label {
-        color: $nopsema-orange;
+        color: $primary-color;
       }
 
       ~ .highlight {
@@ -76,7 +76,7 @@ input, textarea, select {
     bottom: 10px;
     height: 3px;
     width: 100%;
-    background-color: $nopsema-orange;
+    background-color: $primary-color;
     transform: scaleX(0);
     transition: transform $base-transition-duration $base-transition-easing;
   }
@@ -93,23 +93,6 @@ input, textarea, select {
     height: 0;
     width: 0;
 
-    &:focus {
-      ~ label {
-        border: 1px dashed $light-grey;
-      }
-    }
-
-    $checked-color: $nopsema-orange;
-    &:active {
-      ~ label {
-        color: $checked-color;
-      }
-
-      ~ .check {
-        border-color: $checked-color;
-      }
-    }
-
     &:checked{
       ~ label {
         color: $checked-color;
@@ -120,6 +103,20 @@ input, textarea, select {
 
         &:before {
           background: $checked-color;
+        }
+      }
+    }
+
+    &:active {
+      ~ label {
+        color: $highlight-color;
+      }
+
+      ~ .check {
+        border-color: $highlight-color;
+
+        &:before {
+          background: $highlight-color;
         }
       }
     }
@@ -214,6 +211,8 @@ input, textarea, select {
   }
 
   .select2-container-multi {
+    padding: 5px;
+
     .select2-choices {
       background: $off-white;
       border: none;
@@ -229,7 +228,7 @@ input, textarea, select {
       line-height: $select-choice-height;
       font-weight: $base-font-weight;
       width: 98%;
-      background: $nopsema-orange;
+      background: $primary-color;
       color: $white;
     }
   }
@@ -243,7 +242,7 @@ input, textarea, select {
 
 .select2-results {
   .select2-highlighted {
-    background: $nopsema-orange;
+    background: $highlight-color;
   }
 
   .select2-result {
@@ -277,26 +276,6 @@ input, textarea, select {
     height: 0;
     width: 0;
 
-    &:focus {
-      ~ label {
-        border: 1px dashed $light-grey;
-      }
-    }
-
-    &:active {
-      ~ label {
-        color: $checked-color;
-      }
-
-      ~ .check {
-        border-color: $checked-color;
-
-        &:before {
-          opacity: 1;
-        }
-      }
-    }
-
     &:checked {
       ~ label {
         color: $checked-color;
@@ -315,6 +294,21 @@ input, textarea, select {
           &:before {
             opacity: 1;
           }
+        }
+      }
+    }
+
+    &:active {
+      ~ label {
+        color: $highlight-color;
+      }
+
+      ~ .check {
+        border-color: $highlight-color;
+
+        &:before {
+          opacity: 1;
+          color: $highlight-color;
         }
       }
     }
@@ -366,7 +360,7 @@ input, textarea, select {
       top: -6px;
       left: 1px;
       margin: auto;
-      transition: opacity $base-transition-duration $base-transition-easing;
+      transition: all $base-transition-duration $base-transition-easing;
     }
   }
 }
