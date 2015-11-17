@@ -1,6 +1,7 @@
 $checked-color: $nopsema-orange;
 $disabled-opacity: 0.5;
 $input-border-bottom: 2px;
+$select-font-size: 0.8em;
 
 @mixin form-input {
   font-family: $base-font-family;
@@ -220,15 +221,16 @@ input, textarea, select {
       padding: 3px;
     }
 
+    $select-choice-height: $base-input-height * 0.7;
     .select2-search-choice {
       border-radius: $base-border-radius;
-      border: 2px solid $nopsema-orange;
-      min-height: $base-input-height;
-      line-height: $base-input-height;
-      font-size: $base-input-font-size;
+      border: none;
+      min-height: $select-choice-height;
+      line-height: $select-choice-height;
       font-weight: $base-font-weight;
       width: 98%;
-      background: $off-white;
+      background: $nopsema-orange;
+      color: $white;
     }
   }
 }
@@ -245,7 +247,8 @@ input, textarea, select {
   }
 
   .select2-result {
-    padding: 5px;
+    padding: 3px;
+    font-size: $select-font-size;
     border-bottom: $input-border-bottom solid $extra-light-grey;
 
     &:last-child {
