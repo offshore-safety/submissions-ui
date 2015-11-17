@@ -1,4 +1,4 @@
-.radio-group {
+nop-radio {
   position: relative;
   margin-bottom: $base-input-margin-bottom;
 
@@ -12,21 +12,6 @@
     &:focus {
       ~ label {
         border-color: $extra-light-grey;
-      }
-    }
-
-
-    &:checked{
-      ~ label {
-        color: $checked-color;
-      }
-
-      ~ .check {
-        border-color: $checked-color;
-
-        &:before {
-          background: $checked-color;
-        }
       }
     }
 
@@ -44,7 +29,28 @@
       }
     }
 
-    $disabled-opacity: 0.5;
+    &:checked{
+      ~ label {
+        color: $checked-color;
+      }
+
+      ~ .check {
+        border-color: $checked-color;
+
+        &:before {
+          background: $checked-color;
+        }
+      }
+
+      &:disabled {
+        ~ .check {
+          &:before {
+            opacity: 1;
+          }
+        }
+      }
+    }
+
     &:disabled {
       ~ label {
         opacity: $disabled-opacity;
@@ -55,7 +61,7 @@
         opacity: $disabled-opacity;
 
         &:before {
-          opacity: 1;
+          opacity: 0;
         }
       }
     }
