@@ -1,10 +1,16 @@
 $checked-color: $nopsema-orange;
 $disabled-opacity: 0.5;
+$input-border-bottom: 2px;
 
-input, textarea, select {
+@mixin form-input {
   font-family: $base-font-family;
   font-size: $base-input-font-size;
   font-weight: $base-font-weight;
+  background-color: $off-white;
+}
+
+input, textarea, select {
+  @include form-input;
 }
 
 .input-group {
@@ -23,9 +29,8 @@ input, textarea, select {
     margin-top: 25px;
     margin-bottom: $base-input-margin-bottom;
     border: none;
-    border-bottom: 1px solid $extra-light-grey;
+    border-bottom: $input-border-bottom solid $extra-light-grey;
     width: 100%;
-    background-color: $off-white;
 
     &:focus {
       outline: none;
@@ -160,12 +165,92 @@ input, textarea, select {
 }
 
 .select-group {
-  select {
+
+  .select2-container {
     width: 100%;
-    @include appearance(none);
-    height: $base-input-height;
-    border-radius: $base-border-radius;
+
+    &:focus {
+      background: red;
+    }
+
+    .select2-choice {
+      height: $base-input-height;
+      line-height: $base-input-height;
+      background: $off-white;
+      border: none;
+      border-bottom: $input-border-bottom solid $extra-light-grey;
+
+      .select2-arrow {
+        border: none;
+        background: transparent;
+        top: 10px;
+
+        b {
+          transform: scale(2);
+        }
+      }
+    }
+
+    &.select2-container-active {
+      .select2-choice, .select2-choices {
+        box-shadow: none;
+      }
+    }
+
+    .select2-chosen {
+      @include form-input;
+    }
   }
+
+  .select2-container-multi {
+    .select2-choices {
+      background: $off-white;
+      border: none;
+      border-bottom: $input-border-bottom solid $extra-light-grey;
+      padding: 3px;
+    }
+
+    .select2-search-choice {
+      border-radius: $base-border-radius;
+      border: 2px solid $nopsema-orange;
+      min-height: $base-input-height;
+      line-height: $base-input-height;
+      font-size: $base-input-font-size;
+      font-weight: $base-font-weight;
+      width: 98%;
+      background: $off-white;
+    }
+  }
+}
+
+.select2-search {
+  input {
+    height: $base-input-height !important;
+  }
+}
+
+.select2-results {
+  .select2-highlighted {
+    background: $nopsema-orange;
+  }
+
+  .select2-result {
+    padding: 5px;
+    border-bottom: $input-border-bottom solid $extra-light-grey;
+
+    &:last-child {
+      border: none;
+    }
+  }
+}
+
+.select2-drop {
+  @include form-input;
+}
+
+.select2-drop-active {
+  border: none;
+  border-radius: $base-border-radius;
 }
 
 .checkbox-group {

@@ -89,20 +89,15 @@
       </header>
       <div>
         <div class="select-group single">
-          <label for="select-input" /> Single-select
-          <select id="select-input">
-            {{#each selectOptions as |selectOption|}}
-              <option>{{selectOption}}</option>
-            {{/each}}
-          </select>
+          <label for="select-input">Single-select</label>
+          {{select-2 content=selectOptions}}
         </div>
         <div class="select-group multiple">
-          <label for="multi-select-input" /> Multi-select
-          <select id="multi-select-input">
-            {{#each selectOptions as |selectOption|}}
-              <option>{{selectOption}}</option>
-            {{/each}}
-          </select>
+          <label for="multi-select-input">Multi-select</label>
+          {{select-2 elementId=multi-select-input
+                     content=selectOptions
+                     multiple=true
+          }}
         </div>
       </div>
     </section>

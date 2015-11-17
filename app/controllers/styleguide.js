@@ -2,11 +2,11 @@ import Ember from 'ember';
 
 export default Ember.Controller.extend({
   selectOptions: [
-    'Operation of a facility',
-    'Storage, processing or transport of petroleum',
-    'Operation of a petroleum pipeline',
-    'Construction and installation of a facility',
-    'Construction and installation of a pipeline',
-    'Decommissioning, dismantling or removing a facility'
+    {id: 1, text: 'Operation of a facility'},
+    {id: 2, text: 'Storage, processing or transport of petroleum'},
+    {id: 3, text: 'Operation of a petroleum pipeline'},
+    {id: 4, text: 'Construction and installation of a facility'},
+    {id: 5, text: 'Construction and installation of a pipeline'},
+    {id: 6, text: 'Decommissioning, dismantling or removing a facility'}
   ]
 });
