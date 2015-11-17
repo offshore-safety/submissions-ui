@@ -25,26 +25,10 @@
         <h3>Text Inputs</h3>
       </header>
       <div>
-        <div class="input-group text">
-          <input id="text-input" type="text" required="true" />
-          <label for="text-input">Text Input</label>
-          <span class="highlight" />
-        </div>
-        <div class="input-group number">
-          <input id="number-input" type="number" />
-          <label for="number-input">Number Input</label>
-          <span class="highlight" />
-        </div>
-        <div class="input-group email">
-          <input id="email-input" type="email" />
-          <label for="email-input">Email Input</label>
-          <span class="highlight" />
-        </div>
-        <div class="input-group date">
-          <input id="date-input" type="date" />
-          <label for="date-input">Date Input</label>
-          <span class="highlight" />
-        </div>
+        {{nop-input label='Text Input' inputId='text-input' required=true}}
+        {{nop-input label='Number Input' inputId='number-input' type='number'}}
+        {{nop-input label='Email Input' inputId='email-input' type='email'}}
+        {{nop-input label='Date Input' inputId='date-input' type='date'}}
       </div>
     </section>
     <section>

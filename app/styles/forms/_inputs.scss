@@ -2,7 +2,7 @@ input, textarea {
   @include form-input;
 }
 
-.input-group {
+nop-input {
   position: relative;
   margin-bottom: $base-input-margin-bottom;
 
@@ -44,10 +44,6 @@ input, textarea {
 
   input {
     height: $base-input-height;
-
-    ~ .highlight {
-      bottom: $base-input-margin-bottom;
-    }
   }
 
   textarea {
@@ -61,7 +57,7 @@ input, textarea {
   .highlight {
     display: block;
     position: absolute;
-    bottom: 10px;
+    bottom: 0px;
     height: 3px;
     width: 100%;
     background-color: $highlight-color;
