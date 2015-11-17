@@ -37,7 +37,7 @@ input, textarea, select {
       outline: none;
 
       ~label {
-        color: $primary-color;
+        color: $highlight-color;
       }
 
       ~ .highlight {
@@ -76,7 +76,7 @@ input, textarea, select {
     bottom: 10px;
     height: 3px;
     width: 100%;
-    background-color: $primary-color;
+    background-color: $highlight-color;
     transform: scaleX(0);
     transition: transform $base-transition-duration $base-transition-easing;
   }
@@ -92,6 +92,13 @@ input, textarea, select {
     @include appearance(none);
     height: 0;
     width: 0;
+
+    &:focus {
+      ~ label {
+        border-color: $extra-light-grey;
+      }
+    }
+
 
     &:checked{
       ~ label {
@@ -145,6 +152,7 @@ input, textarea, select {
     cursor: pointer;
     transition: color $base-transition-duration $base-transition-easing;
     z-index: 9;
+    border: 1px solid transparent;
   }
 
   .check {
@@ -173,21 +181,10 @@ input, textarea, select {
 }
 
 .select-group {
-
   .select2-container {
     width: 100%;
 
-    &:focus {
-      background: red;
-    }
-
     .select2-choice {
-      height: $base-input-height;
-      line-height: $base-input-height;
-      background: $off-white;
-      border: none;
-      border-bottom: $input-border-bottom solid $extra-light-grey;
-
       .select2-arrow {
         border: none;
         background: transparent;
@@ -197,6 +194,15 @@ input, textarea, select {
           transform: scale(2);
         }
       }
+    }
+
+    .select2-choice, .select2-choices {
+      background: $off-white;
+      border: none;
+      border-bottom: $input-border-bottom solid $extra-light-grey;
+      border-radius: $base-border-radius;
+      height: $base-input-height;
+      line-height: $base-input-height;
     }
 
     &.select2-container-active {
@@ -211,25 +217,15 @@ input, textarea, select {
   }
 
   .select2-container-multi {
-    padding: 5px;
-
-    .select2-choices {
-      background: $off-white;
-      border: none;
-      border-bottom: $input-border-bottom solid $extra-light-grey;
-      padding: 3px;
-    }
-
     $select-choice-height: $base-input-height * 0.7;
     .select2-search-choice {
-      border-radius: $base-border-radius;
-      border: none;
-      min-height: $select-choice-height;
-      line-height: $select-choice-height;
+      height: $select-choice-height;
+      line-height: $select-choice-height - 5px;
       font-weight: $base-font-weight;
       width: 98%;
       background: $primary-color;
       color: $white;
+      border: none;
     }
   }
 }
@@ -258,6 +254,10 @@ input, textarea, select {
 
 .select2-drop {
   @include form-input;
+
+  .select2-input {
+    background: $white;
+  }
 }
 
 .select2-drop-active {
@@ -275,6 +275,12 @@ input, textarea, select {
     @include appearance(none);
     height: 0;
     width: 0;
+
+    &:focus {
+      ~ label {
+        border-color: $extra-light-grey;
+      }
+    }
 
     &:checked {
       ~ label {
@@ -335,6 +341,7 @@ input, textarea, select {
     font-size: $base-input-font-size;
     cursor: pointer;
     transition: color $base-transition-duration $base-transition-easing;
+    border: 1px solid transparent;
     z-index: 9;
   }
 
@@ -343,7 +350,7 @@ input, textarea, select {
     border: 5px solid $nopsema-grey;
     width: 35px;
     height: 35px;
-    top: 0px;
+    top: -2px;
     left: 10px;
     transition: border-color $base-transition-duration $base-transition-easing;
 
