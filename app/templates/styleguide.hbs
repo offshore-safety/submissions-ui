@@ -40,28 +40,13 @@
         <h3>Radio Inputs</h3>
       </header>
       <h4>What type of activity?</h4>
-      <ul>
-        <li class="radio-group petroleum">
-          <input id="radio-input1" type="radio" name="selector" />
-          <label for="radio-input1">Petroleum Activity</label>
-          <div class="check"></div>
-        </li>
-        <li class="radio-group greenhouse-gas">
-          <input id="radio-input2" type="radio" name="selector" />
-          <label for="radio-input2">Gas Activity</label>
-          <div class="check"></div>
-        </li>
-        <li class="radio-group disabled-radio">
-          <input id="radio-input3" type="radio" name="selector" disabled="true" />
-          <label for="radio-input3">Disabled</label>
-          <div class="check"></div>
-        </li>
-        <li class="radio-group disabled-checked-radio">
-          <input id="radio-input4" type="radio" name="selector1" checked="true" disabled="true" />
-          <label for="radio-input4">Disabled (Checked)</label>
-          <div class="check"></div>
-        </li>
-      </ul>
+      {{! TODO We've lost the semantics of having a list here}}
+      <div>
+        {{nop-radio label='Petroleum Activity' inputId='radio-input1' name='selector'}}
+        {{nop-radio label='Gas Activity' inputId='radio-input2' name='selector'}}
+        {{nop-radio label='Disabled' inputId='radio-input3' name='selector' disabled=true}}
+        {{nop-radio label='Disabled (Checked)' inputId='radio-input4' name='selector1' disabled=true checked=true}}
+      </div>
     </section>
 
     <section>
