@@ -3,6 +3,8 @@ select {
 }
 
 .select-group {
+  margin-bottom: $base-input-margin-bottom;
+
   .select2-container {
     width: 100%;
 
