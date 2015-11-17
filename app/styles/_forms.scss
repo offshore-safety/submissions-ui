@@ -99,7 +99,17 @@ input, textarea, select {
     }
 
     $checked-color: $nopsema-orange;
-    &:checked, &:active {
+    &:active {
+      ~ label {
+        color: $checked-color;
+      }
+
+      ~ .check {
+        border-color: $checked-color;
+      }
+    }
+
+    &:checked{
       ~ label {
         color: $checked-color;
       }
@@ -270,7 +280,21 @@ input, textarea, select {
       }
     }
 
-    &:checked, &:active {
+    &:active {
+      ~ label {
+        color: $checked-color;
+      }
+
+      ~ .check {
+        border-color: $checked-color;
+
+        &:before {
+          opacity: 1;
+        }
+      }
+    }
+
+    &:checked {
       ~ label {
         color: $checked-color;
       }
