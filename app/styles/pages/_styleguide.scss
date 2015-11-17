@@ -19,7 +19,7 @@
     @include warning-button;
   }
 
-  nop-input {
+  nop-input, nop-textarea {
     @include span-columns(12);
   }
 

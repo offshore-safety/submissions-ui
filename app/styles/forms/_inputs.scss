@@ -2,7 +2,7 @@ input, textarea {
   @include form-input;
 }
 
-nop-input {
+nop-input, nop-textarea {
   position: relative;
   margin-bottom: $base-input-margin-bottom;
 
@@ -50,7 +50,7 @@ nop-input {
     min-height: $base-input-height;
     resize: vertical;
     ~ .highlight {
-      bottom: $base-input-margin-bottom + 4px;
+      bottom: 6px;
     }
   }
 
