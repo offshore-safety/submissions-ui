@@ -1,0 +1,71 @@
+input, textarea {
+  @include form-input;
+}
+
+.input-group {
+  position: relative;
+
+  label {
+    position: absolute;
+    top: 0;
+    display: block;
+    color: $nopsema-grey;
+    transition: color $base-transition-duration $base-transition-easing;
+  }
+
+  input, textarea {
+    @include appearance(none);
+    margin-top: 25px;
+    margin-bottom: $base-input-margin-bottom;
+    border: none;
+    border-bottom: $input-border-bottom solid $extra-light-grey;
+    width: 100%;
+
+    &:focus {
+      outline: none;
+
+      ~label {
+        color: $highlight-color;
+      }
+
+      ~ .highlight {
+        transform: scaleX(1);
+      }
+    }
+  }
+
+  input:required {
+    ~label {
+      &:after {
+        content: ' *';
+      }
+    }
+  }
+
+  input {
+    height: $base-input-height;
+
+    ~ .highlight {
+      bottom: $base-input-margin-bottom;
+    }
+  }
+
+  textarea {
+    min-height: $base-input-height;
+    resize: vertical;
+    ~ .highlight {
+      bottom: $base-input-margin-bottom + 4px;
+    }
+  }
+
+  .highlight {
+    display: block;
+    position: absolute;
+    bottom: 10px;
+    height: 3px;
+    width: 100%;
+    background-color: $highlight-color;
+    transform: scaleX(0);
+    transition: transform $base-transition-duration $base-transition-easing;
+  }
+}

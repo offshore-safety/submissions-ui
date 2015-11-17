@@ -1,8 +1,8 @@
-.checkbox-group {
+.radio-group {
   position: relative;
   margin-bottom: $base-input-margin-bottom;
 
-  input[type=checkbox] {
+  input[type=radio] {
     position: absolute;
     display: block;
     @include appearance(none);
@@ -15,7 +15,8 @@
       }
     }
 
-    &:checked {
+
+    &:checked{
       ~ label {
         color: $checked-color;
       }
@@ -24,15 +25,7 @@
         border-color: $checked-color;
 
         &:before {
-          opacity: 1;
-        }
-      }
-
-      &:disabled {
-        ~ .check {
-          &:before {
-            opacity: 1;
-          }
+          background: $checked-color;
         }
       }
     }
@@ -46,12 +39,12 @@
         border-color: $highlight-color;
 
         &:before {
-          opacity: 1;
-          color: $highlight-color;
+          background: $highlight-color;
         }
       }
     }
 
+    $disabled-opacity: 0.5;
     &:disabled {
       ~ label {
         opacity: $disabled-opacity;
@@ -62,7 +55,7 @@
         opacity: $disabled-opacity;
 
         &:before {
-          opacity: 0;
+          opacity: 1;
         }
       }
     }
@@ -74,33 +67,31 @@
     font-size: $base-input-font-size;
     cursor: pointer;
     transition: color $base-transition-duration $base-transition-easing;
-    border: 1px solid transparent;
     z-index: 9;
+    border: 1px solid transparent;
   }
 
   .check {
     position: absolute;
     border: 5px solid $nopsema-grey;
+    border-radius: 100%;
     width: 35px;
     height: 35px;
-    top: -2px;
+    top: 0px;
     left: 10px;
     transition: border-color $base-transition-duration $base-transition-easing;
 
     &::before {
       display: block;
       position: absolute;
-      opacity: 0;
-      content: '\f00c';
-      font-size: 1.5*$base-font-size;
-      font-family: FontAwesome;
-      color: $checked-color;
-      height: 16px;
-      width: 16px;
-      top: -6px;
-      left: 1px;
+      content: '';
+      border-radius: 100%;
+      height: 15px;
+      width: 15px;
+      top: 5px;
+      left: 5px;
       margin: auto;
-      transition: all $base-transition-duration $base-transition-easing;
+      transition: background $base-transition-duration $base-transition-easing;
     }
   }
 }
