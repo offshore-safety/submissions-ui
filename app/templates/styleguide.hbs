@@ -71,30 +71,12 @@
       <header>
         <h3>Checkboxes</h3>
       </header>
+      <h4>Pick some types with checkboxes</h4>
       <div>
-        <h4>Pick some types with checkboxes</h4>
-        <ul>
-          <li class="checkbox-group activity-type">
-            <input id="checkbox-input1" type="checkbox" name="selector" />
-            <label for="checkbox-input1">Operation of a facility</label>
-            <div class="check"></div>
-          </li>
-          <li class="checkbox-group activity-type">
-            <input id="checkbox-input2" type="checkbox" name="selector" />
-            <label for="checkbox-input2">Operation of a petroleum pipeline</label>
-            <div class="check"></div>
-          </li>
-          <li class="checkbox-group activity-type">
-            <input id="checkbox-input3" type="checkbox" name="selector" disabled="true" />
-            <label for="checkbox-input3">Disabled</label>
-            <div class="check"></div>
-          </li>
-          <li class="checkbox-group activity-type">
-            <input id="checkbox-input4" type="checkbox" checked="true" name="selector" disabled="true" />
-            <label for="checkbox-input4">Disabled (Checked)</label>
-            <div class="check"></div>
-          </li>
-        </ul>
+        {{nop-checkbox label='Operation of a facility' inputId='checkbox-input1' name='selector'}}
+        {{nop-checkbox label='Operation of a petroleum pipeline' inputId='checkbox-input2' name='selector'}}
+        {{nop-checkbox label='Disabled' inputId='checkbox-input3' name='selector' disabled=true}}
+        {{nop-checkbox label='Disabled (Checked)' inputId='checkbox-input4' name='selector' disabled=true checked=true}}
       </div>
     </section>
     <section>
