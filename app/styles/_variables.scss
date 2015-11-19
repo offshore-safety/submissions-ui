@@ -35,6 +35,9 @@ $base-transition-easing: ease;
 $base-shadow-depth: 5px;
 $shadow-color: $grey-mask;
 
+$disabled-opacity: 0.5;
+$input-border-bottom: 2px;
+
 $desktop-width: em(920);
 
 $desktop: new-breakpoint(min-width $desktop-width);

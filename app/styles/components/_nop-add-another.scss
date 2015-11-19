@@ -1,0 +1,28 @@
+nop-add-another button {
+  @include button-color($off-white);
+
+  border: 1px dashed $light-grey;
+  padding: 5px;
+  padding-left: 10px;
+  box-shadow: none;
+  margin-top: 25px;
+  width: 100%;
+  height: $base-input-height*1.5;
+  font-family: $base-font-family;
+  font-size: $base-input-font-size;
+  font-weight: $base-font-weight;
+  background-color: $off-white;
+  color: $nopsema-grey;
+  text-align: left;
+
+  &:hover,
+  &:focus {
+    color: darken($nopsema-grey, 15%);
+    box-shadow: none;
+  }
+
+  &:active {
+    box-shadow: none;
+    transform: scale(0.995);
+  }
+}
