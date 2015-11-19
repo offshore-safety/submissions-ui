@@ -73,17 +73,22 @@ nop-select {
 }
 
 .select2-results {
-  .select2-highlighted {
-    background: $highlight-color;
-  }
+  $border-width: 5px;
 
   .select2-result {
+    border-left: $border-width solid transparent;
     padding: 3px;
     font-size: $select-font-size;
     border-bottom: $input-border-bottom solid $extra-light-grey;
 
+    &.select2-highlighted {
+      background: $white;
+      color: black;
+      border-left: $border-width solid $highlight-color;
+    }
+
     &:last-child {
-      border: none;
+      border-bottom: none;
     }
   }
 }

@@ -20,10 +20,10 @@
 button {
   @include appearance(none);
   @include shadow-depth2;
-  @include button-color($light-grey);
+  @include button-color($nopsema-grey);
   -webkit-font-smoothing: antialiased;
   user-select: none;
-  
+
   border-radius: $base-border-radius;
   border: none;
   color: #fff;
