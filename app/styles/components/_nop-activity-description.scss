@@ -1,3 +1,19 @@
 nop-activity-description {
-  
+  nop-textarea.activity-description,
+  nop-input.activity-name,
+  nop-input.activity-location,
+  nop-info-box {
+    @include span-columns(12);
+  }
+
+  @include media($desktop) {
+    nop-textarea.activity-description,
+    nop-input.activity-name,
+    nop-input.activity-location {
+      @include span-columns(10);
+    }
+    nop-info-box {
+      @include span-columns(2);
+    }
+  }
 }

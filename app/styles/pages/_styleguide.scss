@@ -19,14 +19,18 @@
     @include warning-button;
   }
 
-  nop-input, nop-textarea {
+  .input-example, nop-textarea {
     @include span-columns(12);
   }
 
   @include media($desktop) {
-    nop-input {
-      @include span-columns(6);
+    .input-example {
+      @include span-columns(5);
       @include omega(2n);
+    }
+
+    nop-textarea {
+      @include span-columns(10);
     }
   }
 
@@ -36,7 +40,7 @@
 
   @include media($desktop) {
     nop-radio, nop-checkbox {
-      @include span-columns(6);
+      @include span-columns(5);
       @include omega(2n);
     }
   }
@@ -47,13 +51,9 @@
 
     @include media($desktop) {
     nop-select {
-      @include span-columns(6);
+      @include span-columns(5);
       @include omega(2n);
     }
-  }
-
-  .textarea {
-    @include span-columns(12);
   }
 
   button {

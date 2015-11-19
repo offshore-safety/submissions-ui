@@ -1,0 +1,17 @@
+nop-info-box {
+  background-color: $extra-light-grey;
+  border: none;
+  border-left: 2px solid $nopsema-grey;
+  padding: 5px;
+
+  .info-title {
+    @include span-columns(12);
+    font-size: $base-font-size * 0.8;
+    font-weight: bold;
+  }
+
+  .info-info {
+    @include span-columns(12);
+    font-size: $base-font-size * 0.7;
+  }
+}
