@@ -1,0 +1,62 @@
+.activity-description-page {
+  @include outer-container;
+
+  section {
+    @include clearfix;
+    margin-bottom: 30px;
+  }
+
+  > section {
+    @include as-card;
+    padding: 20px;
+  }
+
+  .primary {
+    @include primary-button;
+  }
+
+  .warning {
+    @include warning-button;
+  }
+
+  .input-example, nop-textarea {
+    @include span-columns(12);
+  }
+
+  @include media($desktop) {
+    .input-example {
+      @include span-columns($main-content-columns/2);
+      @include omega(2n);
+    }
+
+    nop-textarea {
+      @include span-columns($main-content-columns);
+    }
+  }
+
+  nop-radio, nop-checkbox {
+    @include span-columns(12);
+  }
+
+  @include media($desktop) {
+    nop-radio, nop-checkbox {
+      @include span-columns($main-content-columns/2);
+      @include omega(2n);
+    }
+  }
+
+  nop-select {
+    @include span-columns(12);
+  }
+
+    @include media($desktop) {
+    nop-select {
+      @include span-columns($main-content-columns/2);
+      @include omega(2n);
+    }
+  }
+
+  button {
+    margin-right: 10px;
+  }
+}
