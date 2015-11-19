@@ -1,5 +1,13 @@
 input, textarea {
   @include form-input;
+
+  &:required {
+    ~label {
+      &:after {
+        content: '*';
+      }
+    }
+  }
 }
 
 nop-input, nop-textarea {
@@ -44,14 +52,6 @@ nop-input, nop-textarea {
 
       ~ .highlight {
         transform: scaleX(1);
-      }
-    }
-  }
-
-  input:required {
-    ~label {
-      &:after {
-        content: ' *';
       }
     }
   }
