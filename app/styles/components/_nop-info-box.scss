@@ -4,6 +4,10 @@ nop-info-box {
   border-left: 2px solid $nopsema-grey;
   padding: 5px;
 
+  @include media($desktop) {
+    margin-top: 25px;
+  }
+
   .info-title {
     @include span-columns(12);
     font-size: $base-font-size * 0.8;
