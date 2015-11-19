@@ -6,6 +6,20 @@ nop-input, nop-textarea {
   position: relative;
   margin-bottom: $base-input-margin-bottom;
 
+  &.has-hint {
+    .hint {
+      display: block;
+      margin-top: 30px;
+      font-size: $base-font-size * 0.8;
+      font-style: italic;
+      color: $light-grey;
+    }
+
+    label, textarea {
+      margin-top: 5px;
+    }
+  }
+
   label {
     position: absolute;
     top: 0;

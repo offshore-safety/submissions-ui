@@ -1,5 +1,6 @@
 import Ember from 'ember';
 
 export default Ember.Component.extend({
-  tagName: 'nop-textarea'
+  tagName: 'nop-textarea',
+  classNameBindings: ['hint:has-hint']
 });
