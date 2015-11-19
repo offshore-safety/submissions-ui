@@ -15,8 +15,7 @@ nop-add-another button {
   color: $nopsema-grey;
   text-align: left;
 
-  &:hover,
-  &:focus {
+  &:hover{
     color: darken($nopsema-grey, 15%);
     box-shadow: none;
   }
