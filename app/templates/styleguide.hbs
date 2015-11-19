@@ -54,17 +54,8 @@
         <h3>Selection</h3>
       </header>
       <div>
-        <div class="select-group single">
-          <label for="select-input">Single-select</label>
-          {{select-2 content=selectOptions}}
-        </div>
-        <div class="select-group multiple">
-          <label for="multi-select-input">Multi-select</label>
-          {{select-2 elementId=multi-select-input
-                     content=selectOptions
-                     multiple=true
-          }}
-        </div>
+        {{nop-select label='Single-select' inputId='select-input' content=selectOptions}}
+        {{nop-select label='Multi-select' inputId='multi-select-input' content=selectOptions multiple=true}}
       </div>
     </section>
     <section>

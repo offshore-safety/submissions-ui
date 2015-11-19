@@ -41,12 +41,12 @@
     }
   }
 
-  .single, .multiple {
+  nop-select {
     @include span-columns(12);
   }
 
     @include media($desktop) {
-    .single, .multiple {
+    nop-select {
       @include span-columns(6);
       @include omega(2n);
     }

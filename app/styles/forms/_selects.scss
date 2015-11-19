@@ -2,7 +2,18 @@ select {
   @include form-input;
 }
 
-.select-group {
+@mixin select2-choices {
+  .select2-choice, .select2-choices {
+    background: $off-white;
+    border: none;
+    border-bottom: $input-border-bottom solid $extra-light-grey;
+    border-radius: $base-border-radius;
+    height: $base-input-height;
+    line-height: $base-input-height;
+  }
+}
+
+nop-select {
   margin-bottom: $base-input-margin-bottom;
 
   .select2-container {
@@ -20,18 +31,16 @@ select {
       }
     }
 
-    .select2-choice, .select2-choices {
-      background: $off-white;
-      border: none;
-      border-bottom: $input-border-bottom solid $extra-light-grey;
-      border-radius: $base-border-radius;
-      height: $base-input-height;
-      line-height: $base-input-height;
+    @include select2-choices;
+
+    &.select2-dropdown-open.select2-drop-above {
+      @include select2-choices;
     }
 
     &.select2-container-active {
       .select2-choice, .select2-choices {
         box-shadow: none;
+        border: none;
       }
     }
 
@@ -42,14 +51,17 @@ select {
 
   .select2-container-multi {
     $select-choice-height: $base-input-height * 0.7;
-    .select2-search-choice {
-      height: $select-choice-height;
-      line-height: $select-choice-height - 5px;
-      font-weight: $base-font-weight;
-      width: 98%;
-      background: $primary-color;
-      color: $white;
-      border: none;
+
+    .select2-choices {
+      .select2-search-choice {
+        height: $select-choice-height;
+        line-height: $select-choice-height - 5px;
+        font-weight: $base-font-weight;
+        width: 98%;
+        background: $primary-color;
+        color: $white;
+        border: none;
+      }
     }
   }
 }
@@ -82,9 +94,13 @@ select {
   .select2-input {
     background: $white;
   }
-}
 
-.select2-drop-active {
-  border: none;
-  border-radius: $base-border-radius;
+  &.select2-drop-active {
+    &.select2-drop-above {
+      border: none;
+      border-radius: $base-border-radius;
+    }
+    border: none;
+    border-radius: $base-border-radius;
+  }
 }
