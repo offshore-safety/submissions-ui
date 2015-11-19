@@ -1,11 +1,15 @@
 nop-titleholder-details {
   nop-input,
+  nop-add-another,
   nop-info-box {
     @include span-columns(12);
   }
 
   @include media($desktop) {
     nop-input {
+      @include span-columns(10);
+    }
+    nop-add-another {
       @include span-columns(10);
     }
     nop-info-box {
