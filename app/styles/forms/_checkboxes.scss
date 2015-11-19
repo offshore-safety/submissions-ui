@@ -28,6 +28,16 @@ nop-checkbox {
           color: $highlight-color;
         }
       }
+
+      &:disabled {
+        ~ label {
+          color: $highlight-color;
+        }
+        
+        ~ .check {
+          border-color: $highlight-color;
+        }
+      }
     }
 
     &:checked {
@@ -51,7 +61,6 @@ nop-checkbox {
         }
       }
     }
-
 
     &:disabled {
       ~ label {

@@ -27,6 +27,20 @@ nop-radio {
           background: $highlight-color;
         }
       }
+
+      &:disabled {
+        ~ label {
+          color: $highlight-color;
+        }
+
+        ~ .check {
+          border-color: $highlight-color;
+
+          &:before {
+            background: $highlight-color;
+          }
+        }
+      }
     }
 
     &:checked{
