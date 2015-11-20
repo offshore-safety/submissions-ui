@@ -7,9 +7,13 @@ const Router = Ember.Router.extend({
 
 Router.map(function() {
   this.route('styleguide');
-  this.route('prototype/activity-description');
-  this.route('prototype/person-details');
-  this.route('prototype/titleholder-details');
+
+  this.route('prototype', function() {
+    this.route('before-you-start');
+    this.route('activity-description');
+    this.route('person-details');
+    this.route('titleholder-details');
+  });
 });
 
 export default Router;
