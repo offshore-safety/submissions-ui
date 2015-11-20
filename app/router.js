@@ -9,6 +9,7 @@ Router.map(function() {
   this.route('styleguide');
   this.route('prototype/activity-description');
   this.route('prototype/person-details');
+  this.route('prototype/titleholder-details');
 });
 
 export default Router;
