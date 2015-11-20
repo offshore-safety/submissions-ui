@@ -1,15 +1,7 @@
-{{ title 'Activity Description' replace=true }}
-
-<div class="activity-description-page">
-  <section>
-    <header>
-      <h2>Activity Description</h2>
-    </header>
-
-    {{nop-activity-description}}
-    {{#nop-actions}}
-      <button>Back</button>
-      <button class='primary' onclick="location.href = 'prototype/person-details'">Next ></button>
-    {{/nop-actions}}
-  </section>
-</div>
+{{#nop-page title='Activity Description'}}
+  {{nop-activity-description}}
+  {{#nop-actions}}
+    <button>Back</button>
+    <button class='primary'>Next ></button>
+  {{/nop-actions}}
+{{/nop-page}}

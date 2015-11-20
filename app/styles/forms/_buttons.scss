@@ -15,7 +15,6 @@
   @include button-color($error-color);
 }
 
-
 #{$all-button-inputs},
 button {
   @include appearance(none);
@@ -53,5 +52,9 @@ button {
   &:disabled {
     cursor: not-allowed;
     opacity: 0.5;
+  }
+
+  &.primary {
+    background-color: $primary-color;
   }
 }

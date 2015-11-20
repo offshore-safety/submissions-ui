@@ -1,2 +1,20 @@
 @import 'styleguide';
 @import 'prototype';
+
+nop-page {
+  @include outer-container;
+  display: block;
+
+  > section {
+    @include as-card;
+    padding: 20px;
+
+    &:first-child {
+      margin-top: 50px;
+    }
+  }
+
+  section {
+    @include clearfix;
+  }
+}
