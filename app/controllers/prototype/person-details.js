@@ -6,7 +6,7 @@ export default Ember.Controller.extend({
       this.transitionToRoute('styleguide');
     },
     goBack() {
-      this.transitionToRoute('prototype.titleholder-details');
+      this.transitionToRoute('prototype.title-holder-details');
     }
   }
 });
