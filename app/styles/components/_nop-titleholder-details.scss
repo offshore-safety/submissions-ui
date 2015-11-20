@@ -14,6 +14,7 @@ nop-titleholder-details {
     }
     nop-info-box {
       @include span-columns(2);
+      @include omega;
     }
   }
 }
