@@ -3,7 +3,7 @@ import Ember from 'ember';
 export default Ember.Controller.extend({
   actions: {
     goNext() {
-      this.transitionToRoute('prototype/offshore-project');
+      this.transitionToRoute('prototype.offshore-project');
     }
   }
 });
