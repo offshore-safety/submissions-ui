@@ -10,7 +10,7 @@ nop-offshore-project {
       @include span-columns(10);
     }
     nop-radio {
-      @include span-columns(5);
+      @include span-columns($main-content-columns/2);
       @include omega(2n);
     }
     nop-info-box {
