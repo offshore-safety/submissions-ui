@@ -13,6 +13,7 @@ Router.map(function() {
     this.route('activity-description');
     this.route('person-details');
     this.route('titleholder-details');
+    this.route('offshore-project');
   });
 });
 

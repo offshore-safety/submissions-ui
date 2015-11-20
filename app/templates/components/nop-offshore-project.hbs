@@ -1,0 +1,30 @@
+<section>
+  <h4>Is any part of the activity an offshore project?</h4>
+  {{! TODO needs hint}}
+  {{! TODO We've lost the semantics of having a list here}}
+  <div>
+    {{nop-radio label='Yes' inputId='is-offshore' name='is-offshore'}}
+    {{nop-radio label='No' inputId='not-offshore' name='is-offshore'}}
+    {{nop-info-box title='What is Titleholder' info='Explain what this is in simple and legal terms.'}}
+  </div>
+</section>
+
+<section>
+  <h4>Is there an accepted Offshore Project Proposal (OPP)?</h4>
+  {{! TODO needs hint}}
+  {{! TODO We've lost the semantics of having a list here}}
+  <div>
+    {{nop-radio label='Yes' inputId='has-opp' name='has-opp'}}
+    {{nop-radio label='No' inputId='no-opp' name='has-opp'}}
+  </div>
+</section>
+<section>
+  <h4>Is there a decision by the Environment Minister for the activity?</h4>
+  {{! TODO needs hint}}
+  {{! TODO We've lost the semantics of having a list here}}
+  <div>
+    {{nop-radio label='Yes' inputId='has-env-minister' name='env-minister'}}
+    {{nop-radio label='No' inputId='no-env-minister' name='env-minister'}}
+  </div>
+</section>
+{{nop-input label='Please provide OPP document reference or EPBC reference number' inputId='reference-no'}}
