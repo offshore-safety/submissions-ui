@@ -8,6 +8,7 @@ const Router = Ember.Router.extend({
 Router.map(function() {
   this.route('styleguide');
   this.route('prototype/activity-description');
+  this.route('prototype/person-details');
 });
 
 export default Router;
