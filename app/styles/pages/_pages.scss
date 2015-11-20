@@ -5,6 +5,22 @@ nop-page {
   @include outer-container;
   display: block;
 
+  header {
+    margin-bottom: 0.75em;
+  }
+
+  &.has-hint {
+    h2 {
+      margin-bottom: 0.1em;
+    }
+
+    .hint {
+      font-size: $base-font-size;
+      font-style: italic;
+      color: $nopsema-grey;
+    }
+  }
+
   > section {
     @include as-card;
     padding: 20px;
@@ -15,6 +31,7 @@ nop-page {
   }
 
   section {
+    margin-top: 50px;
     @include clearfix;
   }
 }

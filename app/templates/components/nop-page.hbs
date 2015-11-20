@@ -2,6 +2,9 @@
 <section>
   <header>
     <h2>{{title}}</h2>
+    {{#if hint}}
+      <span class='hint'>{{hint}}</span>
+    {{/if}}
   </header>
 
   {{yield}}
