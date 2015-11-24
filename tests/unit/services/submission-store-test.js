@@ -5,22 +5,14 @@ moduleFor('service:submission-store', 'Unit | Service | submission store', {
   // needs: ['service:foo']
 });
 
-let storedSubmission = {};
-let mockLocalStorage = {
-  setItem(key, toStore) {
-    storedSubmission[key] = toStore;
-  },
-  getItem(key) {
-    return storedSubmission[key];
-  }
-};
-
 test('it exists', function(assert) {
   let service = this.subject();
   assert.ok(service);
 });
 
-test('it saves a submission and retrieves it', function(assert) {
+test('it saves a submission and retrieves it from local storage', function(assert) {
+  let savedSubmission = null;
+  let mockLocalStorage = {setItem: (k, v) => savedSubmission = v, getItem: () => savedSubmission};
   let service = this.subject({localStorage: mockLocalStorage});
   let submission = {name: "blah", content: "more blah"};
 
@@ -30,12 +22,11 @@ test('it saves a submission and retrieves it', function(assert) {
   assert.equal(submission, retrievedSubmission);
 });
 
-// test('it stores the submission in local storage', function(assert) {
-//   let service = this.subject();
-//   let submission = {name: 'all the blahz', comment: 'No comment'};
-//
-//   service.save(submission);
-//
-//   let retrievedSubmission = JSON.parse(window.localStorage['submissions.partial']);
-//   assert.equal(submission, retrievedSubmission);
-// });
+test('it returns a blank object when there isn\'t one already', function(assert) {
+  let mockLocalStorage = {getItem: () => null};
+  let service = this.subject({localStorage: mockLocalStorage});
+
+  let defaultSubmission = service.retrieve();
+
+  assert.equal(JSON.stringify(defaultSubmission), JSON.stringify({}));
+});

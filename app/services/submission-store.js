@@ -1,10 +1,11 @@
 import Ember from 'ember';
 
 export default Ember.Service.extend({
+  localStorage: Ember.inject.service(),
   save(submission) {
-    window.localStorage.setItem('submission', submission);
+    this.get('localStorage').setItem('submission', submission);
   },
   retrieve() {
-    return window.localStorage.getItem('submission');
+    return this.get('localStorage').getItem('submission') || {};
   }
 });
