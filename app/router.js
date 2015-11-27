@@ -15,6 +15,14 @@ Router.map(function() {
     this.route('title-holder-details');
     this.route('offshore-project');
   });
+
+  this.route('environment-plan', function() {
+    this.route('new', function() {
+      this.route('before-you-start');
+      this.route('activity-description');
+      this.route('submission-contact');
+    });
+  });
 });
 
 export default Router;

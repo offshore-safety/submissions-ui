@@ -1,6 +1,6 @@
-{{nop-input label='Name' inputId='person-details-name' required=true}}
-{{nop-input label='Position' inputId='person-details-position'}}
-{{nop-input label='Employer' inputId='person-details-employer'}}
-{{nop-input label='Business Address (postal)' inputId='person-details-business-address'}}
-{{nop-input label='Phone number' inputId='person-details-phone'}}
-{{nop-input label='Email address' inputId='person-details-email' type='email'}}
+{{nop-input label='Name' inputId='person-details-name' required=true value=person.name}}
+{{nop-input label='Position' inputId='person-details-position' value=person.position}}
+{{nop-input label='Employer' inputId='person-details-employer' value=person.employer}}
+{{nop-input label='Business Address (postal)' inputId='person-details-business-address' value=person.postalAddress}}
+{{nop-input label='Phone number' inputId='person-details-phone' value=person.phone}}
+{{nop-input label='Email address' inputId='person-details-email' type='email' value=person.email}}
