@@ -1,0 +1,8 @@
+{{#nop-page title='Your submission was successful' class='confirmation-page'}}
+  <p class='confirmation-message'>Your receipt number for this submission is:</p>
+  <p class='receipt-number'>{{receiptNumber}}</p>
+  <p class='confirmation-message'>Please record this number somewhere as we may ask for it during correspondence about your submission</p>
+  {{#nop-actions}}
+    <button class='primary' {{action 'goHome'}}>Back to Home</button>
+  {{/nop-actions}}
+{{/nop-page}}

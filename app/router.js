@@ -22,6 +22,7 @@ Router.map(function() {
       this.route('activity-description');
       this.route('submission-contact');
       this.route('submit');
+      this.route('confirmation');
     });
   });
 });
