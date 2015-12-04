@@ -30,3 +30,13 @@ test('it returns a blank object when there isn\'t one already', function(assert)
 
   assert.equal(JSON.stringify(defaultSubmission), JSON.stringify({}));
 });
+
+test('it clears the submission when requested', function(assert) {
+  let clearCalled = false;
+  let mockLocalStorage = {setItem: (k, newValue) => clearCalled = newValue === null};
+  let service = this.subject({localStorage: mockLocalStorage});
+
+  service.clear();
+
+  assert.ok(clearCalled);
+});

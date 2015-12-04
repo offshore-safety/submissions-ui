@@ -7,5 +7,8 @@ export default Ember.Service.extend({
   },
   retrieve() {
     return this.get('localStorage').getItem('submission') || {};
+  },
+  clear() {
+    this.get('localStorage').setItem('submission', null);
   }
 });
