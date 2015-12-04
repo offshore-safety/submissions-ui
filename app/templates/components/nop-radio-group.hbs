@@ -5,8 +5,7 @@
   <span class='hint'>{{hint}}</span>
 {{/if}}
 <div>
-  {{nop-radio label='One' inputId='radio-one' name='radio-group'}}
-  {{nop-radio label='Two' inputId='radio-two' name='radio-group'}}
-  {{nop-radio label='Three' inputId='radio-three' name='radio-group' disabled=true}}
-  {{nop-radio label='Four' inputId='radio-four' name='radio-group' disabled=true checked=true}}
+  {{#each options as |option index|}}
+    {{nop-radio label=option.label value=option.value checked=value inputId=option.inputId}}
+  {{/each}}
 </div>
