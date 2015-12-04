@@ -11,29 +11,8 @@ nop-radio-group {
       @include omega(2n);
     }
   }
-
-  // @include appearance(none);
-  // margin-top: 25px;
-  // border: none;
-  // width: 100%;
-  //
-  // &.has-hint {
-  //   .hint {
-  //     display: block;
-  //     margin-top: 30px;
-  //     font-size: $base-font-size * 0.8;
-  //     font-style: italic;
-  //     color: $light-grey;
-  //   }
-  //
-  //   nop-radio-group {
-  //     margin-top: 5px;
-  //   }
-  // }
-
-  label {
-    // position: absolute;
-    // top: 0;
+  > label {
+    margin-bottom: 15px;
     display: block;
     color: $nopsema-grey;
   }
