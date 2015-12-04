@@ -1,6 +1,10 @@
 input, textarea {
   @include form-input;
 
+  $side-padding: 5px;
+  padding-left: $side-padding;
+  padding-right: $side-padding;
+
   &:required {
     ~label {
       &:after {
