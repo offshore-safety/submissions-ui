@@ -5,7 +5,7 @@ export default Ember.Controller.extend({
   receiptNumber: null,
   actions: {
     goHome() {
-      this.transitionToRoute('environment-plan');
+      this.transitionToRoute('environment-plan.new.before-you-start');
     }
   }
 });
