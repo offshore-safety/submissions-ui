@@ -5,6 +5,9 @@
                                             required=true
                                             rows=3
                                             hint='Describe the activity in 200 to 500 words. This information will be published on the NOPSEMA website'}}
+{{nop-radio-group class='activity-regulation-type' label='What type of activity is this?'
+                                                   value=submission.regulationType
+                                                   options=regulationTypes}}
 
 <!-- {{nop-input class='activity-location' label='Location of Activity'
                                       inputId='activity-location'
