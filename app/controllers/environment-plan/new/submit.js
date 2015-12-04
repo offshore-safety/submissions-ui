@@ -7,7 +7,7 @@ export default Ember.Controller.extend({
     submit() {
       const onSuccess = (response) => {
         this.get('submissionStore').clear();
-        this.transitionToRoute('environment-plan.new.confirmation', {queryParams: {receiptNumber: response.receipt_number}});
+        this.transitionToRoute('environment-plan.new.confirmation', {queryParams: {receiptNumber: response.receiptNumber}});
       };
       const onFailure = () => {
         alert('Oh snap');
