@@ -4,6 +4,11 @@
   &:hover, &:active {
     background-color: darken($button-color, 15%);
   }
+
+  &:focus {
+    background-color: darken($button-color, 5%);
+    @include shadow-depth2($nopsema-grey);
+  }
 }
 
 @mixin primary-button {
@@ -55,6 +60,6 @@ button {
   }
 
   &.primary {
-    background-color: $primary-color;
+    @include primary-button;
   }
 }
