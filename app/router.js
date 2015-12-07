@@ -17,6 +17,10 @@ Router.map(function() {
       this.route('confirmation');
     });
   });
+
+  this.route('errors', function() {
+    this.route('bad-gateway');
+  });
 });
 
 export default Router;
