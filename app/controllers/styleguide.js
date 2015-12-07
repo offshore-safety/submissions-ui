@@ -11,6 +11,9 @@ export default Ember.Controller.extend({
   ],
   regulationTypes: [
     {label: 'Petroleum', value: 'petroleum', inputId: 'regulation-type-1'},
-    {label: 'Greenhouse Gas', value: 'greenhouse_gas', inputId: 'regulation-type-2'}
-  ]
+    {label: 'Greenhouse Gas', value: 'greenhouse_gas', inputId: 'regulation-type-2'},
+    {label: 'Disabled', value: 'disabled', inputId: 'regulation-type-3', disabled: true},
+    {label: 'Disabled (Checked)', value: 'disabled-checked', inputId: 'regulation-type-4', disabled: true}
+  ],
+  selectedRadio: 'disabled-checked'
 });

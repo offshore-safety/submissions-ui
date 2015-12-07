@@ -37,16 +37,9 @@
 
     <section>
       <header>
-        <h3>Radio Inputs</h3>
+        <h3>Radio Group</h3>
       </header>
-      <h4>What type of activity?</h4>
-      {{! TODO We've lost the semantics of having a list here}}
-      <div>
-        {{nop-radio label='Petroleum Activity' inputId='radio-input1' name='selector'}}
-        {{nop-radio label='Gas Activity' inputId='radio-input2' name='selector'}}
-        {{nop-radio label='Disabled' inputId='radio-input3' name='selector' disabled=true}}
-        {{nop-radio label='Disabled (Checked)' inputId='radio-input4' name='selector1' disabled=true checked=true}}
-      </div>
+      {{nop-radio-group label='What type of activity?' hint='so you can select one of the radio options' options=regulationTypes value=selectedRadio}}
     </section>
 
     <section>
@@ -82,12 +75,6 @@
         <h3>Add Another</h3>
       </header>
       {{nop-add-another text='Add another'}}
-    </section>
-    <section>
-      <header>
-        <h3>Radio Group</h3>
-      </header>
-      {{nop-radio-group label='A bunch of radio selectors' hint='so you can select one of the radio options' options=regulationTypes}}
     </section>
   </section>
 </div>
