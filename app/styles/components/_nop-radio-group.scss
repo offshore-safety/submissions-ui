@@ -11,10 +11,17 @@ nop-radio-group {
       @include omega(2n);
     }
   }
+
   > label {
     margin-bottom: 15px;
     display: block;
     color: $nopsema-grey;
+
+    &.required {
+      &:after {
+        content: '*';
+      }
+    }
   }
 
   &.has-hint {
