@@ -1,3 +1,5 @@
+$label-section-margin: 15px;
+
 nop-radio-group {
   @include span-columns(12);
 
@@ -13,7 +15,7 @@ nop-radio-group {
   }
 
   > label {
-    margin-bottom: 15px;
+    margin-bottom: $label-section-margin;
     display: block;
     color: $nopsema-grey;
 
@@ -25,9 +27,13 @@ nop-radio-group {
   }
 
   &.has-hint {
+    > label {
+      margin-bottom: 0px;
+    }
+
     .hint {
       display: block;
-      margin-top: 30px;
+      margin-bottom: $label-section-margin;
       font-size: $base-font-size * 0.8;
       font-style: italic;
       color: $light-grey;
