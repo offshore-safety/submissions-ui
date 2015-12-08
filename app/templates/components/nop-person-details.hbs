@@ -1,10 +1,12 @@
 {{nop-input label='Name' inputId='person-details-name' required=true value=person.name}}
-{{nop-input label='Position' inputId='person-details-position' value=person.position}}
 {{nop-input label='Employer' inputId='person-details-employer' value=person.employer}}
+{{nop-input label='Position' inputId='person-details-position' value=person.position}}
 <section>
-  {{nop-section-header title='Phone Numbers' hint='At least one phone number is required'}}
-  {{nop-input label='Phone Number' inputId='person-details-phone' value=person.phone required=true}}
-  {{nop-input label='Mobile Number' inputId='person-details-mobile' value=person.mobile required=true}}
+  {{nop-section-header title='Phone Numbers' hint='At least one phone number is required' required=true}}
+  <div>
+    {{nop-input label='Phone' inputId='person-details-phone' value=person.phone class='phone-number'}}
+    {{nop-input label='Mobile' inputId='person-details-mobile' value=person.mobile class='phone-number'}}
+  </div>
 </section>
 {{nop-input label='Email Address' inputId='person-details-email' type='email' value=person.email required=true}}
 {{nop-input label='Postal Address' inputId='person-details-business-address' value=person.postalAddress}}
