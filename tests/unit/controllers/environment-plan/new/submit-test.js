@@ -7,7 +7,7 @@ moduleFor('controller:environment-plan/new/submit', 'Unit | Controller | environ
 test('it redirects to bad-gateway when submitting results in a 502 status', function(assert){
   assert.expect(1);
 
-  let result = {statusCode: () => 502};
+  let result = {status: 502};
   let promise = new Ember.RSVP.Promise(function(resolve, reject) {
     reject(result);
   });

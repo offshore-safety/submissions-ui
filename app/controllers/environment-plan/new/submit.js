@@ -10,7 +10,7 @@ export default Ember.Controller.extend({
         this.transitionToRoute('environment-plan.new.confirmation', {queryParams: {receiptNumber: response.receiptNumber}});
       };
       const onFailure = (result) => {
-        if (result.statusCode() === 502) {
+        if (result.status === 502) {
           this.transitionToRoute('errors.bad-gateway');
         }
         else {
