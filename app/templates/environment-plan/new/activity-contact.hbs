@@ -1,0 +1,8 @@
+{{#nop-page title='Activity Contact'
+            hint='This is the person who is the day to day contact for the activity'}}
+  {{nop-person-details person=model.activityContact}}
+  {{#nop-actions}}
+    <button {{action 'goBack'}}>Back</button>
+    <button class='primary' {{action 'goNext'}}>Next</button>
+  {{/nop-actions}}
+{{/nop-page}}

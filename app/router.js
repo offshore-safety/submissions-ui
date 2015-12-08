@@ -13,6 +13,7 @@ Router.map(function() {
       this.route('before-you-start');
       this.route('activity-description');
       this.route('submission-contact');
+      this.route('activity-contact');
       this.route('submit');
       this.route('confirmation');
     });
