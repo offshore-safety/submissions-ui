@@ -1,4 +1,11 @@
 nop-person-details {
+
+  section {
+    $section-margin: 30px;
+    margin-top: $section-margin;
+    margin-bottom: $section-margin;
+  }
+
   nop-input,
   nop-info-box {
     @include span-columns(12);

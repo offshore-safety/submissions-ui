@@ -1,0 +1,22 @@
+$header-margin-bottom: 15px;
+
+nop-section-header {
+  @include span-columns(12);
+
+  .section-header {
+    margin-bottom: $header-margin-bottom;
+  }
+
+  &.has-hint {
+    .section-header {
+      margin-bottom: 0px;
+    }
+
+    .hint {
+      margin-bottom: $header-margin-bottom;
+      font-size: $base-font-size * 0.8;
+      font-style: italic;
+      color: $light-grey;
+    }
+  }
+}
