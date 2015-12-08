@@ -14,10 +14,8 @@ nop-page {
       margin-bottom: 0.1em;
     }
 
-    .hint {
+    > .hint {
       font-size: $base-font-size;
-      font-style: italic;
-      color: $nopsema-grey;
     }
   }
 

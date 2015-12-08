@@ -32,11 +32,8 @@ nop-radio-group {
     }
 
     .hint {
-      display: block;
       margin-bottom: $label-section-margin;
       font-size: $base-font-size * 0.8;
-      font-style: italic;
-      color: $light-grey;
     }
   }
 }

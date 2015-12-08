@@ -20,11 +20,8 @@ nop-input, nop-textarea {
 
   &.has-hint {
     .hint {
-      display: block;
       margin-top: 30px;
       font-size: $base-font-size * 0.8;
-      font-style: italic;
-      color: $light-grey;
     }
 
     input, textarea {
