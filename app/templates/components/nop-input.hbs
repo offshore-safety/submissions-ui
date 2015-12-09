@@ -1,6 +1,6 @@
 {{#if hint}}
   <div class='hint'>{{hint}}</div>
 {{/if}}
-{{input id=inputId required=required type=type value=value}}
-<label for="{{inputId}}">{{label}}</label>
+{{input id=(concat elementId '-' idSuffix) required=required type=type value=value}}
+<label for="{{concat elementId '-' idSuffix}}">{{label}}</label>
 <span class="highlight" />

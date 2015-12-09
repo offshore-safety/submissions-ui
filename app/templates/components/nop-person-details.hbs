@@ -1,12 +1,12 @@
-{{nop-input label='Name' inputId='person-details-name' required=true value=person.name}}
-{{nop-input label='Position' inputId='person-details-position' value=person.position}}
-{{nop-input label='Employer' inputId='person-details-employer' value=person.employer hint='Assumed the same as the Titleholder if not supplied'}}
+{{nop-input label='Name' idSuffix='person-details-name' required=true value=person.name}}
+{{nop-input label='Position' idSuffix='person-details-position' value=person.position}}
+{{nop-input label='Employer' idSuffix='person-details-employer' value=person.employer hint='Assumed the same as the Titleholder if not supplied'}}
 <section>
   {{nop-section-header title='Phone Numbers' hint='At least one phone number is required' required=true}}
   <div>
-    {{nop-input label='Phone' inputId='person-details-phone' value=person.phone class='phone-number'}}
-    {{nop-input label='Mobile' inputId='person-details-mobile' value=person.mobile class='phone-number'}}
+    {{nop-input label='Phone' idSuffix='person-details-phone' value=person.phone class='phone-number'}}
+    {{nop-input label='Mobile' idSuffix='person-details-mobile' value=person.mobile class='phone-number'}}
   </div>
 </section>
-{{nop-input label='Email Address' inputId='person-details-email' type='email' value=person.email required=true}}
-{{nop-input label='Postal Address' inputId='person-details-business-address' value=person.postalAddress hint='Required if not the same as the Titleholder'}}
+{{nop-input label='Email Address' idSuffix='person-details-email' type='email' value=person.email required=true}}
+{{nop-input label='Postal Address' idSuffix='person-details-business-address' value=person.postalAddress hint='Required if not the same as the Titleholder'}}

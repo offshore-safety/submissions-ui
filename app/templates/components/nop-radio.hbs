@@ -1,3 +1,3 @@
-{{radio-button id=inputId value=value checked=checked disabled=disabled}}
-<label for="{{inputId}}">{{label}}</label>
+{{radio-button id=(concat elementId '-' idSuffix) value=value checked=checked disabled=disabled}}
+<label for="{{concat elementId '-' idSuffix}}">{{label}}</label>
 <div class="check"></div>

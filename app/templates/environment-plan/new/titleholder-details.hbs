@@ -4,7 +4,7 @@
   {{nop-titleholder-details titleholder=model.titleholderDetails}}
 
   <section>
-    {{nop-checkbox inputId='eligible-voluntary-action' class='eligible-voluntary-action' label='This is an Eligible Voluntary Action' checked=model.eligibleVoluntaryAction}}
+    {{nop-checkbox idSuffix='eligible-voluntary-action' class='eligible-voluntary-action' label='This is an Eligible Voluntary Action' checked=model.eligibleVoluntaryAction}}
     {{nop-info-box title='Eligible Voluntary Action' info='Where the Titleholder is able to act on behalf of the other Titleholders'}}
   </section>
 
@@ -14,9 +14,7 @@
       {{nop-titleholder-details titleholder=other}}
     {{/each}}
 
-    <section>
-      {{nop-add-another action='addTitleholder' text='Add another Titleholder' class='add-another-titleholder'}}
-    </section>
+    {{nop-add-another action='addTitleholder' text='Add another Titleholder' class='add-another-titleholder'}}
   {{/unless}}
 
   {{#nop-actions}}

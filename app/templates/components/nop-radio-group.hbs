@@ -6,6 +6,6 @@
 {{/if}}
 <div>
   {{#each options as |option index|}}
-    {{nop-radio label=option.label value=option.value checked=value inputId=option.inputId disabled=option.disabled}}
+    {{nop-radio label=option.label value=option.value checked=value idSuffix=option.idSuffix disabled=option.disabled}}
   {{/each}}
 </div>

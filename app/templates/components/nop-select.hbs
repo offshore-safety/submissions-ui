@@ -1,2 +1,2 @@
-<label for="{{inputId}}">{{label}}</label>
-{{select-2 content=content multiple=multiple}}
+<label for="{{concat elementId '-' idSuffix}}">{{label}}</label>
+{{select-2 content=content multiple=multiple id=(concat elementId '-' idSuffix)}}

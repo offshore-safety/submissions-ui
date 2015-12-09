@@ -25,14 +25,14 @@
         <h3>Text Inputs</h3>
       </header>
       <div>
-        {{nop-input class='input-example' label='Text Input' inputId='text-input' hint='Feed me text' required=true}}
-        {{nop-input class='input-example' label='Number Input' inputId='number-input' hint='I only eat numbers' type='number'}}
-        {{nop-input class='input-example' label='Email Input' inputId='email-input' type='email'}}
-        {{nop-input class='input-example' label='Date Input' inputId='date-input' type='date'}}
+        {{nop-input class='input-example' label='Text Input' idSuffix='text-input' hint='Feed me text' required=true}}
+        {{nop-input class='input-example' label='Number Input' idSuffix='number-input' hint='I only eat numbers' type='number'}}
+        {{nop-input class='input-example' label='Email Input' idSuffix='email-input' type='email'}}
+        {{nop-input class='input-example' label='Date Input' idSuffix='date-input' type='date'}}
       </div>
     </section>
     <section>
-      {{nop-textarea label='Text Area Input' inputId='textarea-input' hint='I provide useful hints and stuff'}}
+      {{nop-textarea label='Text Area Input' idSuffix='textarea-input' hint='I provide useful hints and stuff'}}
     </section>
 
     <section>
@@ -47,8 +47,8 @@
         <h3>Selection</h3>
       </header>
       <div>
-        {{nop-select label='Single-select' inputId='select-input' content=selectOptions}}
-        {{nop-select label='Multi-select' inputId='multi-select-input' content=selectOptions multiple=true}}
+        {{nop-select label='Single-select' idSuffix='select-input' content=selectOptions}}
+        {{nop-select label='Multi-select' idSuffix='multi-select-input' content=selectOptions multiple=true}}
       </div>
     </section>
     <section>
@@ -57,10 +57,10 @@
       </header>
       <h4>Pick some types with checkboxes</h4>
       <div>
-        {{nop-checkbox label='Operation of a facility' inputId='checkbox-input1' name='selector'}}
-        {{nop-checkbox label='Operation of a petroleum pipeline' inputId='checkbox-input2' name='selector'}}
-        {{nop-checkbox label='Disabled' inputId='checkbox-input3' name='selector' disabled=true}}
-        {{nop-checkbox label='Disabled (Checked)' inputId='checkbox-input4' name='selector' disabled=true checked=true}}
+        {{nop-checkbox label='Operation of a facility' idSuffix='checkbox-input1' name='selector'}}
+        {{nop-checkbox label='Operation of a petroleum pipeline' idSuffix='checkbox-input2' name='selector'}}
+        {{nop-checkbox label='Disabled' idSuffix='checkbox-input3' name='selector' disabled=true}}
+        {{nop-checkbox label='Disabled (Checked)' idSuffix='checkbox-input4' name='selector' disabled=true checked=true}}
       </div>
     </section>
     <section>
