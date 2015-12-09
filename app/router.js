@@ -16,11 +16,16 @@ Router.map(function() {
       this.route('activity-contact');
       this.route('submit');
       this.route('confirmation');
+      this.route('liaison-contact');
     });
   });
 
   this.route('errors', function() {
     this.route('bad-gateway');
+  });
+
+  this.route('environment-plna', function() {
+    this.route('new', function() {});
   });
 });
 
