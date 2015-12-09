@@ -20,7 +20,7 @@ export default Ember.Controller.extend({
       this.get('submitatron').submit(this.get('model')).then(onSuccess, onFailure);
     },
     goBack() {
-      this.transitionToRoute('environment-plan.new.activity-contact');
+      this.transitionToRoute('environment-plan.new.comments');
     }
   }
 });

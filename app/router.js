@@ -17,6 +17,7 @@ Router.map(function() {
       this.route('submit');
       this.route('confirmation');
       this.route('liaison-contact');
+      this.route('comments');
     });
   });
 
