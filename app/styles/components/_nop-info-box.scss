@@ -1,3 +1,11 @@
+nop-checkbox {
+  ~ nop-info-box {
+    @include media($desktop) {
+      margin-top: 0px;
+    }
+  }
+}
+
 nop-info-box {
   background-color: $extra-light-grey;
   border: none;

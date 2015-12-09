@@ -1,0 +1,26 @@
+{{#nop-page title='Titleholder Details'
+            class='titleholder-details-page'
+            hint='This is the party responsible for the preparation, management and execution of the Environment Plan'}}
+  {{nop-titleholder-details titleholder=model.titleholderDetails}}
+
+  <section>
+    {{nop-checkbox inputId='eligible-voluntary-action' class='eligible-voluntary-action' label='This is an Eligible Voluntary Action' checked=model.eligibleVoluntaryAction}}
+    {{nop-info-box title='Eligible Voluntary Action' info='Where the Titleholder is able to act on behalf of the other Titleholders'}}
+  </section>
+
+  {{#unless model.eligibleVoluntaryAction}}
+    {{#each model.otherTitleholders as |other index|}}
+      <h5>Other Titleholder {{index}}</h5>
+      {{nop-titleholder-details titleholder=other}}
+    {{/each}}
+
+    <section>
+      {{nop-add-another action='addTitleholder' text='Add another Titleholder' class='add-another-titleholder'}}
+    </section>
+  {{/unless}}
+
+  {{#nop-actions}}
+    <button {{action 'goBack'}}>Back</button>
+    <button class='primary' {{action 'goNext'}}>Next</button>
+  {{/nop-actions}}
+{{/nop-page}}

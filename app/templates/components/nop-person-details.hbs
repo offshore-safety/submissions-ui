@@ -1,6 +1,6 @@
 {{nop-input label='Name' inputId='person-details-name' required=true value=person.name}}
-{{nop-input label='Employer' inputId='person-details-employer' value=person.employer}}
 {{nop-input label='Position' inputId='person-details-position' value=person.position}}
+{{nop-input label='Employer' inputId='person-details-employer' value=person.employer hint='Assumed the same as the Titleholder if not supplied'}}
 <section>
   {{nop-section-header title='Phone Numbers' hint='At least one phone number is required' required=true}}
   <div>
@@ -9,4 +9,4 @@
   </div>
 </section>
 {{nop-input label='Email Address' inputId='person-details-email' type='email' value=person.email required=true}}
-{{nop-input label='Postal Address' inputId='person-details-business-address' value=person.postalAddress}}
+{{nop-input label='Postal Address' inputId='person-details-business-address' value=person.postalAddress hint='Required if not the same as the Titleholder'}}

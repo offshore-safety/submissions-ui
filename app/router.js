@@ -18,6 +18,7 @@ Router.map(function() {
       this.route('confirmation');
       this.route('liaison-contact');
       this.route('comments');
+      this.route('titleholder-details');
     });
   });
 

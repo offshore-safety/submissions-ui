@@ -1,17 +1,13 @@
-nop-title-holder-details {
-  nop-input,
-  nop-add-another,
-  nop-info-box {
+.titleholder-details-page {
+  .add-another-titleholder, nop-info-box, .eligible-voluntary-action {
     @include span-columns(12);
   }
 
   @include media($desktop) {
-    nop-input {
+    .add-another-titleholder, .eligible-voluntary-action {
       @include span-columns(10);
     }
-    nop-add-another {
-      @include span-columns(10);
-    }
+
     nop-info-box {
       @include span-columns(2);
       @include omega;
