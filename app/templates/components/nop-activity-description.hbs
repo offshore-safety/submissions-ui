@@ -1,6 +1,6 @@
-{{nop-input class='activity-name' label='Activity Name' idSuffix='activity-name' required=true value=submission.name}}
+{{nop-input class='activity-name' label='Activity Name' name='activity-name' required=true value=submission.name}}
 {{nop-textarea class='activity-description' label='Activity Description'
-                                            idSuffix='activity-description'
+                                            name='activity-description'
                                             value=submission.description
                                             required=true
                                             rows=10
@@ -11,7 +11,7 @@
                                                    options=regulationTypes}}
 
 <!-- {{nop-input class='activity-location' label='Location of Activity'
-                                      idSuffix='activity-location'
+                                      name='activity-location'
                                       value=submission.location
                                       required=true
                                       rows=3

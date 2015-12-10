@@ -10,10 +10,10 @@ export default Ember.Controller.extend({
     {id: 6, text: 'Decommissioning, dismantling or removing a facility'}
   ],
   regulationTypes: [
-    {label: 'Petroleum', value: 'petroleum', idSuffix: 'regulation-type-1'},
-    {label: 'Greenhouse Gas', value: 'greenhouse_gas', idSuffix: 'regulation-type-2'},
-    {label: 'Disabled', value: 'disabled', idSuffix: 'regulation-type-3', disabled: true},
-    {label: 'Disabled (Checked)', value: 'disabled-checked', idSuffix: 'regulation-type-4', disabled: true}
+    {label: 'Petroleum', value: 'petroleum', name: 'regulation-type-1'},
+    {label: 'Greenhouse Gas', value: 'greenhouse_gas', name: 'regulation-type-2'},
+    {label: 'Disabled', value: 'disabled', name: 'regulation-type-3', disabled: true},
+    {label: 'Disabled (Checked)', value: 'disabled-checked', name: 'regulation-type-4', disabled: true}
   ],
   selectedRadio: 'disabled-checked'
 });

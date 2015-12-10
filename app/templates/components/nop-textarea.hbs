@@ -1,6 +1,6 @@
 {{#if hint}}
   <div class='hint'>{{hint}}</div>
 {{/if}}
-{{textarea id=(concat elementId '-' idSuffix) rows=rows required=required value=value}}
-<label for="{{concat elementId '-' idSuffix}}">{{label}}</label>
+{{textarea id=(concat elementId '-' name) rows=rows required=required value=value}}
+<label for="{{concat elementId '-' name}}">{{label}}</label>
 <span class="highlight" />
