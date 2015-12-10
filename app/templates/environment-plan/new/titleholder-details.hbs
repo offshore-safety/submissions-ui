@@ -10,8 +10,10 @@
 
   {{#unless model.eligibleVoluntaryAction}}
     {{#each model.otherTitleholders as |other index|}}
-      <h5 class='other-titleholder-title'>Other Titleholder {{counter index}}</h5>
-      {{nop-titleholder-details titleholder=other}}
+      <section class='other-titleholder'>
+        <h5 class='other-titleholder-title'>Other Titleholder {{counter index}}</h5>
+        {{nop-titleholder-details titleholder=other}}
+      </section>
     {{/each}}
 
     {{nop-add-another action='addTitleholder' text='Add another Titleholder' class='add-another-titleholder'}}
