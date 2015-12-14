@@ -9,6 +9,20 @@
                                                    value=submission.regulationType
                                                    required=true
                                                    options=regulationTypes}}
+{{nop-radio-group class='offshore-project' label='Is any part of the activity an offshore project?'
+                                           value=submission.hasOffshoreProject
+                                           options=trueOrFalse}}
+{{#if submission.hasOffshoreProject}}
+  {{nop-radio-group class='opp' label='Is there an accepted Offshore Project Proposal (OPP)?'
+                                               value=submission.hasOPP
+                                               options=trueOrFalse}}
+  {{nop-radio-group class='environment-minister-decision' label='Is there a decision by the Environment Minister for the activity?'
+                                               value=submission.hasEnvironmentMinisterDecision
+                                               options=trueOrFalse}}
+{{/if}}
+{{#if showReferenceNumber}}
+  {{nop-input class='reference-number' label='Please provide OPP document reference or EPBC reference number' name='reference-number' value=submission.OPPOrEPBCReferenceNumber}}
+{{/if}}
 
 <!-- {{nop-input class='activity-location' label='Location of Activity'
                                       name='activity-location'
