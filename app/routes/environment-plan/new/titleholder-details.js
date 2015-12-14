@@ -8,6 +8,7 @@ export default Ember.Route.extend(ResetScroll, {
   },
   afterModel(model) {
     if (!model.titleholderDetails) {
+      model.eligibleVoluntaryAction = true;
       model.titleholderDetails = {};
       model.otherTitleholders = [];
     }
