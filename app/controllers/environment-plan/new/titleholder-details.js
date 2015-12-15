@@ -6,7 +6,9 @@ export default Ember.Controller.extend({
     {label: 'No', value: false}
   ],
   _eligibleVoluntaryActionChanged: Ember.observer('model.isEligibleVoluntaryAction', function() {
-    Ember.set(this.get('model'), 'otherTitleholders', []);
+    if (this.get('model').isEligibleVoluntaryAction) {
+      Ember.set(this.get('model'), 'otherTitleholders', []);
+    }
   }),
   actions: {
     addTitleholder() {
