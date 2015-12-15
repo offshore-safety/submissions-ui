@@ -3,7 +3,8 @@ nop-activity-description {
   nop-input.activity-name,
   nop-input.reference-number,
   nop-input.activity-location,
-  nop-info-box {
+  nop-info-box,
+  nop-radio-group {
     @include span-columns(12);
   }
 
@@ -11,7 +12,8 @@ nop-activity-description {
     nop-textarea.activity-description,
     nop-input.activity-name,
     nop-input.reference-number,
-    nop-input.activity-location {
+    nop-input.activity-location,
+    nop-radio-group {
       @include span-columns($main-content-columns);
     }
     nop-info-box {
