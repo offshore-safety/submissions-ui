@@ -10,13 +10,16 @@
                                                    required=true
                                                    options=regulationTypes}}
 {{nop-radio-group class='offshore-project' label='Is any part of the activity an offshore project?'
+                                           hint='as defined by regulation 4:'
                                            value=submission.hasOffshoreProject
                                            options=trueOrFalse}}
 {{#if submission.hasOffshoreProject}}
   {{nop-radio-group class='opp' label='Is there an accepted Offshore Project Proposal (OPP)?'
+                                               hint='(As accepted under regulation 5D)'
                                                value=submission.hasOPP
                                                options=trueOrFalse}}
   {{nop-radio-group class='environment-minister-decision' label='Is there a decision by the Environment Minister for the activity?'
+                                               hint='As per sub-regulations 9(3) and 17(3)'
                                                value=submission.hasEnvironmentMinisterDecision
                                                options=trueOrFalse}}
 {{/if}}
