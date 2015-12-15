@@ -6,7 +6,7 @@ export default Ember.Controller.extend({
       this.transitionToRoute('environment-plan.new.liaison-contact');
     },
     goBack() {
-      this.transitionToRoute('environment-plan.new.activity-description');
+      this.transitionToRoute('environment-plan.new.titleholder-details');
     }
   }
 });

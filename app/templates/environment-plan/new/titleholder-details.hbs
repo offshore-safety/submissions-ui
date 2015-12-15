@@ -4,11 +4,11 @@
   {{nop-titleholder-details titleholder=model.titleholderDetails}}
 
   <section>
-    {{nop-radio-group name='eligible-voluntary-action' class='eligible-voluntary-action' label='Is this an Eligible Voluntary Action?' value=model.eligibleVoluntaryAction options=trueOrFalse}}
+    {{nop-radio-group name='eligible-voluntary-action' class='eligible-voluntary-action' label='Is this an Eligible Voluntary Action?' value=model.isEligibleVoluntaryAction options=trueOrFalse}}
     {{nop-info-box title='Eligible Voluntary Action' info='Where the Titleholder is able to act on behalf of the other Titleholders'}}
   </section>
 
-  {{#unless model.eligibleVoluntaryAction}}
+  {{#unless model.isEligibleVoluntaryAction}}
     {{#each model.otherTitleholders as |other index|}}
       <section class='other-titleholder'>
         <h5 class='other-titleholder-title'>Other Titleholder {{counter index}}</h5>

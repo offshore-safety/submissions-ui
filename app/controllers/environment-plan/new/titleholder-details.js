@@ -5,12 +5,18 @@ export default Ember.Controller.extend({
     {label: 'Yes', value: true},
     {label: 'No', value: false}
   ],
-  eligibleVoluntaryActionChanged: Ember.observer('model.eligibleVoluntaryAction', function() {
+  _eligibleVoluntaryActionChanged: Ember.observer('model.isEligibleVoluntaryAction', function() {
     Ember.set(this.get('model'), 'otherTitleholders', []);
   }),
   actions: {
     addTitleholder() {
       this.get('model').otherTitleholders.pushObject({});
+    },
+    goNext() {
+      this.transitionToRoute('environment-plan.new.submission-contact');
+    },
+    goBack() {
+      this.transitionToRoute('environment-plan.new.activity-description');
     }
   }
 });
