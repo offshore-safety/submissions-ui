@@ -7,6 +7,17 @@ nop-checkbox {
 }
 
 nop-info-box {
+  @include span-columns(12);
+}
+
+@include media($desktop) {
+  nop-info-box {
+    @include span-columns(2);
+    @include omega;
+  }
+}
+
+nop-info-box {
   background-color: $extra-light-grey;
   border: none;
   border-left: 2px solid $nopsema-grey;

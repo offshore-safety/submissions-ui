@@ -3,6 +3,12 @@ $label-section-margin: 15px;
 nop-radio-group {
   @include span-columns(12);
 
+  @include media($desktop) {
+    @include span-columns(10);
+  }
+}
+
+nop-radio-group {
   nop-radio{
     @include span-columns(12);
   }

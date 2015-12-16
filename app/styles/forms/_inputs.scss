@@ -15,6 +15,16 @@ input, textarea {
 }
 
 nop-input, nop-textarea {
+  @include span-columns(12);
+}
+
+@include media($desktop) {
+  nop-input, nop-textarea {
+    @include span-columns(10);
+  }
+}
+
+nop-input, nop-textarea {
   position: relative;
   margin-bottom: $base-input-margin-bottom;
 
