@@ -1,0 +1,12 @@
+{{#nop-page title='Environment Plan'
+            class='attach-environment-plan-page'
+            hint='Attach the Environment Plan document itself'}}
+  {{nop-input label='Name of this document' value=model.environmentPlan.name}}
+
+  {{nop-uploader}}
+
+  {{#nop-actions}}
+    <button {{action 'goBack'}}>Back</button>
+    <button class='primary' {{action 'goNext'}}>Next</button>
+  {{/nop-actions}}
+{{/nop-page}}

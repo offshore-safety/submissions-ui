@@ -19,6 +19,7 @@ Router.map(function() {
       this.route('liaison-contact');
       this.route('comments');
       this.route('titleholder-details');
+      this.route('attach-environment-plan');
     });
   });
 
