@@ -1,34 +1,27 @@
 nop-uploader {
-  $drop-area-margin: 15px;
-
-  .drop-area {
+  .file-picker {
     @include span-columns(12);
+
     @include media($desktop) {
       @include span-columns(10);
     }
 
-    border: 1px dashed $light-grey;
-    padding-left: 10px;
-    padding-top: 35px;
     height: 100px;
-    background-color: $off-white;
-    margin: $drop-area-margin 0;
-  }
+    padding: 5px;
+    background: $off-white;
 
-  .file-upload {
-    @include span-columns(9);
-
-    @include media($desktop) {
-      @include span-columns(8);
+    .file-picker__dropzone {
+      cursor: pointer;
+      height: 100%;
+    }
+    
+    .file-picker__preview__image {
+      width: 90px;
+      height: 90px;
     }
   }
 
-  .upload-button {
-    @include span-columns(3);
-
-    @include media($desktop) {
-      @include span-columns(2);
-    }
-    margin-top: 25px;
+  .hint {
+    @include span-columns(12);
   }
 }

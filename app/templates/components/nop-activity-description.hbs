@@ -10,12 +10,9 @@
                                                    required=true
                                                    options=regulationTypes}}
 {{nop-radio-group class='offshore-project' label='Is any part of the activity an offshore project?'
-                                           hint='as defined by regulation 4:'
                                            value=submission.hasOffshoreProject
                                            options=trueOrFalse}}
-{{nop-info-box title='What is an Off-shore Project?' info='An offshore project means one or more activities that are undertaken for the purpose of the
-recovery of petroleum, other than on an appraisal basis, including any conveyance of recovered
-petroleum by pipeline whether or not the activity is undertaken for other purposes'}}
+{{nop-info-box title='What is an Offshore Project?' info='An Offshore Project means undertaking activities defined in regulation 4 of OPPX'}}
 {{#if submission.hasOffshoreProject}}
   {{nop-radio-group class='opp' label='Is there an accepted Offshore Project Proposal (OPP)?'
                                                hint='(As accepted under regulation 5D)'
@@ -29,11 +26,3 @@ petroleum by pipeline whether or not the activity is undertaken for other purpos
 {{#if showReferenceNumber}}
   {{nop-input class='reference-number' label='Please provide OPP document reference or EPBC reference number' name='reference-number' value=submission.OPPOrEPBCReferenceNumber}}
 {{/if}}
-
-<!-- {{nop-input class='activity-location' label='Location of Activity'
-                                      name='activity-location'
-                                      value=submission.location
-                                      required=true
-                                      rows=3
-                                      hint='The file should be in JPEG format. A minimum size of 500Kb and a maximum of 1MB.'}}
-{{nop-info-box title='Location Maps' info='This map will be published on the NOPSEMA website. It is an overview of the basin.'}} -->
