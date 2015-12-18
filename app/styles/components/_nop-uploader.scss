@@ -14,10 +14,17 @@ nop-uploader {
       cursor: pointer;
       height: 100%;
     }
-    
+
     .file-picker__preview__image {
       width: 90px;
       height: 90px;
+    }
+
+    .file-picker__progress {
+      &:after {
+        width: 100%;
+        content: 'Uploading the shiz';
+      }
     }
   }
 
