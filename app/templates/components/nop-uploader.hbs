@@ -1,6 +1,18 @@
-{{#file-picker fileLoaded='fileLoaded' preview=true accept=accept readAs='readAsDataURL'}}
-    Drag here or click to upload a file
-{{/file-picker}}
+<button class='file-picker'>
+  {{#if uploading}}
+    <div class='instruction'>Currently uploading, please wait…</div>
+  {{else}}
+    <div class='instruction'>Drop file or click here to upload</div>
+  {{/if}}
+</button>
+{{#if complete}}
+  <div class='preview'></div>
+{{/if}}
 {{#if hint}}
   <div class='hint'>{{hint}}</div>
+{{/if}}
+{{#if showProgress}}
+<div class='progress'>
+  <div class="progress-inner {{if complete 'complete'}}" {{bind-attr style=(concat 'width:' progress '%')}}></div>
+</div>
 {{/if}}

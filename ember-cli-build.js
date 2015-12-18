@@ -12,6 +12,8 @@ module.exports = function(defaults) {
     }
   });
 
+  app.import('bower_components/resumable.js/resumable.js');
+
   // Use `app.import` to add additional libraries to the generated
   // output files.
   //
