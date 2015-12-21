@@ -4,7 +4,8 @@
   {{nop-input label='Name of this document' value=model.environmentPlan.name}}
 
   {{nop-uploader hint='Please submit a Word document (.doc, .docx) or Adobe Portable Format (.pdf)'
-                 accept='.doc,.docx,.pdf'}}
+                 accept='.doc,.docx,.pdf'
+                 token=model.environmentPlan.token}}
 
   {{#nop-actions}}
     <button {{action 'goBack'}}>Back</button>

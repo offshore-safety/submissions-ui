@@ -92,8 +92,11 @@ test('_progressUpdated should update progress as a percentage', function(assert)
 
 test('_uploadCompleted should sets everything correctly', function(assert) {
   const component = this.subject();
+  const file = {
+    uniqueIdentifier: 'o2719832njkj'
+  };
 
-  component._uploadCompleted();
+  component._uploadCompleted(file);
 
   assert.equal(component.progress, 100);
   assert.equal(component.complete, true);

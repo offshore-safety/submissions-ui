@@ -29,11 +29,20 @@ export default Ember.Component.extend({
   _progressUpdated(file) {
     this.set('progress', file.progress()*100);
   },
-  _uploadCompleted() {
+  _uploadCompleted(file) {
     this.set('instruction', 'Upload Complete');
     this.set('complete', true);
     this.set('progress', 100);
+    this.set('token', file.uniqueIdentifier);
   },
+  _initialiseState: function() {
+    if (this.get('token') !== null) {
+      this.set('instruction', 'Upload Complete');
+      this.set('complete', true);
+      this.set('progress', 100);
+      this.set('showProgress', true);
+    }
+  }.on('didInsertElement'),
   _initialiseUploader: function() {
     const self = this;
     const filePicker = this.$().find('.file-picker')[0];
@@ -54,8 +63,8 @@ export default Ember.Component.extend({
       self._progressUpdated(file);
     });
 
-    r.on('complete', function() {
-      self._uploadCompleted();
+    r.on('fileSuccess', function(file) {
+      self._uploadCompleted(file);
     });
   }.on('didInsertElement')
 });
