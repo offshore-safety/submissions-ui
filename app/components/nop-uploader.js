@@ -32,7 +32,6 @@ export default Ember.Component.extend({
   _uploadCompleted() {
     this.set('instruction', 'Upload Complete');
     this.set('complete', true);
-    this.set('uploading', false);
     this.set('progress', 100);
   },
   _initialiseUploader: function() {
