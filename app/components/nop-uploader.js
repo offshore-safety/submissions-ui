@@ -10,6 +10,7 @@ export default Ember.Component.extend({
   complete: false,
   showProgress: false,
   accept: null,
+  token: null,
   instruction: 'Drop file or click here to upload',
   _fileValid(file) {
     const accept = this.get('accept');
@@ -39,7 +40,7 @@ export default Ember.Component.extend({
     this.set('token', file.uniqueIdentifier);
   },
   _initialiseState: function() {
-    if (this.get('token') !== null) {
+    if (this.get('token')) {
       this.set('instruction', 'Upload Complete');
       this.set('complete', true);
       this.set('progress', 100);
