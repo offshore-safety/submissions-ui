@@ -12,7 +12,9 @@ export default Ember.Component.extend({
   instruction: 'Drop file or click here to upload',
   _fileValid(file) {
     const accept = this.get('accept');
-    return accept === null || _.any(accept.split(','), (docType) => file.file.name.endsWith(docType));
+    return accept === null || _.any(accept.split(','), function(docType) {
+      return _.endsWith(file.fileName, docType);
+    });
   },
   _fileAdded(file, r) {
     this.set('complete', false);
@@ -23,7 +25,7 @@ export default Ember.Component.extend({
       r.upload();
     } else {
       this.set('showProgress', false);
-      this.set('instruction', `'${file.file.name}' is not a valid file type`);
+      this.set('instruction', `'${file.fileName}' is not a valid file type`);
     }
   },
   _progressUpdated(file) {

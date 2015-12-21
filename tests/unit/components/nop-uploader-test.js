@@ -25,9 +25,7 @@ test('_fileValid is true if accept not specified', function(assert) {
 test('_fileValid is true if filename matches one of those accepted', function(assert) {
   const component = this.subject({accept: '.docx,.pdf'});
   const file = {
-    file: {
-      name: 'monkeys.docx'
-    }
+    fileName: 'monkeys.docx'
   };
 
   assert.ok(component._fileValid(file));
@@ -36,9 +34,7 @@ test('_fileValid is true if filename matches one of those accepted', function(as
 test('_fileValid is false if filename does not match one of those accepted', function(assert) {
   const component = this.subject({accept: '.docx'});
   const file = {
-    file: {
-      name: 'monkeys.doc'
-    }
+    fileName: 'monkeys.doc'
   };
 
   assert.notOk(component._fileValid(file));
@@ -63,9 +59,7 @@ test('_fileAdded sets everything correctly when an invalid file is added', funct
   let uploadCalled = false;
   const resumable = {upload: () => uploadCalled = true};
   const file = {
-    file: {
-      name: 'monkeys.doc'
-    }
+    fileName: 'monkeys.doc'
   };
 
   component._fileAdded(file, resumable);
