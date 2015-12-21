@@ -3,7 +3,8 @@
             hint='Attach the Environment Plan document itself'}}
   {{nop-input label='Name of this document' value=model.environmentPlan.name}}
 
-  {{nop-uploader hint='Please provide either PDF or docx' accept='.jpg,.jpeg,.gif,.png'}}
+  {{nop-uploader hint='Please submit a Word document (.doc, .docx) or Adobe Portable Format (.pdf)'
+                 accept='.doc,.docx,.pdf'}}
 
   {{#nop-actions}}
     <button {{action 'goBack'}}>Back</button>

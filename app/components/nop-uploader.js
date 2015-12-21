@@ -1,4 +1,5 @@
 import Ember from 'ember';
+import _ from 'lodash/lodash';
 
 export default Ember.Component.extend({
   fileUploader: Ember.inject.service(),
@@ -7,11 +8,21 @@ export default Ember.Component.extend({
   showProgress: false,
   complete: false,
   uploading: false,
-  _fileAdded(file) {
-    this.set('progress', 0);
-    this.set('showProgress', true);
+  error: null,
+  _fileValid(file) {
+    return _.any(this.get('accept').split(','), (docType) => file.file.name.endsWith(docType));
+  },
+  _fileAdded(file, r) {
     this.set('complete', false);
-    this.set('uploading', true);
+    if (this._fileValid(file)) {
+      this.set('progress', 0);
+      this.set('showProgress', true);
+      this.set('uploading', true);
+      this.set('error', null);
+      r.upload();
+    } else {
+      this.set('error', `${file.file.name} is not a valid file type`);
+    }
   },
   _progressUpdated(file) {
     this.set('progress', file.progress()*100);
@@ -32,16 +43,15 @@ export default Ember.Component.extend({
     r.assignBrowse(filePicker);
     r.assignDrop(filePicker);
 
-    r.on('fileAdded', function(file, event){
-      self._fileAdded();
-      r.upload();
+    r.on('fileAdded', function(file){
+      self._fileAdded(file, r);
     });
 
     r.on('fileProgress', function(file) {
       self._progressUpdated(file);
     });
 
-    r.on('complete', function(file) {
+    r.on('complete', function() {
       self._uploadCompleted();
     });
   }.on('didInsertElement')

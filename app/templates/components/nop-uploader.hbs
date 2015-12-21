@@ -1,8 +1,16 @@
 <button class='file-picker'>
-  {{#if uploading}}
-    <div class='instruction'>Currently uploading, please wait…</div>
+  {{#if complete}}
+    <div class='instruction'>Upload Complete</div>
   {{else}}
-    <div class='instruction'>Drop file or click here to upload</div>
+    {{#if uploading}}
+      <div class='instruction'>Currently uploading, please wait…</div>
+    {{else}}
+      {{#if error}}
+        <div class='instruction'>{{error}}</div>
+      {{else}}
+        <div class='instruction'>Drop file or click here to upload</div>
+      {{/if}}
+    {{/if}}
   {{/if}}
 </button>
 {{#if complete}}
