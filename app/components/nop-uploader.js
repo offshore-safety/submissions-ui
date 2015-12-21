@@ -1,3 +1,4 @@
+/*globals Resumable */
 import Ember from 'ember';
 import _ from 'lodash/lodash';
 
@@ -5,31 +6,34 @@ export default Ember.Component.extend({
   fileUploader: Ember.inject.service(),
   tagName: 'nop-uploader',
   progress: 0,
-  showProgress: false,
   complete: false,
-  uploading: false,
-  error: null,
+  showProgress: false,
+  accept: null,
+  instruction: 'Drop file or click here to upload',
   _fileValid(file) {
-    return _.any(this.get('accept').split(','), (docType) => file.file.name.endsWith(docType));
+    const accept = this.get('accept');
+    return accept === null || _.any(accept.split(','), (docType) => file.file.name.endsWith(docType));
   },
   _fileAdded(file, r) {
     this.set('complete', false);
+    this.set('progress', 0);
     if (this._fileValid(file)) {
-      this.set('progress', 0);
       this.set('showProgress', true);
-      this.set('uploading', true);
-      this.set('error', null);
+      this.set('instruction', 'Currently uploading, please wait…');
       r.upload();
     } else {
-      this.set('error', `${file.file.name} is not a valid file type`);
+      this.set('showProgress', false);
+      this.set('instruction', `'${file.file.name}' is not a valid file type`);
     }
   },
   _progressUpdated(file) {
     this.set('progress', file.progress()*100);
   },
   _uploadCompleted() {
+    this.set('instruction', 'Upload Complete');
     this.set('complete', true);
     this.set('uploading', false);
+    this.set('progress', 100);
   },
   _initialiseUploader: function() {
     const self = this;
