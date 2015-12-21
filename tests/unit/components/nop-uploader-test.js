@@ -90,7 +90,7 @@ test('_progressUpdated should update progress as a percentage', function(assert)
   assert.equal(component.progress, 10);
 });
 
-test('_uploadCompleted should sets everythign correctly', function(assert) {
+test('_uploadCompleted should sets everything correctly', function(assert) {
   const component = this.subject();
 
   component._uploadCompleted();
