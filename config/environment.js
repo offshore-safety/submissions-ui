@@ -20,6 +20,7 @@ module.exports = function(environment) {
   };
 
   if (environment === 'development') {
+    ENV.APP.API_ENDPOINT = 'http://nopsema-api.dev'
     // ENV.APP.LOG_RESOLVER = true;
     // ENV.APP.LOG_ACTIVE_GENERATION = true;
     // ENV.APP.LOG_TRANSITIONS = true;
@@ -40,6 +41,7 @@ module.exports = function(environment) {
   }
 
   if (environment === 'production') {
+    ENV.APP.API_ENDPOINT = 'http://10.44.1.248'
     ENV.locationType = 'hash';
   }
 

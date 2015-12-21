@@ -1,6 +1,7 @@
 /*globals Resumable */
 import Ember from 'ember';
 import _ from 'lodash/lodash';
+import ENV from 'submissions-ui/config/environment';
 
 export default Ember.Component.extend({
   fileUploader: Ember.inject.service(),
@@ -50,7 +51,7 @@ export default Ember.Component.extend({
     const filePicker = this.$().find('.file-picker')[0];
 
     const r = new Resumable({
-      target:'http://nopsema-api.dev/api/v1/submissions/file',
+      target:`${ENV.APP.API_ENDPOINT}/api/v1/submissions/file`,
       chunkSize: 5*1024*1024
     });
 
