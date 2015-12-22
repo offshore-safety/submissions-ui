@@ -17,6 +17,11 @@ nop-uploader {
     &:focus {
       @include shadow-depth1;
     }
+
+    &.drag-over {
+      transform: scale(1.03);
+      @include shadow-depth1($nopsema-orange);
+    }
   }
 
   .preview {

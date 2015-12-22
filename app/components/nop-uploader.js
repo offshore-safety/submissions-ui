@@ -70,5 +70,18 @@ export default Ember.Component.extend({
     r.on('fileSuccess', function(file) {
       self._uploadCompleted(file);
     });
+
+    filePicker.addEventListener('dragenter', function() {
+      filePicker.classList.add('drag-over');
+    });
+
+    filePicker.addEventListener('dragleave', function() {
+      filePicker.classList.remove('drag-over');
+    });
+
+    filePicker.addEventListener('drop', function() {
+      filePicker.classList.remove('drag-over');
+    });
+
   }.on('didInsertElement')
 });
