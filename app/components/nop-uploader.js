@@ -4,7 +4,6 @@ import ENV from 'submissions-ui/config/environment';
 import $ from 'jquery';
 
 export default Ember.Component.extend({
-  fileUploader: Ember.inject.service(),
   tagName: 'nop-uploader',
   progress: 0,
   complete: false,
