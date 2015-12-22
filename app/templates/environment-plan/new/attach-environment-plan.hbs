@@ -1,11 +1,8 @@
 {{#nop-page title='Environment Plan'
             class='attach-environment-plan-page'
             hint='Attach the Environment Plan document itself'}}
-  {{nop-input label='Name of this document' value=model.environmentPlanDocument.name}}
 
-  {{nop-uploader hint='Please submit a Word document (.doc, .docx) or Adobe Portable Format (.pdf)'
-                 accept='.doc,.docx,.pdf'
-                 token=model.environmentPlanDocument.token}}
+  {{nop-attach-document document=model.documents.environmentPlan}}
 
   {{#nop-actions}}
     <button {{action 'goBack'}}>Back</button>

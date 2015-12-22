@@ -7,8 +7,11 @@ export default Ember.Route.extend(ResetScroll, {
     return this.get('submissionStore').retrieve();
   },
   afterModel(model) {
-    if (!model.environmentPlanDocument) {
-      model.environmentPlanDocument = {};
+    if (!model.documents) {
+      model.documents = {};
+    }
+    if (!model.documents.environmentPlan) {
+      model.documents.environmentPlan = {};
     }
   },
   actions: {
