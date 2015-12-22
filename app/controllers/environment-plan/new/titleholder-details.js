@@ -18,7 +18,7 @@ export default Ember.Controller.extend({
       this.transitionToRoute('environment-plan.new.submission-contact');
     },
     goBack() {
-      this.transitionToRoute('environment-plan.new.activity-description');
+      this.transitionToRoute('environment-plan.new.titles');
     }
   }
 });

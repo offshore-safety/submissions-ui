@@ -14,6 +14,16 @@ select {
 }
 
 nop-select {
+  @include span-columns(12);
+}
+
+@include media($desktop) {
+  nop-select {
+    @include span-columns($main-content-columns/2);
+  }
+}
+
+nop-select {
   margin-bottom: $base-input-margin-bottom;
 
   .select2-container {
