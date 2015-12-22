@@ -24,6 +24,10 @@ nop-uploader {
     }
   }
 
+  .file-input {
+    display: none;
+  }
+
   .preview {
     @include span-columns(12);
 

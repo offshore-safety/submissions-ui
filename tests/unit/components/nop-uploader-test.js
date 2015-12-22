@@ -24,51 +24,40 @@ test('_fileValid is true if accept not specified', function(assert) {
 
 test('_fileValid is true if filename matches one of those accepted', function(assert) {
   const component = this.subject({accept: '.docx,.pdf'});
-  const file = {
-    fileName: 'monkeys.docx'
-  };
+  const fileName = 'monkeys.docx';
 
-  assert.ok(component._fileValid(file));
+  assert.ok(component._fileValid(fileName));
 });
 
 test('_fileValid is false if filename does not match one of those accepted', function(assert) {
   const component = this.subject({accept: '.docx'});
-  const file = {
-    fileName: 'monkeys.doc'
-  };
+  const fileName = 'monkeys.doc';
 
-  assert.notOk(component._fileValid(file));
+  assert.notOk(component._fileValid(fileName));
 });
 
-test('_fileAdded sets everything correctly when a valid file is added', function(assert) {
+test('_fileAdded sets everything correctly when a valid file is added and returns true', function(assert) {
   const component = this.subject({_fileValid: () => true});
-  let uploadCalled = false;
-  const resumable = {upload() {uploadCalled = true;}};
 
-  component._fileAdded(null, resumable);
+  const result = component._fileAdded();
 
   assert.equal(component.complete, false);
   assert.equal(component.progress, 0);
   assert.equal(component.showProgress, true);
   assert.equal(component.instruction, 'Currently uploading, please wait…');
-  assert.ok(uploadCalled);
+  assert.ok(result);
 });
 
-test('_fileAdded sets everything correctly when an invalid file is added', function(assert) {
+test('_fileAdded sets everything correctly when an invalid file is added and returns false', function(assert) {
   const component = this.subject({_fileValid: () => false});
-  let uploadCalled = false;
-  const resumable = {upload: () => uploadCalled = true};
-  const file = {
-    fileName: 'monkeys.doc'
-  };
 
-  component._fileAdded(file, resumable);
+  const result = component._fileAdded('monkeys.doc');
 
   assert.equal(component.complete, false);
   assert.equal(component.progress, 0);
   assert.equal(component.showProgress, false);
   assert.equal(component.instruction, "'monkeys.doc' is not a valid file type");
-  assert.notOk(uploadCalled);
+  assert.notOk(result);
 });
 
 test('_progressUpdated should update progress as a percentage', function(assert) {
@@ -86,13 +75,20 @@ test('_progressUpdated should update progress as a percentage', function(assert)
 
 test('_uploadCompleted should sets everything correctly', function(assert) {
   const component = this.subject();
-  const file = {
-    uniqueIdentifier: 'o2719832njkj'
-  };
 
-  component._uploadCompleted(file);
+  component._uploadCompleted('o2719832njkj');
 
   assert.equal(component.progress, 100);
   assert.equal(component.complete, true);
   assert.equal(component.instruction, 'Upload Complete');
+  assert.equal(component.token, 'o2719832njkj');
+});
+
+test('_uploadFailed should show an error message', function(assert) {
+  const component = this.subject();
+  const fileName = 'monkeys.doc';
+
+  component._uploadFailed(fileName);
+
+  assert.equal(component.instruction, "Upload failed for 'monkeys.doc'. Please try again");
 });
