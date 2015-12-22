@@ -19,8 +19,8 @@ nop-uploader {
     }
 
     &.drag-over {
-      transform: scale(1.03);
-      @include shadow-depth1($nopsema-orange);
+      transform: scale(1.01);
+      border: 3px dashed black;
     }
   }
 
