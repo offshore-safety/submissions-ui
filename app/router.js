@@ -21,6 +21,7 @@ Router.map(function() {
       this.route('titleholder-details');
       this.route('attach-environment-plan');
       this.route('titles');
+      this.route('attachments');
     });
   });
 

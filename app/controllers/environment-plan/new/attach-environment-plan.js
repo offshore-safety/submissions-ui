@@ -3,7 +3,7 @@ import Ember from 'ember';
 export default Ember.Controller.extend({
   actions: {
     goNext() {
-      this.transitionToRoute('environment-plan.new.comments');
+      this.transitionToRoute('environment-plan.new.attachments');
     },
     goBack() {
       this.transitionToRoute('environment-plan.new.activity-contact');
