@@ -5,7 +5,7 @@
   {{#each model.documents.attachments as |document index|}}
     <section class="attachment {{concat 'attachment' index}}">
       <h5>Attachment {{counter index}}</h5>
-      {{nop-attach-document document=document}}
+      {{nop-attach-file document=document}}
     </section>
   {{/each}}
 
