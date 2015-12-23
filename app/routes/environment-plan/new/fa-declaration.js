@@ -7,10 +7,13 @@ export default Ember.Route.extend(ResetScroll, {
     return this.get('submissionStore').retrieve();
   },
   afterModel(model) {
-    if (!model.faDeclaration) {
-      model.faDeclaration = {
-        includeFa: true,
-        document: {}
+    if (!model.documents) {
+      model.documents = {};
+    }
+
+    if (!model.documents.faDeclaration) {
+      model.documents.faDeclaration = {
+        includeFa: true
       };
     }
   },
