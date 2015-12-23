@@ -1,0 +1,7 @@
+{{nop-radio-group class='include-fa' label='Do you want to submit a Financial Assurance Declaration with this submission?'
+                                           value=declaration.includeFa
+                                           options=trueOrFalse}}
+
+{{#if declaration.includeFa}}
+  {{nop-attach-file document=declaration.document}}
+{{/if}}

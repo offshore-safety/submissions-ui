@@ -9,7 +9,7 @@ export default Ember.Controller.extend({
       this.transitionToRoute('environment-plan.new.comments');
     },
     goBack() {
-      this.transitionToRoute('environment-plan.new.attach-environment-plan');
+      this.transitionToRoute('environment-plan.new.fa-declaration');
     }
   }
 });

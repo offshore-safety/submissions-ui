@@ -22,6 +22,7 @@ Router.map(function() {
       this.route('attach-environment-plan');
       this.route('titles');
       this.route('attachments');
+      this.route('fa-declaration');
     });
   });
 
