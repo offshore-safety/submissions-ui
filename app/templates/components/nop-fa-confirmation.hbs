@@ -1,0 +1,7 @@
+{{nop-radio-group class='include-fa' label='Do you want to submit a Financial Assurance Confirmation with this submission?'
+                                           value=confirmation.includeFa
+                                           options=trueOrFalse}}
+
+{{#if confirmation.includeFa}}
+  {{nop-attach-file document=confirmation}}
+{{/if}}

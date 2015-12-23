@@ -1,0 +1,10 @@
+{{#nop-page title='Financial Assurance Confirmation'
+            class='fa-confirmation-page'}}
+
+  {{nop-fa-confirmation confirmation=model.documents.faConfirmation}}
+
+  {{#nop-actions}}
+    <button {{action 'goBack'}}>Back</button>
+    <button class='primary' {{action 'goNext'}}>Next</button>
+  {{/nop-actions}}
+{{/nop-page}}

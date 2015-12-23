@@ -23,6 +23,7 @@ Router.map(function() {
       this.route('titles');
       this.route('attachments');
       this.route('fa-declaration');
+      this.route('fa-confirmation');
     });
   });
 
