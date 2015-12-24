@@ -70,7 +70,7 @@ export default Ember.Component.extend({
         dataType:         'XML',  // S3 returns XML if success_action_status is set to 201
         replaceFileInput: false,
         add: function(e, data) {
-          if (self._fileAdded(data.files[0].name, data.submit)) {
+          if (self._fileAdded(data.files[0].name)) {
             data.submit();
           }
         },
