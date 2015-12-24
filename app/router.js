@@ -30,10 +30,6 @@ Router.map(function() {
   this.route('errors', function() {
     this.route('bad-gateway');
   });
-
-  this.route('environment-plna', function() {
-    this.route('new', function() {});
-  });
 });
 
 export default Router;
