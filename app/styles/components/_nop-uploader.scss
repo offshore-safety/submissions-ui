@@ -14,7 +14,7 @@ nop-uploader {
   .initialising-mask {
     text-align: center;
     padding: 20px;
-    background-color: transparentize(white, 0.1);
+    background-color: transparentize($card-background-color, 0.1);
 
     .initialising-message {
       @include span-columns(12);
