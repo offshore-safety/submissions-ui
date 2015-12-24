@@ -1,15 +1,22 @@
-<button class='file-picker'>
-  <div class='instruction'>{{instruction}}</div>
-</button>
-<input type='file' class='file-input' />
-{{#if complete}}
-  <div class='preview'></div>
-{{/if}}
-{{#if hint}}
-  <div class='hint'>{{hint}}</div>
-{{/if}}
-{{#if showProgress}}
-<div class='progress'>
-  <div class="progress-inner {{if complete 'complete'}}" {{bind-attr style=(concat 'width:' progress '%')}}></div>
+<div class='upload-section'>
+  <button class='file-picker'>
+    <div class='instruction'>{{instruction}}</div>
+  </button>
+  <input type='file' class='file-input' />
+  {{#if complete}}
+    <div class='preview'></div>
+  {{/if}}
+  {{#if hint}}
+    <div class='hint'>{{hint}}</div>
+  {{/if}}
+  {{#if showProgress}}
+  <div class='progress'>
+    <div class="progress-inner {{if complete 'complete'}}" {{bind-attr style=(concat 'width:' progress '%')}}></div>
+  </div>
+  {{/if}}
 </div>
+{{#if disabled}}
+  <div class='initialising-mask'>
+    <h4 class='initialising-message'>Initialising…</h4>
+  </div>
 {{/if}}

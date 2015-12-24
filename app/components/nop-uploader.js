@@ -10,6 +10,7 @@ export default Ember.Component.extend({
   showProgress: false,
   accept: null,
   token: null,
+  disabled: true,
   instruction: 'Drop file or click here to upload',
   _fileValid(fileName) {
     const accept = this.get('accept');
@@ -57,7 +58,7 @@ export default Ember.Component.extend({
     const fileInput = this.$().find('input:file');
     const signatureEndpoint = `${ENV.APP.API_ENDPOINT}/api/v1/submissions/file/sign`;
 
-    $.get(signatureEndpoint).done(function(data) {
+    const initialiseUploader = function(data) {
       uploader.fileupload({
         fileInput:       fileInput,
         dropZone:        filePicker,
@@ -84,9 +85,18 @@ export default Ember.Component.extend({
           self._uploadFailed(data.files[0].name);
         }
       });
-    }).fail(function() {
-      alert('Oh snap! Unable to sign');
-    });
+
+      self.set('disabled', false);
+    };
+
+    const getPresignedPost = function() {
+      $.get(signatureEndpoint).done(initialiseUploader).fail(function() {
+        console.error('Unable to get presigned POST credentials');
+        setTimeout(getPresignedPost, 1000);
+      });
+    };
+
+    getPresignedPost();
 
     filePicker.on('click', function(e) {
       fileInput.click();

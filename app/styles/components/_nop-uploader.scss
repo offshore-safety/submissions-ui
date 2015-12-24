@@ -1,4 +1,30 @@
 nop-uploader {
+  @include span-columns(12);
+  min-height: 150px;
+  position: relative;
+
+  .initialising-mask, .upload-section {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+  }
+
+  .initialising-mask {
+    text-align: center;
+    padding: 20px;
+    background-color: transparentize(white, 0.1);
+
+    .initialising-message {
+      @include span-columns(12);
+
+      @include media($desktop) {
+        @include span-columns(10);
+      }
+    }
+  }
+
   .file-picker {
     @include span-columns(12);
 

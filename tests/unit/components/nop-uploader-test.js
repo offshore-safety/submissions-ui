@@ -14,6 +14,7 @@ test('it has sensible defaults', function(assert) {
   assert.equal(component.showProgress, false);
   assert.equal(component.instruction, 'Drop file or click here to upload');
   assert.equal(component.accept, null);
+  assert.equal(component.disabled, true);
 });
 
 test('_fileValid is true if accept not specified', function(assert) {
