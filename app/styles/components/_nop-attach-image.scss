@@ -1,0 +1,31 @@
+$label-section-margin: 15px;
+
+nop-attach-image {
+  @include span-columns(12);
+
+  margin-bottom: $base-input-margin-bottom;
+  display: block;
+
+  > label {
+    margin-bottom: $label-section-margin;
+    display: block;
+    color: $nopsema-grey;
+
+    &.required {
+      &:after {
+        content: '*';
+      }
+    }
+  }
+
+  &.has-hint {
+    > label {
+      margin-bottom: 0px;
+    }
+
+    .hint {
+      margin-bottom: $label-section-margin;
+      font-size: $base-font-size * 0.8;
+    }
+  }
+}

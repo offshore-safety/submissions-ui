@@ -1,0 +1,7 @@
+<!-- {{nop-input label=label value=document.name}} -->
+
+{{#if label}}
+  <label class="{{if required 'required'}}">{{label}}</label>
+{{/if}}
+
+{{nop-uploader token=document.token}}
