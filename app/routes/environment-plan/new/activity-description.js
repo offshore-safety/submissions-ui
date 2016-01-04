@@ -6,6 +6,15 @@ export default Ember.Route.extend(ResetScroll, {
   model() {
     return this.get('submissionStore').retrieve();
   },
+  afterModel(model) {
+    if (!model.documents) {
+      model.documents = {};
+    }
+
+    if (!model.documents.locationMap) {
+      model.documents.locationMap = {};
+    }
+  },
   actions: {
     willTransition() {
       this.get('submissionStore').save(this.get('currentModel'));
