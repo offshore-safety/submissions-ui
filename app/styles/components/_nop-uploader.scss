@@ -1,7 +1,11 @@
 nop-uploader {
   @include span-columns(12);
-  min-height: 150px;
   position: relative;
+  height: 70px;
+
+  &.has-progress {
+    height: 130px;
+  }
 
   .instruction {
     white-space: normal;

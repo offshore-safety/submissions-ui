@@ -5,6 +5,7 @@ import $ from 'jquery';
 
 export default Ember.Component.extend({
   tagName: 'nop-uploader',
+  classNameBindings: ['showProgress:has-progress'],
   progress: 0,
   complete: false,
   showProgress: false,
