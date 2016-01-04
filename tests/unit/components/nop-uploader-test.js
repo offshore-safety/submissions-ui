@@ -91,5 +91,5 @@ test('_uploadFailed should show an error message', function(assert) {
 
   component._uploadFailed(fileName);
 
-  assert.equal(component.instruction, "Upload failed for 'monkeys.doc'. Please try again");
+  assert.equal(component.instruction, "Upload failed for 'monkeys.doc'. Please check your connection and try again");
 });

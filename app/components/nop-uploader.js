@@ -12,6 +12,7 @@ export default Ember.Component.extend({
   token: null,
   disabled: true,
   instruction: 'Drop file or click here to upload',
+  initMessage: 'Initialising…',
   _fileValid(fileName) {
     const accept = this.get('accept');
     return accept === null || _.any(accept.split(','), function(docType) {
@@ -41,7 +42,7 @@ export default Ember.Component.extend({
     this.set('token', uniqueIdentifier);
   },
   _uploadFailed(fileName) {
-    this.set('instruction', `Upload failed for '${fileName}'. Please try again`);
+    this.set('instruction', `Upload failed for '${fileName}'. Please check your connection and try again`);
   },
   _initialiseState: function() {
     if (this.get('token')) {
@@ -91,7 +92,7 @@ export default Ember.Component.extend({
 
     const getPresignedPost = function() {
       $.get(signatureEndpoint).done(initialiseUploader).fail(function() {
-        console.error('Unable to get presigned POST credentials');
+        self.set('initMessage', "We're having trouble initialising. Please check your connection while we keep trying…");
         setTimeout(getPresignedPost, 1000);
       });
     };

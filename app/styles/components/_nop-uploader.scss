@@ -3,6 +3,10 @@ nop-uploader {
   min-height: 150px;
   position: relative;
 
+  .instruction {
+    white-space: normal;
+  }
+
   .initialising-mask, .upload-section {
     position: absolute;
     top: 0;
