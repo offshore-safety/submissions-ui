@@ -1,10 +1,10 @@
 nop-uploader {
   @include span-columns(12);
   position: relative;
-  height: 70px;
+  height: 80px;
 
   &.has-progress {
-    height: 130px;
+    height: 140px;
   }
 
   .instruction {
