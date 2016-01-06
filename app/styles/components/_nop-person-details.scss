@@ -12,4 +12,24 @@ nop-person-details {
       @include span-columns(5);
     }
   }
+
+  .person-title {
+    @include span-columns(2);
+  }
+
+  .person-first-name {
+    @include span-columns(10);
+    @include omega;
+
+    @include media($desktop) {
+      @include span-columns(4);
+    }
+  }
+
+  .person-last-name {
+    @include media($desktop) {
+      @include span-columns(4);
+      @include omega;
+    }
+  }
 }
