@@ -1,0 +1,32 @@
+nop-address {
+  .locality {
+    @include media($desktop) {
+      @include span-columns(5);
+    }
+  }
+
+  .state {
+    @include span-columns(6);
+
+    @include media($desktop) {
+      @include span-columns(3);
+    }
+  }
+
+  .postcode {
+    @include span-columns(6);
+    @include omega;
+
+    @include media($desktop) {
+      @include span-columns(2);
+    }
+  }
+
+  .country {
+    @include span-columns(12);
+
+    @include media($desktop) {
+      @include span-columns(10);
+    }
+  }
+}

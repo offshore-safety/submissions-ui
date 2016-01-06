@@ -8,7 +8,9 @@ export default Ember.Route.extend(ResetScroll, {
   },
   afterModel(model) {
     if (!model.liaisonContact) {
-      model.liaisonContact = {};
+      model.liaisonContact = {
+        postalAddress: {}
+      };
     }
   },
   actions: {
