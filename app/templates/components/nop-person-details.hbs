@@ -11,4 +11,4 @@
   </div>
 </section>
 {{nop-input label='Email Address' name='person-details-email' type='email' value=person.email required=true}}
-{{nop-address address=person.postalAddress allowPOBox=true}}
+{{nop-address title='Postal Address' hint='Required if different from Titleholder' address=person.postalAddress allowPOBox=true}}
