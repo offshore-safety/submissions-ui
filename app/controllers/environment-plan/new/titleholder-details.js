@@ -12,7 +12,7 @@ export default Ember.Controller.extend({
   }),
   actions: {
     addTitleholder() {
-      this.get('model').otherTitleholders.pushObject({});
+      this.get('model').otherTitleholders.pushObject({businessAddress: {}, postalAddress: {}});
     },
     goNext() {
       this.transitionToRoute('environment-plan.new.submission-contact');

@@ -4,5 +4,5 @@
 {{/unless}}
 {{nop-input label='ACN/ABN' name='company-number' value=titleholder.companyNumber}}
 {{! TODO Give ACN/ABN a hint so you can do the link to the Aus Business Register}}
-{{nop-input label='Registered Business Address' name='business-address' required=true value=titleholder.businessAddress}}
-{{nop-input label='Postal Address' name='postal-address' value=titleholder.postalAddress}}
+{{nop-address title='Registered Business Address' address=titleholder.businessAddress allowPOBox=false}}
+{{nop-address title='Postal Address' address=titleholder.postalAddress allowPOBox=false}}
