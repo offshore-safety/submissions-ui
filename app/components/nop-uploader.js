@@ -5,10 +5,11 @@ import $ from 'jquery';
 
 export default Ember.Component.extend({
   tagName: 'nop-uploader',
-  classNameBindings: ['showProgress:has-progress'],
+  classNameBindings: ['showProgress:has-progress', 'showPreview:has-preview'],
   progress: 0,
   complete: false,
   showProgress: false,
+  showPreview: false,
   accept: null,
   token: null,
   disabled: true,
@@ -62,30 +63,37 @@ export default Ember.Component.extend({
 
     const initialiseUploader = function(data) {
       uploader.fileupload({
-        fileInput:       fileInput,
-        dropZone:        filePicker,
-        url:             data.url,
-        type:            'POST',
-        autoUpload:       true,
-        formData:         data.formData,
-        paramName:        'file', // S3 does not like nested name fields i.e. name="user[avatar_url]"
-        dataType:         'XML',  // S3 returns XML if success_action_status is set to 201
-        replaceFileInput: false,
-        add: function(e, data) {
-          if (self._fileAdded(data.files[0].name)) {
-            data.submit();
-          }
-        },
-        progressall: function(e, data) {
-          self._progressUpdated({progress: () => data.loaded/data.total});
-        },
-        done: function(e, data) {
-          const uniqueIdentifier = data.response().result.getElementsByTagName('Key')[0].childNodes[0].nodeValue;
-          self._uploadCompleted(uniqueIdentifier);
-        },
-        fail: function(e, data) {
-          self._uploadFailed(data.files[0].name);
+        fileInput:          fileInput,
+        dropZone:           filePicker,
+        url:                data.url,
+        type:               'POST',
+        autoUpload:         false,
+        formData:           data.formData,
+        paramName:          'file', // S3 does not like nested name fields i.e. name="user[avatar_url]"
+        dataType:           'XML',  // S3 returns XML if success_action_status is set to 201
+        replaceFileInput:   false,
+        previewMinWidth:    760,
+        previewMaxWidth:    760,
+        previewMinHeight:   550,
+        previewMaxHeight:   550,
+        previewThumbnail:   false,
+        disableImageResize: true
+      }).on('fileuploadadd', function(e, data) {
+        self.set('showPreview', false);
+        self.$('.preview-container').empty();
+        if (self._fileAdded(data.files[0].name)) {
+          data.submit();
         }
+      }).on('fileuploadprogressall', function(e,data) {
+        self._progressUpdated({progress: () => data.loaded/data.total});
+      }).on('fileuploadprocessalways', function(e, data) {
+        self.set('showPreview', true);
+        self.$('.preview-container').append(data.files[0].preview);
+      }).on('fileuploaddone', function(e, data) {
+        const uniqueIdentifier = data.response().result.getElementsByTagName('Key')[0].childNodes[0].nodeValue;
+        self._uploadCompleted(uniqueIdentifier);
+      }).on('fileuploadfail', function(e, data) {
+        self._uploadFailed(data.files[0].name);
       });
 
       self.set('disabled', false);

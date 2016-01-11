@@ -1,10 +1,19 @@
+$base-uploader-height: 80px;
+$progress-bar-height: 60px;
+$preview-height: 550px;
+
 nop-uploader {
   @include span-columns(12);
+  @include clearfix;
   position: relative;
-  height: 80px;
+  height: $base-uploader-height;
 
   &.has-progress {
-    height: 140px;
+    height: $base-uploader-height + $progress-bar-height;
+
+    &.has-preview {
+      height: $base-uploader-height + $progress-bar-height + $preview-height;
+    }
   }
 
   .instruction {
@@ -62,17 +71,27 @@ nop-uploader {
     display: none;
   }
 
-  .preview {
+  .preview-container {
     @include span-columns(12);
+    height: 0;
 
     @include media($desktop) {
-      @include span-columns(2);
-      @include omega;
+      @include span-columns(10);
 
       text-align: center;
       font-size: 2.5 * $base-font-size;
       line-height: 60px;
       color: $nopsema-blue;
+    }
+
+    &.visible {
+      margin-top: 20px;
+      height: auto;
+    }
+
+    canvas {
+      width: 100%;
+      height: 100%;
     }
   }
 

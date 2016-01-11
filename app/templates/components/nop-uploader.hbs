@@ -3,9 +3,6 @@
     <div class='instruction'>{{instruction}}</div>
   </button>
   <input type='file' class='file-input' />
-  {{#if complete}}
-    <div class='preview'></div>
-  {{/if}}
   {{#if hint}}
     <div class='hint'>{{hint}}</div>
   {{/if}}
@@ -14,6 +11,7 @@
     <div class="progress-inner {{if complete 'complete'}}" {{bind-attr style=(concat 'width:' progress '%')}}></div>
   </div>
   {{/if}}
+  <div class="preview-container {{if showPreview 'visible'}}"></div>
 </div>
 {{#if disabled}}
   <div class='initialising-mask'>

@@ -12,9 +12,12 @@ module.exports = function(defaults) {
     }
   });
 
+  app.import('bower_components/blueimp-load-image/js/load-image.all.min.js');
   app.import('bower_components/blueimp-file-upload/js/vendor/jquery.ui.widget.js');
   app.import('bower_components/blueimp-file-upload/js/jquery.iframe-transport.js');
   app.import('bower_components/blueimp-file-upload/js/jquery.fileupload.js');
+  app.import('bower_components/blueimp-file-upload/js/jquery.fileupload-process.js');
+  app.import('bower_components/blueimp-file-upload/js/jquery.fileupload-image.js');
 
   // Use `app.import` to add additional libraries to the generated
   // output files.
