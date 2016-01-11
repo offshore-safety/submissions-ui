@@ -10,6 +10,7 @@ export default Ember.Component.extend({
   complete: false,
   showProgress: false,
   showPreview: false,
+  hasPreview: false,
   accept: null,
   token: null,
   disabled: true,
@@ -87,8 +88,11 @@ export default Ember.Component.extend({
       }).on('fileuploadprogressall', function(e,data) {
         self._progressUpdated({progress: () => data.loaded/data.total});
       }).on('fileuploadprocessalways', function(e, data) {
-        self.set('showPreview', true);
-        self.$('.preview-container').append(data.files[0].preview);
+        const file = data.files[0];
+        if (file.preview && self.get('hasPreview')) {
+          self.set('showPreview', true);
+          self.$('.preview-container').append(data.files[0].preview);
+        }
       }).on('fileuploaddone', function(e, data) {
         const uniqueIdentifier = data.response().result.getElementsByTagName('Key')[0].childNodes[0].nodeValue;
         self._uploadCompleted(uniqueIdentifier);
