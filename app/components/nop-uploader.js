@@ -83,14 +83,14 @@ export default Ember.Component.extend({
         self.set('showPreview', false);
         self.$('.preview-container').empty();
         if (self._fileAdded(data.files[0].name)) {
+          self.set('showPreview', true);
           data.submit();
         }
       }).on('fileuploadprogressall', function(e,data) {
         self._progressUpdated({progress: () => data.loaded/data.total});
       }).on('fileuploadprocessalways', function(e, data) {
         const file = data.files[0];
-        if (file.preview && self.get('hasPreview')) {
-          self.set('showPreview', true);
+        if (file.preview && self.get('showPreview')) {
           self.$('.preview-container').append(data.files[0].preview);
         }
       }).on('fileuploaddone', function(e, data) {
