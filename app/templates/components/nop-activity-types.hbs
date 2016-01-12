@@ -1,0 +1,18 @@
+{{#if petroleumActivity}}
+  {{nop-select label='Activity Types' name='petroleum-activity-types'
+                                      content=petroleumActivityTypeOptions
+                                      value=submission.activityTypes
+                                      optionValuePath='text'
+                                      multiple=true}}
+{{else if greenhouseGasActivity}}
+  {{nop-select label='Activity Types' name='greenhouse-gas-activity-types'
+                                      content=greenhouseGasActivityTypeOptions
+                                      value=submission.activityTypes
+                                      optionValuePath='text'
+                                      multiple=true}}
+{{else}}
+  {{nop-radio-group class='activity-regulation-type' label='What type of activity is this?'
+                                                     value=submission.regulationType
+                                                     required=true
+                                                     options=regulationTypes}}
+{{/if}}
