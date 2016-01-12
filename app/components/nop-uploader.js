@@ -19,7 +19,7 @@ export default Ember.Component.extend({
   _fileValid(fileName) {
     const accept = this.get('accept');
     return accept === null || _.any(accept.split(','), function(docType) {
-      return _.endsWith(fileName, docType);
+      return _.endsWith(fileName.toLowerCase(), docType);
     });
   },
   _fileAdded(fileName) {

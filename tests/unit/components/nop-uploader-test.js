@@ -30,6 +30,13 @@ test('_fileValid is true if filename matches one of those accepted', function(as
   assert.ok(component._fileValid(fileName));
 });
 
+test('_fileValid is true if filename matches one of those accepted in a different case', function(assert) {
+  const component = this.subject({accept: '.docx,.pdf'});
+  const fileName = 'monkeys.DOCX';
+
+  assert.ok(component._fileValid(fileName));
+});
+
 test('_fileValid is false if filename does not match one of those accepted', function(assert) {
   const component = this.subject({accept: '.docx'});
   const fileName = 'monkeys.doc';
