@@ -3,12 +3,14 @@
                                       content=petroleumActivityTypeOptions
                                       value=submission.activityTypes
                                       optionValuePath='text'
+                                      required=true
                                       multiple=true}}
 {{else if greenhouseGasActivity}}
   {{nop-select label='Activity Types' name='greenhouse-gas-activity-types'
                                       content=greenhouseGasActivityTypeOptions
                                       value=submission.activityTypes
                                       optionValuePath='text'
+                                      required=true
                                       multiple=true}}
 {{else}}
   {{nop-radio-group class='activity-regulation-type' label='What type of activity is this?'
