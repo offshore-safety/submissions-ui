@@ -2,14 +2,14 @@
   {{nop-select label='Activity Types' name='petroleum-activity-types'
                                       content=petroleumActivityTypeOptions
                                       value=submission.activityTypes
-                                      optionValuePath='text'
+                                      optionValuePath='id'
                                       required=true
                                       multiple=true}}
 {{else if greenhouseGasActivity}}
   {{nop-select label='Activity Types' name='greenhouse-gas-activity-types'
                                       content=greenhouseGasActivityTypeOptions
                                       value=submission.activityTypes
-                                      optionValuePath='text'
+                                      optionValuePath='id'
                                       required=true
                                       multiple=true}}
 {{else}}
