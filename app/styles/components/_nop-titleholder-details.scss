@@ -1,0 +1,10 @@
+nop-titleholder-details {
+  .company-numbers {
+    nop-input {
+      @include media($desktop) {
+        @include span-columns(5);
+        @include omega(2n);
+      }
+    }
+  }
+}
