@@ -25,8 +25,8 @@ export default Ember.Controller.extend(SubmissionValidations, {
     }
   },
   _validate: function() {
-    this.validate().then(() => {
+    this.validate().finally(() => {
       console.log(this.get('errors'));
-    }).on('init')
-  }
+    })
+  }.on('init')
 });
