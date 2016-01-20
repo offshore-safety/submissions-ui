@@ -1,7 +1,8 @@
 {{#nop-page title='Review Your Submission'}}
-  {{nop-review submission=model}}
+  {{nop-review submission=model errors=errors}}
   {{#nop-actions}}
     <button {{action 'goBack'}}>Back</button>
     <button class='primary' {{action 'submit'}}>Submit</button>
   {{/nop-actions}}
+  {{errors}}
 {{/nop-page}}

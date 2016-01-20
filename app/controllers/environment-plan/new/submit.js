@@ -1,6 +1,7 @@
 import Ember from 'ember';
+import SubmissionValidations from '../../../mixins/validations/submission';
 
-export default Ember.Controller.extend({
+export default Ember.Controller.extend(SubmissionValidations, {
   submitatron: Ember.inject.service(),
   submissionStore: Ember.inject.service(),
   actions: {
@@ -22,5 +23,10 @@ export default Ember.Controller.extend({
     goBack() {
       this.transitionToRoute('environment-plan.new.comments');
     }
+  },
+  _validate: function() {
+    this.validate().then(() => {
+      console.log(this.get('errors'));
+    }).on('init')
   }
 });
