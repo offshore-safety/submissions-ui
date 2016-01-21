@@ -1,9 +1,17 @@
 import Ember from 'ember';
 
 export default Ember.Controller.extend({
+  _nextRoute() {
+    const routePrefix = 'environment-plan.new';
+
+    if (this.get('model').sameAsActivity) {
+      return `${routePrefix}.activity-types`;
+    }
+    return `${routePrefix}.activity-contact`;
+  },
   actions: {
     goNext() {
-      this.transitionToRoute('environment-plan.new.activity-contact');
+      this.transitionToRoute(this._nextRoute());
     },
     goBack() {
       this.transitionToRoute('environment-plan.new.submission-contact');

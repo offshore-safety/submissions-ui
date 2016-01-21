@@ -1,6 +1,8 @@
 {{#nop-page title='Person submitting this Environment Plan'
             hint='This is the person who will be the point of contact throughout the submission of this Environment Plan'}}
   {{nop-person-details person=model.submissionContact}}
+  {{nop-checkbox label='I am also the Nominated Liaison person for this activity' checked=model.sameAsLiaison}}
+  {{nop-checkbox label='I am also the day-to-day contact person for this activity' checked=model.sameAsActivity}}
   {{#nop-actions}}
     <button {{action 'goBack'}}>Back</button>
     <button class='primary' {{action 'goNext'}}>Next</button>
