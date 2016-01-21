@@ -11,7 +11,9 @@
     <div class="progress-inner {{if complete 'complete'}}" {{bind-attr style=(concat 'width:' progress '%')}}></div>
   </div>
   {{/if}}
+  {{#if hasPreview}}
   <div class="preview-container {{if showPreview 'visible'}}"></div>
+  {{/if}}
 </div>
 {{#if disabled}}
   <div class='initialising-mask'>
