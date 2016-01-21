@@ -24,7 +24,25 @@ nop-select {
 }
 
 nop-select {
+  position: relative;
   margin-bottom: $base-input-margin-bottom;
+
+  .select2-container-active {
+    ~ .highlight {
+      transform: scaleX(1);
+    }
+  }
+
+  .highlight {
+    display: block;
+    position: absolute;
+    bottom: 0px;
+    height: 3px;
+    width: 100%;
+    background-color: $highlight-color;
+    transform: scaleX(0);
+    transition: transform $base-transition-duration $base-transition-easing;
+  }
 
   .select2-container {
     width: 100%;
