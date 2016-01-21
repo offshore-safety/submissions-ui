@@ -5,7 +5,26 @@ moduleFor('route:environment-plan/new/submission-contact', 'Unit | Route | envir
   // needs: ['controller:foo']
 });
 
-test('it exists', function(assert) {
-  let route = this.subject();
-  assert.ok(route);
+test('it copies the activity contact from the submission contact when flag set', function(assert) {
+  const route = this.subject();
+  const model = {submissionContact: {name: 'submission'}};
+
+  route._copyContacts(model);
+  assert.notPropEqual(model.activityContact, model.submissionContact);
+
+  model.sameAsActivity = true;
+  route._copyContacts(model);
+  assert.propEqual(model.activityContact, model.submissionContact);
+});
+
+test('it copies the liaison contact from the submission contact when flag set', function(assert) {
+  const route = this.subject();
+  const model = {submissionContact: {name: 'submission'}};
+
+  route._copyContacts(model);
+  assert.notPropEqual(model.liaisonContact, model.submissionContact);
+
+  model.sameAsLiaison = true;
+  route._copyContacts(model);
+  assert.propEqual(model.liaisonContact, model.submissionContact);
 });
