@@ -1,0 +1,11 @@
+nop-activity-type {
+  @include span-columns(12);
+
+  @include media($desktop) {
+    @include span-columns(10);
+  }
+
+  nop-select {
+    @include span-columns(12);
+  }
+}

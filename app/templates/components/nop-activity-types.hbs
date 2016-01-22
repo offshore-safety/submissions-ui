@@ -1,17 +1,14 @@
-{{#if petroleumActivity}}
-  {{nop-select label='Activity Types' name='petroleum-activity-types'
-                                      content=petroleumActivityTypeOptions
-                                      value=submission.activityTypes
-                                      optionValuePath='id'
-                                      required=true
-                                      multiple=true}}
-{{else if greenhouseGasActivity}}
-  {{nop-select label='Activity Types' name='greenhouse-gas-activity-types'
-                                      content=greenhouseGasActivityTypeOptions
-                                      value=submission.activityTypes
-                                      optionValuePath='id'
-                                      required=true
-                                      multiple=true}}
+{{#if hasRegulationType}}
+  {{#if petroleumActivity}}
+    {{#each submission.activityTypes as |activityType|}}
+      {{nop-activity-type activityTypeOptions=petroleumActivityTypeOptions activityType=activityType}}
+    {{/each}}
+  {{else if greenhouseGasActivity}}
+    {{#each submission.activityTypes as |activityType|}}
+      {{nop-activity-type activityTypeOptions=greenhouseGasActivityTypeOptions activityType=activityType}}
+    {{/each}}
+  {{/if}}
+  {{nop-add-another action='addActivityType' text='Add another Activity Type'}}
 {{else}}
   {{nop-radio-group class='activity-regulation-type' label='What type of activity is this?'
                                                      value=submission.regulationType

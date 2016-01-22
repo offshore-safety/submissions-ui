@@ -37,5 +37,13 @@ export default Ember.Component.extend({
     {id: '2013', text: 'Any other greenhouse gas-related activity'}
   ],
   petroleumActivity: Ember.computed.equal('submission.regulationType', 'petroleum'),
-  greenhouseGasActivity: Ember.computed.equal('submission.regulationType', 'greenhouse_gas')
+  greenhouseGasActivity: Ember.computed.equal('submission.regulationType', 'greenhouse_gas'),
+  hasRegulationType: Ember.computed('submission.regulationType', function() {
+    return this.get('submission').regulationType !== undefined;
+  }),
+  actions: {
+    addActivityType() {
+      this.get('submission').activityTypes.pushObject({});
+    }
+  }
 });

@@ -8,7 +8,7 @@ export default Ember.Route.extend(ResetScroll, {
   },
   afterModel(model) {
     if (!model.activityTypes) {
-      model.activityTypes = [];
+      model.activityTypes = [{}];
     }
   },
   actions: {

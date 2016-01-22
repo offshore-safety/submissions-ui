@@ -10,12 +10,8 @@ export default Ember.Controller.extend({
         this.transitionToRoute('environment-plan.new.confirmation', {queryParams: {receiptNumber: response.receiptNumber}});
       };
       const onFailure = (result) => {
-        if (result.status === 502) {
-          this.transitionToRoute('errors.bad-gateway');
-        }
-        else {
-          alert('Oh snap');
-        }
+        this.set('errors', result.responseText);
+        alert('Oh snap');
       };
       this.get('submitatron').submit(this.get('model')).then(onSuccess, onFailure);
     },
