@@ -7,6 +7,12 @@ nop-section-header {
     margin-bottom: $header-margin-bottom;
   }
 
+  .required {
+    &:after {
+      content: '*';
+    }
+  }
+
   &.has-hint {
     .section-header {
       margin-bottom: 0px;

@@ -7,5 +7,5 @@
   {{nop-input label='ACN' name='company-number_acn' value=titleholder.acn}}
 </div>
 {{! TODO Give ACN/ABN a hint so you can do the link to the Aus Business Register}}
-{{nop-address title='Registered Business Address' address=titleholder.businessAddress allowPOBox=false}}
+{{nop-address title='Registered Business Address' required=true address=titleholder.businessAddress allowPOBox=false}}
 {{nop-address title='Postal Address' address=titleholder.postalAddress allowPOBox=false}}
