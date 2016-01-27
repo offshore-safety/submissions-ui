@@ -1,9 +1,16 @@
 import Ember from 'ember';
+import _ from 'lodash/lodash';
 
 export default Ember.Controller.extend({
   submitatron: Ember.inject.service(),
   submissionStore: Ember.inject.service(),
+  validation: Ember.inject.service('validations.environment-plan'),
   actions: {
+    validate() {
+      const errors = this.get('validation').validate(this.get('model'));
+      const keys = _.keys(errors);
+      this.set('errorMessages', keys.map((k) => `${k} - ${errors[k]}`));
+    },
     submit() {
       const onSuccess = (response) => {
         this.get('submissionStore').clear();

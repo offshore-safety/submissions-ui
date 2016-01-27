@@ -1,6 +1,9 @@
 {{#nop-page title='Review Your Submission'}}
-  {{ errors }}
+  {{#each errorMessages as |message|}}
+    <div>{{message}}</div>
+  {{/each}}
   {{#nop-actions}}
+    <button {{action 'validate'}}>Validate</button>
     <button {{action 'goBack'}}>Back</button>
     <button class='primary' {{action 'submit'}}>Submit</button>
   {{/nop-actions}}
