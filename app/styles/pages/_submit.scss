@@ -3,5 +3,9 @@
     .activity-name, .regulation-type, .has-opp, .has-minister-decision {
       @include span-columns(6);
     }
+
+    .title-number, .title-region, .title-commonwealth-waters {
+      @include span-columns(4);
+    }
   }
 }

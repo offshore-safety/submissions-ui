@@ -2,6 +2,7 @@ import Ember from 'ember';
 
 export default Ember.Component.extend({
   tagName: 'nop-title',
+  disabled: false,
   regions: [
     {id: 1, text: 'Queensland'},
     {id: 2, text: 'New South Wales'},
