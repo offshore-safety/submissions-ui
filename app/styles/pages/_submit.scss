@@ -7,5 +7,18 @@
     .title-number, .title-region, .title-commonwealth-waters {
       @include span-columns(4);
     }
+
+    .titleholder-detail_name {
+      @include span-columns(6);
+      @include omega;
+    }
+
+    .titleholder-detail_abn, .titleholder-detail_acn {
+      @include span-columns(3);
+    }
+
+    .full-address {
+      @include span-columns(6);
+    }
   }
 }

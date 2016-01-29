@@ -1,17 +1,32 @@
-{{nop-titleholder-details titleholder=submission.titleholderDetails}}
+{{#if disabled}}
+  <h3>Titleholder Details</h3>
+  <h4>Primary Titleholder</h4>
+  {{nop-titleholder-details titleholder=submission.titleholderDetails disabled=true}}
 
-<section>
-  {{nop-radio-group name='eligible-voluntary-action' class='eligible-voluntary-action' label='Is this an Eligible Voluntary Action?' value=submission.isEligibleVoluntaryAction options=trueOrFalse}}
-  {{nop-info-box title='Eligible Voluntary Action' info='Where the Titleholder is able to act on behalf of the other Titleholders'}}
-</section>
+  {{#if submission.isEligibleVoluntaryAction}}
+    You have indicated this is an Eligible Voluntary Action
+  {{else}}
+    <h4>Other Titleholders</h4>
+    {{#each submission.otherTitleholders as |other index|}}
+      {{nop-titleholder-details titleholder=other noInfo=true disabled=true}}
+    {{/each}}
+  {{/if}}
+{{else}}
+  {{nop-titleholder-details titleholder=submission.titleholderDetails}}
 
-{{#unless submission.isEligibleVoluntaryAction}}
-  {{#each submission.otherTitleholders as |other index|}}
-    <section class='other-titleholder'>
-      <h5 class='other-titleholder-title'>Other Titleholder {{counter index}}</h5>
-      {{nop-titleholder-details titleholder=other noInfo=true}}
-    </section>
-  {{/each}}
+  <section>
+    {{nop-radio-group name='eligible-voluntary-action' class='eligible-voluntary-action' label='Is this an Eligible Voluntary Action?' value=submission.isEligibleVoluntaryAction options=trueOrFalse}}
+    {{nop-info-box title='Eligible Voluntary Action' info='Where the Titleholder is able to act on behalf of the other Titleholders'}}
+  </section>
 
-  {{nop-add-another action='addTitleholder' text='Add another Titleholder' class='add-another-titleholder'}}
-{{/unless}}
+  {{#unless submission.isEligibleVoluntaryAction}}
+    {{#each submission.otherTitleholders as |other index|}}
+      <section class='other-titleholder'>
+        <h5 class='other-titleholder-title'>Other Titleholder {{counter index}}</h5>
+        {{nop-titleholder-details titleholder=other noInfo=true}}
+      </section>
+    {{/each}}
+
+    {{nop-add-another action='addTitleholder' text='Add another Titleholder' class='add-another-titleholder'}}
+  {{/unless}}
+{{/if}}

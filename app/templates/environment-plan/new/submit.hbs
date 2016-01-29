@@ -1,7 +1,16 @@
 {{#nop-page title='Review Your Submission' class='submit-page'}}
-  {{nop-activity-description submission=model disabled=true}}
-  {{nop-titles submission=model disabled=true}}
-  {{nop-activity-types submission=model disabled=true}}
+  <section>
+    {{nop-activity-description submission=model disabled=true}}
+  </section>
+  <section>
+    {{nop-titles submission=model disabled=true}}
+  </section>
+  <section>
+    {{nop-activity-types submission=model disabled=true}}
+  </section>
+  <section>
+    {{nop-titleholders submission=model disabled=true}}
+  </section>
   {{#each errorMessages as |message|}}
     <div>{{message}}</div>
   {{/each}}
