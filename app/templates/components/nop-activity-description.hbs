@@ -2,7 +2,7 @@
   <h3>Activity Details</h3>
   <div>
     {{nop-text-field class='activity-name' label='Name' value=submission.name}}
-    {{nop-text-field class='regulation-type' label='Regulation Type' value=submission.regulationType}}
+    {{nop-text-field class='regulation-type' label='Regulation Type' value=(regulation-type-from-id submission.regulationType)}}
   </div>
   {{nop-text-field label='Description' value=submission.description}}
   {{#if submission.hasOffshoreProject}}
