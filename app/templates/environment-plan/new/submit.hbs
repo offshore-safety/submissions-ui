@@ -1,4 +1,5 @@
-{{#nop-page title='Review Your Submission'}}
+{{#nop-page title='Review Your Submission' class='submit-page'}}
+  {{nop-activity-description submission=model disabled=true}}
   {{#each errorMessages as |message|}}
     <div>{{message}}</div>
   {{/each}}

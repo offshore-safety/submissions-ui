@@ -1,0 +1,7 @@
+.submit-page {
+  @include media($desktop) {
+    .activity-name, .regulation-type, .has-opp, .has-minister-decision {
+      @include span-columns(6);
+    }
+  }
+}
