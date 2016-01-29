@@ -1,17 +1,26 @@
-{{#if hasRegulationType}}
-  {{#if petroleumActivity}}
+{{#if disabled}}
+  <h3>Activity Types</h3>
+  <ul class='bullets'>
     {{#each submission.activityTypes as |activityType|}}
-      {{nop-activity-type activityTypeOptions=petroleumActivityTypeOptions activityType=activityType}}
+      <li>{{activity-type-from-id activityType.type}}</li>
     {{/each}}
-  {{else if greenhouseGasActivity}}
-    {{#each submission.activityTypes as |activityType|}}
-      {{nop-activity-type activityTypeOptions=greenhouseGasActivityTypeOptions activityType=activityType}}
-    {{/each}}
-  {{/if}}
-  {{nop-add-another action='addActivityType' text='Add another Activity Type'}}
+  </ul>
 {{else}}
-  {{nop-radio-group class='activity-regulation-type' label='What type of activity is this?'
-                                                     value=submission.regulationType
-                                                     required=true
-                                                     options=regulationTypes}}
+  {{#if hasRegulationType}}
+    {{#if petroleumActivity}}
+      {{#each submission.activityTypes as |activityType|}}
+        {{nop-activity-type activityTypeOptions=petroleumActivityTypeOptions activityType=activityType}}
+      {{/each}}
+    {{else if greenhouseGasActivity}}
+      {{#each submission.activityTypes as |activityType|}}
+        {{nop-activity-type activityTypeOptions=greenhouseGasActivityTypeOptions activityType=activityType}}
+      {{/each}}
+    {{/if}}
+    {{nop-add-another action='addActivityType' text='Add another Activity Type'}}
+  {{else}}
+    {{nop-radio-group class='activity-regulation-type' label='What type of activity is this?'
+                                                       value=submission.regulationType
+                                                       required=true
+                                                       options=regulationTypes}}
+  {{/if}}
 {{/if}}
