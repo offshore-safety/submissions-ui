@@ -8,7 +8,7 @@ export default Ember.Service.extend({
       errors['name'] = 'Activity name must be specified';
     }
 
-    if (entity.description === undefined || entity.description.split(' ').length > 100) {
+    if (entity.description === undefined || entity.description.split(' ').length < 100) {
       errors['description'] = 'Activity description must be specified and more than 100 words';
     }
 
