@@ -1,11 +1,10 @@
 import Ember from 'ember';
+import _ from 'lodash/lodash';
+import Constants from '../constants';
 
 export default Ember.Component.extend({
   tagName: 'nop-activity-description',
-  regulationTypes: [
-    {label: 'Petroleum', value: 'petroleum', name: 'regulation-type-1'},
-    {label: 'Greenhouse Gas', value: 'greenhouse_gas', name: 'regulation-type-2'}
-  ],
+  regulationTypes: _.keys(Constants.REGULATION_TYPES).map((k, index) => {return {value: k, label: Constants.REGULATION_TYPES[k], name: `regulation-type-${index}`};}),
   trueOrFalse: [
     {label: 'Yes', value: true},
     {label: 'No', value: false}
