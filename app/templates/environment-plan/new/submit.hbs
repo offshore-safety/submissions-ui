@@ -11,6 +11,18 @@
   <section>
     {{nop-titleholders submission=model disabled=true}}
   </section>
+  <section>
+    <h3>Submission Contact</h3>
+    {{nop-person-details person=model.submissionContact disabled=true}}
+  </section>
+  <section>
+    <h3>Nominated Liaison Person</h3>
+    {{nop-person-details person=model.liaisonContact disabled=true}}
+  </section>
+  <section>
+    <h3>Activity Contact</h3>
+    {{nop-person-details person=model.activityContact disabled=true}}
+  </section>
   {{#each errorMessages as |message|}}
     <div>{{message}}</div>
   {{/each}}
