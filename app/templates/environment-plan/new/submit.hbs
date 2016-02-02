@@ -26,6 +26,9 @@
   {{#each errorMessages as |message|}}
     <div>{{message}}</div>
   {{/each}}
+  <section>
+    {{nop-confirmation-emails submission=model hint='Confirmation emails with details about your submission and a reference number will be sent to these addresses.'}}
+  </section>
   {{#nop-actions}}
     <button {{action 'validate'}}>Validate</button>
     <button {{action 'goBack'}}>Back</button>
