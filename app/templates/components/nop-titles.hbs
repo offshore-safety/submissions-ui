@@ -1,9 +1,7 @@
 {{#if disabled}}
   <h3>Titles</h3>
   {{#each submission.titles as |title index|}}
-    <section>
-      {{nop-title title=title disabled=disabled}}
-    </section>
+    {{nop-title title=title disabled=disabled}}
   {{/each}}
 {{else}}
   {{#each submission.titles as |title index|}}
