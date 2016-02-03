@@ -1,0 +1,12 @@
+{{#if readonly}}
+  {{#if environmentPlan.token}}
+    You have provided the following document:
+    <ul class="bullets">
+      <li>{{environmentPlan.name}}</li>
+    </ul>
+  {{else}}
+    <!-- Do something about errors here  -->
+  {{/if}}
+{{else}}
+  {{nop-attach-document document=environmentPlan}}
+{{/if}}

@@ -2,7 +2,7 @@
             class='attach-environment-plan-page'
             hint='Attach the Environment Plan document itself'}}
 
-  {{nop-attach-document document=model.documents.environmentPlan}}
+  {{nop-attach-environment-plan environmentPlan=model.documents.environmentPlan}}
 
   {{#nop-actions}}
     <button {{action 'goBack'}}>Back</button>
