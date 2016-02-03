@@ -1,7 +1,18 @@
-{{nop-radio-group class='include-fa' label='Do you want to submit a Financial Assurance Confirmation with this submission?'
-                                           value=confirmation.includeFa
-                                           options=trueOrFalse}}
+{{#if disabled}}
+  {{#if confirmation.includeFa}}
+    You have provided the following document:
+    <ul class="bullets">
+      <li>{{confirmation.name}}</li>
+    </ul>
+  {{else}}
+    You have chosen not to submit a Financial Assurance Confirmation as part of this submission
+  {{/if}}
+{{else}}
+  {{nop-radio-group class='include-fa' label='Do you want to submit a Financial Assurance Confirmation with this submission?'
+                                             value=confirmation.includeFa
+                                             options=trueOrFalse}}
 
-{{#if confirmation.includeFa}}
-  {{nop-attach-file document=confirmation}}
+  {{#if confirmation.includeFa}}
+    {{nop-attach-file document=confirmation}}
+  {{/if}}
 {{/if}}
