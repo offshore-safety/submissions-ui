@@ -36,3 +36,19 @@ nop-page {
     @include clearfix;
   }
 }
+
+@media print {
+  body {
+    background: none !important;
+  }
+
+  nop-page {
+    max-width: initial;
+
+    > section {
+      width: 100%;
+      box-shadow: none;
+      border: none;
+    }
+  }
+}

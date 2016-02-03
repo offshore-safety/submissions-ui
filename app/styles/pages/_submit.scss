@@ -1,25 +1,5 @@
-.submit-page {
-  section {
-    margin-top: 30px;
-  }
-
-  h3 {
-    margin-bottom: 0px;
-  }
-
-  .person-phone, .person-mobile {
-    @include span-columns(6);
-  }
-
-  .person-contacts {
-    @include span-columns(12);
-  }
-
-  ul {
-    margin: 0;
-  }
-
-  @include media($desktop) {
+@mixin large-layout {
+  .submit-page {
     .activity-name, .regulation-type, .has-opp, .has-minister-decision {
       @include span-columns(6);
     }
@@ -48,5 +28,35 @@
     .person-contacts, .person-postal {
       @include span-columns(6);
     }
+  }
+}
+
+@include media($desktop) {
+  @include large-layout;
+}
+
+@media print {
+  @include large-layout;
+}
+
+.submit-page {
+  section {
+    margin-top: 30px;
+  }
+
+  h3 {
+    margin-bottom: 0px;
+  }
+
+  .person-phone, .person-mobile {
+    @include span-columns(6);
+  }
+
+  .person-contacts {
+    @include span-columns(12);
+  }
+
+  ul {
+    margin: 0;
   }
 }
