@@ -11,7 +11,7 @@ export default Ember.Controller.extend({
   },
   actions: {
     goNext() {
-      this.transitionToRoute('environment-plan.new.activity-types');
+      this.transitionToRoute('environment-plan.new.attach-environment-plan');
     },
     goBack() {
       this.transitionToRoute(this._previousRoute());

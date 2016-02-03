@@ -5,7 +5,7 @@ export default Ember.Controller.extend({
     const routePrefix = 'environment-plan.new';
 
     if (this.get('model').sameAsActivity) {
-      return `${routePrefix}.activity-types`;
+      return `${routePrefix}.attach-environment-plan`;
     }
     return `${routePrefix}.activity-contact`;
   },

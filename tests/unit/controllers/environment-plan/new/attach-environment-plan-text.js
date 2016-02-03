@@ -1,6 +1,6 @@
 import { moduleFor, test } from 'ember-qunit';
 
-moduleFor('controller:environment-plan/new/activity-types', 'Unit | Controller | environment plan/new/activity types', {
+moduleFor('controller:environment-plan/new/attach-environment-plan', 'Unit | Controller | environment plan/new/attach environment plan', {
 });
 
 test('previous route should be activity contact if sameAsActivity not set', function(assert) {

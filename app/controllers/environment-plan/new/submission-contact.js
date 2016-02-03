@@ -6,7 +6,7 @@ export default Ember.Controller.extend({
 
     if (this.get('model').sameAsLiaison) {
       if (this.get('model').sameAsActivity) {
-        return `${routePrefix}.activity-types`;
+        return `${routePrefix}.attach-environment-plan`;
       }
       return `${routePrefix}.activity-contact`;
     }

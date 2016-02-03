@@ -19,10 +19,10 @@ test('next route should be activity contact when nominated liaison same', functi
   assert.ok(controller);
 });
 
-test('next route should be activity types when both contacts same', function(assert) {
+test('next route should be attach environment plan when both contacts same', function(assert) {
   let controller = this.subject();
   controller.set('model', {sameAsLiaison: true, sameAsActivity: true});
 
-  assert.equal(controller._nextRoute(), 'environment-plan.new.activity-types');
+  assert.equal(controller._nextRoute(), 'environment-plan.new.attach-environment-plan');
   assert.ok(controller);
 });
