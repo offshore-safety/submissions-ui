@@ -51,4 +51,12 @@ nop-page {
       border: none;
     }
   }
+
+  .page-break {
+    page-break-before: always;
+  }
+
+  nop-actions {
+    display: none;
+  }
 }

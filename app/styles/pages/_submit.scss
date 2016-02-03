@@ -31,14 +31,6 @@
   }
 }
 
-@include media($desktop) {
-  @include large-layout;
-}
-
-@media print {
-  @include large-layout;
-}
-
 .submit-page {
   section {
     margin-top: 30px;
@@ -59,4 +51,12 @@
   ul {
     margin: 0;
   }
+}
+
+@include media($desktop) {
+  @include large-layout;
+}
+
+@media print {
+  @include large-layout;
 }
