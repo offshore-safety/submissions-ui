@@ -1,4 +1,12 @@
 .submit-page {
+  section {
+    margin-top: 30px;
+  }
+
+  h3 {
+    margin-bottom: 0px;
+  }
+
   .person-phone, .person-mobile {
     @include span-columns(6);
   }
