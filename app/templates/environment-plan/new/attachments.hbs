@@ -2,7 +2,7 @@
             class='attachments-page'
             hint='Upload any supporting documents'}}
 
-  {{nop-attachments attachments=model.documents.attachments}}
+  {{nop-attachments submission=model}}
 
   {{#nop-actions}}
     <button {{action 'goBack'}}>Back</button>

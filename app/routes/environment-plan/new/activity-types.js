@@ -6,11 +6,6 @@ export default Ember.Route.extend(ResetScroll, {
   model() {
     return this.get('submissionStore').retrieve();
   },
-  afterModel(model) {
-    if (!model.activityTypes) {
-      model.activityTypes = [{}];
-    }
-  },
   actions: {
     willTransition() {
       this.get('submissionStore').save(this.get('currentModel'));

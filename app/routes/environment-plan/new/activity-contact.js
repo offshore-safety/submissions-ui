@@ -6,13 +6,6 @@ export default Ember.Route.extend(ResetScroll, {
   model() {
     return this.get('submissionStore').retrieve();
   },
-  afterModel(model) {
-    if (!model.activityContact) {
-      model.activityContact = {
-        postalAddress: {}
-      };
-    }
-  },
   actions: {
     willTransition() {
       this.get('submissionStore').save(this.get('currentModel'));

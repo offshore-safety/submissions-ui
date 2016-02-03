@@ -14,6 +14,6 @@ export default Ember.Component.extend({
   }),
   fullAddress: Ember.computed('address.street', 'address.locality', 'address.state', 'address.postcode', 'address.country', function() {
     const address = this.get('address');
-    return `${address.street}\r\n${address.locality} ${address.state} ${address.postcode}\r\n${countryFromCode([address.country])}`;
+    return address ? `${address.street}\r\n${address.locality} ${address.state} ${address.postcode}\r\n${countryFromCode([address.country])}` : '';
   })
 });

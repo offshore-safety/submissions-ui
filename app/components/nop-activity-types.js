@@ -5,6 +5,12 @@ import Constants from '../constants';
 export default Ember.Component.extend({
   tagName: 'nop-activity-types',
   readonly: false,
+  _initialiseActivityTypes: function() {
+    const submission = this.get('submission');
+    if (!submission.activityTypes) {
+      submission.activityTypes = [{}];
+    }
+  }.on('init'),
   regulationTypes: _.keys(Constants.REGULATION_TYPES).map((k, index) => {return {value: k, label: Constants.REGULATION_TYPES[k], name: `regulation-type-${index}`};}),
   petroleumActivityTypeOptions: _.keys(Constants.PETROLEUM_ACTIVITY_TYPES).map((k) => {return {id: k, text: Constants.PETROLEUM_ACTIVITY_TYPES[k]};}),
   greenhouseGasActivityTypeOptions: _.keys(Constants.GREENHOUSE_GAS_ACTIVITY_TYPES).map((k) => {return {id: k, text: Constants.GREENHOUSE_GAS_ACTIVITY_TYPES[k]};}),

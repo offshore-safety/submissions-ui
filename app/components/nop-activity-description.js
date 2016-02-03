@@ -4,6 +4,16 @@ import Constants from '../constants';
 
 export default Ember.Component.extend({
   tagName: 'nop-activity-description',
+  _initialiseLocationMap: function() {
+    const submission = this.get('submission');
+    if (!submission.documents) {
+      submission.documents = {};
+    }
+
+    if (!submission.documents.locationMap) {
+      submission.documents.locationMap = {};
+    }
+  }.on('init'),
   regulationTypes: _.keys(Constants.REGULATION_TYPES).map((k, index) => {return {value: k, label: Constants.REGULATION_TYPES[k], name: `regulation-type-${index}`};}),
   trueOrFalse: [
     {label: 'Yes', value: true},

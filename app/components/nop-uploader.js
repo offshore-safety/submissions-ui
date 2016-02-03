@@ -56,7 +56,7 @@ export default Ember.Component.extend({
       this.set('progress', 100);
       this.set('showProgress', true);
     }
-  }.on('didInsertElement'),
+  }.on('init'),
   _initialiseUploader: function() {
     const self = this;
     const uploader = this.$();

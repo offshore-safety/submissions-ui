@@ -7,14 +7,6 @@ export default Ember.Route.extend(ResetScroll, {
   model() {
     return this.get('submissionStore').retrieve();
   },
-  afterModel(model) {
-    if (!model.documents) {
-      model.documents = {};
-    }
-    if (!model.documents.attachments) {
-      model.documents.attachments = [];
-    }
-  },
   actions: {
     willTransition() {
       const currentModel = this.get('currentModel');
