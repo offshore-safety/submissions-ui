@@ -19,32 +19,32 @@
   <div class='page-break'/>
   <section>
     <h3>Submission Contact</h3>
-    {{nop-person-details person=model.submissionContact readonly=true}}
+    {{nop-submission-contact submission=model readonly=true}}
   </section>
   <section>
     <h3>Nominated Liaison Person</h3>
-    {{nop-person-details person=model.liaisonContact readonly=true}}
+    {{nop-liaison-contact submission=model readonly=true}}
   </section>
   <section>
     <h3>Activity Contact</h3>
-    {{nop-person-details person=model.activityContact readonly=true}}
+    {{nop-activity-contact submission=model readonly=true}}
   </section>
   <div class='page-break'/>
   <section>
     <h3>Environment Plan</h3>
-    {{nop-attach-environment-plan environmentPlan=model.documents.environmentPlan readonly=true}}
+    {{nop-attach-environment-plan submission=model readonly=true}}
   </section>
   <section>
     <h3>Financial Assurance Declaration</h3>
-    {{nop-fa-declaration declaration=model.documents.faDeclaration readonly=true}}
+    {{nop-fa-declaration submission=model readonly=true}}
   </section>
   <section>
     <h3>Financial Assurance Confirmation</h3>
-    {{nop-fa-confirmation confirmation=model.documents.faConfirmation readonly=true}}
+    {{nop-fa-confirmation submission=model readonly=true}}
   </section>
   <section>
     <h3>Attachments</h3>
-    {{nop-attachments attachments=model.documents.attachments readonly=true}}
+    {{nop-attachments submission=model readonly=true}}
   </section>
   <section>
     <h3>Comments</h3>
