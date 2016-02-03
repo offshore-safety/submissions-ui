@@ -3,7 +3,7 @@ import { countryFromCode } from '../helpers/country-from-code';
 
 export default Ember.Component.extend({
   tagName: 'nop-address',
-  disabled: false,
+  readonly: false,
   countries: Ember.inject.service(),
   countryOptions: Ember.computed('countries', function() {
     return this.get('countries').all();

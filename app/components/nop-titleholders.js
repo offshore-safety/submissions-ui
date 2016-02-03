@@ -2,7 +2,7 @@ import Ember from 'ember';
 
 export default Ember.Component.extend({
   tagName: 'nop-titleholders',
-  disabled: false,
+  readonly: false,
   actions: {
     addTitleholder() {
       this.get('submission').otherTitleholders.pushObject({businessAddress: {}, postalAddress: {}});

@@ -1,4 +1,4 @@
-{{#if disabled}}
+{{#if readonly}}
   {{nop-text-field label='Name' value=fullName}}
   <div>
     {{nop-text-field class='person-employer' label='Employer' value=person.employer}}
@@ -12,7 +12,7 @@
       </div>
       {{nop-text-field class='person-email' label='Email' value=person.email}}
     </div>
-    {{nop-address class='person-postal' title='Postal Address' address=person.postalAddress disabled=true}}
+    {{nop-address class='person-postal' title='Postal Address' address=person.postalAddress readonly=true}}
   </div>
 {{else}}
   {{nop-input label='Title' class='person-title' name='person-details-title' required=true value=person.title}}

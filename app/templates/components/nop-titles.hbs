@@ -1,7 +1,7 @@
-{{#if disabled}}
+{{#if readonly}}
   <h3>Titles</h3>
   {{#each submission.titles as |title index|}}
-    {{nop-title title=title disabled=disabled}}
+    {{nop-title title=title readonly=readonly}}
   {{/each}}
 {{else}}
   {{#each submission.titles as |title index|}}

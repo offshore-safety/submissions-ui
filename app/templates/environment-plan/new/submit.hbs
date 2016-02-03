@@ -1,27 +1,27 @@
 {{#nop-page title='Review Your Submission' class='submit-page'}}
   <section>
-    {{nop-activity-description submission=model disabled=true}}
+    {{nop-activity-description submission=model readonly=true}}
   </section>
   <section>
-    {{nop-titles submission=model disabled=true}}
+    {{nop-titles submission=model readonly=true}}
   </section>
   <section>
-    {{nop-activity-types submission=model disabled=true}}
+    {{nop-activity-types submission=model readonly=true}}
   </section>
   <section>
-    {{nop-titleholders submission=model disabled=true}}
+    {{nop-titleholders submission=model readonly=true}}
   </section>
   <section>
     <h3>Submission Contact</h3>
-    {{nop-person-details person=model.submissionContact disabled=true}}
+    {{nop-person-details person=model.submissionContact readonly=true}}
   </section>
   <section>
     <h3>Nominated Liaison Person</h3>
-    {{nop-person-details person=model.liaisonContact disabled=true}}
+    {{nop-person-details person=model.liaisonContact readonly=true}}
   </section>
   <section>
     <h3>Activity Contact</h3>
-    {{nop-person-details person=model.activityContact disabled=true}}
+    {{nop-person-details person=model.activityContact readonly=true}}
   </section>
   <section>
     <h3>Environment Plan Document</h3>
@@ -29,19 +29,19 @@
   </section>
   <section>
     <h3>Financial Assurance Declaration</h3>
-    {{nop-fa-declaration declaration=model.documents.faDeclaration disabled=true}}
+    {{nop-fa-declaration declaration=model.documents.faDeclaration readonly=true}}
   </section>
   <section>
     <h3>Financial Assurance Confirmation</h3>
-    {{nop-fa-confirmation confirmation=model.documents.faConfirmation disabled=true}}
+    {{nop-fa-confirmation confirmation=model.documents.faConfirmation readonly=true}}
   </section>
   <section>
     <h3>Attachments</h3>
-    {{nop-attachments attachments=model.documents.attachments disabled=true}}
+    {{nop-attachments attachments=model.documents.attachments readonly=true}}
   </section>
   <section>
     <h3>Comments</h3>
-    {{nop-comments comments=model.comments disabled=true}}
+    {{nop-comments comments=model.comments readonly=true}}
   </section>
   {{#each errorMessages as |message|}}
     <div>{{message}}</div>

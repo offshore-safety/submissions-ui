@@ -9,7 +9,7 @@ export default Ember.Component.extend({
     {label: 'Yes', value: true},
     {label: 'No', value: false}
   ],
-  disabled: false,
+  readonly: false,
   showReferenceNumber: Ember.computed.or('submission.hasOPP', 'submission.hasEnvironmentMinisterDecision'),
   showReferenceNumberChanged: function() {
     if(!this.get('showReferenceNumber')) {
