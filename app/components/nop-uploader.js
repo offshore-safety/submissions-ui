@@ -13,6 +13,7 @@ export default Ember.Component.extend({
   hasPreview: false,
   accept: null,
   token: null,
+  name: null,
   disabled: true,
   instruction: 'Drop file or click here to upload',
   initMessage: 'Initialising…',
@@ -26,6 +27,7 @@ export default Ember.Component.extend({
     this.set('complete', false);
     this.set('progress', 0);
     if (this._fileValid(fileName)) {
+      this.set('name', fileName);
       this.set('showProgress', true);
       this.set('instruction', 'Currently uploading, please wait…');
       return true;
