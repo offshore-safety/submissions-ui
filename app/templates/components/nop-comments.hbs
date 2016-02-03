@@ -1,0 +1,9 @@
+{{#if disabled}}
+  {{#if comments}}
+    {{comments}}
+  {{else}}
+    You have no comments to provide for this submission
+  {{/if}}
+{{else}}
+  {{nop-textarea value=comments rows=10}}
+{{/if}}
