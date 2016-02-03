@@ -1,6 +1,8 @@
 nop-text-field {
   @include span-columns(12);
 
+  margin: 5px 0;
+
   .content {
     margin: 0;
   }
