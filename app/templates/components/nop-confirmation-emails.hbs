@@ -1,14 +1,20 @@
 {{#if readonly}}
-  {{#each uniqueEmails as |email|}}
-    {{nop-text-field class='person-email' value=email}}
-  {{/each}}
-  {{#each submission.otherConfirmationEmails as |other|}}
-    {{nop-text-field class='person-email' value=other.email}}
-  {{/each}}
+  The following people will receive confirmation emails upon submission:
+  <ul class="bullets">
+    {{#each uniqueEmails as |email|}}
+      <li>{{email}}</li>
+    {{/each}}
+    {{#each submission.otherConfirmationEmails as |other|}}
+      <li>{{other.email}}</li>
+    {{/each}}
+  </ul>
 {{else}}
-  {{#each uniqueEmails as |email|}}
-    {{nop-text-field class='person-email' value=email}}
-  {{/each}}
+  The following people will receive confirmation emails upon submission:
+  <ul class="bullets">
+    {{#each uniqueEmails as |email|}}
+      <li>{{email}}</li>
+    {{/each}}
+  </ul>
   <section>
     {{#each submission.otherConfirmationEmails as |other|}}
       {{nop-input label='Additional email address' name='other-confirmation-email' type='email' value=other.email}}
