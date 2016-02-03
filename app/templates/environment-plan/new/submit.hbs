@@ -47,6 +47,10 @@
     <h3>Comments</h3>
     {{nop-comments comments=model.comments readonly=true}}
   </section>
+  <section>
+    <h3>Confirmation Emails</h3>
+    {{nop-confirmation-emails submission=model readonly=true}}
+  </section>
   {{#each errorMessages as |message|}}
     <div>{{message}}</div>
   {{/each}}
