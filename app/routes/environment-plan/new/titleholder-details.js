@@ -8,12 +8,10 @@ export default Ember.Route.extend(ResetScroll, {
   },
   afterModel(model) {
     if (!model.titleholderDetails) {
-      model.isEligibleVoluntaryAction = true;
       model.titleholderDetails = {
         businessAddress: {},
         postalAddress: {}
       };
-      model.otherTitleholders = [];
     }
   },
   actions: {
