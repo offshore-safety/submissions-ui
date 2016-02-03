@@ -2,14 +2,7 @@
             class='attachments-page'
             hint='Upload any supporting documents'}}
 
-  {{#each model.documents.attachments as |document index|}}
-    <section class="attachment {{concat 'attachment' index}}">
-      <h5>Attachment {{counter index}}</h5>
-      {{nop-attach-file document=document}}
-    </section>
-  {{/each}}
-
-  {{nop-add-another action='addAttachment' text='Add attachment' class='add-attachment'}}
+  {{nop-attachments attachments=model.documents.attachments}}
 
   {{#nop-actions}}
     <button {{action 'goBack'}}>Back</button>

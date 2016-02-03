@@ -1,0 +1,21 @@
+{{#if disabled}}
+  {{#if attachments}}
+    You have provided the following attachments:
+    <ul class='bullets'>
+      {{#each attachments as |attachment|}}
+        <li>{{attachment.name}}</li>
+      {{/each}}
+    </ul>
+  {{else}}
+    You have chosen not to provide any additional attachments with this submission
+  {{/if}}
+{{else}}
+  {{#each attachments as |document index|}}
+    <section class="attachment {{concat 'attachment' index}}">
+      <h5>Attachment {{counter index}}</h5>
+      {{nop-attach-file document=document}}
+    </section>
+  {{/each}}
+
+  {{nop-add-another action='addAttachment' text='Add attachment' class='add-attachment'}}
+{{/if}}

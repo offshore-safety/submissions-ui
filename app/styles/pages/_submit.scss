@@ -15,6 +15,10 @@
     @include span-columns(12);
   }
 
+  ul {
+    margin: 0;
+  }
+
   @include media($desktop) {
     .activity-name, .regulation-type, .has-opp, .has-minister-decision {
       @include span-columns(6);

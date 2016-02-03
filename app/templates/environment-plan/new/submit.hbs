@@ -37,11 +37,7 @@
   </section>
   <section>
     <h3>Attachments</h3>
-    <ul class='bullets'>
-      {{#each model.documents.attachments as |attachment|}}
-        <li>{{attachment.name}}</li>
-      {{/each}}
-    </ul>
+    {{nop-attachments attachments=model.documents.attachments disabled=true}}
   </section>
   <section>
     <h3>Comments</h3>
