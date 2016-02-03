@@ -51,7 +51,8 @@
     <div>{{message}}</div>
   {{/each}}
   <section>
-    {{nop-confirmation-emails submission=model hint='Confirmation emails with details about your submission and a reference number will be sent to these addresses.'}}
+    {{nop-confirmation-emails submission=model
+      hint='Provide email addresses of others who need to receive confirmation of this submission'}}
   </section>
   {{#nop-actions}}
     <button {{action 'validate'}}>Validate</button>
