@@ -1,19 +1,11 @@
-<h2>Additional Emails</h2>
-{{#if hint}}
-  <div class='hint'>{{hint}}</div>
-{{/if}}
 <section>
-  {{nop-text-field class='person-email' value=submission.submissionContact.email}}
-  {{#unless submission.sameAsLiaison}}
-    {{nop-text-field class='person-email' value=submission.liaisonContact.email}}
-  {{/unless}}
-  {{#unless submission.sameAsActivity}}
-    {{nop-text-field class='person-email' value=submission.activityContact.email}}
-  {{/unless}}
+  {{#each uniqueEmails as |email|}}
+    {{nop-text-field class='person-email' value=email}}
+  {{/each}}
 </section>
 <section>
-{{#each submission.otherConfirmationEmails as |other|}}
-  {{nop-input label='Additional email address' name='other-confirmation-email' type='email' value=other.email}}
-{{/each}}
+  {{#each submission.otherConfirmationEmails as |other|}}
+    {{nop-input label='Additional email address' name='other-confirmation-email' type='email' value=other.email}}
+  {{/each}}
 </section>
 {{nop-add-another action='addConfirmationEmail' text='Would you like to add additional email addresses?' class='add-another-confirmation-email'}}

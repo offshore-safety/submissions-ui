@@ -25,6 +25,7 @@ Router.map(function() {
       this.route('fa-declaration');
       this.route('fa-confirmation');
       this.route('activity-types');
+      this.route('confirmation-emails');
     });
   });
 

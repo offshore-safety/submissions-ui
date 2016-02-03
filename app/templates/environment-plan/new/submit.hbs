@@ -50,10 +50,6 @@
   {{#each errorMessages as |message|}}
     <div>{{message}}</div>
   {{/each}}
-  <section>
-    {{nop-confirmation-emails submission=model
-      hint='Provide email addresses of others who need to receive confirmation of this submission'}}
-  </section>
   {{#nop-actions}}
     <button {{action 'validate'}}>Validate</button>
     <button {{action 'goBack'}}>Back</button>
