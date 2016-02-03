@@ -1,6 +1,6 @@
 {{#nop-page title='Nominated Liaison Person'
             hint='This is the person who will be the contact point throughout the submission of this  environment plan'}}
-  {{nop-person-details person=model.liaisonContact}}
+  {{nop-liaison-contact submission=model}}
   {{#nop-actions}}
     <button {{action 'goBack'}}>Back</button>
     <button class='primary' {{action 'goNext'}}>Next</button>
