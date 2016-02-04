@@ -12,6 +12,7 @@ export default Ember.Component.extend({
   }.on('init'),
   fullName: Ember.computed('person.title', 'person.firstName', 'person.lastName', function() {
     const person = this.get('person');
-    return person ? `${person.title} ${person.firstName} ${person.lastName}` : '';
+    const hasName = person.title && person.firstName && person.lastName;
+    return hasName ? `${person.title} ${person.firstName} ${person.lastName}` : '';
   })
 });
