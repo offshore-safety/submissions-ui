@@ -1,8 +1,11 @@
 import Ember from 'ember';
+import ComponentValidation from '../mixins/component-validation';
 
-export default Ember.Component.extend({
+export default Ember.Component.extend(ComponentValidation, {
   tagName: 'nop-fa-confirmation',
   readonly: false,
+  classNameBindings: ['hasErrors', 'readonly'],
+  validator: Ember.inject.service('validations.fa-confirmation'),
   _initialiseFAConfirmation: function() {
     const submission = this.get('submission');
     if (!submission.documents) {
