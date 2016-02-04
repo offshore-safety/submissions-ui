@@ -2,11 +2,11 @@
   {{#if environmentPlan.token}}
     You have provided the following document:
     <ul class="bullets">
-      <li>{{environmentPlan.name}}</li>
+      <li>{{or environmentPlan.name '-'}}</li>
     </ul>
-  {{else}}
-    <!-- Do something about errors here  -->
   {{/if}}
+
+  {{nop-errors errors=errors}}
 {{else}}
   {{nop-attach-document document=environmentPlan}}
 {{/if}}
