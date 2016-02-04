@@ -6,5 +6,7 @@ export default Ember.Component.extend({
     if(this.get('value')) {
       return this.get('value').split('\r\n');
     }
+
+    return ['-'];
   })
 });

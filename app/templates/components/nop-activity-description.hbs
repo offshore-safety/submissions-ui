@@ -13,6 +13,8 @@
       {{nop-text-field label='OPP Document Reference or EPBC reference number' value=submission.OPPOrEPBCReferenceNumber}}
     {{/if}}
   {{/if}}
+
+  {{nop-errors errors=errors}}
 {{else}}
   {{nop-input class='activity-name' label='Activity Name' name='activity-name' required=true value=submission.name}}
   {{nop-textarea class='activity-description' label='Activity Description'

@@ -50,16 +50,6 @@ export default Ember.Service.extend({
       this._validateDetails(entity.titleholderDetails, 'titleholderDetails', errors);
     }
 
-    if (!entity.isEligibleVoluntaryAction) {
-      if (entity.otherTitleholders === undefined || entity.otherTitleholders.length === 0) {
-        errors['otherTitleholders'] = 'Other titleholder details must be specified when not an Eligible Voluntary Action';
-      } else {
-        entity.otherTitleholders.forEach((otherTitleholder, index) => {
-          this._validateDetails(otherTitleholder, `otherTitleholderDetails.${index}`, errors);
-        });
-      }
-    }
-
     return errors;
   }
 });

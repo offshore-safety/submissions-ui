@@ -1,4 +1,5 @@
 nop-titleholder-details {
+  @include clearfix;
   .company-numbers {
     nop-input {
       @include media($desktop) {

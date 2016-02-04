@@ -10,3 +10,9 @@
 @import 'nop-titleholder-details';
 @import 'nop-activity-type';
 @import 'nop-text-field';
+@import 'nop-errors';
+
+.has-errors {
+  display: block;
+  background-color: $error-mask;
+}
