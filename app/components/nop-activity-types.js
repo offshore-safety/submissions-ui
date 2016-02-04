@@ -1,10 +1,12 @@
 import Ember from 'ember';
 import _ from 'lodash/lodash';
 import Constants from '../constants';
+import ComponentValidation from '../mixins/component-validation';
 
-export default Ember.Component.extend({
+export default Ember.Component.extend(ComponentValidation, {
   tagName: 'nop-activity-types',
   classNameBindings: ['hasErrors', 'readonly'],
+  validator: Ember.inject.service('validations.activity-types'),
   readonly: false,
   _initialiseActivityTypes: function() {
     const submission = this.get('submission');
