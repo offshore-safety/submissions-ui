@@ -1,4 +1,5 @@
 import Ember from 'ember';
+import _ from 'lodash/lodash';
 import ResetScroll from '../../../mixins/reset-scroll';
 
 export default Ember.Route.extend(ResetScroll, {
