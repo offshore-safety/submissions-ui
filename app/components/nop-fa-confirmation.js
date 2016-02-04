@@ -6,6 +6,9 @@ export default Ember.Component.extend(ComponentValidation, {
   readonly: false,
   classNameBindings: ['hasErrors', 'readonly'],
   validator: Ember.inject.service('validations.fa-confirmation'),
+  inclusionSpecified: Ember.computed('confirmation.includeFa', function() {
+    return this.get('confirmation').includeFa !== undefined;
+  }),
   _initialiseFAConfirmation: function() {
     const submission = this.get('submission');
     if (!submission.documents) {

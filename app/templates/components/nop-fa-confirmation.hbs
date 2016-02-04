@@ -1,10 +1,12 @@
 {{#if readonly}}
   {{#if inclusionSpecified}}
     {{#if confirmation.includeFa}}
-      You have provided the following document:
-      <ul class="bullets">
-        <li>{{confirmation.name}}</li>
-      </ul>
+      {{#if confirmation.token}}
+        You have provided the following document:
+        <ul class="bullets">
+          <li>{{confirmation.name}}</li>
+        </ul>
+      {{/if}}
     {{else}}
       You have chosen not to submit a Financial Assurance Confirmation as part of this submission
     {{/if}}

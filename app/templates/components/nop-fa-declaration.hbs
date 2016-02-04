@@ -1,10 +1,12 @@
 {{#if readonly}}
   {{#if inclusionSpecified}}
     {{#if declaration.includeFa}}
-      You have provided the following document:
-      <ul class="bullets">
-        <li>{{declaration.name}}</li>
-      </ul>
+    {{#if declaration.token}}
+        You have provided the following document:
+        <ul class="bullets">
+          <li>{{declaration.name}}</li>
+        </ul>
+      {{/if}}
     {{else}}
       You have chosen not to submit a Financial Assurance Declaration as part of this submission
     {{/if}}
