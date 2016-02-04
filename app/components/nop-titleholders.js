@@ -3,7 +3,7 @@ import ComponentValidation from '../mixins/component-validation';
 
 export default Ember.Component.extend(ComponentValidation, {
   tagName: 'nop-titleholders',
-  classNameBindings: ['hasErrors'],
+  classNameBindings: ['hasErrors', 'readonly'],
   readonly: false,
   validator: Ember.inject.service('validations.titleholder-details'),
   _initialiseTitleholders: function() {

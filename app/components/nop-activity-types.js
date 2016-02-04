@@ -4,6 +4,7 @@ import Constants from '../constants';
 
 export default Ember.Component.extend({
   tagName: 'nop-activity-types',
+  classNameBindings: ['hasErrors', 'readonly'],
   readonly: false,
   _initialiseActivityTypes: function() {
     const submission = this.get('submission');

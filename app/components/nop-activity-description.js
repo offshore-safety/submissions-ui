@@ -5,7 +5,7 @@ import ComponentValidation from '../mixins/component-validation';
 
 export default Ember.Component.extend(ComponentValidation, {
   tagName: 'nop-activity-description',
-  classNameBindings: ['hasErrors'],
+  classNameBindings: ['hasErrors', 'readonly'],
   validator: Ember.inject.service('validations.activity-description'),
   _initialiseLocationMap: function() {
     const submission = this.get('submission');
