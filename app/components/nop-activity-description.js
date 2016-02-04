@@ -1,11 +1,12 @@
 import Ember from 'ember';
 import _ from 'lodash/lodash';
 import Constants from '../constants';
+import ComponentValidation from '../mixins/component-validation';
 
-export default Ember.Component.extend({
+export default Ember.Component.extend(ComponentValidation, {
   tagName: 'nop-activity-description',
   classNameBindings: ['hasErrors'],
-  validation: Ember.inject.service('validations.activity-description'),
+  validator: Ember.inject.service('validations.activity-description'),
   _initialiseLocationMap: function() {
     const submission = this.get('submission');
     if (!submission.documents) {
@@ -15,12 +16,6 @@ export default Ember.Component.extend({
     if (!submission.documents.locationMap) {
       submission.documents.locationMap = {};
     }
-  }.on('init'),
-  _validate: function() {
-    const errors = this.get('validation').validate(this.get('submission'));
-    const keys = _.keys(errors);
-    this.set('errors', errors);
-    this.set('hasErrors', keys.length > 0);
   }.on('init'),
   regulationTypes: _.keys(Constants.REGULATION_TYPES).map((k, index) => {return {value: k, label: Constants.REGULATION_TYPES[k], name: `regulation-type-${index}`};}),
   trueOrFalse: [
