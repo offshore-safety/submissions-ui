@@ -8,7 +8,10 @@ export default Ember.Route.extend(ResetScroll, {
   },
   actions: {
     willTransition() {
-      this.get('submissionStore').save(this.get('currentModel'));
+      const currentModel = this.get('currentModel');
+      _.remove(_.rest(currentModel.activityTypes, 1), (a) => !a.token);
+
+      this.get('submissionStore').save(currentModel);
     }
   }
 });
