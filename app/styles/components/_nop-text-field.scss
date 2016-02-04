@@ -11,4 +11,9 @@ nop-text-field {
     color: $hint-color;
     font-size: $base-font-size * 0.8;
   }
+
+  .blank {
+    color: $hint-color;
+    font-style: italic;
+  }
 }

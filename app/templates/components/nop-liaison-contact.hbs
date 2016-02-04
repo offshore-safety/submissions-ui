@@ -1,1 +1,9 @@
-{{nop-person-details person=submission.liaisonContact readonly=readonly}}
+{{#if readonly}}
+  {{#nop-review-component title='Nominated Liaison Person'}}
+    {{nop-person-details person=submission.liaisonContact readonly=true}}
+
+    {{nop-errors errors=errors}}
+  {{/nop-review-component}}
+{{else}}
+  {{nop-person-details person=submission.liaisonContact}}
+{{/if}}

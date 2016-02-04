@@ -1,57 +1,44 @@
 {{#nop-page title='Review Your Submission' class='submit-page'}}
   <section>
-    <h3>Activity Details</h3>
     {{nop-activity-description submission=model readonly=true}}
   </section>
   <section>
-    <h3>Titles</h3>
     {{nop-titles submission=model readonly=true}}
   </section>
   <section>
-    <h3>Activity Types</h3>
     {{nop-activity-types submission=model readonly=true}}
   </section>
   <div class='page-break'/>
   <section>
-    <h3>Titleholder Details</h3>
     {{nop-titleholders submission=model readonly=true}}
   </section>
   <div class='page-break'/>
   <section>
-    <h3>Submission Contact</h3>
     {{nop-submission-contact submission=model readonly=true}}
   </section>
   <section>
-    <h3>Nominated Liaison Person</h3>
     {{nop-liaison-contact submission=model readonly=true}}
   </section>
   <section>
-    <h3>Activity Contact</h3>
     {{nop-activity-contact submission=model readonly=true}}
   </section>
   <div class='page-break'/>
   <section>
-    <h3>Environment Plan</h3>
     {{nop-attach-environment-plan submission=model readonly=true}}
   </section>
   <section>
-    <h3>Financial Assurance Declaration</h3>
     {{nop-fa-declaration submission=model readonly=true}}
   </section>
   <section>
-    <h3>Financial Assurance Confirmation</h3>
     {{nop-fa-confirmation submission=model readonly=true}}
   </section>
   <section>
-    <h3>Attachments</h3>
     {{nop-attachments submission=model readonly=true}}
   </section>
   <section>
-    <h3>Comments</h3>
     {{nop-comments comments=model.comments readonly=true}}
   </section>
   <section>
-    <h3>Confirmation Emails</h3>
     {{nop-confirmation-emails submission=model readonly=true}}
   </section>
   {{#each errorMessages as |message|}}

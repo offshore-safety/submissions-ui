@@ -1,9 +1,11 @@
 {{#if readonly}}
-  {{#if comments}}
-    {{comments}}
-  {{else}}
-    You have no comments to provide for this submission
-  {{/if}}
+  {{#nop-review-component title='Comments'}}
+    {{#if comments}}
+      {{comments}}
+    {{else}}
+      You have no comments to provide for this submission
+    {{/if}}
+  {{/nop-review-component}}
 {{else}}
   {{nop-textarea value=comments rows=10}}
 {{/if}}

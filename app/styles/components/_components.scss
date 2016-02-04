@@ -11,10 +11,4 @@
 @import 'nop-activity-type';
 @import 'nop-text-field';
 @import 'nop-errors';
-
-.readonly {
-  &.has-errors {
-    display: block;
-    background-color: $error-mask;
-  }
-}
+@import 'nop-review-component';

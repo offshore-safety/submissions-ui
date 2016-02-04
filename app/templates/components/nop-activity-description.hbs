@@ -1,20 +1,23 @@
 {{#if readonly}}
-  <div>
-    {{nop-text-field class='activity-name' label='Name' value=submission.name}}
-    {{nop-text-field class='regulation-type' label='Regulation Type' value=(regulation-type-from-id submission.regulationType)}}
-  </div>
-  {{nop-text-field label='Description' value=submission.description}}
-  {{#if submission.hasOffshoreProject}}
+  {{#nop-review-component}}
+    <h3>Activity Details</h3>
     <div>
-      {{nop-text-field class='has-opp' label='Accepted Offshort Project Proposal (OPP)?' value=(boolean-to-yes-no submission.hasOPP)}}
-      {{nop-text-field class='has-minister-decision' label='Environment Minister Decision?' value=(boolean-to-yes-no submission.hasEnvironmentMinisterDecision)}}
+      {{nop-text-field class='activity-name' label='Name' value=submission.name}}
+      {{nop-text-field class='regulation-type' label='Regulation Type' value=(regulation-type-from-id submission.regulationType)}}
     </div>
-    {{#if showReferenceNumber}}
-      {{nop-text-field label='OPP Document Reference or EPBC reference number' value=submission.OPPOrEPBCReferenceNumber}}
+    {{nop-text-field label='Description' value=submission.description}}
+    {{#if submission.hasOffshoreProject}}
+      <div>
+        {{nop-text-field class='has-opp' label='Accepted Offshort Project Proposal (OPP)?' value=(boolean-to-yes-no submission.hasOPP)}}
+        {{nop-text-field class='has-minister-decision' label='Environment Minister Decision?' value=(boolean-to-yes-no submission.hasEnvironmentMinisterDecision)}}
+      </div>
+      {{#if showReferenceNumber}}
+        {{nop-text-field label='OPP Document Reference or EPBC reference number' value=submission.OPPOrEPBCReferenceNumber}}
+      {{/if}}
     {{/if}}
-  {{/if}}
 
-  {{nop-errors errors=errors}}
+    {{nop-errors errors=errors}}
+  {{/nop-review-component}}
 {{else}}
   {{nop-input class='activity-name' label='Activity Name' name='activity-name' required=true value=submission.name}}
   {{nop-textarea class='activity-description' label='Activity Description'

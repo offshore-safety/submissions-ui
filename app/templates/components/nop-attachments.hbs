@@ -1,16 +1,18 @@
 {{#if readonly}}
-  {{#if attachments}}
-    You have provided the following attachments:
-    <ul class='bullets'>
-      {{#each attachments as |attachment|}}
-        <li>{{or attachment.name '-'}}</li>
-      {{/each}}
-    </ul>
-  {{else}}
-    You have chosen not to provide any additional attachments with this submission
-  {{/if}}
+  {{#nop-review-component title='Attachments'}}
+    {{#if attachments}}
+      You have provided the following attachments:
+      <ul class='bullets'>
+        {{#each attachments as |attachment|}}
+          <li>{{or attachment.name '-'}}</li>
+        {{/each}}
+      </ul>
+    {{else}}
+      You have chosen not to provide any additional attachments with this submission
+    {{/if}}
 
-  {{nop-errors errors=errors}}
+    {{nop-errors errors=errors}}
+  {{/nop-review-component}}
 {{else}}
   {{#each attachments as |document index|}}
     <section class="attachment {{concat 'attachment' index}}">

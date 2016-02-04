@@ -2,3 +2,6 @@
 {{#each valueLines as |line|}}
   <p class='content'>{{line}}</p>
 {{/each}}
+{{#unless value}}
+  <span class='blank'>Not specified</span>
+{{/unless}}

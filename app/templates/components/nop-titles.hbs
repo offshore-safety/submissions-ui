@@ -1,9 +1,11 @@
 {{#if readonly}}
-  {{#each submission.titles as |title index|}}
-    {{nop-title title=title readonly=readonly errors=errors}}
-  {{/each}}
+  {{#nop-review-component title='Titles'}}
+    {{#each submission.titles as |title index|}}
+      {{nop-title title=title readonly=readonly errors=errors}}
+    {{/each}}
 
-  {{nop-errors errors=errors}}
+    {{nop-errors errors=errors}}
+  {{/nop-review-component}}
 {{else}}
   {{#each submission.titles as |title index|}}
     <section>
