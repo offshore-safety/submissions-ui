@@ -1,0 +1,42 @@
+nop-navigation {
+  display: flex;
+  margin: 10px 100px;
+}
+
+nop-navigation-item {
+  text-align: center;
+  background-color: $nopsema-blue;
+  margin: 0 5px;
+  height: 100px;
+  width: 100px;
+
+  box-shadow: none;
+
+  transition: all 0.5s ease;
+
+  padding: 10px;
+  font-size: 0.8 * $base-font-size;
+
+  &.current {
+    @include shadow-depth3(transparentize(black, 0.5));
+    transform: scale(1.15);
+  }
+
+  .fa {
+    font-size: 3em;
+    height: 45px;
+  }
+
+  a {
+    text-decoration: none;
+    color: $off-white;
+
+    &:hover {
+      color: lighten($nopsema-blue, 30%);
+    }
+
+    &:focus {
+      color: $off-white;
+    }
+  }
+}

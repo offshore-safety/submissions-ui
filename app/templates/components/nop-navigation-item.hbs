@@ -1,0 +1,10 @@
+{{#link-to item.link}}
+  <div class='circle'>
+    {{#if hasErrors}}
+      {{fa-icon 'exclamation'}}
+    {{else}}
+      {{fa-icon 'check'}}
+    {{/if}}
+    <div>{{item.name}}</div>
+  </div>
+{{/link-to}}
