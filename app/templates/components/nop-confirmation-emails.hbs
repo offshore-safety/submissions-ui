@@ -1,7 +1,7 @@
 {{#if readonly}}
   The following people will receive confirmation emails upon submission:
   <ul class="bullets">
-    {{#each uniqueEmails as |email|}}
+    {{#each uniqueEmailMessages as |email|}}
       <li>{{email}}</li>
     {{/each}}
     {{#each submission.otherConfirmationEmails as |other|}}
@@ -13,7 +13,7 @@
 {{else}}
   The following people will receive confirmation emails upon submission:
   <ul class="bullets">
-    {{#each uniqueEmails as |email|}}
+    {{#each uniqueEmailMessages as |email|}}
       <li>{{email}}</li>
     {{/each}}
   </ul>

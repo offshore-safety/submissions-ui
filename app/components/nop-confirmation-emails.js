@@ -10,14 +10,23 @@ export default Ember.Component.extend({
       submission.otherConfirmationEmails = [];
     }
   }.on('init'),
-  uniqueEmails: Ember.computed(function() {
+  _addEmailMessage(emails, contact, message) {
+    if(_.isUndefined(contact) || _.isUndefined(contact.email)) {
+      emails.push(message);
+    } else {
+      emails.push(contact.email);
+    }
+  },
+  uniqueEmailMessages: Ember.computed(function() {
     var submission = this.get('submission');
-    var allEmails = [
-                      submission.submissionContact.email,
-                      submission.liaisonContact.email,
-                      submission.activityContact.email
-                    ];
-    return _.uniq(allEmails);
+    var displayEmails = [];
+
+    this._addEmailMessage(displayEmails, submission.submissionContact, "No submission contact email set");
+    this._addEmailMessage(displayEmails, submission.liaisonContact, "No liaison contact email set");
+    this._addEmailMessage(displayEmails, submission.activityContact, "No activity contact email set");
+
+    return _.uniq(displayEmails);
+
   }),
   actions: {
     addConfirmationEmail() {
