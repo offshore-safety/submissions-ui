@@ -1,17 +1,15 @@
 {{#if readonly}}
-  {{#nop-review-component title='Confirmation Emails'}}
-    The following people will receive confirmation emails upon submission:
-    <ul class="bullets">
-      {{#each uniqueEmails as |email|}}
-        <li>{{email}}</li>
-      {{/each}}
-      {{#each submission.otherConfirmationEmails as |other|}}
-        <li>{{other.email}}</li>
-      {{/each}}
-    </ul>
+  The following people will receive confirmation emails upon submission:
+  <ul class="bullets">
+    {{#each uniqueEmails as |email|}}
+      <li>{{email}}</li>
+    {{/each}}
+    {{#each submission.otherConfirmationEmails as |other|}}
+      <li>{{other.email}}</li>
+    {{/each}}
+  </ul>
 
-    {{nop-errors errors=errors}}
-  {{/nop-review-component}}
+  {{nop-errors errors=errors}}
 {{else}}
   The following people will receive confirmation emails upon submission:
   <ul class="bullets">

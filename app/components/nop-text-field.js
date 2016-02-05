@@ -5,6 +5,6 @@ export default Ember.Component.extend({
   valueLines: Ember.computed('value', function() {
     if(this.get('value')) {
       return this.get('value').split('\r\n');
-    };
+    }
   })
 });

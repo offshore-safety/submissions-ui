@@ -1,9 +1,7 @@
 {{#if readonly}}
-  {{#nop-review-component title='Activity Contact'}}
-    {{nop-person-details person=submission.activityContact readonly=true}}
+  {{nop-person-details person=submission.activityContact readonly=true}}
 
-    {{nop-errors errors=errors}}
-  {{/nop-review-component}}
+  {{nop-errors errors=errors}}
 {{else}}
   {{nop-person-details person=submission.activityContact}}
 {{/if}}

@@ -1,49 +1,72 @@
 {{#nop-page title='Review Your Submission' class='submit-page'}}
   <section>
-    {{nop-activity-description submission=model readonly=true}}
+    {{#nop-review-component title='Activity Description' editLink='environment-plan.new.activity-description'}}
+      {{nop-activity-description submission=model readonly=true}}
+    {{/nop-review-component}}
   </section>
   <section>
-    {{nop-titles submission=model readonly=true}}
+    {{#nop-review-component title='Titles' editLink='environment-plan.new.titles'}}
+      {{nop-titles submission=model readonly=true}}
+    {{/nop-review-component}}
   </section>
   <section>
-    {{nop-activity-types submission=model readonly=true}}
-  </section>
-  <div class='page-break'/>
-  <section>
-    {{nop-titleholders submission=model readonly=true}}
-  </section>
-  <div class='page-break'/>
-  <section>
-    {{nop-submission-contact submission=model readonly=true}}
+    {{#nop-review-component title='Activity Types' editLink='environment-plan.new.activity-types'}}
+      {{nop-activity-types submission=model readonly=true}}
+    {{/nop-review-component}}
   </section>
   <section>
-    {{nop-liaison-contact submission=model readonly=true}}
+    {{#nop-review-component title='Titleholder Details' editLink='environment-plan.new.titleholder-details'}}
+      {{nop-titleholders submission=model readonly=true}}
+    {{/nop-review-component}}
+  </section>
+  <div class='contacts page-break'>
+    <section>
+      {{#nop-review-component title='Submission Contact' editLink='environment-plan.new.submission-contact'}}
+        {{nop-submission-contact submission=model readonly=true}}
+      {{/nop-review-component}}
+    </section>
+    <section>
+      {{#nop-review-component title='Nominated Liaison Person' editLink='environment-plan.new.liaison-contact'}}
+        {{nop-liaison-contact submission=model readonly=true}}
+      {{/nop-review-component}}
+    </section>
+    <section>
+      {{#nop-review-component title='Activity Contact' editLink='environment-plan.new.activity-contact'}}
+        {{nop-activity-contact submission=model readonly=true}}
+      {{/nop-review-component}}
+    </section>
+  </div>
+  <section>
+    {{#nop-review-component title='Environment Plan' editLink='environment-plan.new.attach-environment-plan'}}
+      {{nop-attach-environment-plan submission=model readonly=true}}
+    {{/nop-review-component}}
   </section>
   <section>
-    {{nop-activity-contact submission=model readonly=true}}
-  </section>
-  <div class='page-break'/>
-  <section>
-    {{nop-attach-environment-plan submission=model readonly=true}}
+    {{#nop-review-component title='Financial Assurance Declaration' editLink='environment-plan.new.fa-declaration'}}
+      {{nop-fa-declaration submission=model readonly=true}}
+    {{/nop-review-component}}
   </section>
   <section>
-    {{nop-fa-declaration submission=model readonly=true}}
+    {{#nop-review-component title='Financial Assurance Confirmation' editLink='environment-plan.new.fa-confirmation'}}
+      {{nop-fa-confirmation submission=model readonly=true}}
+    {{/nop-review-component}}
   </section>
   <section>
-    {{nop-fa-confirmation submission=model readonly=true}}
+    {{#nop-review-component title='Attachments' editLink='environment-plan.new.attachments'}}
+      {{nop-attachments submission=model readonly=true}}
+    {{/nop-review-component}}
+  </section>
+  <div class='page-break' />
+  <section>
+    {{#nop-review-component title='Comments' editLink='environment-plan.new.comments'}}
+      {{nop-comments comments=model.comments readonly=true}}
+    {{/nop-review-component}}
   </section>
   <section>
-    {{nop-attachments submission=model readonly=true}}
+    {{#nop-review-component title='Additional Emails' editLink='environment-plan.new.confirmation-emails'}}
+      {{nop-confirmation-emails submission=model readonly=true}}
+    {{/nop-review-component}}
   </section>
-  <section>
-    {{nop-comments comments=model.comments readonly=true}}
-  </section>
-  <section>
-    {{nop-confirmation-emails submission=model readonly=true}}
-  </section>
-  {{#each errorMessages as |message|}}
-    <div>{{message}}</div>
-  {{/each}}
   {{#nop-actions}}
     <button {{action 'goBack'}}>Back</button>
     <button class='primary' {{action 'submit'}}>Submit</button>

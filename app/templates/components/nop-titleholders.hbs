@@ -1,9 +1,7 @@
 {{#if readonly}}
-  {{#nop-review-component title='Titleholder Details'}}
-    {{nop-titleholder-details titleholder=submission.titleholderDetails readonly=true}}
+  {{nop-titleholder-details titleholder=submission.titleholderDetails readonly=true}}
 
-    {{nop-errors errors=errors}}
-  {{/nop-review-component}}
+  {{nop-errors errors=errors}}
 {{else}}
   {{nop-titleholder-details titleholder=submission.titleholderDetails}}
 {{/if}}

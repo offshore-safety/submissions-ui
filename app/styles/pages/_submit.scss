@@ -20,15 +20,22 @@
     .full-address {
       @include span-columns(6);
     }
+  }
+}
 
-    .person-employer, .person-position {
-      @include span-columns(6);
-    }
+.contacts {
+  @include clearfix;
+  display: flex;
+  align-items: stretch;
+  section {
+    flex: 4;
+    margin-right: 20px;
 
-    .person-contacts, .person-postal {
-      @include span-columns(6);
+    &:last-child {
+      margin-right: 0px;
     }
   }
+
 }
 
 .submit-page {
@@ -44,10 +51,6 @@
 
   h3 {
     margin-bottom: 0px;
-  }
-
-  .person-phone, .person-mobile {
-    @include span-columns(6);
   }
 
   .person-contacts {

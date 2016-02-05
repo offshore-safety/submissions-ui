@@ -1,14 +1,12 @@
 {{#if readonly}}
-  {{#nop-review-component title='Environment Plan'}}
-    {{#if environmentPlan.token}}
-      You have provided the following document:
-      <ul class="bullets">
-        <li>{{or environmentPlan.name '-'}}</li>
-      </ul>
-    {{/if}}
+  {{#if environmentPlan.token}}
+    You have provided the following document:
+    <ul class="bullets">
+      <li>{{or environmentPlan.name '-'}}</li>
+    </ul>
+  {{/if}}
 
-    {{nop-errors errors=errors}}
-  {{/nop-review-component}}
+  {{nop-errors errors=errors}}
 {{else}}
   {{nop-attach-document document=environmentPlan}}
 {{/if}}

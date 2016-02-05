@@ -12,3 +12,8 @@
 @import 'nop-text-field';
 @import 'nop-errors';
 @import 'nop-review-component';
+
+.blank {
+  color: $hint-color;
+  font-style: italic;
+}

@@ -1,15 +1,15 @@
 {{#if readonly}}
-  {{#nop-review-component title='Activity Types'}}
-    {{#unless errors}}
-      You have specified the following activity types to be undertaken:
-      <ul class='bullets'>
-        {{#each submission.activityTypes as |activityType|}}
-          <li>{{activity-type-from-id activityType.type}}</li>
-        {{/each}}
-      </ul>
-    {{/unless}}
-    {{nop-errors errors=errors}}
-  {{/nop-review-component}}
+  You have specified the following activity types to be undertaken:
+  <ul class='bullets'>
+    {{#each submission.activityTypes as |activityType|}}
+      {{#if activityType.type}}
+        <li>{{activity-type-from-id activityType.type}}</li>
+      {{else}}
+        <li class='blank'>Not specified</li>
+      {{/if}}
+    {{/each}}
+  </ul>
+  {{nop-errors errors=errors}}
 {{else}}
   {{#if hasRegulationType}}
     {{#if petroleumActivity}}
