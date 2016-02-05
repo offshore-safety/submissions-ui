@@ -6,7 +6,7 @@ nop-navigation {
 $nav-item-dimensions: 90px;
 nop-navigation-item {
   text-align: center;
-  background-color: $nopsema-blue;
+  background-color: $nopsema-grey;
   margin: 0 5px;
   height: $nav-item-dimensions;
   width: $nav-item-dimensions;
@@ -17,6 +17,10 @@ nop-navigation-item {
 
   padding: 10px;
   font-size: 0.8 * $base-font-size;
+
+  &.complete {
+    background-color: $nopsema-blue;
+  }
 
   &.current {
     @include shadow-depth3(transparentize(black, 0.5));

@@ -1,9 +1,9 @@
 {{#link-to link}}
   <div class='circle'>
-    {{#if hasErrors}}
-      {{fa-icon 'exclamation'}}
-    {{else}}
+    {{#if complete}}
       {{fa-icon 'check'}}
+    {{else}}
+      {{fa-icon 'exclamation'}}
     {{/if}}
     <div>{{item.name}}</div>
   </div>
