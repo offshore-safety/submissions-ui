@@ -4,7 +4,7 @@ export default Ember.Service.extend({
   validate(entity) {
     const errors = {};
 
-    if (!entity.documents.environmentPlan || !entity.documents.environmentPlan.token) {
+    if (!entity.documents || !entity.documents.environmentPlan || !entity.documents.environmentPlan.token) {
       errors['environmentPlan.token'] = 'An Environment Plan must be uploaded with your submission';
     } else {
       if (!entity.documents.environmentPlan.name) {
