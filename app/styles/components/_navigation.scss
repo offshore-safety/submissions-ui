@@ -3,12 +3,13 @@ nop-navigation {
   margin: 10px 100px;
 }
 
+$nav-item-dimensions: 90px;
 nop-navigation-item {
   text-align: center;
   background-color: $nopsema-blue;
   margin: 0 5px;
-  height: 100px;
-  width: 100px;
+  height: $nav-item-dimensions;
+  width: $nav-item-dimensions;
 
   box-shadow: none;
 
@@ -24,7 +25,7 @@ nop-navigation-item {
 
   .fa {
     font-size: 3em;
-    height: 45px;
+    height: 35px;
   }
 
   a {
