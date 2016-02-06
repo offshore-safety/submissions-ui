@@ -4,7 +4,7 @@ export default Ember.Service.extend({
   validate(entity) {
     const errors = {};
 
-    if (!entity.documents || entity.documents.faDeclaration.includeFa === undefined) {
+    if (!entity.documents || !entity.documents.faConfirmation || entity.documents.faDeclaration.includeFa === undefined) {
       errors['faDeclaration.include'] = 'You must specify whether or not you are including an Financial Assurance Declaration with this submission';
     } else {
       if (entity.documents.faDeclaration.includeFa) {

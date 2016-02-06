@@ -60,7 +60,16 @@ export default Ember.Controller.extend({
     {
       name: 'Review',
       paths: ['environment-plan.new.submit'],
-      validators: []
+      validators: [
+        'activityDescription',
+        'titles',
+        'activityTypes',
+        'titleholderDetails',
+        'environmentPlan',
+        'faDeclaration',
+        'faConfirmation',
+        'attachments'
+      ]
     }
   ]
 });

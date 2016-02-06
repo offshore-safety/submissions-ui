@@ -31,9 +31,7 @@ export default Ember.Component.extend({
     this._updateComplete();
   }.on('init'),
   _routeChanged: Ember.observer('router.currentRouteName', function() {
-    if (this.get('current') && !this._matchingRoute()) {
-      this._updateComplete();
-    }
+    this._updateComplete();
     this._updateCurrent();
   })
 });

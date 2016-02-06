@@ -20,6 +20,7 @@ $base-input-height: 40px;
 $base-input-margin-bottom: 25px;
 
 $base-font-color: $dark-grey;
+$inverted-font-color: invert($base-font-color);
 $base-background-color: $extra-light-grey;
 $base-input-background: $extra-light-grey;
 $card-background-color: $white;

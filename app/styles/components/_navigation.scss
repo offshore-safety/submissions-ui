@@ -1,22 +1,43 @@
 nop-navigation {
-  display: flex;
-  margin: 20px 100px;
+  display: block;
+  text-align: center;
+  width: 100%;
+
+  .nav-items {
+    margin: 20px auto;
+  }
 }
 
 $nav-item-dimensions: 90px;
 nop-navigation-item {
-  text-align: center;
+  display: inline-block;
   background-color: $nopsema-grey;
   margin: 0 5px;
   height: $nav-item-dimensions;
   width: $nav-item-dimensions;
 
-  box-shadow: none;
-
   transition: all 0.5s ease;
-
-  padding: 10px;
+  @include shadow-depth1(transparentize(black, 0.5));
   font-size: 0.8 * $base-font-size;
+
+  position: relative;
+
+  .item-name, .fa {
+    position: absolute;
+    left: 0;
+    text-align: center;
+    width: 100%;
+  }
+
+  .item-name {
+    bottom: 0;
+    padding: 5px;
+  }
+
+  .fa {
+    top: 8px;
+    font-size: 3em;
+  }
 
   &.complete {
     background-color: $nopsema-blue;
@@ -28,12 +49,10 @@ nop-navigation-item {
     background-color: $nopsema-orange;
   }
 
-  .fa {
-    font-size: 3em;
-    height: 35px;
-  }
-
   a {
+    display: inline-block;
+    width: 100%;
+    height: 100%;
     text-decoration: none;
     color: $off-white;
 

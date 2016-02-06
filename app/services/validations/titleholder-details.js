@@ -27,11 +27,11 @@ export default Ember.Service.extend({
       errors[`${key}.name`] = 'A business name must be specified for titleholders';
     }
 
-    if (titleholder.abn !== undefined && titleholder.abn.length !== 11) {
+    if (!(titleholder.abn === undefined || titleholder.abn === '') && titleholder.abn.length !== 11) {
       errors[`${key}.abn`] = 'An ABN must be 11 digits long';
     }
 
-    if (titleholder.acn !== undefined && titleholder.acn.length !== 9) {
+    if (!(titleholder.acn === undefined || titleholder.acn === '') && titleholder.acn.length !== 9) {
       errors[`${key}.acn`] = 'An ACN must be 9 digits long';
     }
 
