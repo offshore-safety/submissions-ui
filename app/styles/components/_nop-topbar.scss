@@ -1,0 +1,10 @@
+nop-topbar {
+  display: block;
+  height: 60px;
+  background-color: darken($nopsema-grey, 30%);
+
+  .logo {
+    margin-left: 50px;
+    height: 100%;
+  }
+}
