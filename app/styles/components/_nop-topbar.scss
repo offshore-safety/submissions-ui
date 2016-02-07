@@ -7,16 +7,30 @@ nop-topbar {
   text-align: center;
   position: relative;
 
-  .logo {
+  .logo, .logo-icon {
     position: absolute;
     left: 30px;
     height: 100%;
   }
 
+  .logo {
+    display: none;
+
+    @include media($desktop) {
+      display: inline;
+    }
+  }
+
+  .logo-icon {
+    @include media($desktop) {
+      display: none;
+    }
+  }
+
   .page-title {
     display: inline-block;
     color: $off-white;
-    font-size: $base-font-size * 2.2;
+    font-size: $base-font-size * 2;
     line-height: $topbar-height;
   }
 }
