@@ -25,7 +25,7 @@ export default Ember.Controller.extend({
     {
       name: 'Contact Details',
       paths: ['environment-plan.new.submission-contact', 'environment-plan.new.liaison-contact', 'environment-plan.new.activity-contact'],
-      validators: []
+      validators: ['submissionContact', 'liaisonContact', 'activityContact']
     },
     {
       name: 'Environment Plan',

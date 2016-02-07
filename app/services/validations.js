@@ -8,5 +8,8 @@ export default Ember.Service.extend({
   faConfirmation: Ember.inject.service('validations.fa-confirmation'),
   faDeclaration: Ember.inject.service('validations.fa-declaration'),
   titleholderDetails: Ember.inject.service('validations.titleholder-details'),
-  titles: Ember.inject.service('validations.titles')
+  titles: Ember.inject.service('validations.titles'),
+  submissionContact: Ember.inject.service('validations.submission-contact'),
+  liaisonContact: Ember.inject.service('validations.liaison-contact'),
+  activityContact: Ember.inject.service('validations.activity-contact')
 });
