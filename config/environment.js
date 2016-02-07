@@ -41,7 +41,7 @@ module.exports = function(environment) {
   }
 
   if (environment === 'production') {
-    ENV.APP.API_ENDPOINT = 'http://ec2-54-206-7-128.ap-southeast-2.compute.amazonaws.com'
+    ENV.APP.API_ENDPOINT = 'http://54.206.7.128'
     ENV.locationType = 'hash';
   }
 
