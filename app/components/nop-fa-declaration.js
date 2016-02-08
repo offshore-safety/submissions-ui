@@ -27,4 +27,8 @@ export default Ember.Component.extend(ComponentValidation, {
     {label: 'Yes', value: true},
     {label: 'No', value: false}
   ],
+  showSubmit: Ember.computed('declaration.alreadySubmitted', function() {
+    const alreadySubmitted = this.get('declaration').alreadySubmitted;
+    return Ember.isPresent(alreadySubmitted) && !alreadySubmitted;
+  })
 });

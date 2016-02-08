@@ -14,11 +14,18 @@
 
   {{nop-errors errors=errors}}
 {{else}}
-  {{nop-radio-group class='include-fa' label='Do you want to submit a Financial Assurance Declaration with this submission?'
-                                             value=declaration.includeFa
-                                             options=trueOrFalse}}
-
-  {{#if declaration.includeFa}}
-    {{nop-attach-file document=declaration}}
+  {{nop-radio-group class='already-submitted'
+                    label='Have you previously submitted a Financial Assurance Declaration for these titles?'
+                    value=declaration.alreadySubmitted
+                    options=trueOrFalse
+                    required=true}}
+  {{#if showSubmit}}
+    {{nop-radio-group class='include-fa' label='Do you want to submit a Financial Assurance Declaration with this submission?'
+                                               value=declaration.includeFa
+                                               options=trueOrFalse
+                                               required=true}}
+    {{#if declaration.includeFa}}
+      {{nop-attach-file document=declaration}}
+    {{/if}}
   {{/if}}
 {{/if}}

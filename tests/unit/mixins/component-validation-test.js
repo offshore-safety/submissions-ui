@@ -13,7 +13,7 @@ test('it does nothing with no errors', function(assert) {
     }
   };
   let subject = ComponentValidationObject.create({validator: validator});
-  subject.init();
+  subject._performValidation();
   assert.equal(JSON.stringify(errors), JSON.stringify(subject.errors));
   assert.equal(false, subject.hasErrors);
 });
@@ -30,7 +30,7 @@ test('it puts errors on the object and flags there are some', function(assert) {
     }
   };
   let subject = ComponentValidationObject.create({validator: validator});
-  subject.init();
+  subject._performValidation();
   assert.equal(JSON.stringify(errors), JSON.stringify(subject.errors));
   assert.equal(true, subject.hasErrors);
 });
