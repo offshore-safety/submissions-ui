@@ -6,10 +6,10 @@ export default Ember.Component.extend({
   _initialiseTitleholder: function() {
     const titleholder = this.get('titleholder');
     if (!titleholder.businessAddress) {
-      titleholder.businessAddress = {};
+      titleholder.businessAddress = { country: 'AU' };
     }
     if (!titleholder.postalAddress) {
-      titleholder.postalAddress = {};
+      titleholder.postalAddress = { country: 'AU' };
     }
   }.on('init'),
 });
