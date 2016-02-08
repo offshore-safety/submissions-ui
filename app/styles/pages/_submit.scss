@@ -68,4 +68,8 @@
 
 @media print {
   @include large-layout;
+
+  nop-navigation {
+    display: none;
+  }
 }
