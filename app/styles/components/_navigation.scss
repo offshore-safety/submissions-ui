@@ -41,12 +41,24 @@ nop-navigation-item {
 
   &.complete {
     background-color: $nopsema-blue;
+
+    a {
+      &:hover {
+        color: lighten($nopsema-blue, 30%);
+      }
+    }
   }
 
   &.current {
     @include shadow-depth3(transparentize(black, 0.5));
     transform: scale(1.15);
     background-color: $nopsema-orange;
+
+    a {
+      &:hover {
+        color: lighten($nopsema-orange, 30%);
+      }
+    }
   }
 
   a {
@@ -57,7 +69,7 @@ nop-navigation-item {
     color: $off-white;
 
     &:hover {
-      color: lighten($nopsema-blue, 30%);
+      color: lighten($nopsema-grey, 30%);
     }
 
     &:focus {
