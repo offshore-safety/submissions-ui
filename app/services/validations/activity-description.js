@@ -4,15 +4,15 @@ export default Ember.Service.extend({
   validate(entity) {
     const errors = {};
 
-    if (entity.name === undefined || entity.name.length < 3) {
+    if (Ember.isBlank(entity.name) || entity.name.length < 3) {
       errors['name'] = 'Activity name must be specified';
     }
 
-    if (entity.description === undefined || entity.description.split(' ').length < 100) {
+    if (Ember.isBlank(entity.description) || entity.description.split(' ').length < 100) {
       errors['description'] = 'Activity description must be specified and more than 100 words';
     }
 
-    if (entity.regulationType === undefined) {
+    if (Ember.isBlank(entity.regulationType)) {
       errors['regulationType'] = 'The type of activity being undertaken must be specified';
     }
 

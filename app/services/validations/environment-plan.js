@@ -7,7 +7,7 @@ export default Ember.Service.extend({
     if (!entity.documents || !entity.documents.environmentPlan || !entity.documents.environmentPlan.token) {
       errors['environmentPlan.token'] = 'An Environment Plan must be uploaded with your submission';
     } else {
-      if (!entity.documents.environmentPlan.name) {
+      if (Ember.isBlank(entity.documents.environmentPlan.name)) {
         errors['environmentPlan.name'] = 'The submitted Environment Plan document must have a name';
       }
     }

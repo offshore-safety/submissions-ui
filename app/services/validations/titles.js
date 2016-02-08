@@ -12,15 +12,15 @@ export default Ember.Service.extend({
       entity.titles.forEach((title, index) => {
         const errorName = `titles.${index}`;
 
-        if (title.titleOrApplicationNumber === undefined || title.titleOrApplicationNumber.length < 3) {
+        if (Ember.isBlank(title.titleOrApplicationNumber) || title.titleOrApplicationNumber.length < 3) {
           errors[`${errorName}.titleOrApplicationNumber`] = 'A valid title or application number must be specified';
         }
 
-        if (title.region === undefined) {
+        if (Ember.isBlank(title.region)) {
           errors[`${errorName}.region`] = 'A region must be specified for each title';
         }
 
-        if (title.commonwealthWaters === undefined) {
+        if (Ember.isBlank(title.commonwealthWaters)) {
           errors[`${errorName}.commonwealthWaters`] = 'Please specify the Commonwealth waters adjacent to each title';
         }
       });

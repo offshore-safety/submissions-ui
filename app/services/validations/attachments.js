@@ -6,7 +6,7 @@ export default Ember.Service.extend({
 
     if (entity.documents && entity.documents.attachments) {
       entity.documents.attachments.forEach((a, index) => {
-        if (a.token && !a.name) {
+        if (a.token && Ember.isBlank(a.name)) {
           errors[`attachments.${index}.name`] = 'Attachments must have names';
         }
       });
