@@ -37,15 +37,30 @@ nop-navigation-item {
   .fa {
     top: 8px;
     font-size: 3em;
+    display: none;
   }
 
   &.complete {
     background-color: $nopsema-blue;
 
-    a {
-      &:hover {
-        color: lighten($nopsema-blue, 30%);
-      }
+    .fa-check {
+      display: inline-block;
+    }
+
+    .fa-exclamation {
+      display: none;
+    }
+  }
+
+  &.errors {
+    background-color: $nopsema-grey;
+
+    .fa-check {
+      display: none;
+    }
+
+    .fa-exclamation {
+      display: inline-block;
     }
   }
 
@@ -53,12 +68,6 @@ nop-navigation-item {
     @include shadow-depth3(transparentize(black, 0.5));
     transform: scale(1.15);
     background-color: $nopsema-orange;
-
-    a {
-      &:hover {
-        color: lighten($nopsema-orange, 30%);
-      }
-    }
   }
 
   a {
@@ -69,7 +78,7 @@ nop-navigation-item {
     color: $off-white;
 
     &:hover {
-      color: lighten($nopsema-grey, 30%);
+      color: lighten($nopsema-blue, 30%);
     }
 
     &:focus {

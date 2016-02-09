@@ -7,10 +7,5 @@ export default Ember.Route.extend({
       outlet: 'navigation',
       into: 'application'
     });
-  },
-  actions: {
-    willTransition() {
-      console.log('new leaving');
-    }
   }
 });
