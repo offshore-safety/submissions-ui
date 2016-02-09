@@ -5,7 +5,7 @@ export default Ember.Controller.extend({
     {
       name: 'Activity Description',
       paths: ['environment-plan.new.activity-description'],
-      validators: ['activityDescription']
+      validators: ['activityDescription'],
     },
     {
       name: 'Titles',

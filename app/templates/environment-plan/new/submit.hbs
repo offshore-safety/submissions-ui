@@ -67,6 +67,8 @@
       {{nop-confirmation-emails submission=model readonly=true}}
     {{/nop-review-component}}
   </section>
+
+  {{ errors }}
   {{#nop-actions}}
     <button {{action 'goBack'}}>Back</button>
     <button class='primary' {{action 'submit'}}>Submit</button>
