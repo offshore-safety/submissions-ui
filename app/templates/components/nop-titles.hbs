@@ -1,14 +1,17 @@
 {{#if readonly}}
-  {{#each submission.titles as |title index|}}
+  {{#each titles.titles as |title index|}}
     {{nop-title title=title readonly=readonly errors=errors}}
   {{/each}}
 
-  {{nop-errors errors=errors}}
+  <!-- {{nop-errors errors=errors}} -->
 {{else}}
-  {{#each submission.titles as |title index|}}
-    {{#nop-list-item}}
-      {{nop-title title=title index=index showRemove=multipleTitles}}
-    {{/nop-list-item}}
+  {{log titles.titles.currentState }}
+
+  {{#each titles.titles as |title index|}}
+    <section>
+      <h5 class='title-title'>Title {{counter index}}</h5>
+      {{nop-title title=title}}
+    </section>
   {{/each}}
 
   {{nop-add-another action='addTitle' text='Add another Title' class='add-another-title'}}

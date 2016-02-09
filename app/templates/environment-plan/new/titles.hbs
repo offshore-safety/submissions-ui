@@ -1,7 +1,7 @@
 {{#nop-page title='Titles'
             class='titles-page'
             hint='These are the titles and activities covered in this submission. Add all of the titles that are covered by this submission.'}}
-  {{nop-titles submission=model}}
+  {{nop-titles titles=model addTitle='addTitle'}}
 
   {{#nop-actions}}
     <button {{action 'goBack'}}>Back</button>
