@@ -19,10 +19,10 @@ export default Ember.Component.extend({
   },
   _updateComplete() {
     const errors = {};
-    this.get('item').validators.forEach((v) => {
-      const service = this.get('validations').get(v);
-      _.merge(errors, service.validate(this.get('submissionStore').retrieve()));
-    });
+    // this.get('item').validators.forEach((v) => {
+    //   const service = this.get('validations').get(v);
+    //   _.merge(errors, service.validate(this.get('submissionStore').retrieve()));
+    // });
 
     this.set('complete', _.keys(errors).length === 0);
   },

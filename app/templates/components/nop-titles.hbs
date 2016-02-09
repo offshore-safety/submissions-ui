@@ -1,11 +1,13 @@
 {{#if readonly}}
-  {{#each submission.titles as |title index|}}
+  {{#each titles.titles as |title index|}}
     {{nop-title title=title readonly=readonly errors=errors}}
   {{/each}}
 
-  {{nop-errors errors=errors}}
+  <!-- {{nop-errors errors=errors}} -->
 {{else}}
-  {{#each submission.titles as |title index|}}
+  {{log titles.titles.currentState }}
+
+  {{#each titles.titles as |title index|}}
     <section>
       <h5 class='title-title'>Title {{counter index}}</h5>
       {{nop-title title=title}}
