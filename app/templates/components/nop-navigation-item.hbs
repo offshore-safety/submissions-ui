@@ -1,5 +1,9 @@
-{{#link-to link}}
-  {{fa-icon 'check'}}
-  {{fa-icon 'exclamation'}}
-  <div class='item-name'>{{item.name}}</div>
+{{#link-to item.path}}
+  {{#if complete}}
+    {{fa-icon 'check'}}
+  {{/if}}
+  {{#if errors}}
+    {{fa-icon 'exclamation'}}
+  {{/if}}
+  <div class='item-name'>{{item.label}}</div>
 {{/link-to}}

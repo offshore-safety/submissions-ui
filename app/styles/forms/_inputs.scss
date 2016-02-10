@@ -14,6 +14,12 @@ input, textarea {
   }
 }
 
+.errors {
+  input, textarea {
+    background-color: $error-mask;
+  }
+}
+
 nop-input, nop-textarea {
   @include span-columns(12);
 }
@@ -27,6 +33,10 @@ nop-input, nop-textarea {
 nop-input, nop-textarea {
   position: relative;
   margin-bottom: $base-input-margin-bottom;
+
+  .errors {
+    color: $error-red;
+  }
 
   &.has-hint {
     .hint {
