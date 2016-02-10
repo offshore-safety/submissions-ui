@@ -5,13 +5,13 @@ export default Ember.Component.extend({
   tagName: 'nop-navigation-item',
   submissionStatus: Ember.inject.service(),
   classNameBindings: ['current', 'complete', 'errors'],
-  link: Ember.computed('item', function() {
-    return this.get('item').paths[0];
-  }),
-  complete: Ember.computed('submissionStatus.title-list', function () {
-    return this.get('submissionStatus').isComplete('title-list');
+  visited: Ember.computed('submissionStatus.title-list', function () {
+    return this.get('submissionStatus').visited(this.get('item').key);
   }),
   errors: Ember.computed('submissionStatus.title-list', function () {
-    return this.get('submissionStatus').hasErrors('title-list');
+    return this.get('submissionStatus').hasErrors(this.get('item').key);
+  }),
+  complete: Ember.computed('visited', 'errors', function() {
+    return this.get('visited') && !this.get('errors');
   })
 });

@@ -3,4 +3,8 @@
   font-size: $base-input-font-size;
   font-weight: $base-font-weight;
   background-color: $off-white;
+
+  &.errors {
+    background-color: $error-mask;
+  }
 }

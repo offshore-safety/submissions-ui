@@ -1,6 +1,8 @@
 import DS from 'ember-data';
+import Ember from 'ember';
+import Errors from '../mixins/errors';
 
-export default DS.Model.extend({
+export default DS.Model.extend(Errors, {
   titleOrApplicationNumber: DS.attr(),
   commonwealthWaters: DS.attr(),
   region: DS.attr(),
@@ -13,7 +15,7 @@ export default DS.Model.extend({
     }
 
     if (Ember.isBlank(this.get('commonwealthWaters'))) {
-      errors['commonwealthWaters'] = 'Commonwealth waters closest to required';
+      errors['commonwealthWaters'] = 'Commonwealth waters adjacent to required';
     }
 
     if (Ember.isBlank(this.get('region'))) {

@@ -3,73 +3,64 @@ import Ember from 'ember';
 export default Ember.Controller.extend({
   items: [
     {
-      name: 'Activity Description',
-      paths: ['environment-plan.new.activity-description'],
-      validators: ['activityDescription'],
+      label: 'Before You Start',
+      path: 'environment-plan.new.before-you-start',
+      key: 'before-you-start'
     },
     {
-      name: 'Titles',
-      paths: ['environment-plan.new.titles'],
-      validators: ['titles']
+      label: 'Activity Details',
+      path: 'environment-plan.new.activity-description',
+      key: 'activity-details'
     },
     {
-      name: 'Activity Types',
-      paths: ['environment-plan.new.activity-types'],
-      validators: ['activityTypes']
+      label: 'Titles',
+      path: 'environment-plan.new.titles',
+      key: 'title-list'
     },
     {
-      name: 'Titleholder Details',
-      paths: ['environment-plan.new.titleholder-details'],
-      validators: ['titleholderDetails']
+      label: 'Activity Types',
+      path: 'environment-plan.new.activity-types',
+      key: 'activity-types'
     },
     {
-      name: 'Contact Details',
-      paths: ['environment-plan.new.submission-contact', 'environment-plan.new.liaison-contact', 'environment-plan.new.activity-contact'],
-      validators: ['submissionContact', 'liaisonContact', 'activityContact']
+      label: 'Titleholder Details',
+      path: 'environment-plan.new.titleholder-details',
+      key: 'titeholder-details'
     },
     {
-      name: 'Environment Plan',
-      paths: ['environment-plan.new.attach-environment-plan'],
-      validators: ['environmentPlan']
+      label: 'Submission Contact',
+      path: 'environment-plan.new.submission-contact',
+      key: 'submission-contact'
     },
     {
-      name: 'FA Declaration',
-      paths: ['environment-plan.new.fa-declaration'],
-      validators: ['faDeclaration']
+      label: 'Nominated Liaison',
+      path: 'environment-plan.new.liaison-contact',
+      key: 'nominated-liaison'
     },
     {
-      name: 'FA Confirmation',
-      paths: ['environment-plan.new.fa-confirmation'],
-      validators: ['faConfirmation']
+      label: 'Activity Contact',
+      path: 'environment-plan.new.activity-contact',
+      key: 'activity-contact'
     },
     {
-      name: 'Attachments',
-      paths: ['environment-plan.new.attachments'],
-      validators: ['attachments']
+      label: 'Documents',
+      path: 'environment-plan.new.attach-environment-plan',
+      key: 'documents'
     },
     {
-      name: 'Comments',
-      paths: ['environment-plan.new.comments'],
-      validators: []
+      label: 'Financial Assurance',
+      path: 'environment-plan.new.fa-declaration',
+      key: 'financial-assurance'
     },
     {
-      name: 'Additional Emails',
-      paths: ['environment-plan.new.confirmation-emails'],
-      validators: []
+      label: 'Additional Info',
+      path: 'environment-plan.new.comments',
+      key: 'additional-info'
     },
     {
-      name: 'Review',
-      paths: ['environment-plan.new.submit'],
-      validators: [
-        'activityDescription',
-        'titles',
-        'activityTypes',
-        'titleholderDetails',
-        'environmentPlan',
-        'faDeclaration',
-        'faConfirmation',
-        'attachments'
-      ]
+      label: 'Review',
+      path: 'environment-plan.new.submit',
+      key: 'review'
     }
   ]
 });

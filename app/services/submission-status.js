@@ -1,16 +1,16 @@
 import Ember from 'ember';
 
 export default Ember.Service.extend({
-  leaving(name, errors) {
-    this.set(name, errors);
+  leaving(name, hasErrors) {
+    this.set(name, hasErrors);
   },
-  isComplete(name) {
+  visited(name) {
     const value = this.get(name);
-    return Ember.isArray(this.get(name));
+    return Ember.isPresent(value);
   },
   hasErrors(name) {
-    const errors = this.get(name);
-    return Ember.isArray(errors) && !Ember.isEmpty(errors);
+    const hasErrors = this.get(name);
+    return Ember.isPresent(hasErrors) && hasErrors;
   }
 });
  

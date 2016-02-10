@@ -27,8 +27,8 @@ nop-select {
   position: relative;
   margin-bottom: $base-input-margin-bottom;
 
-  label {
-    color: $nopsema-grey;
+  .errors {
+    color: $error-red;
   }
 
   .select2-container-active {

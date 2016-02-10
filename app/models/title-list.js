@@ -1,6 +1,8 @@
 import DS from 'ember-data';
+import Ember from 'ember';
+import Errors from '../mixins/errors';
 
-export default DS.Model.extend({
+export default DS.Model.extend(Errors, {
   visited: DS.attr(),
   titles: DS.hasMany('title', {async: false, embedded: 'always'}),
   errors: Ember.computed('titles.@each.errors', function() {
