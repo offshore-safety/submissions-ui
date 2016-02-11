@@ -1,9 +1,7 @@
 {{#if readonly}}
   {{#each titles.titles as |title index|}}
-    {{nop-title title=title readonly=readonly errors=errors}}
+    {{nop-title title=title readonly=readonly}}
   {{/each}}
-
-  <!-- {{nop-errors errors=errors}} -->
 {{else}}
   {{#each titles.titles as |title index|}}
     <section>
@@ -12,5 +10,7 @@
     </section>
   {{/each}}
 
-  {{nop-add-another action='addTitle' text='Add another Title' class='add-another-title'}}
+  {{nop-add-another action='addTitle'
+                    text='Add another Title'
+                    class='add-another-title'}}
 {{/if}}
