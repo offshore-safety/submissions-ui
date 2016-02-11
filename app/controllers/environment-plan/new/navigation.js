@@ -18,11 +18,6 @@ export default Ember.Controller.extend({
       key: 'title-list'
     },
     {
-      label: 'Activity Types',
-      path: 'environment-plan.new.activity-types',
-      key: 'activity-types'
-    },
-    {
       label: 'Titleholder Details',
       path: 'environment-plan.new.titleholder-details',
       key: 'titeholder-details'
