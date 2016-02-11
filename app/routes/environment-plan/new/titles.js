@@ -13,19 +13,28 @@ export default Ember.Route.extend(ResetScroll,{
 
     return promise;
   },
+  _saveCurrentModel() {
+    const titleList = this.get('currentModel');
+    titleList.save();
+    titleList.get('titles').forEach(function(title) {
+      title.save();
+    });
+  },
+  _raiseErrors(transition) {
+    if (this.get('currentModel').get('hasErrors')) {
+      if (!confirm('There are errors on this page, do you want to come back to them later?')) {
+        transition.abort();
+      }
+    }
+  },
+  _notifyListeners() {
+    this.get('submissionStatus').leaving('title-list', this.get('currentModel').get('hasErrors'));
+  },
   actions: {
     willTransition(transition) {
-      const titleList = this.get('currentModel');
-      titleList.save();
-      titleList.get('titles').forEach(function(title) {
-        title.save();
-      });
-      if (titleList.get('hasErrors')) {
-        if (!confirm('There are errors on this page, do you want to come back to them later?')) {
-          transition.abort();
-        }
-      }
-      this.get('submissionStatus').leaving('title-list', titleList.get('hasErrors'));
+      this._saveCurrentModel();
+      this._raiseErrors(transition);
+      this._notifyListeners();
     },
     addTitle() {
       const titleList = this.get('currentModel');
