@@ -1,9 +1,31 @@
 {{#if readonly}}
-  {{nop-text-field class='title-number' label='Title or Application number' value=title.titleOrApplicationNumber}}
-  {{nop-text-field class='title-commonwealth-waters' label='Commonwealth waters adjacent to' value=title.commonwealthWaters}}
-  {{nop-text-field class='title-region' label='Region' value=title.region}}
+  {{nop-text-field class='title-number'
+                   label='Title or Application number'
+                   value=title.titleOrApplicationNumber}}
+  {{nop-text-field class='title-commonwealth-waters'
+                   label='Commonwealth waters adjacent to'
+                   value=title.commonwealthWaters}}
+  {{nop-text-field class='title-region'
+                   label='Region'
+                   value=title.region}}
 {{else}}
-  {{nop-input label='Title number (or application number)' name='title-or-application-number' required=true value=title.titleOrApplicationNumber errors=title.errors errorKey='titleOrApplicationNumber'}}
-  {{nop-select label='Commonwealth waters adjacent to' name='title-commonwealth-waters' content=commonwealthWaters required=true value=title.commonwealthWaters optionValuePath='text' errors=title.errors errorKey='commonwealthWaters'}}
-  {{nop-select label='Region' name='title-region' content=regions required=true value=title.region optionValuePath='text' errors=title.errors errorKey='region'}}
+  {{nop-input label='Title number (or application number)'
+              required=true
+              value=title.titleOrApplicationNumber
+              errors=title.errors
+              errorKey='titleOrApplicationNumber'}}
+  {{nop-select label='Commonwealth waters adjacent to'
+               content=commonwealthWaters
+               required=true
+               value=title.commonwealthWaters
+               optionValuePath='text'
+               errors=title.errors
+               errorKey='commonwealthWaters'}}
+  {{nop-select label='Region'
+               content=regions
+               required=true
+               value=title.region
+               optionValuePath='text'
+               errors=title.errors
+               errorKey='region'}}
 {{/if}}
