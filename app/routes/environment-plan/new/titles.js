@@ -5,9 +5,14 @@ export default Ember.Route.extend(ResetScroll,{
   submissionStatus: Ember.inject.service(),
   model() {
     const store = this.store;
+    const self = this;
     const promise = new Ember.RSVP.Promise(function(resolve) {
       const recordFound = (existing) => resolve(existing);
-      const recordNotFound = () => resolve(store.createRecord('title-list', {}));
+      const recordNotFound = function() {
+        const titleList = store.createRecord('title-list', {id: 'ltdm0'});
+        self._addTitleTo(titleList);
+        resolve(titleList);
+      };
       store.findRecord('title-list', 'ltdm0').then(recordFound, recordNotFound);
     });
 
@@ -30,6 +35,14 @@ export default Ember.Route.extend(ResetScroll,{
   _notifyListeners() {
     this.get('submissionStatus').leaving('title-list', this.get('currentModel').get('hasErrors'));
   },
+  _addTitleTo(titleList) {
+    const newTitle = this.store.createRecord('title', {
+      titleList
+    });
+    newTitle.save();
+    titleList.get('titles').pushObject(newTitle);
+    titleList.save();
+  },
   actions: {
     willTransition(transition) {
       this._saveCurrentModel();
@@ -38,12 +51,7 @@ export default Ember.Route.extend(ResetScroll,{
     },
     addTitle() {
       const titleList = this.get('currentModel');
-      const newTitle = this.store.createRecord('title', {
-        titleList
-      });
-      newTitle.save();
-      titleList.get('titles').pushObject(newTitle);
-      titleList.save();
+      this._addTitleTo(titleList);
     }
   }
 });
