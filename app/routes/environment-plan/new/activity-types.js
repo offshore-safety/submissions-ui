@@ -5,7 +5,6 @@ export default Ember.Route.extend(ResetScroll,{
   submissionStatus: Ember.inject.service(),
   model() {
     const store = this.store;
-    const self = this;
     const promise = new Ember.RSVP.Promise(function(resolve) {
       const recordFound = (existing) => resolve(existing);
       const recordNotFound = function() {
