@@ -5,15 +5,15 @@ import Errors from '../mixins/errors';
 export default DS.Model.extend(Errors, {
   name: DS.attr(),
   description: DS.attr(),
-  locationMap: DS.belongsTo('document'),
+  locationMap: DS.belongsTo('document', {async: false}),
   activityType: DS.attr(),
   hasOffshoreProject: DS.attr(),
   hasOPP: DS.attr(),
   oppDocumentReference: DS.attr(),
   hasMinisterDecision: DS.attr(),
   epbcReferenceNumber: DS.attr(),
-  activityTypes: DS.hasMany('activity-type'),
-  errors: Ember.computed('name', 'description', 'locationMap.token', 'hasOffshoreProject', 'hasOPP',
+  activityTypes: DS.hasMany('activity-type', {async: false}),
+  errors: Ember.computed('name', 'description', 'locationMap.token', 'hasOffshoreProject', 'hasOPP', 'locationMap.errors',
                          'oppDocumentReference', 'hasMinisterDecision', 'epbcReferenceNumber', 'activityTypes.@each.errors', function() {
     const errors = {};
 
@@ -21,8 +21,8 @@ export default DS.Model.extend(Errors, {
       errors['name'] = 'The activity name must be specified';
     }
 
-    if (Ember.isBlank(this.get('description'))) {
-      errors['description'] = 'The activity description must be specified';
+    if (Ember.isBlank(this.get('description')) || this.get('description').split(' ').length < 100) {
+      errors['description'] = 'The activity description must be specified and more than 100 words';
     }
 
     if (Ember.isBlank(this.get('locationMap').get('token'))) {

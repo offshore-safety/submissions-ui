@@ -20,15 +20,15 @@ export default DS.Model.extend(Errors, {
     }
 
     if (Ember.isBlank(this.get('state'))) {
-      errors['state'] = 'State is required';
+      errors['state'] = 'State required';
     }
 
     if (Ember.isBlank(this.get('postcode'))) {
-      errors['postcode'] = 'Postcode is required';
+      errors['postcode'] = 'Postcode required';
     }
 
     if (Ember.isBlank(this.get('country'))) {
-      errors['country'] = 'Country is required';
+      errors['country'] = 'Country required';
     }
 
     return errors;

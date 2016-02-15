@@ -1,48 +1,65 @@
 {{#if readonly}}
   <div>
-    {{nop-text-field class='activity-name' label='Name' value=submission.name}}
-    {{nop-text-field class='regulation-type' label='Regulation Type' value=(regulation-type-from-id submission.regulationType)}}
+    {{nop-text-field class='activity-name' label='Name' value=activityDetails.name}}
+    {{nop-text-field class='regulation-type' label='Regulation Type' value=(regulation-type-from-id activityDetails.regulationType)}}
   </div>
-  {{nop-text-field label='Description' value=submission.description}}
-  {{#if submission.hasOffshoreProject}}
+  {{nop-text-field label='Description' value=activityDetails.description}}
+  {{#if activityDetails.hasOffshoreProject}}
     <div>
-      {{nop-text-field class='has-opp' label='Accepted Offshort Project Proposal (OPP)?' value=(boolean-to-yes-no submission.hasOPP)}}
-      {{nop-text-field class='has-minister-decision' label='Environment Minister Decision?' value=(boolean-to-yes-no submission.hasEnvironmentMinisterDecision)}}
+      {{nop-text-field class='has-opp' label='Accepted Offshort Project Proposal (OPP)?' value=(boolean-to-yes-no activityDetails.hasOPP)}}
+      {{nop-text-field class='has-minister-decision' label='Environment Minister Decision?' value=(boolean-to-yes-no activityDetails.hasEnvironmentMinisterDecision)}}
     </div>
     {{#if showReferenceNumber}}
-      {{nop-text-field label='OPP Document Reference or EPBC reference number' value=submission.OPPOrEPBCReferenceNumber}}
+      {{nop-text-field label='OPP Document Reference or EPBC reference number' value=activityDetails.OPPOrEPBCReferenceNumber}}
     {{/if}}
   {{/if}}
 
   {{nop-errors errors=errors}}
 {{else}}
-  {{nop-input class='activity-name' label='Activity Name' name='activity-name' required=true value=submission.name}}
+  {{nop-input class='activity-name'
+              label='Activity Name'
+              required=true
+              value=activityDetails.name
+              errors=activityDetails.errors
+              errorKey='name'}}
   {{nop-textarea class='activity-description' label='Activity Description'
                                               name='activity-description'
-                                              value=submission.description
+                                              value=activityDetails.description
                                               required=true
                                               rows=10
-                                              hint='Describe the activity in 200 to 500 words. This information will be published on the NOPSEMA website'}}
-  {{nop-attach-image label='Location of Activity' hint='Attach location map' document=locationMap}}
-  {{nop-radio-group class='activity-regulation-type' label='What type of activity is this?'
-                                                     value=submission.regulationType
+                                              hint='Describe the activity in 200 to 500 words. This information will be published on the NOPSEMA website'
+                                              errors=activityDetails.errors
+                                              errorKey='description'}}
+  {{nop-attach-image label='Location of Activity' hint='Attach location map' document=activityDetails.locationMap}}
+
+  {{nop-section-header title='Activity Types'}}
+  {{nop-radio-group class='activity-regulation-type' label='Is this a petroleum or greenhouse gas activity?'
+                                                     value=activityDetails.regulationType
                                                      required=true
                                                      options=regulationTypes}}
+  {{nop-activity-types activityTypes=activityDetails.activityTypes regulationType=activityDetails.regulationType}}
+
+  {{nop-section-header title='Offshore Project'}}
   {{nop-radio-group class='offshore-project' label='Is any part of the activity an offshore project?'
-                                             value=submission.hasOffshoreProject
+                                             value=activityDetails.hasOffshoreProject
                                              options=trueOrFalse}}
-  {{nop-info-box title='What is an Offshore Project?' info='An Offshore Project means undertaking activities defined in regulation 4 of OPPX'}}
-  {{#if submission.hasOffshoreProject}}
+  {{#if activityDetails.hasOffshoreProject}}
     {{nop-radio-group class='opp' label='Is there an accepted Offshore Project Proposal (OPP)?'
                                                  hint='(As accepted under regulation 5D)'
-                                                 value=submission.hasOPP
+                                                 value=activityDetails.hasOPP
                                                  options=trueOrFalse}}
-    {{nop-radio-group class='environment-minister-decision' label='Is there a decision by the Environment Minister for the activity?'
-                                                 hint='As per sub-regulations 9(3) and 17(3)'
-                                                 value=submission.hasEnvironmentMinisterDecision
-                                                 options=trueOrFalse}}
-  {{/if}}
-  {{#if showReferenceNumber}}
-    {{nop-input class='reference-number' label='Please provide OPP document reference or EPBC reference number' name='reference-number' value=submission.OPPOrEPBCReferenceNumber}}
+    {{#if showOPPReference}}
+      {{nop-input class='reference-number' label='Please provide OPP document reference' value=activityDetails.oppDocumentReference}}
+    {{/if}}
+
+    {{#if showMinisterQuestion}}
+      {{nop-radio-group class='environment-minister-decision' label='Is there a decision by the Environment Minister for the activity?'
+                                           hint='As per sub-regulations 9(3) and 17(3)'
+                                           value=activityDetails.hasMinisterDecision
+                                           options=trueOrFalse}}
+      {{#if showEPBCReference}}
+        {{nop-input class='reference-number' label='Please provide the EPBC reference number' value=activityDetails.epbcReferenceNumber}}
+      {{/if}}
+    {{/if}}
   {{/if}}
 {{/if}}
