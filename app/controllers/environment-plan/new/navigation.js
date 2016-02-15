@@ -39,17 +39,17 @@ export default Ember.Controller.extend({
     },
     {
       label: 'Documents',
-      path: 'environment-plan.new.attach-environment-plan',
+      path: 'environment-plan.new.documents',
       key: 'documents'
     },
     {
       label: 'Financial Assurance',
-      path: 'environment-plan.new.fa-declaration',
+      path: 'environment-plan.new.financial-assurance',
       key: 'financial-assurance'
     },
     {
       label: 'Additional Info',
-      path: 'environment-plan.new.comments',
+      path: 'environment-plan.new.additional-info',
       key: 'additional-info'
     },
     {

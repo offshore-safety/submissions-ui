@@ -12,20 +12,16 @@ Router.map(function() {
     this.route('new', function() {
       this.route('before-you-start');
       this.route('activity-description');
+      this.route('titles');
+      this.route('titleholder-details');
       this.route('submission-contact');
       this.route('activity-contact');
+      this.route('liaison-contact');
+      this.route('documents');
+      this.route('financial-assurance');
+      this.route('additional-info');
       this.route('submit');
       this.route('confirmation');
-      this.route('liaison-contact');
-      this.route('comments');
-      this.route('titleholder-details');
-      this.route('attach-environment-plan');
-      this.route('titles');
-      this.route('attachments');
-      this.route('fa-declaration');
-      this.route('fa-confirmation');
-      this.route('activity-types');
-      this.route('confirmation-emails');
     });
   });
 
