@@ -9,7 +9,7 @@ const collectLeaves = function(node) {
       return collectLeaves(nodeValue);
     }
   }));
-}
+};
 
 export default Ember.Mixin.create({
   errorMessages: Ember.computed('errors', function() {

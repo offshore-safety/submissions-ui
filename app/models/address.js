@@ -9,7 +9,7 @@ export default DS.Model.extend(Errors, {
   postcode: DS.attr(),
   country: DS.attr({defaultValue: 'AU'}),
   errors: Ember.computed('street', 'locality', 'state', 'postcode', 'country',function() {
-    const errors = {}
+    const errors = {};
 
     if (Ember.isBlank(this.get('street'))) {
       errors['street'] = 'Address is required';

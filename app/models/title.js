@@ -8,7 +8,7 @@ export default DS.Model.extend(Errors, {
   region: DS.attr(),
   titleList: DS.belongsTo('title-list', {async: false, embedded: 'always'}),
   errors: Ember.computed('titleOrApplicationNumber', 'commonwealthWaters', 'region', function() {
-    const errors = {}
+    const errors = {};
 
     if (Ember.isBlank(this.get('titleOrApplicationNumber'))) {
       errors['titleOrApplicationNumber'] = 'Title or application number required';
