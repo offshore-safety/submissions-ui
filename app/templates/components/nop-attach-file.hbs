@@ -1,3 +1,6 @@
-{{nop-uploader token=document.token name=document.name}}
+{{#if showRemove}}
+  {{nop-remove action='remove'}}
+{{/if}}
 
+{{nop-uploader token=document.token name=document.name}}
 {{nop-input label='Name of this document' value=document.name}}

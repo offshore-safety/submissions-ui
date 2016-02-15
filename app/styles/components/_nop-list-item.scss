@@ -1,0 +1,45 @@
+nop-list-item {
+  @include span-columns(12);
+
+  @include media($desktop) {
+    @include span-columns(10);
+  }
+
+  position: relative;
+
+  padding-top: 15px;
+  padding-right: 10px;
+  padding-left: 50px;
+
+  margin: 5px;
+  border: 1px solid $extra-light-grey;
+
+  nop-attach-file, nop-title, nop-activity-type, .repeating {
+    @include span-columns(12);
+
+    .file-picker {
+      @include media($desktop) {
+        @include span-columns(12);
+      }
+    }
+
+    @include media($desktop) {
+      nop-input {
+        @include span-columns(12);
+      }
+    }
+  }
+
+  @include media($desktop) {
+    nop-activity-type {
+      nop-select {
+        @include span-columns(12);
+      }
+    }
+    nop-title {
+      nop-select {
+        @include span-columns(6);
+      }
+    }
+  }
+}

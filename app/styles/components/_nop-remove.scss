@@ -1,0 +1,22 @@
+nop-remove {
+  margin: 0px;
+
+  div {
+    height: 100%;
+    vertical-align: middle;
+    line-height: normal;
+    color: $nopsema-grey;
+    text-align: center;
+
+    .fa {
+      font-size: 25px;
+    }
+
+    i {
+      position: absolute;
+      top: 50%;
+      left: 25px;
+      transform: translate(-50%, -50%);
+    }
+  }
+}

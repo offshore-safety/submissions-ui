@@ -1,10 +1,10 @@
 import Ember from 'ember';
 
 export default Ember.Component.extend({
-  tagName: 'nop-activity-type',
+  tagName: 'nop-remove',
   actions: {
-    remove() {
-      console.log("remove activity type");
+    click: function() {
+      this.sendAction();
     }
   }
 });

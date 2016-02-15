@@ -26,5 +26,10 @@ export default Ember.Component.extend({
     {id: 6, text: 'Tasmania'},
     {id: 7, text: 'Victoria'},
     {id: 8, text: 'Western Australia'},
-  ]
+  ],
+  actions: {
+    remove() {
+      console.log('remove title');
+    }
+  }
 });

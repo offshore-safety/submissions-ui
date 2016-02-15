@@ -26,5 +26,8 @@ export default Ember.Component.extend(ComponentValidation, {
     addActivityType() {
       this.get('submission').activityTypes.pushObject({});
     }
-  }
+  },
+  multipleActivityTypes: Ember.computed('submission.activityTypes.length', function() {
+    return this.get('submission').activityTypes.length > 1;
+  })
 });

@@ -14,12 +14,14 @@
   The following people will receive confirmation emails upon submission:
   <ul class="bullets">
     {{#each uniqueEmailMessages as |email|}}
-      <li>{{email}}</li>
+        <li>{{email}}</li>
     {{/each}}
   </ul>
   <section>
     {{#each submission.otherConfirmationEmails as |other|}}
-      {{nop-input label='Additional email address' name='other-confirmation-email' type='email' value=other.email}}
+      {{#nop-list-item}}
+        {{nop-confirmation-email email=other.email showRemove=true}}
+      {{/nop-list-item}}
     {{/each}}
   </section>
   {{nop-add-another action='addConfirmationEmail' text='Would you like to add additional email addresses?' class='add-another-confirmation-email'}}

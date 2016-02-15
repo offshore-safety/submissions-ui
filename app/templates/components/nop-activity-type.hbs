@@ -1,3 +1,6 @@
+{{#if showRemove}}
+  {{nop-remove action='remove'}}
+{{/if}}
 {{nop-select label='Choose an Activity Type' name='activity-type'
                                     content=activityTypeOptions
                                     value=activityType.type

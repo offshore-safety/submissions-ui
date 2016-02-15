@@ -1,10 +1,10 @@
 import Ember from 'ember';
 
 export default Ember.Component.extend({
-  tagName: 'nop-activity-type',
+  tagName: 'nop-confirmation-email',
   actions: {
     remove() {
-      console.log("remove activity type");
+      console.log('remove confirmation email');
     }
   }
 });
