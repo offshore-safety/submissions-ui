@@ -27,6 +27,10 @@ nop-select {
   position: relative;
   margin-bottom: $base-input-margin-bottom;
 
+  label {
+    color: $nopsema-grey;
+  }
+
   .select2-container-active {
     ~ .highlight {
       transform: scaleX(1);
