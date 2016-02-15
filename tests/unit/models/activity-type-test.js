@@ -1,8 +1,8 @@
 import { moduleForModel, test } from 'ember-qunit';
 
-moduleForModel('title', 'Unit | Model | title', {
+moduleForModel('activity-type', 'Unit | Model | activity type', {
   // Specify the other units that are required for this test.
-  needs: ['model:title-list']
+  needs: []
 });
 
 test('it exists', function(assert) {

@@ -2,7 +2,7 @@ import { moduleForModel, test } from 'ember-qunit';
 
 moduleForModel('titleholder-details', 'Unit | Model | titleholder details', {
   // Specify the other units that are required for this test.
-  needs: []
+  needs: ['model:address']
 });
 
 test('it exists', function(assert) {

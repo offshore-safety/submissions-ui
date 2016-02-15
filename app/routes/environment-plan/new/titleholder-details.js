@@ -28,7 +28,6 @@ export default Ember.Route.extend(ResetScroll, {
     titleholderDetails.get('businessAddress').save();
     titleholderDetails.get('postalAddress').save();
     titleholderDetails.save();
-    debugger;
   },
   _raiseErrors(transition) {
     if (this.get('currentModel').get('hasErrors')) {
