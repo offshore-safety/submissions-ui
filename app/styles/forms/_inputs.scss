@@ -14,12 +14,6 @@ input, textarea {
   }
 }
 
-.errors {
-  input, textarea {
-    background-color: $error-mask;
-  }
-}
-
 nop-input, nop-textarea {
   @include span-columns(12);
 }
@@ -79,6 +73,22 @@ nop-input, nop-textarea {
 
   input {
     height: $base-input-height;
+  }
+
+  $error-offset: 23px;
+
+  &.errors {
+    textarea {
+      ~ .highlight {
+        bottom: 6px + $error-offset;
+      }
+    }
+
+    input {
+      ~ .highlight {
+        bottom: $error-offset;
+      }
+    }
   }
 
   textarea {
