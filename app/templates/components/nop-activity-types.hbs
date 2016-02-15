@@ -11,21 +11,17 @@
   </ul>
   {{nop-errors errors=errors}}
 {{else}}
-  {{#if hasRegulationType}}
+  {{#if regulationType}}
+    {{nop-section-header title='What is the nature of the activity?'}}
     {{#if petroleumActivity}}
-      {{#each submission.activityTypes as |activityType|}}
+      {{#each activityTypes as |activityType|}}
         {{nop-activity-type activityTypeOptions=petroleumActivityTypeOptions activityType=activityType}}
       {{/each}}
     {{else if greenhouseGasActivity}}
-      {{#each submission.activityTypes as |activityType|}}
+      {{#each activityTypes as |activityType|}}
         {{nop-activity-type activityTypeOptions=greenhouseGasActivityTypeOptions activityType=activityType}}
       {{/each}}
     {{/if}}
     {{nop-add-another action='addActivityType' text='Add another Activity Type'}}
-  {{else}}
-    {{nop-radio-group class='activity-regulation-type' label='What type of activity is this?'
-                                                       value=submission.regulationType
-                                                       required=true
-                                                       options=regulationTypes}}
   {{/if}}
 {{/if}}
