@@ -97,6 +97,7 @@ export default Ember.Route.extend({
       const recordNotFound = function() {
         console.log(`No record found for ID '${params.submissionId}'`);
         const newEnvironmentPlan = store.createRecord('environment-plan', {
+          id: params.submissionId,
           activityDetails: self._activityDetails(),
           titles: self._titles(),
           titleholderDetails: self._titleholderDetails(),
@@ -106,7 +107,6 @@ export default Ember.Route.extend({
           documents: self._documents(),
           financialAssurance: self._financialAssurance()
         });
-        newEnvironmentPlan.set('id', params.submissionId);
         newEnvironmentPlan.save();
         resolve(newEnvironmentPlan);
       };
