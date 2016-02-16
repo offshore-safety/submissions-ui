@@ -4,7 +4,7 @@
     {{#each uniqueEmailMessages as |email|}}
       <li>{{email}}</li>
     {{/each}}
-    {{#each submission.otherConfirmationEmails as |other|}}
+    {{#each additionalInfo.otherConfirmationEmails as |other|}}
       <li>{{other.email}}</li>
     {{/each}}
   </ul>
@@ -17,8 +17,9 @@
         <li>{{email}}</li>
     {{/each}}
   </ul>
+  <div class='hint'>Provide email addresses of others who need to receive confirmation of this submission</div>
   <section>
-    {{#each submission.otherConfirmationEmails as |other|}}
+    {{#each additionalInfo.otherConfirmationEmails as |other|}}
       {{#nop-list-item}}
         {{nop-confirmation-email email=other.email showRemove=true}}
       {{/nop-list-item}}
