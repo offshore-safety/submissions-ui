@@ -63,6 +63,16 @@ export default Ember.Route.extend({
 
     return contact;
   },
+  _documents() {
+    const store = this.store;
+    const environmentPlanDocuments = store.createRecord('environment-plan-documents', {id: 'ltdm0'});
+    const document = store.createRecord('document', {});
+    document.save();
+    environmentPlanDocuments.set('environmentPlan', document);
+    environmentPlanDocuments.save();
+
+    return environmentPlanDocuments;
+  },
   model(params) {
     const store = this.store;
     const self = this;
@@ -80,6 +90,7 @@ export default Ember.Route.extend({
           submissionContact: self._submissionContact(),
           liaisonContact: self._liaisonContact(),
           activityContact: self._activityContact(),
+          documents: self._documents()
         });
         newEnvironmentPlan.set('id', params.submissionId);
         newEnvironmentPlan.save();

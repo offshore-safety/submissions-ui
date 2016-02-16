@@ -6,25 +6,11 @@ export default Ember.Route.extend(ResetScroll,{
   beforeModel() {
     this.get('submissionStatus').visiting(this.get('routeName'));
   },
-  model() {
-    const store = this.store;
-    const promise = new Ember.RSVP.Promise(function(resolve) {
-      const recordFound = (existing) => resolve(existing);
-      const recordNotFound = function() {
-        const environmentPlanDocuments = store.createRecord('environment-plan-documents', {id: 'ltdm0'});
-        const document = store.createRecord('document', {});
-        document.save();
-        environmentPlanDocuments.set('environmentPlan', document);
-        environmentPlanDocuments.save();
-        resolve(environmentPlanDocuments);
-      };
-      store.findRecord('environment-plan-documents', 'ltdm0').then(recordFound, recordNotFound);
-    });
-
-    return promise;
+  _pageModel() {
+    return this.get('currentModel').get('documents');
   },
   _saveCurrentModel() {
-    const environmentPlanDocuments = this.get('currentModel');
+    const environmentPlanDocuments = this._pageModel();
     environmentPlanDocuments.save();
     environmentPlanDocuments.get('environmentPlan').save();
     environmentPlanDocuments.get('attachments').forEach(function(attachment) {
@@ -32,14 +18,14 @@ export default Ember.Route.extend(ResetScroll,{
     });
   },
   _raiseErrors(transition) {
-    if (this.get('currentModel').get('hasErrors')) {
+    if (this._pageModel().get('hasErrors')) {
       if (!confirm('There are errors on this page, do you want to come back to them later?')) {
         transition.abort();
       }
     }
   },
   _notifyListeners() {
-    this.get('submissionStatus').leaving('documents', this.get('currentModel').get('hasErrors'));
+    this.get('submissionStatus').leaving('documents', this._pageModel().get('hasErrors'));
   },
   actions: {
     willTransition(transition) {
