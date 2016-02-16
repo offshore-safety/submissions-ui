@@ -5,11 +5,14 @@ nop-remove {
     height: 100%;
     vertical-align: middle;
     line-height: normal;
-    color: $nopsema-grey;
     text-align: center;
 
     .fa {
       font-size: 25px;
+    }
+
+    a {
+      color: $nopsema-grey;
     }
 
     i {

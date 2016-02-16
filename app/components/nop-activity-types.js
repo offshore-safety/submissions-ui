@@ -26,7 +26,7 @@ export default Ember.Component.extend({
       this._addActivityType();
     }
   },
-  multipleActivityTypes: Ember.computed('submission.activityTypes.length', function() {
-    return this.get('submission').activityTypes.length > 1;
+  multipleActivityTypes: Ember.computed('activityTypes.length', function() {
+    return this.get('activityTypes').length > 1;
   })
 });

@@ -4,10 +4,9 @@
   {{/each}}
 {{else}}
   {{#each titles.titles as |title index|}}
-    <section>
-      <h5 class='title-title'>Title {{counter index}}</h5>
-      {{nop-title title=title}}
-    </section>
+    {{#nop-list-item}}
+      {{nop-title title=title index=index showRemove=multipleTitles}}
+    {{/nop-list-item}}
   {{/each}}
 
   {{nop-add-another action='addTitle'

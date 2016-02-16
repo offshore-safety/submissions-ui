@@ -9,6 +9,11 @@
                    label='Region'
                    value=title.region}}
 {{else}}
+  {{#if showRemove}}
+    {{nop-remove action='remove'}}
+  {{/if}}
+  <h5 class='title-title'>Title {{counter index}}</h5>
+
   {{nop-input label='Title number (or application number)'
               required=true
               value=title.titleOrApplicationNumber

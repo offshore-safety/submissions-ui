@@ -15,11 +15,15 @@
     {{nop-section-header title='What is the purpose of the activity?'}}
     {{#if petroleumActivity}}
       {{#each activityTypes as |activityType|}}
-        {{nop-activity-type activityTypeOptions=petroleumActivityTypeOptions activityType=activityType}}
+        {{#nop-list-item}}
+          {{nop-activity-type activityTypeOptions=petroleumActivityTypeOptions activityType=activityType showRemove=multipleActivityTypes}}
+        {{/nop-list-item}}
       {{/each}}
     {{else if greenhouseGasActivity}}
       {{#each activityTypes as |activityType|}}
-        {{nop-activity-type activityTypeOptions=greenhouseGasActivityTypeOptions activityType=activityType}}
+        {{#nop-list-item}}
+          {{nop-activity-type activityTypeOptions=greenhouseGasActivityTypeOptions activityType=activityType showRemove=multipleActivityTypes}}
+        {{/nop-list-item}}
       {{/each}}
     {{/if}}
     {{nop-add-another action='addActivityType' text='Add another Activity Type'}}
