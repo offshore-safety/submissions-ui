@@ -33,6 +33,36 @@ export default Ember.Route.extend({
     titleholderDetails.save();
     return titleholderDetails;
   },
+  _submissionContact() {
+    const store = this.store;
+    const contact = store.createRecord('submission-contact');
+    const postalAddress = store.createRecord('address');
+    contact.set('postalAddress', postalAddress);
+    postalAddress.save();
+    contact.save();
+
+    return contact;
+  },
+  _liaisonContact() {
+    const store = this.store;
+    const contact = store.createRecord('liaison-contact');
+    const postalAddress = store.createRecord('address');
+    contact.set('postalAddress', postalAddress);
+    postalAddress.save();
+    contact.save();
+
+    return contact;
+  },
+  _activityContact() {
+    const store = this.store;
+    const contact = store.createRecord('activity-contact');
+    const postalAddress = store.createRecord('address');
+    contact.set('postalAddress', postalAddress);
+    postalAddress.save();
+    contact.save();
+
+    return contact;
+  },
   model(params) {
     const store = this.store;
     const self = this;
@@ -46,7 +76,10 @@ export default Ember.Route.extend({
         const newEnvironmentPlan = store.createRecord('environment-plan', {
           activityDetails: self._activityDetails(),
           titles: self._titles(),
-          titleholderDetails: self._titleholderDetails()
+          titleholderDetails: self._titleholderDetails(),
+          submissionContact: self._submissionContact(),
+          liaisonContact: self._liaisonContact(),
+          activityContact: self._activityContact(),
         });
         newEnvironmentPlan.set('id', params.submissionId);
         newEnvironmentPlan.save();

@@ -6,37 +6,23 @@ export default Ember.Route.extend(ResetScroll, {
   beforeModel() {
     this.get('submissionStatus').visiting(this.get('routeName'));
   },
-  model() {
-    const store = this.store;
-    const promise = new Ember.RSVP.Promise(function(resolve) {
-      const recordFound = (existing) => resolve(existing);
-      const recordNotFound = () => {
-        const contact = store.createRecord('activity-contact', {id: 'ltdm0'});
-        const postalAddress = store.createRecord('address', {});
-        contact.set('postalAddress', postalAddress);
-        postalAddress.save();
-        contact.save();
-        resolve(contact);
-      };
-      store.findRecord('activity-contact', 'ltdm0').then(recordFound, recordNotFound);
-    });
-
-    return promise;
+  _pageModel() {
+    return this.get('currentModel').get('activityContact');
   },
   _saveCurrentModel() {
-    const contact = this.get('currentModel');
+    const contact = this._pageModel();
     contact.get('postalAddress').save();
     contact.save();
   },
   _raiseErrors(transition) {
-    if (this.get('currentModel').get('hasErrors')) {
+    if (this._pageModel().get('hasErrors')) {
       if (!confirm('There are errors on this page, do you want to come back to them later?')) {
         transition.abort();
       }
     }
   },
   _notifyListeners() {
-    this.get('submissionStatus').leaving('activity-contact', this.get('currentModel').get('hasErrors'));
+    this.get('submissionStatus').leaving('activity-contact', this._pageModel().get('hasErrors'));
   },
   actions: {
     willTransition(transition) {

@@ -1,6 +1,6 @@
 {{#nop-page title='Person submitting this Environment Plan'
             hint='This is the person who will be the point of contact throughout the submission of this Environment Plan'}}
-  {{nop-submission-contact contact=model}}
+  {{nop-submission-contact contact=model.submissionContact}}
   {{#nop-actions}}
     <button {{action 'goBack'}}>Back</button>
     <button class='primary' {{action 'goNext'}}>Next</button>

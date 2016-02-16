@@ -5,7 +5,6 @@ export default DS.Model.extend({
   titles: DS.belongsTo('title-list', {async: false}),
   titleholderDetails: DS.belongsTo('titleholder-details', {async: false}),
   submissionContact: DS.belongsTo('submission-contact', {async: false}),
-  submissionContact: DS.belongsTo('submission-contact', {async: false}),
   liaisonContact: DS.belongsTo('liaison-contact', {async: false}),
   activityContact: DS.belongsTo('activity-contact', {async: false}),
   documents: DS.belongsTo('environment-plan-documents', {async: false}),
