@@ -3,6 +3,9 @@ import ResetScroll from '../../../mixins/reset-scroll';
 
 export default Ember.Route.extend(ResetScroll,{
   submissionStatus: Ember.inject.service(),
+  beforeModel() {
+    this.get('submissionStatus').visiting(this.get('routeName'));
+  },
   model() {
     const store = this.store;
     const promise = new Ember.RSVP.Promise(function(resolve) {

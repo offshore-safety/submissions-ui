@@ -13,6 +13,9 @@ export default Ember.Component.extend({
   tagName: 'nop-navigation-item',
   submissionStatus: Ember.inject.service(),
   classNameBindings: ['current', 'complete', 'errors'],
+  current: Ember.computed('submissionStatus.currentRoute', function() {
+    return this.get('submissionStatus').get('currentRoute') === this.get('item').path;
+  }),
   complete: Ember.computed('visited', 'errors', function() {
     return this.get('visited') && !this.get('errors');
   })

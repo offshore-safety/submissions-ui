@@ -43,6 +43,7 @@ nop-navigation-item {
     @include shadow-depth3(transparentize(black, 0.5));
     transform: scale(1.15);
     background-color: $nopsema-orange;
+    z-index: 10;
   }
 
   &.complete {
