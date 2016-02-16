@@ -1,0 +1,11 @@
+{{#nop-page title='Financial Assurance'
+            hint='These are not required for submission but NOPSEMA cannot accept an Environment Plan without both'
+            class='financial-assurance-page'}}
+
+  {{nop-financial-assurance assurance=model}}
+
+  {{#nop-actions}}
+    <button {{action 'goBack'}}>Back</button>
+    <button class='primary' {{action 'goNext'}}>Next</button>
+  {{/nop-actions}}
+{{/nop-page}}

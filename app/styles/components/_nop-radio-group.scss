@@ -13,6 +13,11 @@ nop-radio-group {
     @include span-columns(12);
   }
 
+  .errors {
+    @include span-columns(12);
+    color: $error-red;
+  }
+
   @include media($desktop) {
     nop-radio{
       @include span-columns($main-content-columns/2);

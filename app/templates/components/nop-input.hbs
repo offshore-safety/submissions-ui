@@ -4,8 +4,8 @@
 {{input id=(concat elementId '-' name) required=required type=type value=value}}
 <label for="{{concat elementId '-' name}}">{{label}}</label>
 <span class="highlight" />
-<div class="errors">
-  {{#if errorMessage}}
+{{#if errorMessage}}
+  <div class="errors">
     {{ errorMessage }}
-  {{/if}}
-</div>
+  </div>
+{{/if}}

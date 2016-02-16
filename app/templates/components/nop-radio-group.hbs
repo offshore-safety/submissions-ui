@@ -9,3 +9,8 @@
     {{nop-radio label=option.label value=option.value checked=value name=option.name disabled=option.disabled}}
   {{/each}}
 </div>
+{{#if errorMessage}}
+  <div class="errors">
+    {{ errorMessage }}
+  </div>
+{{/if}}

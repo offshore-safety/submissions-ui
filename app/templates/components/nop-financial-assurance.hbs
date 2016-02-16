@@ -1,0 +1,30 @@
+{{nop-section-header title='Financial Assurance Declaration'}}
+{{nop-radio-group class='already-submitted'
+                  label='Have you previously submitted a Financial Assurance Declaration for these titles?'
+                  value=assurance.previousDeclaration
+                  options=trueOrFalse
+                  required=true
+                  errors=assurance.errors
+                  errorKey='previousDeclaration'}}
+{{#if noPreviousDeclaration}}
+  {{nop-radio-group class='include-fa' label='Do you want to submit a Financial Assurance Declaration with this submission?'
+                                             value=assurance.includeDeclaration
+                                             options=trueOrFalse
+                                             required=true
+                                             errors=assurance.errors
+                                             errorKey='includeDeclaration'}}
+  {{#if assurance.includeDeclaration}}
+    {{nop-attach-file document=assurance.faDeclaration}}
+  {{/if}}
+{{/if}}
+
+{{nop-section-header title='Financial Assurance Confirmation'}}
+{{nop-radio-group class='include-fa' label='Do you want to submit a Financial Assurance Confirmation with this submission?'
+                                           value=assurance.includeConfirmation
+                                           options=trueOrFalse
+                                           errors=assurance.errors
+                                           errorKey='includeConfirmation'}}
+
+{{#if assurance.includeConfirmation}}
+  {{nop-attach-file document=assurance.faConfirmation}}
+{{/if}}
