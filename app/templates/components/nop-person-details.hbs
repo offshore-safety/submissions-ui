@@ -15,18 +15,52 @@
     {{nop-address class='person-postal' title='Postal Address' address=person.postalAddress readonly=true}}
   </div>
 {{else}}
-  {{nop-input label='Title' class='person-title' name='person-details-title' required=true value=person.title}}
-  {{nop-input label='First Name' class='person-first-name' name='person-details-first-name' required=true value=person.firstName}}
-  {{nop-input label='Last Name' class='person-last-name' name='person-details-last-name' required=true value=person.lastName}}
+  {{nop-input label='Title'
+              class='person-title'
+              name='person-details-title'
+              required=true
+              value=person.title
+              errors=person.errors
+              errorKey='title'}}
+  {{nop-input label='First Name'
+              class='person-first-name'
+              name='person-details-first-name'
+              required=true
+              value=person.firstName
+              errors=person.errors
+              errorKey='firstName'}}
+  {{nop-input label='Last Name'
+              class='person-last-name'
+              name='person-details-last-name'
+              required=true
+              value=person.lastName
+              errors=person.errors
+              errorKey='lastName'}}
   {{nop-input label='Position' name='person-details-position' value=person.position}}
   {{nop-input label='Employer' name='person-details-employer' value=person.employer hint='Assumed the same as the Titleholder if not supplied'}}
   <section>
     {{nop-section-header title='Phone Numbers' hint='At least one phone number is required' required=true}}
     <div>
-      {{nop-input label='Phone' name='person-details-phone' value=person.phone class='phone-number'}}
-      {{nop-input label='Mobile' name='person-details-mobile' value=person.mobile class='phone-number'}}
+      {{nop-input label='Phone'
+                  name='person-details-phone'
+                  value=person.phone
+                  class='phone-number'
+                  errors=person.errors
+                  errorKey='phoneNumber'}}
+      {{nop-input label='Mobile'
+                  name='person-details-mobile'
+                  value=person.mobile
+                  class='phone-number'
+                  errors=person.errors
+                  errorKey='phoneNumber'}}
     </div>
   </section>
-  {{nop-input label='Email Address' name='person-details-email' type='email' value=person.email required=true}}
+  {{nop-input label='Email Address'
+              name='person-details-email'
+              type='email'
+              value=person.email
+              required=true
+              errors=person.errors
+              errorKey='email'}}
   {{nop-address title='Postal Address' hint='Required if different from Titleholder' address=person.postalAddress allowPOBox=true}}
 {{/if}}
