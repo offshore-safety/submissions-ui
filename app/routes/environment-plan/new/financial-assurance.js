@@ -6,41 +6,24 @@ export default Ember.Route.extend(ResetScroll, {
   beforeModel() {
     this.get('submissionStatus').visiting(this.get('routeName'));
   },
-  model() {
-    const store = this.store;
-    const promise = new Ember.RSVP.Promise(function(resolve) {
-      const recordFound = (existing) => resolve(existing);
-      const recordNotFound = () => {
-        const financialAssurance = store.createRecord('financial-assurance', {id: 'ltdm0'});
-        const faDeclaration = store.createRecord('document', {});
-        financialAssurance.set('faDeclaration', faDeclaration);
-        faDeclaration.save();
-        const faConfirmation = store.createRecord('document', {});
-        financialAssurance.set('faConfirmation', faConfirmation);
-        faConfirmation.save();
-        financialAssurance.save();
-        resolve(financialAssurance);
-      };
-      store.findRecord('financial-assurance', 'ltdm0').then(recordFound, recordNotFound);
-    });
-
-    return promise;
+  _pageModel() {
+    return this.get('currentModel').get('financialAssurance');
   },
   _saveCurrentModel() {
-    const financialAssurance = this.get('currentModel');
+    const financialAssurance = this._pageModel();
     financialAssurance.get('faDeclaration').save();
     financialAssurance.get('faConfirmation').save();
     financialAssurance.save();
   },
   _raiseErrors(transition) {
-    if (this.get('currentModel').get('hasErrors')) {
+    if (this._pageModel().get('hasErrors')) {
       if (!confirm('There are errors on this page, do you want to come back to them later?')) {
         transition.abort();
       }
     }
   },
   _notifyListeners() {
-    this.get('submissionStatus').leaving('financial-assurance', this.get('currentModel').get('hasErrors'));
+    this.get('submissionStatus').leaving('financial-assurance', this._pageModel().get('hasErrors'));
   },
   actions: {
     willTransition(transition) {

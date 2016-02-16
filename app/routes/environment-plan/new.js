@@ -65,13 +65,26 @@ export default Ember.Route.extend({
   },
   _documents() {
     const store = this.store;
-    const environmentPlanDocuments = store.createRecord('environment-plan-documents', {id: 'ltdm0'});
-    const document = store.createRecord('document', {});
+    const environmentPlanDocuments = store.createRecord('environment-plan-documents');
+    const document = store.createRecord('document');
     document.save();
     environmentPlanDocuments.set('environmentPlan', document);
     environmentPlanDocuments.save();
 
     return environmentPlanDocuments;
+  },
+  _financialAssurance() {
+    const store = this.store;
+    const financialAssurance = store.createRecord('financial-assurance');
+    const faDeclaration = store.createRecord('document');
+    financialAssurance.set('faDeclaration', faDeclaration);
+    faDeclaration.save();
+    const faConfirmation = store.createRecord('document');
+    financialAssurance.set('faConfirmation', faConfirmation);
+    faConfirmation.save();
+    financialAssurance.save();
+
+    return financialAssurance;
   },
   model(params) {
     const store = this.store;
@@ -90,7 +103,8 @@ export default Ember.Route.extend({
           submissionContact: self._submissionContact(),
           liaisonContact: self._liaisonContact(),
           activityContact: self._activityContact(),
-          documents: self._documents()
+          documents: self._documents(),
+          financialAssurance: self._financialAssurance()
         });
         newEnvironmentPlan.set('id', params.submissionId);
         newEnvironmentPlan.save();
