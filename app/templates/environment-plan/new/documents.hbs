@@ -1,8 +1,8 @@
-{{#nop-page title='Environment Plan'
+{{#nop-page title='Environment Plan Documents'
             class='attach-environment-plan-page'
-            hint='Attach the Environment Plan document itself'}}
+            hint='Attach the Environment Plan and any supporting documentation'}}
 
-  {{nop-attach-environment-plan submission=model}}
+  {{nop-environment-plan-documents documents=model}}
 
   {{#nop-actions}}
     <button {{action 'goBack'}}>Back</button>

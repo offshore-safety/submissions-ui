@@ -6,6 +6,9 @@
   {{#if hint}}
     <div class='hint'>{{hint}}</div>
   {{/if}}
+  {{#if errorMessage}}
+  <div class="errors">{{errorMessage}}</div>
+  {{/if}}
   {{#if showProgress}}
   <div class='progress'>
     <div class="progress-inner {{if complete 'complete'}}" {{bind-attr style=(concat 'width:' progress '%')}}></div>

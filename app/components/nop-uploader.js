@@ -17,6 +17,11 @@ export default Ember.Component.extend({
   disabled: true,
   instruction: 'Drop file or click here to upload',
   initMessage: 'Initialising…',
+  errorMessage: Ember.computed('errors', 'errorKey', function() {
+    if (this.get('errors') && this.get('errorKey')) {
+      return this.get('errors')[this.get('errorKey')];
+    }
+  }),
   _fileValid(fileName) {
     const accept = this.get('accept');
     return accept === null || _.any(accept.split(','), function(docType) {

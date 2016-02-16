@@ -1,4 +1,4 @@
-$base-uploader-height: 80px;
+$base-uploader-height:100px;
 $progress-bar-height: 60px;
 $preview-height: 525px;
 
@@ -120,5 +120,10 @@ nop-uploader {
   .hint {
     @include span-columns(12);
     font-size: $base-font-size * 0.8;
+  }
+
+  .errors {
+    @include span-columns(12);
+    color: $error-red;
   }
 }
