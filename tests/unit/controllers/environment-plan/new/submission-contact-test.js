@@ -23,6 +23,6 @@ test('next route should be attach environment plan when both contacts same', fun
   let controller = this.subject();
   controller.set('model', {sameAsLiaison: true, sameAsActivity: true});
 
-  assert.equal(controller._nextRoute(), 'environment-plan.new.attach-environment-plan');
+  assert.equal(controller._nextRoute(), 'environment-plan.new.documents');
   assert.ok(controller);
 });

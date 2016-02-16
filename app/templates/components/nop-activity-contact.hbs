@@ -1,7 +1,5 @@
 {{#if readonly}}
-  {{nop-person-details person=submission.activityContact readonly=true}}
-
-  {{nop-errors errors=errors}}
+  {{nop-person-details person=contact readonly=true}}
 {{else}}
-  {{nop-person-details person=submission.activityContact}}
+  {{nop-person-details person=contact}}
 {{/if}}
