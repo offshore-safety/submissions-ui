@@ -30,7 +30,7 @@ export default Ember.Controller.extend({
     {
       label: 'Nominated Liaison',
       path: 'environment-plan.new.liaison-contact',
-      key: 'nominated-liaison'
+      key: 'liaison-contact'
     },
     {
       label: 'Activity Contact',

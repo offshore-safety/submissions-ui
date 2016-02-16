@@ -11,7 +11,7 @@ export default Ember.Controller.extend({
   },
   actions: {
     goNext() {
-      this.transitionToRoute('environment-plan.new.attach-environment-plan');
+      this.transitionToRoute('environment-plan.new.documents');
     },
     goBack() {
       this.transitionToRoute(this._previousRoute());
