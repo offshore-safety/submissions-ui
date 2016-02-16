@@ -12,12 +12,14 @@
 
   {{nop-errors errors=errors}}
 {{else}}
+  <ul>
   {{#each attachments as |document index|}}
-    <section class="attachment {{concat 'attachment' index}}">
+    <li class="attachment {{concat 'attachment' index}}">
       <h5>Attachment {{counter index}}</h5>
       {{nop-attach-file document=document}}
-    </section>
+    </li>
   {{/each}}
+</ul>
 
   {{nop-add-another action='addAttachment' text='Add attachment' class='add-attachment'}}
 {{/if}}

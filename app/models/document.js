@@ -12,6 +12,10 @@ export default DS.Model.extend(Errors, {
       errors['name'] = 'The document name must be specified';
     }
 
+    if (Ember.isBlank(this.get('token'))) {
+      errors['token'] = 'You must upload a file';
+    }
+
     return errors;
   })
 });

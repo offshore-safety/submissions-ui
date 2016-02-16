@@ -1,0 +1,9 @@
+nop-attachments {
+  li {
+    @include span-columns(12);
+  }
+
+  ul {
+    padding: 0;
+  }
+}

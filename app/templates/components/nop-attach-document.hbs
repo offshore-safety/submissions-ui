@@ -1,6 +1,11 @@
-{{nop-uploader hint='Please submit a Word document (.doc, .docx) or Adobe Portable Format (.pdf)'
+{{nop-uploader hint='Please submit in Adobe Portable Format (.pdf) or Word document (.doc, .docx) format'
                accept='.doc,.docx,.pdf'
                token=document.token
-               name=document.name}}
+               name=document.name
+               errors=document.errors
+               errorKey='token'}}
 
-{{nop-input label='Name of this document' value=document.name}}
+{{nop-input label='Name of this document'
+            value=document.name
+            errors=document.errors
+            errorKey='name'}}
