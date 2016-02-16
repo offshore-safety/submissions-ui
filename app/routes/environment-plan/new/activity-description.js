@@ -41,7 +41,7 @@ export default Ember.Route.extend(ResetScroll,{
   _addActivityTypeTo(activityDetails) {
     const newType = this.store.createRecord('activity-type', {});
     newType.save();
-    activityDetails.get('titles').pushObject(newType);
+    activityDetails.get('activityTypes').pushObject(newType);
     activityDetails.save();
   },
   actions: {
