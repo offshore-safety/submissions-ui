@@ -3,6 +3,11 @@ import Ember from 'ember';
 import Errors from '../mixins/errors';
 
 export default DS.Model.extend(Errors, {
+  _previousChanged: Ember.observer('previousDeclaration', function() {
+    if (this.get('previousDeclaration') === true) {
+      this.set('includeDeclaration', null);
+    }
+  }),
   previousDeclaration: DS.attr(),
   includeDeclaration: DS.attr(),
   faDeclaration: DS.belongsTo('document', {async: false}),
