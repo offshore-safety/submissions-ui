@@ -36,7 +36,12 @@
               value=person.lastName
               errors=person.errors
               errorKey='lastName'}}
-  {{nop-input label='Position' name='person-details-position' value=person.position}}
+  {{nop-input label='Position'
+              name='person-details-position'
+              value=person.position
+              required=true
+              errors=person.errors
+              errorKey='position'}}
   {{nop-input label='Employer' name='person-details-employer' value=person.employer hint='Assumed the same as the Titleholder if not supplied'}}
   <section>
     {{nop-section-header title='Phone Numbers' hint='At least one phone number is required' required=true}}
