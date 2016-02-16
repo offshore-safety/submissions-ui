@@ -1,27 +1,45 @@
 import Ember from 'ember';
 import ResetScroll from '../../../mixins/reset-scroll';
-import $ from 'jquery';
 
 export default Ember.Route.extend(ResetScroll, {
-  submissionStore: Ember.inject.service(),
-  _copyContacts: function(model) {
-    if (model) {
-      if (model.sameAsActivity) {
-        model.activityContact = $.extend(true, {}, model.submissionContact);
-      }
-      if (model.sameAsLiaison) {
-        model.liaisonContact = $.extend(true, {}, model.submissionContact);
+  submissionStatus: Ember.inject.service(),
+  model() {
+    const store = this.store;
+    const promise = new Ember.RSVP.Promise(function(resolve) {
+      const recordFound = (existing) => resolve(existing);
+      const recordNotFound = () => {
+        const contact = store.createRecord('submission-contact', {id: 'ltdm0'});
+        const postalAddress = store.createRecord('address', {});
+        contact.set('postalAddress', postalAddress);
+        postalAddress.save();
+        contact.save();
+        resolve(contact);
+      };
+      store.findRecord('submission-contact', 'ltdm0').then(recordFound, recordNotFound);
+    });
+
+    return promise;
+  },
+  _saveCurrentModel() {
+    const contact = this.get('currentModel');
+    contact.get('postalAddress').save();
+    contact.save();
+  },
+  _raiseErrors(transition) {
+    if (this.get('currentModel').get('hasErrors')) {
+      if (!confirm('There are errors on this page, do you want to come back to them later?')) {
+        transition.abort();
       }
     }
   },
-  model() {
-    return this.get('submissionStore').retrieve();
+  _notifyListeners() {
+    this.get('submissionStatus').leaving('submission-contact', this.get('currentModel').get('hasErrors'));
   },
   actions: {
-    willTransition() {
-      const model = this.get('currentModel');
-      this._copyContacts(model);
-      this.get('submissionStore').save(model);
+    willTransition(transition) {
+      this._saveCurrentModel();
+      this._raiseErrors(transition);
+      this._notifyListeners();
     }
   }
 });
