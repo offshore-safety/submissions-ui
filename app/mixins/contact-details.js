@@ -41,6 +41,11 @@ export default Ember.Mixin.create(Errors, {
       errors['email'] = 'Email address is required';
     }
 
+    const emailRegex = /.+@.+\..+/i;
+    if (Ember.isPresent(this.get('email')) && !emailRegex.test(this.get('email'))) {
+      errors['email'] = 'Please specify a valid email address';
+    }
+
     errors.postalAddress = this.get('postalAddress').get('errors');
 
     return errors;
