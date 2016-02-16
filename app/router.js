@@ -9,7 +9,7 @@ Router.map(function() {
   this.route('styleguide');
 
   this.route('environment-plan', function() {
-    this.route('new', function() {
+    this.route('new', { path: '/new/:submissionId' }, function() {
       this.route('before-you-start');
       this.route('activity-description');
       this.route('titles');

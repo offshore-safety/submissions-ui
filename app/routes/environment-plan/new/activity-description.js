@@ -6,25 +6,11 @@ export default Ember.Route.extend(ResetScroll,{
   beforeModel() {
     this.get('submissionStatus').visiting(this.get('routeName'));
   },
-  model() {
-    const store = this.store;
-    const promise = new Ember.RSVP.Promise(function(resolve) {
-      const recordFound = (existing) => resolve(existing);
-      const recordNotFound = function() {
-        const activityDetails = store.createRecord('activity-details', {id: 'ltdm0'});
-        const locationMap = store.createRecord('document', {});
-        locationMap.save();
-        activityDetails.set('locationMap', locationMap);
-        activityDetails.save();
-        resolve(activityDetails);
-      };
-      store.findRecord('activity-details', 'ltdm0').then(recordFound, recordNotFound);
-    });
-
-    return promise;
+  _pageModel() {
+    return this.get('currentModel').get('activityDetails');
   },
   _saveCurrentModel() {
-    const activityDetails = this.get('currentModel');
+    const activityDetails = this._pageModel();
     activityDetails.save();
     activityDetails.get('locationMap').save();
     activityDetails.get('activityTypes').forEach(function(activityType) {
@@ -32,14 +18,14 @@ export default Ember.Route.extend(ResetScroll,{
     });
   },
   _raiseErrors(transition) {
-    if (this.get('currentModel').get('hasErrors')) {
+    if (this._pageModel().get('hasErrors')) {
       if (!confirm('There are errors on this page, do you want to come back to them later?')) {
         transition.abort();
       }
     }
   },
   _notifyListeners() {
-    this.get('submissionStatus').leaving('activity-details', this.get('currentModel').get('hasErrors'));
+    this.get('submissionStatus').leaving('activity-details', this._pageModel().get('hasErrors'));
   },
   _addActivityTypeTo(activityDetails) {
     const newType = this.store.createRecord('activity-type', {});

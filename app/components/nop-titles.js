@@ -2,6 +2,7 @@ import Ember from 'ember';
 
 export default Ember.Component.extend({
   tagName: 'nop-titles',
+  store: Ember.inject.service(),
   classNameBindings: ['hasErrors', 'readonly'],
   readonly: false,
   multipleTitles: Ember.computed('titles.titles.length', function() {
@@ -9,7 +10,9 @@ export default Ember.Component.extend({
   }),
   actions: {
     addTitle() {
-      this.sendAction('addTitle');
+      const newTitle = this.get('store').createRecord('title');
+      newTitle.save();
+      this.get('titles').get('titles').pushObject(newTitle);
     }
   }
 });
