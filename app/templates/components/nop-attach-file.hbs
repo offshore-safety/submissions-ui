@@ -2,5 +2,12 @@
   {{nop-remove action='remove'}}
 {{/if}}
 
-{{nop-uploader token=document.token name=document.name}}
-{{nop-input label='Name of this document' value=document.name}}
+{{nop-uploader token=document.token
+               name=document.name
+               errors=document.errors
+               errorKey='token'}}
+
+{{nop-input label='Name of this document'
+            value=document.name
+            errors=document.errors
+            errorKey='name'}}
