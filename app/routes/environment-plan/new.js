@@ -2,86 +2,101 @@ import Ember from 'ember';
 
 export default Ember.Route.extend({
   submissionStore: Ember.inject.service(),
-  _activityDetails() {
+  _activityDetails(id) {
     const store = this.store;
     const locationMap = store.createRecord('document');
     locationMap.save();
     const activityDetails = store.createRecord('activity-details', {
+      id,
       locationMap
     });
     activityDetails.save();
     return activityDetails;
   },
-  _titles() {
+  _titles(id) {
     const store = this.store;
-    const titleList = store.createRecord('title-list');
+    const titleList = store.createRecord('title-list', {
+      id
+    });
     const title = store.createRecord('title');
     titleList.get('titles').pushObject(title);
     title.save();
     titleList.save();
     return titleList;
   },
-  _titleholderDetails() {
+  _titleholderDetails(id) {
     const store = this.store;
-    const titleholderDetails = store.createRecord('titleholder-details');
     const businessAddress = store.createRecord('address');
     const postalAddress = store.createRecord('address');
-    titleholderDetails.set('businessAddress', businessAddress);
-    titleholderDetails.set('postalAddress', postalAddress);
     businessAddress.save();
     postalAddress.save();
+    const titleholderDetails = store.createRecord('titleholder-details', {
+      id,
+      businessAddress,
+      postalAddress
+    });
     titleholderDetails.save();
     return titleholderDetails;
   },
-  _submissionContact() {
+  _submissionContact(id) {
     const store = this.store;
-    const contact = store.createRecord('submission-contact');
     const postalAddress = store.createRecord('address');
-    contact.set('postalAddress', postalAddress);
     postalAddress.save();
+    const contact = store.createRecord('submission-contact', {
+      id,
+      postalAddress
+    });
     contact.save();
 
     return contact;
   },
-  _liaisonContact() {
+  _liaisonContact(id) {
     const store = this.store;
-    const contact = store.createRecord('liaison-contact');
     const postalAddress = store.createRecord('address');
-    contact.set('postalAddress', postalAddress);
     postalAddress.save();
+    const contact = store.createRecord('liaison-contact', {
+      id,
+      postalAddress
+    });
     contact.save();
 
     return contact;
   },
-  _activityContact() {
+  _activityContact(id) {
     const store = this.store;
-    const contact = store.createRecord('activity-contact');
     const postalAddress = store.createRecord('address');
-    contact.set('postalAddress', postalAddress);
     postalAddress.save();
+    const contact = store.createRecord('activity-contact', {
+      id,
+      postalAddress
+    });
     contact.save();
 
     return contact;
   },
-  _documents() {
+  _documents(id) {
     const store = this.store;
-    const environmentPlanDocuments = store.createRecord('environment-plan-documents');
-    const document = store.createRecord('document');
-    document.save();
-    environmentPlanDocuments.set('environmentPlan', document);
+    const environmentPlan = store.createRecord('document');
+    environmentPlan.save();
+    const environmentPlanDocuments = store.createRecord('environment-plan-documents', {
+      id,
+      environmentPlan
+    });
     environmentPlanDocuments.save();
 
     return environmentPlanDocuments;
   },
-  _financialAssurance() {
+  _financialAssurance(id) {
     const store = this.store;
-    const financialAssurance = store.createRecord('financial-assurance');
     const faDeclaration = store.createRecord('document');
-    financialAssurance.set('faDeclaration', faDeclaration);
     faDeclaration.save();
     const faConfirmation = store.createRecord('document');
-    financialAssurance.set('faConfirmation', faConfirmation);
     faConfirmation.save();
+    const financialAssurance = store.createRecord('financial-assurance', {
+      id,
+      faDeclaration,
+      faConfirmation
+    });
     financialAssurance.save();
 
     return financialAssurance;
@@ -92,20 +107,21 @@ export default Ember.Route.extend({
     const promise = new Ember.RSVP.Promise(function(resolve) {
       const recordFound = (existing) => {
         console.log(`Found record for ID '${params.submissionId}'`);
+        debugger;
         resolve(existing);
       };
       const recordNotFound = function() {
         console.log(`No record found for ID '${params.submissionId}'`);
         const newEnvironmentPlan = store.createRecord('environment-plan', {
           id: params.submissionId,
-          activityDetails: self._activityDetails(),
-          titles: self._titles(),
-          titleholderDetails: self._titleholderDetails(),
-          submissionContact: self._submissionContact(),
-          liaisonContact: self._liaisonContact(),
-          activityContact: self._activityContact(),
-          documents: self._documents(),
-          financialAssurance: self._financialAssurance()
+          activityDetails: self._activityDetails(params.submissionId),
+          titles: self._titles(params.submissionId),
+          titleholderDetails: self._titleholderDetails(params.submissionId),
+          submissionContact: self._submissionContact(params.submissionId),
+          liaisonContact: self._liaisonContact(params.submissionId),
+          activityContact: self._activityContact(params.submissionId),
+          documents: self._documents(params.submissionId),
+          financialAssurance: self._financialAssurance(params.submissionId)
         });
         newEnvironmentPlan.save();
         resolve(newEnvironmentPlan);
