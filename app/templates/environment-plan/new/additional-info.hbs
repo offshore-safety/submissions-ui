@@ -2,8 +2,11 @@
   <section>
     {{nop-confirmation-emails additionalInfo=model uniqueEmailMessages=uniqueEmailMessages}}
   </section>
+
+  {{nop-comments comments=model.comments hint='Anything else that you need to support your submission'}}
+
   {{#nop-actions}}
-    <button {{action 'goBack'}}>Back</button>
-    <button class='primary' {{action 'goNext'}}>Next</button>
+  <button {{action 'goBack'}}>Back</button>
+  <button class='primary' {{action 'goNext'}}>Next</button>
   {{/nop-actions}}
 {{/nop-page}}
