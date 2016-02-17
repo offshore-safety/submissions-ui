@@ -1,5 +1,5 @@
 import Ember from 'ember';
-import EnvironmentPlan from '../../models/environment-plan'
+import EnvironmentPlan from '../../models/environment-plan';
 import Document from '../../models/document';
 import ActivityDetails from '../../models/activity-details';
 import Title from '../../models/title';

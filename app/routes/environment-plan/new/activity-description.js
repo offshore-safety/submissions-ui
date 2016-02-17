@@ -1,6 +1,5 @@
 import Ember from 'ember';
 import ResetScroll from '../../../mixins/reset-scroll';
-import ActivityType from '../../../models/activity-type';
 
 export default Ember.Route.extend(ResetScroll,{
   submissionStatus: Ember.inject.service(),
