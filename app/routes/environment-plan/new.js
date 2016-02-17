@@ -101,6 +101,13 @@ export default Ember.Route.extend({
 
     return financialAssurance;
   },
+  _additionalInfo(id) {
+    const store = this.store;
+    const additionalInfo = store.createRecord('additional-info');
+    additionalInfo.save();
+
+    return additionalInfo;
+  },
   model(params) {
     const store = this.store;
     const self = this;
@@ -120,7 +127,8 @@ export default Ember.Route.extend({
           liaisonContact: self._liaisonContact(params.submissionId),
           activityContact: self._activityContact(params.submissionId),
           documents: self._documents(params.submissionId),
-          financialAssurance: self._financialAssurance(params.submissionId)
+          financialAssurance: self._financialAssurance(params.submissionId),
+          additionalInfo: self._additionalInfo(params.submissionId)
         });
         newEnvironmentPlan.save();
         resolve(newEnvironmentPlan);

@@ -16,7 +16,7 @@ export default Ember.Controller.extend({
       this.get('submitatron').submit(this.get('model')).then(onSuccess, onFailure);
     },
     goBack() {
-      this.transitionToRoute('environment-plan.new.confirmation-emails');
+      this.transitionToRoute('environment-plan.new.additional-info');
     }
   }
 });

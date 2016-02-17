@@ -1,6 +1,6 @@
 import { moduleFor, test } from 'ember-qunit';
 
-moduleFor('controller:environment-plan/new/confirmation-emails', 'Unit | Controller | environment plan/new/confirmation emails', {
+moduleFor('controller:environment-plan/new/additional-info', 'Unit | Controller | environment plan/new/additional info', {
   // Specify the other units that are required for this test.
   // needs: ['controller:foo']
 });

@@ -1,0 +1,9 @@
+{{#nop-page title='Additional Information' class='additional-info-page'}}
+  <section>
+    {{nop-confirmation-emails additionalInfo=model uniqueEmailMessages=uniqueEmailMessages}}
+  </section>
+  {{#nop-actions}}
+    <button {{action 'goBack'}}>Back</button>
+    <button class='primary' {{action 'goNext'}}>Next</button>
+  {{/nop-actions}}
+{{/nop-page}}
