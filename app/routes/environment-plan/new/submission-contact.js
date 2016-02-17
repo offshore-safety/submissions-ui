@@ -35,7 +35,7 @@ export default Ember.Route.extend(ResetScroll, {
     this.get('submissionStatus').leaving('submission-contact', this._pageModel().get('hasErrors'));
   },
   actions: {
-    willTransition(transition) {
+    willTransition() {
       this._copyContacts();
       this._pageModel().set('visited', true);
       this._saveCurrentModel();

@@ -24,7 +24,7 @@ export default Ember.Route.extend(ResetScroll, {
     this.get('submissionStatus').leaving('additional-info', this._pageModel().get('hasErrors'));
   },
   actions: {
-    willTransition(transition) {
+    willTransition() {
       this._pageModel().set('visited', true);
       this._saveCurrentModel();
       // this._raiseErrors(transition);
