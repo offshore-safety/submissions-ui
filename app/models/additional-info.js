@@ -1,10 +1,17 @@
-import DS from 'ember-data';
 import Ember from 'ember';
 import Errors from '../mixins/errors';
+import Serializable from '../mixins/serializable';
+import ConfirmationEmail from './confirmation-email';
 
-export default DS.Model.extend(Errors, {
-  comments: DS.attr(),
-  confirmationEmails: DS.hasMany('confirmation-email', {async: false}),
+export default Ember.Object.extend(Errors, Serializable, {
+  _serializableProperties: [
+    'comments', 'confirmationEmails'
+  ],
+  _relationshipTypes: {
+    'confirmationEmails': ConfirmationEmail
+  },
+  comments: null,
+  confirmationEmails: [],
   errors: Ember.computed('comments', 'confirmationEmails.@each.errors', function() {
     const errors = {};
 

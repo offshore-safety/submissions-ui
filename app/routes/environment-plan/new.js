@@ -11,6 +11,7 @@ import LiaisonContact from '../../models/liaison-contact';
 import ActivityContact from '../../models/activity-contact';
 import EnvironmentPlanDocuments from '../../models/environment-plan-documents';
 import FinancialAssurance from '../../models/financial-assurance';
+import AdditionalInfo from '../../models/additional-info';
 
 export default Ember.Route.extend({
   submissionStore: Ember.inject.service(),
@@ -81,12 +82,8 @@ export default Ember.Route.extend({
 
     return financialAssurance;
   },
-  _additionalInfo(id) {
-    const store = this.store;
-    const additionalInfo = store.createRecord('additional-info', {
-      id
-    });
-    additionalInfo.save();
+  _additionalInfo() {
+    const additionalInfo = AdditionalInfo.create();
 
     return additionalInfo;
   },
@@ -109,6 +106,7 @@ export default Ember.Route.extend({
         activityContact: this._activityContact(),
         documents: this._documents(),
         financialAssurance: this._financialAssurance(),
+        additionalInfo: this._additionalInfo()
       });
 
       return newEnvironmentPlan;

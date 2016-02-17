@@ -15,6 +15,8 @@ export default Ember.Route.extend(ResetScroll, {
   },
   _raiseErrors(transition) {
     if (this._pageModel().get('hasErrors')) {
+      window.$E = this._pageModel();
+      console.log(this._pageModel().get('errorMessages'));
       if (!confirm('There are errors on this page, do you want to come back to them later?')) {
         transition.abort();
       }

@@ -3,6 +3,7 @@ import ResetScroll from '../../../mixins/reset-scroll';
 
 export default Ember.Route.extend(ResetScroll, {
   submissionStatus: Ember.inject.service(),
+  submissionStore: Ember.inject.service(),
   beforeModel() {
     this.get('submissionStatus').visiting(this.get('routeName'));
   },
@@ -10,11 +11,7 @@ export default Ember.Route.extend(ResetScroll, {
     return this.get('currentModel').get('additionalInfo');
   },
   _saveCurrentModel() {
-    const additionalInfo = this._pageModel();
-    additionalInfo.save();
-    additionalInfo.get('confirmationEmails').forEach(function(confirmationEmail) {
-      confirmationEmail.save();
-    });
+    this.get('submissionStore').save(this.get('currentModel'));
   },
   _raiseErrors(transition) {
     if (this._pageModel().get('hasErrors')) {
@@ -24,23 +21,13 @@ export default Ember.Route.extend(ResetScroll, {
     }
   },
   _notifyListeners() {
-    this.get('submissionStatus').leaving('additional-info', this.get('currentModel').get('hasErrors'));
-  },
-  _addConfirmationEmailTo(additionalInfo) {
-    const newEmail = this.store.createRecord('confirmation-email', {});
-    newEmail.save();
-    additionalInfo.get('confirmationEmails').pushObject(newEmail);
-    additionalInfo.save();
+    this.get('submissionStatus').leaving('additional-info', this._pageModel().get('hasErrors'));
   },
   actions: {
     willTransition(transition) {
       this._saveCurrentModel();
       this._raiseErrors(transition);
       this._notifyListeners();
-    },
-    addConfirmationEmail() {
-      const additionalInfo = this.get('currentModel');
-      this._addConfirmationEmailTo(additionalInfo);
     }
   }
 });

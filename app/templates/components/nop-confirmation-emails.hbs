@@ -19,9 +19,9 @@
   </ul>
   <div class='hint'>Provide email addresses of others who need to receive confirmation of this submission</div>
   <section>
-    {{#each additionalInfo.otherConfirmationEmails as |other|}}
+    {{#each additionalInfo.confirmationEmails as |email|}}
       {{#nop-list-item}}
-        {{nop-confirmation-email email=other.email showRemove=true}}
+        {{nop-confirmation-email email=email showRemove=true}}
       {{/nop-list-item}}
     {{/each}}
   </section>

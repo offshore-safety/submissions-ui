@@ -1,4 +1,5 @@
 import Ember from 'ember';
+import Document from '../models/document';
 
 export default Ember.Component.extend({
   tagName: 'nop-attachments',
@@ -7,8 +8,7 @@ export default Ember.Component.extend({
   readonly: false,
   actions: {
     addAttachment() {
-      const newAttachment = this.get('store').createRecord('document', {});
-      newAttachment.save();
+      const newAttachment = Document.create();
       this.get('attachments').pushObject(newAttachment);
     }
   }
