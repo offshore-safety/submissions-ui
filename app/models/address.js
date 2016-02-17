@@ -1,13 +1,16 @@
-import DS from 'ember-data';
 import Ember from 'ember';
 import Errors from '../mixins/errors';
+import Serializable from '../mixins/serializable';
 
-export default DS.Model.extend(Errors, {
-  street: DS.attr(),
-  locality: DS.attr(),
-  state: DS.attr(),
-  postcode: DS.attr(),
-  country: DS.attr({defaultValue: 'AU'}),
+export default Ember.Object.extend(Errors, Serializable, {
+  _serializableProperties: [
+    'street', 'locality', 'state', 'postcode', 'country'
+  ],
+  street: null,
+  locality: null,
+  state: null,
+  postcode: null,
+  country: 'AU',
   errors: Ember.computed('street', 'locality', 'state', 'postcode', 'country',function() {
     const errors = {};
 

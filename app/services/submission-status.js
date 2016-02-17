@@ -6,6 +6,7 @@ export default Ember.Service.extend({
     this.set('currentRoute', routeName);
   },
   leaving(name, hasErrors) {
+    console.log(`Leaving '${name}' with errors: ${hasErrors}`);
     this.set(name, hasErrors);
   },
   visited(name) {

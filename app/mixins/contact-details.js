@@ -1,19 +1,27 @@
 import Ember from 'ember';
-import DS from 'ember-data';
 import Errors from './errors';
+import Address from '../models/address';
+import Serializable from './serializable';
 
-export default Ember.Mixin.create(Errors, {
-  title: DS.attr(),
-  firstName: DS.attr(),
-  lastName: DS.attr(),
-  position: DS.attr(),
-  employer: DS.attr(),
-  phone: DS.attr(),
-  mobile: DS.attr(),
-  email: DS.attr(),
-  postalAddress: DS.belongsTo('address', {async: false}),
-  sameAsLiaison: DS.attr('boolean', {defaultValue: true}),
-  sameAsActivity: DS.attr('boolean', {defaultValue: false}),
+export default Ember.Mixin.create(Errors, Serializable, {
+  _serializableProperties: [
+    'title', 'firstName', 'lastName', 'position', 'employer', 'phone',
+    'mobile', 'email', 'postalAddress', 'sameAsLiaison', 'sameAsActivity'
+  ],
+  _relationshipTypes: {
+    'postalAddress': Address
+  },
+  title: null,
+  firstName: null,
+  lastName: null,
+  position: null,
+  employer: null,
+  phone: null,
+  mobile: null,
+  email: null,
+  postalAddress: null,
+  sameAsLiaison: false,
+  sameAsActivity: false,
   errors: Ember.computed('title', 'firstName', 'lastName', 'phone', 'mobile', 'email', 'postalAddress.errors', function() {
     const errors = {};
 

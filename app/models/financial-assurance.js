@@ -1,18 +1,25 @@
-import DS from 'ember-data';
 import Ember from 'ember';
 import Errors from '../mixins/errors';
+import Serializable from '../mixins/serializable';
 
-export default DS.Model.extend(Errors, {
+export default Ember.Object.extend(Errors, Serializable, {
+  _serializableProperties: [
+    'previousDeclaration', 'includeDeclaration', 'faDeclaration', 'includeConfirmation', 'faConfirmation'
+  ],
+  _relationshipTypes: {
+    'faDeclaration': Document,
+    'faConfirmation': Document
+  },
   _previousChanged: Ember.observer('previousDeclaration', function() {
     if (this.get('previousDeclaration') === true) {
       this.set('includeDeclaration', null);
     }
   }),
-  previousDeclaration: DS.attr(),
-  includeDeclaration: DS.attr(),
-  faDeclaration: DS.belongsTo('document', {async: false}),
-  includeConfirmation: DS.attr(),
-  faConfirmation: DS.belongsTo('document', {async: false}),
+  previousDeclaration: null,
+  includeDeclaration: null,
+  faDeclaration: null,
+  includeConfirmation: null,
+  faConfirmation: null,
   errors: Ember.computed('previousDeclaration', 'includeDeclaration', 'faDeclaration.errors', 'includeConfirmation', 'faConfirmation.errors', function() {
     const errors = {};
 

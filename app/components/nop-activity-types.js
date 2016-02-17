@@ -1,6 +1,7 @@
 import Ember from 'ember';
 import _ from 'lodash/lodash';
 import Constants from '../constants';
+import ActivityType from '../models/activity-type';
 
 export default Ember.Component.extend({
   tagName: 'nop-activity-types',
@@ -12,8 +13,7 @@ export default Ember.Component.extend({
     this._addActivityType();
   }),
   _addActivityType() {
-    const newType = this.get('store').createRecord('activity-type', {});
-    newType.save();
+    const newType = ActivityType.create();
     this.get('activityTypes').pushObject(newType);
   },
   regulationTypes: _.keys(Constants.REGULATION_TYPES).map((k, index) => {return {value: k, label: Constants.REGULATION_TYPES[k], name: `regulation-type-${index}`};}),

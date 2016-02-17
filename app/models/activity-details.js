@@ -1,18 +1,29 @@
-import DS from 'ember-data';
 import Ember from 'ember';
 import Errors from '../mixins/errors';
+import Serializable from '../mixins/serializable';
+import Document from './document';
+import ActivityType from './activity-type';
 
-export default DS.Model.extend(Errors, {
-  name: DS.attr(),
-  description: DS.attr(),
-  locationMap: DS.belongsTo('document', {async: false}),
-  regulationType: DS.attr(),
-  hasOffshoreProject: DS.attr(),
-  hasOPP: DS.attr(),
-  oppDocumentReference: DS.attr(),
-  hasMinisterDecision: DS.attr(),
-  epbcReferenceNumber: DS.attr(),
-  activityTypes: DS.hasMany('activity-type', {async: false}),
+export default Ember.Object.extend(Errors, Serializable, {
+  _serializableProperties: [
+    'name', 'description', 'locationMap', 'regulationType', 'hasOffshoreProject',
+    'hasOPP', 'oppDocumentReference', 'hasMinisterDecision', 'epbcReferenceNumber',
+    'activityTypes'
+  ],
+  _relationshipTypes: {
+    'locationMap': Document,
+    'activityTypes': ActivityType
+  },
+  name: null,
+  description: null,
+  locationMap: null,
+  regulationType: null,
+  hasOffshoreProject: null,
+  hasOPP: null,
+  oppDocumentReference: null,
+  hasMinisterDecision: null,
+  epbcReferenceNumber: null,
+  activityTypes: [],
   errors: Ember.computed('name', 'description', 'locationMap.token', 'hasOffshoreProject', 'hasOPP', 'locationMap.errors',
                          'oppDocumentReference', 'hasMinisterDecision', 'epbcReferenceNumber', 'activityTypes.@each.errors', function() {
     const errors = {};

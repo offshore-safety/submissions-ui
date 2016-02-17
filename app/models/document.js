@@ -1,10 +1,11 @@
-import DS from 'ember-data';
 import Ember from 'ember';
 import Errors from '../mixins/errors';
+import Serializable from '../mixins/serializable';
 
-export default DS.Model.extend(Errors, {
-  name: DS.attr(),
-  token: DS.attr(),
+export default Ember.Object.extend(Errors, Serializable, {
+  _serializableProperties: ['name', 'token'],
+  name: null,
+  token: null,
   errors: Ember.computed('name', 'token', function() {
     const errors = {};
 

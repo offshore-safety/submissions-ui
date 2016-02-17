@@ -3,6 +3,7 @@ import ResetScroll from '../../../mixins/reset-scroll';
 
 export default Ember.Route.extend(ResetScroll, {
   submissionStatus: Ember.inject.service(),
+  submissionStore: Ember.inject.service(),
   beforeModel() {
     this.get('submissionStatus').visiting(this.get('routeName'));
   },
@@ -10,9 +11,7 @@ export default Ember.Route.extend(ResetScroll, {
     return this.get('currentModel').get('activityContact');
   },
   _saveCurrentModel() {
-    const contact = this._pageModel();
-    contact.get('postalAddress').save();
-    contact.save();
+    this.get('submissionStore').save(this.get('currentModel'));
   },
   _raiseErrors(transition) {
     if (this._pageModel().get('hasErrors')) {

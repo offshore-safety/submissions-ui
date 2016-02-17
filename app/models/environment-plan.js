@@ -1,13 +1,37 @@
-import DS from 'ember-data';
+import Ember from 'ember';
+import Serializable from '../mixins/serializable';
+import ActivityDetails from './activity-details';
+import TitleList from './title-list';
+import TitleholderDetails from './titleholder-details';
+import SubmissionContact from './submission-contact';
+import LiaisonContact from './liaison-contact';
+import ActivityContact from './activity-contact';
+import EnvironmentPlanDocuments from './environment-plan-documents';
+import FinancialAssurance from './financial-assurance';
 
-export default DS.Model.extend({
-  activityDetails: DS.belongsTo('activity-details', {async: false}),
-  titles: DS.belongsTo('title-list', {async: false}),
-  titleholderDetails: DS.belongsTo('titleholder-details', {async: false}),
-  submissionContact: DS.belongsTo('submission-contact', {async: false}),
-  liaisonContact: DS.belongsTo('liaison-contact', {async: false}),
-  activityContact: DS.belongsTo('activity-contact', {async: false}),
-  documents: DS.belongsTo('environment-plan-documents', {async: false}),
-  financialAssurance: DS.belongsTo('financial-assurance', {async: false}),
-  additionalInfo: DS.belongsTo('additional-info', {async: false}),
+export default Ember.Object.extend(Serializable, {
+  _serializableProperties: [
+    'id', 'activityDetails', 'titles', 'titleholderDetails', 'submissionContact', 'liaisonContact', 'activityContact',
+    'documents', 'financialAssurance'
+  ],
+  _relationshipTypes: {
+    'activityDetails': ActivityDetails,
+    'titles': TitleList,
+    'titleholderDetails': TitleholderDetails,
+    'submissionContact': SubmissionContact,
+    'liaisonContact': LiaisonContact,
+    'activityContact': ActivityContact,
+    'documents': EnvironmentPlanDocuments,
+    'financialAssurance': FinancialAssurance
+  },
+  id: null,
+  activityDetails: null,
+  titles: null,
+  titleholderDetails: null,
+  submissionContact: null,
+  liaisonContact: null,
+  activityContact: null,
+  documents: null,
+  financialAssurance: null,
+  // additionalInfo: null,
 });

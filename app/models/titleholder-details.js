@@ -1,14 +1,21 @@
-import DS from 'ember-data';
 import Ember from 'ember';
 import Errors from '../mixins/errors';
+import Serializable from '../mixins/serializable';
+import Address from './address';
 
-export default DS.Model.extend(Errors, {
-  visited: DS.attr(),
-  name: DS.attr(),
-  abn: DS.attr(),
-  acn: DS.attr(),
-  businessAddress: DS.belongsTo('address', {async: false}),
-  postalAddress: DS.belongsTo('address', {async: false}),
+export default Ember.Object.extend(Errors, Serializable, {
+  _serializableProperties: [
+    'name', 'abn', 'acn', 'businessAddress', 'postalAddress'
+  ],
+  _relationshipTypes: {
+    'businessAddress': Address,
+    'postalAddress': Address
+  },
+  name: null,
+  abn: null,
+  acn: null,
+  businessAddress: null,
+  postalAddress: null,
   errors: Ember.computed('name', 'abn', 'acn', 'businessAddress.errors', 'postalAddress.errors', function() {
     const errors = {};
 

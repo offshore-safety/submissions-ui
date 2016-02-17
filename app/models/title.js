@@ -1,11 +1,14 @@
-import DS from 'ember-data';
 import Ember from 'ember';
 import Errors from '../mixins/errors';
+import Serializable from '../mixins/serializable';
 
-export default DS.Model.extend(Errors, {
-  titleOrApplicationNumber: DS.attr(),
-  commonwealthWaters: DS.attr(),
-  region: DS.attr(),
+export default Ember.Object.extend(Errors, Serializable, {
+  _serializableProperties: [
+    'titleOrApplicationNumber', 'commonwealthWaters', 'region'
+  ],
+  titleOrApplicationNumber: null,
+  commonwealthWaters: null,
+  region: null,
   errors: Ember.computed('titleOrApplicationNumber', 'commonwealthWaters', 'region', function() {
     const errors = {};
 

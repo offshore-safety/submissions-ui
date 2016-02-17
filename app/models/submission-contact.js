@@ -1,5 +1,5 @@
-import DS from 'ember-data';
+import Ember from 'ember';
 import ContactDetails from '../mixins/contact-details';
 
-export default DS.Model.extend(ContactDetails, {
+export default Ember.Object.extend(ContactDetails, {
 });
