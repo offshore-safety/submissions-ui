@@ -10,7 +10,8 @@ moduleForModel('environment-plan', 'Unit | Model | environment plan', {
     'model:liaison-contact',
     'model:activity-contact',
     'model:environment-plan-documents',
-    'model:financial-assurance'
+    'model:financial-assurance',
+    'model:additional-info',
   ]
 });
 
