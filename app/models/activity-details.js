@@ -6,7 +6,7 @@ export default DS.Model.extend(Errors, {
   name: DS.attr(),
   description: DS.attr(),
   locationMap: DS.belongsTo('document', {async: false}),
-  activityType: DS.attr(),
+  regulationType: DS.attr(),
   hasOffshoreProject: DS.attr(),
   hasOPP: DS.attr(),
   oppDocumentReference: DS.attr(),
