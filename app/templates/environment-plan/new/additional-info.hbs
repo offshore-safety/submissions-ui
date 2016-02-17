@@ -1,9 +1,5 @@
 {{#nop-page title='Additional Information' class='additional-info-page'}}
-  <section>
-    {{nop-confirmation-emails additionalInfo=model.additionalInfo uniqueEmailMessages=uniqueEmailMessages}}
-  </section>
-
-  {{nop-comments comments=model.additionalInfo.comments hint='Anything else that you need to support your submission'}}
+  {{nop-additional-info additionalInfo=model.additionalInfo uniqueEmailAddresses=uniqueEmailAddresses}}
 
   {{#nop-actions}}
     <button {{action 'goBack'}}>Back</button>
