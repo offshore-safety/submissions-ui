@@ -8,12 +8,13 @@ export default Ember.Object.extend(Errors, Serializable, {
   _serializableProperties: [
     'name', 'description', 'locationMap', 'regulationType', 'hasOffshoreProject',
     'hasOPP', 'oppDocumentReference', 'hasMinisterDecision', 'epbcReferenceNumber',
-    'activityTypes'
+    'activityTypes', 'visited'
   ],
   _relationshipTypes: {
     'locationMap': Document,
     'activityTypes': ActivityType
   },
+  visited: false,
   name: null,
   description: null,
   locationMap: null,

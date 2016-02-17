@@ -5,7 +5,7 @@ import Document from './document';
 
 export default Ember.Object.extend(Errors, Serializable, {
   _serializableProperties: [
-    'previousDeclaration', 'includeDeclaration', 'faDeclaration', 'includeConfirmation', 'faConfirmation'
+    'previousDeclaration', 'includeDeclaration', 'faDeclaration', 'includeConfirmation', 'faConfirmation', 'visited'
   ],
   _relationshipTypes: {
     'faDeclaration': Document,
@@ -16,6 +16,7 @@ export default Ember.Object.extend(Errors, Serializable, {
       this.set('includeDeclaration', null);
     }
   }),
+  visited: false,
   previousDeclaration: null,
   includeDeclaration: null,
   faDeclaration: null,

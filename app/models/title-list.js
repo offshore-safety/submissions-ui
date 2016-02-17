@@ -5,11 +5,12 @@ import Serializable from '../mixins/serializable';
 
 export default Ember.Object.extend(Errors, Serializable, {
   _serializableProperties: [
-    'titles'
+    'titles', 'visited'
   ],
   _relationshipTypes: {
     'titles': Title
   },
+  visited: false,
   titles: [],
   errors: Ember.computed('titles.@each.errors', function() {
     return {titles: this.get('titles').map((t) => t.get('errors'))};

@@ -5,11 +5,12 @@ import ConfirmationEmail from './confirmation-email';
 
 export default Ember.Object.extend(Errors, Serializable, {
   _serializableProperties: [
-    'comments', 'confirmationEmails'
+    'comments', 'confirmationEmails', 'visited'
   ],
   _relationshipTypes: {
     'confirmationEmails': ConfirmationEmail
   },
+  visited: false,
   comments: null,
   confirmationEmails: [],
   errors: Ember.computed('comments', 'confirmationEmails.@each.errors', function() {

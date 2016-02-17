@@ -5,12 +5,13 @@ import Document from './document';
 
 export default Ember.Object.extend(Errors, Serializable, {
   _serializableProperties: [
-    'environmentPlan', 'attachments', 'reg31Documents'
+    'environmentPlan', 'attachments', 'reg31Documents', 'visited'
   ],
   _relationshipTypes: {
     'environmentPlan': Document,
     'attachments': Document
   },
+  visited: false,
   environmentPlan: null,
   attachments: [],
   reg31Documents: null,

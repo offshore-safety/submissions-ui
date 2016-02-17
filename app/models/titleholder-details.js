@@ -11,6 +11,7 @@ export default Ember.Object.extend(Errors, Serializable, {
     'businessAddress': Address,
     'postalAddress': Address
   },
+  visited: false,
   name: null,
   abn: null,
   acn: null,

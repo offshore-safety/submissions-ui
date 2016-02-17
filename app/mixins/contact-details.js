@@ -6,11 +6,12 @@ import Serializable from './serializable';
 export default Ember.Mixin.create(Errors, Serializable, {
   _serializableProperties: [
     'title', 'firstName', 'lastName', 'position', 'employer', 'phone',
-    'mobile', 'email', 'postalAddress', 'sameAsLiaison', 'sameAsActivity'
+    'mobile', 'email', 'postalAddress', 'sameAsLiaison', 'sameAsActivity', 'visited'
   ],
   _relationshipTypes: {
     'postalAddress': Address
   },
+  visited: false,
   title: null,
   firstName: null,
   lastName: null,
