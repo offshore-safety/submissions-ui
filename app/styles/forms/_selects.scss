@@ -27,10 +27,6 @@ nop-select {
   position: relative;
   margin-bottom: $base-input-margin-bottom;
 
-  .errors {
-    color: $error-red;
-  }
-
   .select2-container-active {
     ~ .highlight {
       transform: scaleX(1);

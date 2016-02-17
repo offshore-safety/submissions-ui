@@ -37,6 +37,7 @@ export default Ember.Route.extend(ResetScroll, {
   actions: {
     willTransition(transition) {
       this._copyContacts();
+      this._pageModel().set('visited', true);
       this._saveCurrentModel();
       // this._raiseErrors(transition);
       this._notifyListeners();

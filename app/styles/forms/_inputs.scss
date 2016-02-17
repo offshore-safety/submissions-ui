@@ -28,10 +28,6 @@ nop-input, nop-textarea {
   position: relative;
   margin-bottom: $base-input-margin-bottom;
 
-  .errors {
-    color: $error-red;
-  }
-
   &.has-hint {
     .hint {
       margin-top: 30px;

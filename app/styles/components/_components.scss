@@ -23,3 +23,14 @@
   color: $hint-color;
   font-style: italic;
 }
+
+.error-message {
+  display: none;
+}
+
+.visited {
+  .error-message {
+    display: inline-block;
+    color: $error-red;
+  }
+}

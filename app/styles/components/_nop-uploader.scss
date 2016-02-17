@@ -124,6 +124,5 @@ nop-uploader {
 
   .errors {
     @include span-columns(12);
-    color: $error-red;
   }
 }

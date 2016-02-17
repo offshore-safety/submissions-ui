@@ -8,5 +8,9 @@ export default Ember.Component.extend({
   ],
   noPreviousDeclaration: Ember.computed('assurance.previousDeclaration', function() {
     return this.get('assurance').get('previousDeclaration') === false;
-  })
+  }),
+  classNameBindings: ['visited'],
+  visited: Ember.computed('assurance.visited', function() {
+    return this.get('assurance').get('visited');
+  }),
 });

@@ -1,7 +1,7 @@
 <label for="{{concat elementId '-' name}}">{{label}}</label>
 {{select-2 content=content multiple=multiple required=required value=value optionValuePath=optionValuePath id=(concat elementId '-' name)}}
 <span class="highlight" />
-<div class="errors">
+<div class="error-message">
   {{#if errorMessage}}
     {{ errorMessage }}
   {{/if}}

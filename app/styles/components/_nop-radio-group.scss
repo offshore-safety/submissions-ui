@@ -15,7 +15,6 @@ nop-radio-group {
 
   .errors {
     @include span-columns(12);
-    color: $error-red;
   }
 
   @include media($desktop) {
