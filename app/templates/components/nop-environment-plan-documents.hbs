@@ -3,7 +3,7 @@
   {{#if documents.environmentPlan.token}}
     You provided the following file:
     <ul class='bullets'>
-      <li>{{documents.environmentPlan.name}}</li>
+      <li>{{or documents.environmentPlan.name '-'}}</li>
     </ul>
   {{else}}
     Environment Plan not provided
@@ -14,7 +14,7 @@
       You provided the following files:
       <ul class='bullets'>
         {{#each documents.attachments as |attachment|}}
-          <li>{{attachment.name}}</li>
+          <li>{{or attachment.name '-'}}</li>
         {{/each}}
       </ul>
     {{else}}

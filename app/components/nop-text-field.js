@@ -6,5 +6,10 @@ export default Ember.Component.extend({
     if(this.get('value')) {
       return this.get('value').split('\r\n');
     }
+  }),
+  errorMessage: Ember.computed('errors', 'errorKey', function() {
+    if (this.get('errors') && this.get('errorKey')) {
+      return this.get('errors')[this.get('errorKey')];
+    }
   })
 });

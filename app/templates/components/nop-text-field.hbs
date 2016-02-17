@@ -5,3 +5,8 @@
 {{#unless value}}
   <span class='blank'>Not specified</span>
 {{/unless}}
+{{#if errorMessage}}
+  <div class="errors">
+    {{ errorMessage }}
+  </div>
+{{/if}}

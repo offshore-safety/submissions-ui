@@ -25,6 +25,10 @@ export default Ember.Mixin.create(Errors, Serializable, {
   errors: Ember.computed('title', 'firstName', 'lastName', 'phone', 'mobile', 'email', 'postalAddress.errors', function() {
     const errors = {};
 
+    if (Ember.isBlank(this.get('title')) || Ember.isBlank(this.get('firstName')) || Ember.isBlank(this.get('lastName'))) {
+      errors['fullName'] = 'Title, first name and last name are all required';
+    }
+
     if (Ember.isBlank(this.get('title'))) {
       errors['title'] = 'Title is required';
     }

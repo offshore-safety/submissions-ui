@@ -33,11 +33,15 @@ export default Ember.Object.extend(Errors, Serializable, {
     }
 
     if (Ember.isBlank(this.get('description')) || this.get('description').split(' ').length < 100) {
-      errors['description'] = 'The activity description must be specified and more than 100 words';
+      errors['description'] = 'The activity description must be specified at least 100 words';
     }
 
     if (Ember.isBlank(this.get('locationMap').get('token'))) {
       errors['locationMap'] = 'The location map must be uploaded';
+    }
+
+    if (Ember.isBlank(this.get('regulationType'))) {
+      errors['regulationType'] = 'You must specify whether this is a petroleum or greenhouse gas activity';
     }
 
     if (Ember.isBlank(this.get('hasOffshoreProject'))) {

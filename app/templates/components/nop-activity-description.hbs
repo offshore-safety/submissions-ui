@@ -2,12 +2,19 @@
   <div>
     {{nop-text-field class='activity-name'
                      label='Name'
-                     value=activityDetails.name}}
+                     value=activityDetails.name
+                     errors=activityDetails.errors
+                     errorKey='name'}}
     {{nop-text-field class='regulation-type'
-                     label='Regulation Type'
-                     value=(regulation-type-from-id activityDetails.regulationType)}}
+                     label='Petroleum or Greenhouse Gas?'
+                     value=(regulation-type-from-id activityDetails.regulationType)
+                     errors=activityDetails.errors
+                     errorKey='regulationType'}}
   </div>
-  {{nop-text-field label='Description' value=activityDetails.description}}
+  {{nop-text-field label='Description'
+                   value=activityDetails.description
+                   errors=activityDetails.errors
+                   errorKey='description'}}
   {{nop-activity-types activityTypes=activityDetails.activityTypes readonly=true}}
   {{#if activityDetails.hasOffshoreProject}}
     <div>
@@ -18,8 +25,6 @@
       {{nop-text-field label='OPP Document Reference or EPBC reference number' value=activityDetails.OPPOrEPBCReferenceNumber}}
     {{/if}}
   {{/if}}
-
-  {{nop-errors errors=errors}}
 {{else}}
   {{nop-input class='activity-name'
               label='Activity Name'

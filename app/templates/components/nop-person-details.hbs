@@ -1,16 +1,32 @@
 {{#if readonly}}
-  {{nop-text-field label='Name' value=fullName}}
+  {{nop-text-field label='Name'
+                   value=fullName
+                   errors=person.errors
+                   errorKey='fullName'}}
   <div>
-    {{nop-text-field class='person-employer' label='Employer' value=person.employer}}
-    {{nop-text-field class='person-position' label='Position' value=person.position}}
+    {{nop-text-field class='person-employer' label='Employer' value=person.employer errors=person.errors errorKey='employer'}}
+    {{nop-text-field class='person-position' label='Position' value=person.position errors=person.errors
+    errorKey='position'}}
   </div>
   <div>
     <div class='person-contacts'>
       <div class='person-numbers'>
-        {{nop-text-field class='person-phone' label='Phone' value=person.phone}}
-        {{nop-text-field class='person-mobile' label='Mobile' value=person.mobile}}
+        {{nop-text-field class='person-phone'
+                         label='Phone'
+                         value=person.phone
+                         errors=person.errors
+                         errorKey='phoneNumber'}}
+        {{nop-text-field class='person-mobile'
+                         label='Mobile'
+                         value=person.mobile
+                         errors=person.errors
+                         errorKey='phoneNumber'}}
       </div>
-      {{nop-text-field class='person-email' label='Email' value=person.email}}
+      {{nop-text-field class='person-email'
+                       label='Email'
+                       value=person.email
+                       errors=person.errors
+                       errorKey='email'}}
     </div>
     {{nop-address class='person-postal' title='Postal Address' address=person.postalAddress readonly=true}}
   </div>

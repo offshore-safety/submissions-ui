@@ -3,6 +3,10 @@ nop-text-field {
 
   margin: 5px 0;
 
+  .errors {
+    color: $error-red;
+  }
+
   .content {
     margin: 0;
   }

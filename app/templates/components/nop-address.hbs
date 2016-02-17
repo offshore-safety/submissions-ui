@@ -1,5 +1,8 @@
 {{#if readonly}}
-  {{nop-text-field class='full-address' label=title value=fullAddress}}
+  {{nop-text-field class='full-address'
+                   label=title value=fullAddress
+                   errors=address.errors
+                   errorKey='fullAddress'}}
 {{else}}
   <section>
     {{nop-section-header title=title hint=hint required=required}}
