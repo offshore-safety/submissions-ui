@@ -10,6 +10,15 @@ export default Ember.Route.extend(ResetScroll, {
   _pageModel() {
     return this.get('currentModel').get('submissionContact');
   },
+  _copyContacts() {
+    if (this._pageModel().get('sameAsLiaison')) {
+      this.get('currentModel').set('liaisonContact', Ember.copy(this._pageModel(), true));
+    }
+
+    if (this._pageModel().get('sameAsActivity')) {
+      this.get('currentModel').set('activityContact', Ember.copy(this._pageModel(), true));
+    }
+  },
   _saveCurrentModel() {
     this.get('submissionStore').save(this.get('currentModel'));
   },
@@ -27,6 +36,7 @@ export default Ember.Route.extend(ResetScroll, {
   },
   actions: {
     willTransition(transition) {
+      this._copyContacts();
       this._saveCurrentModel();
       this._raiseErrors(transition);
       this._notifyListeners();
