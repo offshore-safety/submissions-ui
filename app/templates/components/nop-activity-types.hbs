@@ -1,7 +1,8 @@
 {{#if readonly}}
+  {{nop-section-header title='Activity Types'}}
   You have specified the following activity types to be undertaken:
   <ul class='bullets'>
-    {{#each submission.activityTypes as |activityType|}}
+    {{#each activityTypes as |activityType|}}
       {{#if activityType.type}}
         <li>{{activity-type-from-id activityType.type}}</li>
       {{else}}

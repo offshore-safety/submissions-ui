@@ -1,9 +1,14 @@
 {{#if readonly}}
   <div>
-    {{nop-text-field class='activity-name' label='Name' value=activityDetails.name}}
-    {{nop-text-field class='regulation-type' label='Regulation Type' value=(regulation-type-from-id activityDetails.regulationType)}}
+    {{nop-text-field class='activity-name'
+                     label='Name'
+                     value=activityDetails.name}}
+    {{nop-text-field class='regulation-type'
+                     label='Regulation Type'
+                     value=(regulation-type-from-id activityDetails.regulationType)}}
   </div>
   {{nop-text-field label='Description' value=activityDetails.description}}
+  {{nop-activity-types activityTypes=activityDetails.activityTypes readonly=true}}
   {{#if activityDetails.hasOffshoreProject}}
     <div>
       {{nop-text-field class='has-opp' label='Accepted Offshort Project Proposal (OPP)?' value=(boolean-to-yes-no activityDetails.hasOPP)}}
