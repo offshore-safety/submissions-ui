@@ -42,16 +42,11 @@
     {{/nop-review-component}}
   </section>
   <div class='page-break' />
-  <!-- <section>
-    {{#nop-review-component title='Comments' editLink='environment-plan.new.comments'}}
-      {{nop-comments comments=model.comments readonly=true}}
+  <section>
+    {{#nop-review-component title='Additional Info' editLink='environment-plan.new.additional-info'}}
+      {{nop-additional-info additionalInfo=model.additionalInfo readonly=true}}
     {{/nop-review-component}}
-  </section> -->
-  <!-- <section>
-    {{#nop-review-component title='Additional Emails' editLink='environment-plan.new.confirmation-emails'}}
-      {{nop-confirmation-emails submission=model readonly=true}}
-    {{/nop-review-component}}
-  </section> -->
+  </section>
   <!-- {{#nop-actions}}
     <button {{action 'goBack'}}>Back</button>
     <button class='primary' {{action 'submit'}}>Submit</button>

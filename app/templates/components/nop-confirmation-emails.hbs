@@ -1,10 +1,11 @@
 {{#if readonly}}
+  <!-- TODO We should be showing the contact addresses here too -->
   The following people will receive confirmation emails upon submission:
   <ul class="bullets">
     {{#each uniqueEmailMessages as |email|}}
       <li>{{email}}</li>
     {{/each}}
-    {{#each additionalInfo.otherConfirmationEmails as |other|}}
+    {{#each additionalInfo.confirmationEmails as |other|}}
       <li>{{other.email}}</li>
     {{/each}}
   </ul>
