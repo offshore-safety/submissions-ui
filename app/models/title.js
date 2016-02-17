@@ -6,7 +6,6 @@ export default DS.Model.extend(Errors, {
   titleOrApplicationNumber: DS.attr(),
   commonwealthWaters: DS.attr(),
   region: DS.attr(),
-  titleList: DS.belongsTo('title-list', {async: false, embedded: 'always'}),
   errors: Ember.computed('titleOrApplicationNumber', 'commonwealthWaters', 'region', function() {
     const errors = {};
 
