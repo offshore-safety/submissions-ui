@@ -2,7 +2,16 @@ import { moduleForModel, test } from 'ember-qunit';
 
 moduleForModel('environment-plan', 'Unit | Model | environment plan', {
   // Specify the other units that are required for this test.
-  needs: []
+  needs: [
+    'model:activity-details',
+    'model:title-list',
+    'model:titleholder-details',
+    'model:submission-contact',
+    'model:liaison-contact',
+    'model:activity-contact',
+    'model:environment-plan-documents',
+    'model:financial-assurance'
+  ]
 });
 
 test('it exists', function(assert) {
