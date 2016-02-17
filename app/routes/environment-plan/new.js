@@ -103,7 +103,9 @@ export default Ember.Route.extend({
   },
   _additionalInfo(id) {
     const store = this.store;
-    const additionalInfo = store.createRecord('additional-info');
+    const additionalInfo = store.createRecord('additional-info', {
+      id
+    });
     additionalInfo.save();
 
     return additionalInfo;
