@@ -107,7 +107,6 @@ export default Ember.Route.extend({
     const promise = new Ember.RSVP.Promise(function(resolve) {
       const recordFound = (existing) => {
         console.log(`Found record for ID '${params.submissionId}'`);
-        debugger;
         resolve(existing);
       };
       const recordNotFound = function() {

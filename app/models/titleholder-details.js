@@ -7,8 +7,8 @@ export default DS.Model.extend(Errors, {
   name: DS.attr(),
   abn: DS.attr(),
   acn: DS.attr(),
-  businessAddress: DS.belongsTo('address', {async: false, embedded: 'always'}),
-  postalAddress: DS.belongsTo('address', {async: false, embedded: 'always'}),
+  businessAddress: DS.belongsTo('address', {async: false}),
+  postalAddress: DS.belongsTo('address', {async: false}),
   errors: Ember.computed('name', 'abn', 'acn', 'businessAddress.errors', 'postalAddress.errors', function() {
     const errors = {};
 
