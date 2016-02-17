@@ -1,7 +1,12 @@
 <div class='sidebar'>
-  {{#link-to editLink}}{{fa-icon 'edit'}}{{/link-to}}
+
 </div>
 <div class='content'>
-  <h3>{{title}}</h3>
+  {{#link-to editLink}}
+    <h3>
+      {{title}}
+      {{fa-icon 'edit'}}
+    </h3>
+  {{/link-to}}
   {{yield}}
 </div>

@@ -3,22 +3,31 @@ nop-review-component {
   min-height: 50px;
   border: 1px solid $extra-light-grey;
 
+  &.errors {
+    > .sidebar {
+      background-color: $error-red;
+    }
+  }
+
   > .sidebar {
     display: flex;
-    width: 50px;
-    align-items: center;
-    justify-content: center;
-    font-size: 1.3em;
+    width: 20px;
     background-color: $off-white;
-
-    a {
-      color: $base-font-color;
-    }
   }
 
   > .content {
     flex: 20;
     padding: 20px;
+
+    a {
+      text-decoration: none;
+      color: $base-font-color;
+    }
+
+    .fa-edit {
+      margin-left: 5px;
+      font-size: 1em;
+    }
   }
 }
 

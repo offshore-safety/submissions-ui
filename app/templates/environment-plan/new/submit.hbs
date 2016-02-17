@@ -1,49 +1,49 @@
 {{#nop-page title='Review Your Submission' class='submit-page'}}
   <section>
-    {{#nop-review-component title='Activity Details' editLink='environment-plan.new.activity-description'}}
+    {{#nop-review-component title='Activity Details' editLink='environment-plan.new.activity-description' errors=model.activityDetails.hasErrors}}
       {{nop-activity-description activityDetails=model.activityDetails readonly=true}}
     {{/nop-review-component}}
   </section>
   <section>
-    {{#nop-review-component title='Titles' editLink='environment-plan.new.titles'}}
+    {{#nop-review-component title='Titles' editLink='environment-plan.new.titles' errors=model.titles.hasErrors}}
       {{nop-titles titles=model.titles readonly=true}}
     {{/nop-review-component}}
   </section>
   <section>
-    {{#nop-review-component title='Titleholder Details' editLink='environment-plan.new.titleholder-details'}}
+    {{#nop-review-component title='Titleholder Details' editLink='environment-plan.new.titleholder-details' errors=model.titleholderDetails.hasErrors}}
       {{nop-titleholder-details titleholder=model.titleholderDetails readonly=true}}
     {{/nop-review-component}}
   </section>
   <div class='contacts page-break'>
     <section>
-      {{#nop-review-component title='Submission Contact' editLink='environment-plan.new.submission-contact'}}
+      {{#nop-review-component title='Submission Contact' editLink='environment-plan.new.submission-contact' errors=model.submissionContact.hasErrors}}
         {{nop-submission-contact contact=model.submissionContact readonly=true}}
       {{/nop-review-component}}
     </section>
     <section>
-      {{#nop-review-component title='Nominated Liaison Person' editLink='environment-plan.new.liaison-contact'}}
+      {{#nop-review-component title='Nominated Liaison Person' editLink='environment-plan.new.liaison-contact' errors=model.liaisonContact.hasErrors}}
         {{nop-liaison-contact contact=model.liaisonContact readonly=true}}
       {{/nop-review-component}}
     </section>
     <section>
-      {{#nop-review-component title='Activity Contact' editLink='environment-plan.new.activity-contact'}}
+      {{#nop-review-component title='Activity Contact' editLink='environment-plan.new.activity-contact' errors=model.activityContact.hasErrors}}
         {{nop-activity-contact contact=model.activityContact readonly=true}}
       {{/nop-review-component}}
     </section>
   </div>
   <section>
-    {{#nop-review-component title='Environment Plan Documents' editLink='environment-plan.new.documents'}}
+    {{#nop-review-component title='Environment Plan Documents' editLink='environment-plan.new.documents' errors=model.documents.hasErrors}}
       {{nop-environment-plan-documents documents=model.documents readonly=true}}
     {{/nop-review-component}}
   </section>
   <section>
-    {{#nop-review-component title='Financial Assurance' editLink='environment-plan.new.financial-assurance'}}
+    {{#nop-review-component title='Financial Assurance' editLink='environment-plan.new.financial-assurance' errors=model.financialAssurance.hasErrors}}
       {{nop-financial-assurance assurance=model.financialAssurance readonly=true}}
     {{/nop-review-component}}
   </section>
   <div class='page-break' />
   <section>
-    {{#nop-review-component title='Additional Info' editLink='environment-plan.new.additional-info'}}
+    {{#nop-review-component title='Additional Info' editLink='environment-plan.new.additional-info' errors=model.additionalInfo.hasErrors}}
       {{nop-additional-info additionalInfo=model.additionalInfo readonly=true}}
     {{/nop-review-component}}
   </section>
