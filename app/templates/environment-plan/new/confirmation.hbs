@@ -1,7 +1,29 @@
 {{#nop-page title='Your submission was successful' class='confirmation-page'}}
-  <p class='confirmation-message'>Your receipt number for this submission is:</p>
-  <p class='receipt-number'>{{receiptNumber}}</p>
-  <p class='confirmation-message'>Please record this number somewhere as we may ask for it during correspondence about your submission.</p>
+  <h5 class='confirmation-message'>
+    Keep this information handy, it may be required during correspondence around
+    your submission. A copy of this information has been emailed to you.
+  </h5>
+  <section>
+    {{nop-text-field label='Receipt Number' value=model.receiptNumber}}
+  </section>
+
+  <section>
+    {{nop-text-field label='Submission Received At' value=model.timestamp}}
+    {{nop-text-field label='NOPSEMA Response Due' value=model.responseDue}}
+  </section>
+
+  <section class='documents'>
+    You uploaded the following documents:
+    <ul class='bullets'>
+      {{#each documentNames as |name|}}
+        <li class='document-name'>{{name}}</li>
+      {{/each}}
+    </ul>
+    {{#if model.documents.reg31Documents}}
+      <p>You have already supplied the following information under Regulation 31:</p>
+      <p class='reg31-documents'>{{model.documents.reg31Documents}}</p>
+    {{/if}}
+  </section>
   {{#nop-actions}}
     <button class='primary' {{action 'goHome'}}>Back to Home</button>
   {{/nop-actions}}

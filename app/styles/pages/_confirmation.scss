@@ -1,9 +1,5 @@
 .confirmation-page {
-  .confirmation-message {
-    margin-top: 30px;
-  }
-
-  .receipt-number {
+  .receipt-number, .timestamp-value, .response-value, .document-name, .reg31-documents {
     font-size: $base-font-size * 1.2;
   }
 }
