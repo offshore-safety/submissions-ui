@@ -4,8 +4,8 @@ export default Ember.Controller.extend({
   _nextRoute() {
     const routePrefix = 'environment-plan.new';
 
-    if (this.get('model').sameAsLiaison) {
-      if (this.get('model').sameAsActivity) {
+    if (this.get('model').get('submissionContact').get('sameAsLiaison')) {
+      if (this.get('model').get('submissionContact').get('sameAsActivity')) {
         return `${routePrefix}.documents`;
       }
       return `${routePrefix}.activity-contact`;

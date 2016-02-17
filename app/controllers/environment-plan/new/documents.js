@@ -4,8 +4,8 @@ export default Ember.Controller.extend({
   _previousRoute() {
     const routePrefix = 'environment-plan.new';
 
-    if (this.get('model').sameAsActivity) {
-      if (this.get('model').sameAsLiaison) {
+    if (this.get('model').get('submissionContact').get('sameAsLiaison')) {
+      if (this.get('model').get('submissionContact').get('sameAsActivity')) {
         return `${routePrefix}.submission-contact`;
       }
       return `${routePrefix}.liaison-contact`;
@@ -14,7 +14,7 @@ export default Ember.Controller.extend({
   },
   actions: {
     goNext() {
-      this.transitionToRoute('environment-plan.new.fa-declaration');
+      this.transitionToRoute('environment-plan.new.financial-assurance');
     },
     goBack() {
       this.transitionToRoute(this._previousRoute());
