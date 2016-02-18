@@ -10,32 +10,32 @@ export default Ember.Controller.extend({
     {
       label: 'Activity Details',
       path: 'environment-plan.new.activity-description',
-      key: 'activity-details'
+      key: 'activityDetails'
     },
     {
       label: 'Titles',
       path: 'environment-plan.new.titles',
-      key: 'title-list'
+      key: 'titles'
     },
     {
       label: 'Titleholder Details',
       path: 'environment-plan.new.titleholder-details',
-      key: 'titleholder-details'
+      key: 'titleholderDetails'
     },
     {
       label: 'Submission Contact',
       path: 'environment-plan.new.submission-contact',
-      key: 'submission-contact'
+      key: 'submissionContact'
     },
     {
       label: 'Nominated Liaison',
       path: 'environment-plan.new.liaison-contact',
-      key: 'liaison-contact'
+      key: 'liaisonContact'
     },
     {
       label: 'Activity Contact',
       path: 'environment-plan.new.activity-contact',
-      key: 'activity-contact'
+      key: 'activityContact'
     },
     {
       label: 'Documents',
@@ -45,12 +45,12 @@ export default Ember.Controller.extend({
     {
       label: 'Financial Assurance',
       path: 'environment-plan.new.financial-assurance',
-      key: 'financial-assurance'
+      key: 'financialAssurance'
     },
     {
       label: 'Additional Info',
       path: 'environment-plan.new.additional-info',
-      key: 'additional-info'
+      key: 'additionalInfo'
     },
     {
       label: 'Review',

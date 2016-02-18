@@ -5,7 +5,7 @@ import Address from './address';
 
 export default Ember.Object.extend(Errors, Serializable, {
   _serializableProperties: [
-    'name', 'abn', 'acn', 'businessAddress', 'postalAddress'
+    'name', 'abn', 'acn', 'businessAddress', 'postalAddress', 'visited'
   ],
   _relationshipTypes: {
     'businessAddress': Address,

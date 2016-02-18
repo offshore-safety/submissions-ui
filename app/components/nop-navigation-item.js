@@ -3,11 +3,13 @@ import Ember from 'ember';
 export default Ember.Component.extend({
   initialiseProperties: function() {
     const keyName = this.get('item').key;
-    this.set('visited', Ember.computed(`submissionStatus.${keyName}`, function () {
-      return this.get('submissionStatus').visited(this.get('item').key);
+    this.set('visited', Ember.computed(`model.${keyName}.visited`, function () {
+      const pageModel = this.get('model').get(keyName);
+      return pageModel ? pageModel.get('visited') : false;
     }));
-    this.set('errors', Ember.computed(`submissionStatus.${keyName}`, function() {
-      return this.get('submissionStatus').hasErrors(this.get('item').key);
+    this.set('errors', Ember.computed(`model.${keyName}.hasErrors`, function() {
+      const pageModel = this.get('model').get(keyName);
+      return pageModel ? pageModel.get('hasErrors') : false;
     }));
   }.on('init'),
   tagName: 'nop-navigation-item',
@@ -15,6 +17,9 @@ export default Ember.Component.extend({
   classNameBindings: ['current', 'complete', 'errors'],
   current: Ember.computed('submissionStatus.currentRoute', function() {
     return this.get('submissionStatus').get('currentRoute') === this.get('item').path;
+  }),
+  visitedWithErrors: Ember.computed('visited', 'errors', function() {
+    return this.get('visited') && this.get('errors');
   }),
   complete: Ember.computed('visited', 'errors', function() {
     return this.get('visited') && !this.get('errors');

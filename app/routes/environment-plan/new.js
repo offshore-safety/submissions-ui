@@ -112,10 +112,13 @@ export default Ember.Route.extend({
       return newEnvironmentPlan;
     }
   },
-  renderTemplate() {
+  renderTemplate(controller, model) {
+    const navigationController = this.controllerFor('environment-plan.new.navigation');
+    navigationController.set('model', model);
     this.render('environment-plan.new.navigation', {
       outlet: 'navigation',
-      into: 'application'
+      into: 'application',
+      controller: navigationController
     });
   }
 });
