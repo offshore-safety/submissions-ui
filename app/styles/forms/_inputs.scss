@@ -27,7 +27,7 @@ nop-input, nop-textarea {
 
 $error-offset: 23px;
 .visited {
-  nop-input, nop-text-area {
+  nop-input, nop-textarea {
     &.errors {
       textarea {
         ~ .highlight {
