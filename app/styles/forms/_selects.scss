@@ -23,6 +23,16 @@ nop-select {
   }
 }
 
+.visited {
+  nop-select {
+    &.errors {
+      .highlight {
+        bottom: 23px;
+      }
+    }
+  }
+}
+
 nop-select {
   position: relative;
   margin-bottom: $base-input-margin-bottom;
