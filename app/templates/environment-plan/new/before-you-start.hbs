@@ -31,6 +31,9 @@
     </ul>
     Please note that you can continue your partially completed submission provided you are using the same computer and browser.
   </section>
+  {{#nop-actions}}
+    <button class='primary' {{action 'goNext'}}>Next</button>
+  {{/nop-actions}}
   <section class='privacy-notice'>
     <h3>Privacy notice</h3>
     <p>
@@ -66,7 +69,4 @@
       NOPSEMA’s Privacy Officer on 08 6188 8700 or by email at <a href='mailto:privacy@nopsema.gov.au'>privacy@nopsema.gov.au</a>.
     </p>
   </section>
-  {{#nop-actions}}
-    <button class='primary' {{action 'goNext'}}>Next</button>
-  {{/nop-actions}}
 {{/nop-page}}
