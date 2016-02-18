@@ -1,4 +1,5 @@
 import Ember from 'ember';
+import Title from '../models/title';
 
 export default Ember.Component.extend({
   tagName: 'nop-titles',
@@ -13,8 +14,7 @@ export default Ember.Component.extend({
   }),
   actions: {
     addTitle() {
-      const newTitle = this.get('store').createRecord('title');
-      newTitle.save();
+      const newTitle = Title.create();
       this.get('titles').get('titles').pushObject(newTitle);
     }
   }
