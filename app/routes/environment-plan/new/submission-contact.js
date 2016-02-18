@@ -1,12 +1,8 @@
 import Ember from 'ember';
 import ResetScroll from '../../../mixins/reset-scroll';
+import SubmissionState from '../../../mixins/submission-state';
 
-export default Ember.Route.extend(ResetScroll, {
-  submissionStatus: Ember.inject.service(),
-  submissionStore: Ember.inject.service(),
-  beforeModel() {
-    this.get('submissionStatus').visiting(this.get('routeName'));
-  },
+export default Ember.Route.extend(ResetScroll, SubmissionState, {
   _pageModel() {
     return this.get('currentModel').get('submissionContact');
   },
@@ -19,14 +15,10 @@ export default Ember.Route.extend(ResetScroll, {
       this.get('currentModel').set('activityContact', Ember.copy(this._pageModel(), true));
     }
   },
-  _saveCurrentModel() {
-    this.get('submissionStore').save(this.get('currentModel'));
-  },
   actions: {
     willTransition() {
       this._copyContacts();
-      this._pageModel().set('visited', true);
-      this._saveCurrentModel();
+      this._super();
     }
   }
 });
