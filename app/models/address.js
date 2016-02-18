@@ -2,8 +2,9 @@ import Ember from 'ember';
 import Errors from '../mixins/errors';
 import Serializable from '../mixins/serializable';
 import _ from 'lodash/lodash';
+import Address from './address';
 
-export default Ember.Object.extend(Errors, Serializable, {
+export default Ember.Object.extend(Errors, Serializable, Ember.Copyable, {
   _serializableProperties: [
     'street', 'locality', 'state', 'postcode', 'country'
   ],
@@ -12,6 +13,9 @@ export default Ember.Object.extend(Errors, Serializable, {
   state: null,
   postcode: null,
   country: 'AU',
+  copy() {
+    return Address.create().deserialize(this.serialize());
+  },
   errors: Ember.computed('street', 'locality', 'state', 'postcode', 'country',function() {
     const errors = {};
 

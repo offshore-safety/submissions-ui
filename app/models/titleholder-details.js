@@ -5,7 +5,7 @@ import Address from './address';
 
 export default Ember.Object.extend(Errors, Serializable, {
   _serializableProperties: [
-    'name', 'abn', 'acn', 'businessAddress', 'postalAddress', 'visited'
+    'name', 'abn', 'acn', 'businessAddress', 'postalAddress', 'sameAsBusiness', 'visited'
   ],
   _relationshipTypes: {
     'businessAddress': Address,
@@ -16,6 +16,7 @@ export default Ember.Object.extend(Errors, Serializable, {
   abn: null,
   acn: null,
   businessAddress: null,
+  sameAsBusiness: false,
   postalAddress: null,
   errors: Ember.computed('name', 'abn', 'acn', 'businessAddress.errors', 'postalAddress.errors', function() {
     const errors = {};
