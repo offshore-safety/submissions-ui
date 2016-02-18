@@ -7,7 +7,7 @@ export default Ember.Service.extend({
       {
         method: 'post',
         contentType: 'application/json',
-        data: JSON.stringify({environmentPlan: submission})
+        data: JSON.stringify({environmentPlan: submission.serialize()})
       }
     );
   }
