@@ -1,8 +1,8 @@
 {{#if readonly}}
   {{nop-person-details person=contact readonly=true}}
 {{else}}
-  {{nop-checkbox class='same-as-liaison' label='I am also the Nominated Liaison person for this activity' checked=contact.sameAsLiaison}}
-  {{nop-checkbox class='same-as-activity' label='I am also the day-to-day contact person for this activity' checked=contact.sameAsActivity}}
-
   {{nop-person-details person=contact}}
+
+  {{nop-checkbox class='same-as-liaison' label='I am also the nominated liaison person to be shown on NOPSEMA\'s website' checked=contact.sameAsLiaison}}
+  {{nop-checkbox class='same-as-activity' label='I am also the contact person for regulatory activities eg. assessments' checked=contact.sameAsActivity}}
 {{/if}}
