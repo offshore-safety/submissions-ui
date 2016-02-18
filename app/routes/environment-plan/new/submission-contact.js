@@ -22,25 +22,11 @@ export default Ember.Route.extend(ResetScroll, {
   _saveCurrentModel() {
     this.get('submissionStore').save(this.get('currentModel'));
   },
-  _raiseErrors(transition) {
-    if (this._pageModel().get('hasErrors')) {
-      window.$E = this._pageModel();
-      console.log(this._pageModel().get('errorMessages'));
-      if (!confirm('There are errors on this page, do you want to come back to them later?')) {
-        transition.abort();
-      }
-    }
-  },
-  _notifyListeners() {
-    this.get('submissionStatus').leaving('submission-contact', this._pageModel().get('hasErrors'));
-  },
   actions: {
     willTransition() {
       this._copyContacts();
       this._pageModel().set('visited', true);
       this._saveCurrentModel();
-      // this._raiseErrors(transition);
-      this._notifyListeners();
     }
   }
 });
