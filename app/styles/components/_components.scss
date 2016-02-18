@@ -26,11 +26,11 @@
 
 .error-message {
   display: none;
+  color: $error-red;
 }
 
 .visited {
   .error-message {
     display: inline-block;
-    color: $error-red;
   }
 }
