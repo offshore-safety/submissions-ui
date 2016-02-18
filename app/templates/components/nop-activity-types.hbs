@@ -16,13 +16,19 @@
     {{#if petroleumActivity}}
       {{#each activityTypes as |activityType|}}
         {{#nop-list-item}}
-          {{nop-activity-type activityTypeOptions=petroleumActivityTypeOptions activityType=activityType showRemove=multipleActivityTypes}}
+          {{nop-activity-type activityTypeOptions=petroleumActivityTypeOptions
+                              activityType=activityType
+                              showRemove=multipleActivityTypes
+                              removeActivityType=(action 'removeActivityType')}}
         {{/nop-list-item}}
       {{/each}}
     {{else if greenhouseGasActivity}}
       {{#each activityTypes as |activityType|}}
         {{#nop-list-item}}
-          {{nop-activity-type activityTypeOptions=greenhouseGasActivityTypeOptions activityType=activityType showRemove=multipleActivityTypes}}
+          {{nop-activity-type activityTypeOptions=greenhouseGasActivityTypeOptions
+                              activityType=activityType
+                              showRemove=multipleActivityTypes
+                              removeActivityType=(action 'removeActivityType')}}
         {{/nop-list-item}}
       {{/each}}
     {{/if}}

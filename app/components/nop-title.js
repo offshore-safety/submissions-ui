@@ -29,7 +29,7 @@ export default Ember.Component.extend({
   ],
   actions: {
     remove() {
-      console.log('remove title');
+      this.sendAction('removeTitle', this.get('title'));
     }
   }
 });

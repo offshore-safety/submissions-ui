@@ -4,7 +4,7 @@ export default Ember.Component.extend({
   tagName: 'nop-confirmation-email',
   actions: {
     remove() {
-      console.log('remove confirmation email');
+      this.sendAction('removeEmail', this.get('email'));
     }
   }
 });

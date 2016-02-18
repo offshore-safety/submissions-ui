@@ -10,6 +10,9 @@ export default Ember.Component.extend({
     addAttachment() {
       const newAttachment = Document.create();
       this.get('attachments').pushObject(newAttachment);
+    },
+    removeAttachment(attachment) {
+      this.get('attachments').removeObject(attachment);
     }
   }
 });

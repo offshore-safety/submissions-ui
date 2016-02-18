@@ -5,7 +5,10 @@
 {{else}}
   {{#each titles.titles as |title index|}}
     {{#nop-list-item}}
-      {{nop-title title=title index=index showRemove=multipleTitles}}
+      {{nop-title title=title
+                  index=index
+                  showRemove=multipleTitles
+                  removeTitle=(action 'removeTitle')}}
     {{/nop-list-item}}
   {{/each}}
 

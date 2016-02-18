@@ -22,7 +22,7 @@
   <section>
     {{#each additionalInfo.confirmationEmails as |email|}}
       {{#nop-list-item}}
-        {{nop-confirmation-email email=email showRemove=true}}
+        {{nop-confirmation-email email=email showRemove=true removeEmail=(action 'removeConfirmationEmail')}}
       {{/nop-list-item}}
     {{/each}}
   </section>

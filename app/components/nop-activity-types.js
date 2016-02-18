@@ -21,12 +21,15 @@ export default Ember.Component.extend({
   greenhouseGasActivityTypeOptions: _.keys(Constants.GREENHOUSE_GAS_ACTIVITY_TYPES).map((k) => {return {id: k, text: Constants.GREENHOUSE_GAS_ACTIVITY_TYPES[k]};}),
   petroleumActivity: Ember.computed.equal('regulationType', 'petroleum'),
   greenhouseGasActivity: Ember.computed.equal('regulationType', 'greenhouse_gas'),
+  multipleActivityTypes: Ember.computed('activityTypes.length', function() {
+    return this.get('activityTypes').length > 1;
+  }),
   actions: {
     addActivityType() {
       this._addActivityType();
+    },
+    removeActivityType(activityType) {
+      this.get('activityTypes').removeObject(activityType);
     }
-  },
-  multipleActivityTypes: Ember.computed('activityTypes.length', function() {
-    return this.get('activityTypes').length > 1;
-  })
+  }
 });

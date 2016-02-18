@@ -14,7 +14,7 @@
 {{else}}
   {{#each attachments as |document index|}}
     {{#nop-list-item}}
-      {{nop-attach-file document=document showRemove=true}}
+      {{nop-attach-file document=document showRemove=true removeAttachment=(action 'removeAttachment')}}
     {{/nop-list-item}}
   {{/each}}
 

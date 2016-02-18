@@ -4,7 +4,7 @@ export default Ember.Component.extend({
   tagName: 'nop-activity-type',
   actions: {
     remove() {
-      console.log("remove activity type");
+      this.sendAction('removeActivityType', this.get('activityType'));
     }
   }
 });

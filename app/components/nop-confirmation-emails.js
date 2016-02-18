@@ -7,6 +7,9 @@ export default Ember.Component.extend({
     addConfirmationEmail() {
       const newEmail = ConfirmationEmail.create();
       this.get('additionalInfo').get('confirmationEmails').pushObject(newEmail);
+    },
+    removeConfirmationEmail(email) {
+      this.get('additionalInfo').get('confirmationEmails').removeObject(email);
     }
   }
 });
