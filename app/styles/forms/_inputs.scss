@@ -24,6 +24,27 @@ nop-input, nop-textarea {
   }
 }
 
+
+$error-offset: 23px;
+.visited {
+  nop-input, nop-text-area {
+    &.errors {
+      textarea {
+        ~ .highlight {
+          bottom: 6px + $error-offset;
+        }
+      }
+
+      input {
+        ~ .highlight {
+          bottom: $error-offset;
+        }
+      }
+    }
+  }
+}
+
+
 nop-input, nop-textarea {
   position: relative;
   margin-bottom: $base-input-margin-bottom;
@@ -69,22 +90,6 @@ nop-input, nop-textarea {
 
   input {
     height: $base-input-height;
-  }
-
-  $error-offset: 23px;
-
-  &.errors {
-    textarea {
-      ~ .highlight {
-        bottom: 6px + $error-offset;
-      }
-    }
-
-    input {
-      ~ .highlight {
-        bottom: $error-offset;
-      }
-    }
   }
 
   textarea {
