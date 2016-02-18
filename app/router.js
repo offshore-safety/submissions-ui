@@ -11,7 +11,7 @@ Router.map(function() {
   this.route('environment-plan', function() {
     this.route('new', { path: '/new/:submissionId' }, function() {
       this.route('before-you-start');
-      this.route('activity-description');
+      this.route('activity-details');
       this.route('titles');
       this.route('titleholder-details');
       this.route('submission-contact');
@@ -20,7 +20,7 @@ Router.map(function() {
       this.route('documents');
       this.route('financial-assurance');
       this.route('additional-info');
-      this.route('submit');
+      this.route('review');
       this.route('confirmation');
     });
   });

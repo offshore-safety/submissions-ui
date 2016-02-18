@@ -9,7 +9,7 @@ export default Ember.Controller.extend({
     },
     {
       label: 'Activity Details',
-      path: 'environment-plan.new.activity-description',
+      path: 'environment-plan.new.activity-details',
       key: 'activityDetails'
     },
     {
@@ -54,7 +54,7 @@ export default Ember.Controller.extend({
     },
     {
       label: 'Review',
-      path: 'environment-plan.new.submit',
+      path: 'environment-plan.new.review',
       key: 'review'
     }
   ]
