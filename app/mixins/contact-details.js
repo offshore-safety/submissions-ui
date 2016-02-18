@@ -23,7 +23,7 @@ export default Ember.Mixin.create(Errors, Serializable, {
   postalAddress: null,
   sameAsLiaison: false,
   sameAsActivity: false,
-  errors: Ember.computed('title', 'firstName', 'lastName', 'phone', 'mobile', 'email', 'postalAddress.errors', function() {
+  errors: Ember.computed('title', 'firstName', 'lastName', 'position', 'phone', 'mobile', 'email', 'postalAddress.errors', function() {
     const errors = {};
 
     if (Ember.isBlank(this.get('title')) || Ember.isBlank(this.get('firstName')) || Ember.isBlank(this.get('lastName'))) {
