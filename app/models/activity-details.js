@@ -64,7 +64,7 @@ export default Ember.Object.extend(Errors, Serializable, {
     if (this.get('hasMinisterDecision') && Ember.isBlank(this.get('epbcReferenceNumber'))) {
       errors['epbcReferenceNumber'] = 'You must specify the EPBC reference number';
     }
-
+    
     errors['activityTypes'] = this.get('activityTypes').map((at) => at.get('errors'));
 
     return errors;
