@@ -39,6 +39,14 @@ export default Ember.Object.extend(Errors, Serializable, {
       errors['includeConfirmation'] = 'You must specify whether you are going to provide an FA Confirmation with this submission';
     }
 
+    if (Ember.isPresent(this.get('includeDeclaration')) && this.get('includeDeclaration')) {
+      errors.faDeclaration = this.get('faDeclaration').get('errors');
+    }
+
+    if (Ember.isPresent(this.get('includeConfirmation')) && this.get('includeConfirmation')) {
+      errors.faConfirmation = this.get('faConfirmation').get('errors');
+    }
+
     return errors;
   })
 });
