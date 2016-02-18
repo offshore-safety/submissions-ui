@@ -61,6 +61,13 @@
     @include span-columns(12);
   }
 
+  .person-email {
+    .content {
+      max-width: 250px;
+      word-break:break-all;
+    }
+  }
+
   ul {
     margin: 0;
   }
