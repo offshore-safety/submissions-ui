@@ -5,7 +5,8 @@ export default Ember.Controller.extend({
     {
       label: 'Before You Start',
       path: 'environment-plan.new.before-you-start',
-      key: 'before-you-start'
+      key: 'before-you-start',
+      inverted: true
     },
     {
       label: 'Activity Details',
@@ -55,7 +56,8 @@ export default Ember.Controller.extend({
     {
       label: 'Review',
       path: 'environment-plan.new.review',
-      key: 'review'
+      key: 'review',
+      inverted: true
     }
   ]
 });

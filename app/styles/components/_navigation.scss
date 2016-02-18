@@ -38,9 +38,17 @@ nop-navigation-item {
     top: 8px;
     font-size: 3em;
   }
-  
+
   &.complete {
     background-color: $nopsema-blue;
+  }
+
+  &.inverted {
+    background-color: $white;
+
+    a {
+      color: $base-font-color;
+    }
   }
 
   &.current {
@@ -48,6 +56,10 @@ nop-navigation-item {
     transform: scale(1.15);
     background-color: $nopsema-orange;
     z-index: 10;
+
+    a {
+      color: $white;
+    }
   }
 
   a {
@@ -57,12 +69,12 @@ nop-navigation-item {
     text-decoration: none;
     color: $off-white;
 
-    &:hover {
-      color: lighten($nopsema-blue, 30%);
+    &:hover, &:focus {
+      color: darken($off-white, 10%);
     }
 
-    &:focus {
-      color: $off-white;
+    &:active {
+      color: $white;
     }
   }
 }

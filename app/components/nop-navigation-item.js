@@ -14,7 +14,7 @@ export default Ember.Component.extend({
   }.on('init'),
   tagName: 'nop-navigation-item',
   submissionStatus: Ember.inject.service(),
-  classNameBindings: ['current', 'complete', 'errors'],
+  classNameBindings: ['current', 'complete', 'errors', 'inverted'],
   current: Ember.computed('submissionStatus.currentRoute', function() {
     return this.get('submissionStatus').get('currentRoute') === this.get('item').path;
   }),
@@ -23,5 +23,8 @@ export default Ember.Component.extend({
   }),
   complete: Ember.computed('visited', 'errors', function() {
     return this.get('visited') && !this.get('errors');
+  }),
+  inverted: Ember.computed('item', function() {
+    return this.get('item').inverted;
   })
 });
