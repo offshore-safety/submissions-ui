@@ -18,23 +18,30 @@ nop-info-box {
 }
 
 nop-info-box {
-  background-color: $extra-light-grey;
-  border: none;
-  border-left: 2px solid $nopsema-grey;
-  padding: 5px;
+  position: relative;
+  margin-bottom: 20px;
+
+  .inner {
+    background-color: $extra-light-grey;
+    border: none;
+    border-left: 2px solid $nopsema-grey;
+    padding: 5px;
+  }
 
   @include media($desktop) {
     margin-top: 25px;
+
+    .inner {
+      position: absolute;
+    }
   }
 
   .info-title {
-    @include span-columns(12);
     font-size: $base-font-size * 0.8;
     font-weight: bold;
   }
 
   .info-info {
-    @include span-columns(12);
     font-size: $base-font-size * 0.7;
   }
 }
