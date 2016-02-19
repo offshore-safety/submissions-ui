@@ -5,7 +5,9 @@
                    errorKey='fullAddress'}}
 {{else}}
   <section>
-    {{nop-section-header title=title hint=hint required=required}}
+    {{#if title}}
+      {{nop-section-header title=title hint=hint required=required}}
+    {{/if}}
     {{nop-input class='address'
                 label=addressLabel
                 name='address'
