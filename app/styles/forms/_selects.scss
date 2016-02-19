@@ -62,9 +62,10 @@ nop-select {
         border: none;
         background: transparent;
         top: 10px;
+        right: 4px;
 
         b {
-          transform: scale(2);
+          transform: scale(1.5);
         }
       }
     }
@@ -111,18 +112,18 @@ nop-select {
 }
 
 .select2-results {
-  $border-width: 5px;
+  max-height: 280px;
+  margin: 0;
+  padding: 0;
 
   .select2-result {
-    border-left: $border-width solid transparent;
-    padding: 3px;
+    padding: 1px;
     font-size: $select-font-size;
-    border-bottom: $input-border-bottom solid $extra-light-grey;
+    border-bottom: 1px solid $extra-light-grey;
 
     &.select2-highlighted {
       background: $white;
       color: black;
-      border-left: $border-width solid $highlight-color;
     }
 
     &:last-child {
@@ -140,10 +141,10 @@ nop-select {
 
   &.select2-drop-active {
     &.select2-drop-above {
-      border: none;
+      border: 1px solid $highlight-color;
       border-radius: $base-border-radius;
     }
-    border: none;
+    border: 1px solid $highlight-color;
     border-radius: $base-border-radius;
   }
 }
