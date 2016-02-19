@@ -12,12 +12,11 @@ $nav-item-dimensions: 90px;
 nop-navigation-item {
   display: inline-block;
   background-color: $nopsema-grey;
-  margin: 0 5px;
+  margin: 0;
   height: $nav-item-dimensions;
   width: $nav-item-dimensions;
 
   transition: all 0.5s ease;
-  @include shadow-depth1(transparentize(black, 0.5));
   font-size: 0.8 * $base-font-size;
 
   position: relative;
