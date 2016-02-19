@@ -4,6 +4,7 @@ export default Ember.Controller.extend({
   items: [
     {
       label: 'Before You Start',
+      icon: 'info-circle',
       path: 'environment-plan.new.before-you-start',
       key: 'before-you-start',
       inverted: true
