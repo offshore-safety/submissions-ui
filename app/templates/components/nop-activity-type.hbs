@@ -1,10 +1,11 @@
 {{#if showRemove}}
   {{nop-remove action='remove'}}
 {{/if}}
-{{nop-select label='Choose an Activity Type' name='activity-type'
-                                    content=activityTypeOptions
-                                    value=activityType.type
-                                    optionValuePath='id'
-                                    required=true
-                                    errors=activityType.errors
-                                    errorKey='type'}}
+{{nop-select placeholder='Select Activity Type' 
+             name='activity-type'
+             content=activityTypeOptions
+             value=activityType.type
+             optionValuePath='id'
+             required=true
+             errors=activityType.errors
+             errorKey='type'}}
