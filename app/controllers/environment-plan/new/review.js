@@ -3,6 +3,7 @@ import Ember from 'ember';
 export default Ember.Controller.extend({
   submitatron: Ember.inject.service(),
   submissionStore: Ember.inject.service(),
+  back: 'environment-plan.new.additional-info',
   actions: {
     submit() {
       // this.get('model').set('receiptNumber', 'f4002ce0-b983-44ec-9391-d908426387ab');
@@ -18,9 +19,6 @@ export default Ember.Controller.extend({
         alert(result.responseText);
       };
       this.get('submitatron').submit(this.get('model')).then(onSuccess, onFailure);
-    },
-    goBack() {
-      this.transitionToRoute('environment-plan.new.additional-info');
     }
   }
 });

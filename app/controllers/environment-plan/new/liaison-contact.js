@@ -1,20 +1,13 @@
 import Ember from 'ember';
 
 export default Ember.Controller.extend({
-  _nextRoute() {
+  next: Ember.computed('model.submissionContact.sameAsActivity', function() {
     const routePrefix = 'environment-plan.new';
 
-    if (this.get('model').sameAsActivity) {
-      return `${routePrefix}.attach-environment-plan`;
+    if (this.get('model').get('submissionContact').get('sameAsActivity')) {
+      return `${routePrefix}.documents`;
     }
     return `${routePrefix}.activity-contact`;
-  },
-  actions: {
-    goNext() {
-      this.transitionToRoute(this._nextRoute());
-    },
-    goBack() {
-      this.transitionToRoute('environment-plan.new.submission-contact');
-    }
-  }
+  }),
+  back: 'environment-plan.new.submission-contact'
 });

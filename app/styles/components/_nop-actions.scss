@@ -2,4 +2,8 @@ nop-actions {
   @include span-columns(12);
   margin-top: 25px;
   text-align: right;
+
+  a {
+    text-decoration: none;
+  }
 }

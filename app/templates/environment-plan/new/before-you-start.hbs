@@ -32,7 +32,9 @@
     Please note that you can continue your partially completed submission provided you are using the same computer and browser.
   </section>
   {{#nop-actions}}
-    <button class='primary' {{action 'goNext'}}>Next</button>
+    {{#link-to next}}
+      <button class='primary'>Next</button>
+    {{/link-to}}
   {{/nop-actions}}
   <section class='privacy-notice'>
     <h3>Privacy notice</h3>

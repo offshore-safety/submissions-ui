@@ -28,12 +28,6 @@ export default Ember.Controller.extend({
 
     return _.uniq(displayEmails);
   }),
-  actions: {
-    goNext() {
-      this.transitionToRoute('environment-plan.new.review');
-    },
-    goBack() {
-      this.transitionToRoute('environment-plan.new.financial-assurance');
-    }
-  }
+  next: 'environment-plan.new.review',
+  back: 'environment-plan.new.financial-assurance'
 });
