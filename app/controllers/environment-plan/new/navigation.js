@@ -54,7 +54,7 @@ export default Ember.Controller.extend({
       key: 'additionalInfo'
     },
     {
-      label: 'Review',
+      label: 'Review & Submit',
       path: 'environment-plan.new.review',
       key: 'review',
       inverted: true
