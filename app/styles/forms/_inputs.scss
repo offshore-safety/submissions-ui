@@ -88,12 +88,20 @@ nop-input, nop-textarea {
     }
   }
 
+  &.errors {
+    input, textarea {
+      background: #F9ECEC;    
+      border-bottom: $input-border-bottom solid #DDAAAA;
+    }
+  }
+
   input {
-    height: $base-input-height;
+    padding: 10px 14px;
   }
 
   textarea {
     min-height: $base-input-height;
+    padding: 10px 14px;
     resize: vertical;
     ~ .highlight {
       bottom: 6px;

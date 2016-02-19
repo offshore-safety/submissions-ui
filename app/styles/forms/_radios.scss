@@ -83,7 +83,7 @@ nop-radio {
 
   label {
     position: relative;
-    padding: 6px 6px 6px 50px;
+    padding: 6px 6px 6px 32px;
     font-size: 1.2em;
     cursor: pointer;
     transition: color $base-transition-duration $base-transition-easing;
@@ -93,12 +93,12 @@ nop-radio {
 
   .check {
     position: absolute;
-    border: 3px solid $nopsema-grey;
+    border: 2px solid $nopsema-grey;
     border-radius: 100%;
-    width: 30px;
-    height: 30px;
+    width: 26px;
+    height: 26px;
     top: 0;
-    left: 10px;
+    left: 0;
     transition: border-color $base-transition-duration $base-transition-easing;
 
     &::before {
@@ -106,10 +106,10 @@ nop-radio {
       position: absolute;
       content: '';
       border-radius: 100%;
-      height: 14px;
-      width: 14px;
-      top: 5px;
-      left: 5px;
+      height: 18px;
+      width: 18px;
+      top: 2px;
+      left: 2px;
       margin: auto;
       transition: background $base-transition-duration $base-transition-easing;
     }

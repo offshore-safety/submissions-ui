@@ -108,6 +108,13 @@ nop-select {
   }
 }
 
+.select2-no-results {
+  text-align: center;
+  padding: 10px;
+  font-size: 0.8rem;
+  opacity: 0.5;
+}
+
 .select2-search {
   input {
     height: $base-input-height !important;

@@ -27,7 +27,7 @@ nop-radio-group {
   }
 
   > label {
-    margin-bottom: $label-section-margin;
+    margin-bottom: 6px;
     display: block;
     color: $nopsema-grey;
 
@@ -44,7 +44,7 @@ nop-radio-group {
     }
 
     .hint {
-      margin-bottom: $label-section-margin;
+      margin-bottom: 6px;
       font-size: $base-font-size * 0.8;
     }
   }
