@@ -15,6 +15,9 @@ select {
 
 nop-select {
   @include span-columns(12);
+  label {
+    color: $nopsema-grey;
+  }
 }
 
 @include media($desktop) {
