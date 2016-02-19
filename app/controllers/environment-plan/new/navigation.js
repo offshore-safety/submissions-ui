@@ -4,7 +4,7 @@ export default Ember.Controller.extend({
   items: [
     {
       label: 'Before You Start',
-      icon: 'info-circle',
+      icon: 'info',
       path: 'environment-plan.new.before-you-start',
       key: 'before-you-start',
       inverted: true
@@ -56,9 +56,9 @@ export default Ember.Controller.extend({
     },
     {
       label: 'Review & Submit',
+      icon: 'share',
       path: 'environment-plan.new.review',
-      key: 'review',
-      inverted: true
+      key: 'review'
     }
   ]
 });
