@@ -126,7 +126,7 @@ export default Ember.Component.extend({
       e.preventDefault();
     });
 
-    $(document).on('dragenter dragleave drop', function(e) {
+    $(document.body).on('dragover drop', function(e) {
       e.preventDefault();
     });
 
