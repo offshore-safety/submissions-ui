@@ -1,4 +1,5 @@
 import Ember from 'ember';
+import _ from 'lodash/lodash';
 
 export default Ember.Component.extend({
   tagName: 'nop-title',
@@ -17,6 +18,9 @@ export default Ember.Component.extend({
     {id: 11, text: 'North West'},
     {id: 12, text: 'Nothern Territory'},
   ],
+  regionsSorted: Ember.computed('regions', function() {
+    return _.sortBy(this.get('regions'), 'text');
+  }),
   commonwealthWaters: [
     {id: 1, text: 'Ashmore Cartier Island'},
     {id: 2, text: 'New South Wales'},
@@ -27,6 +31,9 @@ export default Ember.Component.extend({
     {id: 7, text: 'Victoria'},
     {id: 8, text: 'Western Australia'},
   ],
+  commonwealthWatersSorted: Ember.computed('commonwealthWaters', function() {
+    return _.sortBy(this.get('commonwealthWaters'), 'text');
+  }),
   actions: {
     remove() {
       this.sendAction('removeTitle', this.get('title'));
