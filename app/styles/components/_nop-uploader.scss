@@ -1,5 +1,5 @@
-$base-uploader-height:100px;
-$progress-bar-height: 60px;
+$base-uploader-height:160px;
+$progress-bar-height: 4px;
 $preview-height: 525px;
 
 nop-uploader {
@@ -8,17 +8,33 @@ nop-uploader {
   position: relative;
   height: $base-uploader-height;
 
-  &.has-progress {
-    height: $base-uploader-height + $progress-bar-height;
 
-    &.has-preview {
-      height: $base-uploader-height + $progress-bar-height + $preview-height;
+  .instruction {
+    pointer-events: none;
+    white-space: normal;
+    margin-bottom: 4px;
+    .fa {
+      font-size: 2rem;
+      opacity: 0.25;
     }
   }
 
-  .instruction {
-    white-space: normal;
+  .progress {
+    height: 4px;
+    margin: 10px;
+
+    .progress-inner {
+      transition: all 0.5s ease;
+      height: 100%;
+      background-color: $nopsema-blue;
+
+      &.complete {
+        background-color: $nopsema-orange;
+      }
+    }
   }
+
+
 
   .initialising-mask, .upload-section {
     position: absolute;
@@ -43,19 +59,15 @@ nop-uploader {
   }
 
   .file-picker {
-    @include span-columns(12);
-
-    @include media($desktop) {
-      @include span-columns(10);
-    }
-
-    height: 60px;
+    height: 140px;
     padding: 5px;
+    width: 100%;
     background: $off-white;
     color: $nopsema-grey;
     cursor: pointer;
     box-shadow: none;
     margin-bottom: 0px;
+    border: 2px dashed #DDD;
 
     &:focus {
       @include shadow-depth1;
@@ -63,7 +75,7 @@ nop-uploader {
 
     &.drag-over {
       transform: scale(1.01);
-      border: 3px dashed black;
+      border-color: black;
     }
   }
 
@@ -94,32 +106,6 @@ nop-uploader {
       height: 100%;
       max-height: 500px;
     }
-  }
-
-  .progress {
-    @include span-columns(12);
-
-    @include media($desktop) {
-      @include span-columns(10);
-    }
-
-    height: 30px;
-    margin-top: 20px;
-
-    .progress-inner {
-      transition: all 0.5s ease;
-      height: 100%;
-      background-color: $nopsema-blue;
-
-      &.complete {
-        background-color: $nopsema-orange;
-      }
-    }
-  }
-
-  .hint {
-    @include span-columns(12);
-    font-size: $base-font-size * 0.8;
   }
 
   .errors {

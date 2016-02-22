@@ -1,11 +1,16 @@
+{{nop-label forElementId=(concat elementId '-' name)
+            label=label
+            required=required
+            errorMessage=errorMessage}}
 {{#if hint}}
   <div class='hint'>{{hint}}</div>
 {{/if}}
-{{input id=(concat elementId '-' name) required=required type=type value=value}}
-<label for="{{concat elementId '-' name}}">{{label}}</label>
-<span class="highlight" />
-{{#if errorMessage}}
+<div class="highlight-container">
+  {{input id=(concat elementId '-' name) required=required type=type value=value}}
+  <span class="highlight" />
+</div>
+{{#if nonRequiredErrors}}
   <div class="error-message">
-    {{ errorMessage }}
+    {{ nonRequiredErrors }}
   </div>
 {{/if}}

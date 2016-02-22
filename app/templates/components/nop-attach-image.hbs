@@ -1,11 +1,10 @@
-{{#if label}}
-  <label class="{{if required 'required'}}">{{label}}</label>
-{{/if}}
-
+{{nop-label forElementId=(concat elementId '-' name)
+            label=label
+            required=required
+            errorMessage=errorMessage}}
 {{#if hint}}
   <div class='hint'>{{hint}}</div>
 {{/if}}
-
 {{nop-uploader token=document.token
                hasPreview=true
                hint='Please submit a file in the JPEG (.jpg, .jpeg) or PNG (.png) formats.'

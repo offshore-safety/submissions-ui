@@ -12,7 +12,8 @@
   </ul>
 {{else}}
   {{#if regulationType}}
-    {{nop-section-header title='What is the purpose of the activity?'}}
+    {{nop-label label='What is the purpose of the activity?'
+                required=true}}
     {{#if petroleumActivity}}
       {{#each activityTypes as |activityType|}}
         {{#nop-list-item}}
@@ -32,6 +33,6 @@
         {{/nop-list-item}}
       {{/each}}
     {{/if}}
-    {{nop-add-another action='addActivityType' text='Add another Activity Type'}}
+    {{nop-add-another action='addActivityType' text='Add another'}}
   {{/if}}
 {{/if}}

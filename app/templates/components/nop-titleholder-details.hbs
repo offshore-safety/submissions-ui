@@ -31,8 +31,9 @@
                 errorKey='acn'}}
   </div>
   {{nop-address title='Registered Business Address' required=true address=titleholder.businessAddress allowPOBox=false}}
-  {{nop-checkbox label='Postal address same as business?' checked=titleholder.sameAsBusiness}}
+  {{nop-section-header title='Postal Address' required=true}}
+  {{nop-checkbox label='Same as business address?' checked=titleholder.sameAsBusiness}}
   {{#unless titleholder.sameAsBusiness}}
-    {{nop-address title='Postal Address' address=titleholder.postalAddress allowPOBox=true}}
+    {{nop-address title='' address=titleholder.postalAddress allowPOBox=true}}
   {{/unless}}
 {{/if}}

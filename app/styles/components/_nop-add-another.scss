@@ -9,19 +9,15 @@ nop-add-another {
 }
 
 nop-add-another button {
-  @include button-color($off-white);
-
-  border: 1px dashed $light-grey;
-  padding: 5px;
-  padding-left: 10px;
+  @include button-color(white);
+  padding: 8px;
   box-shadow: none;
   margin-top: 5px;
-  width: 100%;
-  height: $base-input-height*1.5;
+  margin-left: 53px;
   font-family: $base-font-family;
   font-size: $base-input-font-size;
   font-weight: $base-font-weight;
-  background-color: $off-white;
+  background-color: white;
   color: $nopsema-grey;
   text-align: left;
 

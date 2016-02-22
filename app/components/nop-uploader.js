@@ -14,6 +14,8 @@ export default Ember.Component.extend({
   accept: null,
   token: null,
   name: null,
+  size: null,
+  extension: null,
   disabled: true,
   instruction: 'Drop file or click here to upload',
   initMessage: 'Initialising…',
@@ -28,17 +30,19 @@ export default Ember.Component.extend({
       return _.endsWith(fileName.toLowerCase(), docType);
     });
   },
-  _fileAdded(fileName) {
+  _fileAdded(file) {
     this.set('complete', false);
     this.set('progress', 0);
-    if (this._fileValid(fileName)) {
-      this.set('name', fileName);
+    this.set('size', file.size);
+    this.set('extension', _.last(file.name.split('.')));
+    if (this._fileValid(file.name)) {
+      this.set('name', file.name);
       this.set('showProgress', true);
       this.set('instruction', 'Currently uploading, please wait…');
       return true;
     } else {
       this.set('showProgress', false);
-      this.set('instruction', `'${fileName}' is not a valid file type`);
+      this.set('instruction', `'${file.name}' is not a valid file type`);
       return false;
     }
   },
@@ -89,7 +93,7 @@ export default Ember.Component.extend({
       }).on('fileuploadadd', function(e, data) {
         self.set('showPreview', false);
         self.$('.preview-container').empty();
-        if (self._fileAdded(data.files[0].name)) {
+        if (self._fileAdded(data.files[0])) {
           if (self.get('hasPreview')) {
             self.set('showPreview', true);
           }
@@ -126,7 +130,7 @@ export default Ember.Component.extend({
       e.preventDefault();
     });
 
-    $(document).on('dragenter dragleave drop', function(e) {
+    $(document.body).on('dragover drop', function(e) {
       e.preventDefault();
     });
 

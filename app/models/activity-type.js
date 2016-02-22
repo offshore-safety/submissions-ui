@@ -9,7 +9,7 @@ export default Ember.Object.extend(Errors, Serializable, {
     const errors = {};
 
     if (Ember.isBlank(this.get('type'))) {
-      errors['type'] = 'You must specify an activity type';
+      errors['type'] = 'Required';
     }
 
     return errors;

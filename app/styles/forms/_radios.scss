@@ -1,6 +1,6 @@
 nop-radio {
   position: relative;
-  margin-bottom: $base-input-margin-bottom;
+  margin-bottom: 10px;
 
   input[type=radio] {
     position: absolute;
@@ -83,22 +83,23 @@ nop-radio {
 
   label {
     position: relative;
-    padding: 10px 10px 10px 60px;
-    font-size: $base-input-font-size;
+    padding: 6px 6px 6px 32px;
+    font-size: 1em;
+    font-weight: 300;
+    color: #6B6D70;
     cursor: pointer;
-    transition: color $base-transition-duration $base-transition-easing;
     z-index: 9;
     border: 1px solid transparent;
   }
 
   .check {
     position: absolute;
-    border: 5px solid $nopsema-grey;
+    border: 2px solid $nopsema-grey;
     border-radius: 100%;
-    width: 35px;
-    height: 35px;
-    top: -2px;
-    left: 10px;
+    width: 26px;
+    height: 26px;
+    top: 0;
+    left: 0;
     transition: border-color $base-transition-duration $base-transition-easing;
 
     &::before {
@@ -106,10 +107,10 @@ nop-radio {
       position: absolute;
       content: '';
       border-radius: 100%;
-      height: 15px;
-      width: 15px;
-      top: 5px;
-      left: 5px;
+      height: 18px;
+      width: 18px;
+      top: 2px;
+      left: 2px;
       margin: auto;
       transition: background $base-transition-duration $base-transition-easing;
     }

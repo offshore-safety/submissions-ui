@@ -9,7 +9,7 @@ export default Ember.Object.extend(Errors, Serializable, {
     const errors = {};
 
     if (Ember.isBlank(this.get('email'))) {
-      errors['email'] = 'Email must be specified';
+      errors['email'] = 'Required';
     }
 
     const emailRegex = /.+@.+\..+/i;

@@ -25,7 +25,7 @@ export default Ember.Object.extend(Errors, Serializable, {
     errors['postalAddress'] = this.get('postalAddress').get('errors');
 
     if (Ember.isBlank(this.get('name'))) {
-      errors['name'] = 'A business name is required';
+      errors['name'] = 'Required';
     }
 
     if (Ember.isPresent(this.get('abn')) && this.get('abn').length !== 11) {

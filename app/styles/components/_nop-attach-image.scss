@@ -1,7 +1,7 @@
 $label-section-margin: 15px;
 
 nop-attach-image {
-  @include span-columns(12);
+  @include span-columns(10);
 
   margin-bottom: $base-input-margin-bottom;
   display: block;
@@ -15,17 +15,6 @@ nop-attach-image {
       &:after {
         content: '*';
       }
-    }
-  }
-
-  &.has-hint {
-    > label {
-      margin-bottom: 0px;
-    }
-
-    .hint {
-      margin-bottom: $label-section-margin;
-      font-size: $base-font-size * 0.8;
     }
   }
 }

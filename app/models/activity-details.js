@@ -30,39 +30,43 @@ export default Ember.Object.extend(Errors, Serializable, {
     const errors = {};
 
     if (Ember.isBlank(this.get('name'))) {
-      errors['name'] = 'The activity name must be specified';
+      errors['name'] = 'Required';
     }
 
     if (Ember.isBlank(this.get('description')) || this.get('description').split(' ').length < 100) {
       errors['description'] = 'The activity description must be specified at least 100 words';
     }
 
+    if (Ember.isBlank(this.get('description'))) {
+      errors['description'] = 'Required';
+    }
+
     if (Ember.isBlank(this.get('locationMap').get('token'))) {
-      errors['locationMap'] = 'The location map must be uploaded';
+      errors['locationMap'] = 'Required';
     }
 
     if (Ember.isBlank(this.get('regulationType'))) {
-      errors['regulationType'] = 'You must specify whether this is a petroleum or greenhouse gas activity';
+      errors['regulationType'] = 'Required';
     }
 
     if (Ember.isBlank(this.get('hasOffshoreProject'))) {
-      errors['hasOffshoreProject'] = 'You must specify whether this activity is part of an offshore project';
+      errors['hasOffshoreProject'] = 'Required';
     }
 
     if (this.get('hasOffshoreProject') && Ember.isBlank(this.get('hasOPP'))) {
-      errors['hasOPP'] = 'You must specify whether this has an Offshore Project Proposal (OPP)';
+      errors['hasOPP'] = 'Required';
     }
 
     if (this.get('hasOPP') === false && Ember.isBlank(this.get('hasMinisterDecision'))) {
-      errors['hasMinisterDecision'] = 'You must specify whether there is an Environment Minister decision';
+      errors['hasMinisterDecision'] = 'Required';
     }
 
     if (this.get('hasOPP') && Ember.isBlank(this.get('oppDocumentReference'))) {
-      errors['oppDocumentReference'] = 'You must specify the OPP document reference';
+      errors['oppDocumentReference'] = 'Required';
     }
 
     if (this.get('hasMinisterDecision') && Ember.isBlank(this.get('epbcReferenceNumber'))) {
-      errors['epbcReferenceNumber'] = 'You must specify the EPBC reference number';
+      errors['epbcReferenceNumber'] = 'Required';
     }
     
     errors['activityTypes'] = this.get('activityTypes').map((at) => at.get('errors'));

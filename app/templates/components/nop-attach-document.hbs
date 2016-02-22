@@ -1,11 +1,11 @@
-{{nop-uploader hint='Please submit in Adobe Portable Format (.pdf) or Word document (.doc, .docx) format'
-               accept='.doc,.docx,.pdf'
-               token=document.token
-               name=document.name
-               errors=document.errors
-               errorKey='token'}}
-
-{{nop-input label='Name of this document'
-            value=document.name
-            errors=document.errors
-            errorKey='name'}}
+{{nop-document document=document}}
+{{#unless document.token}}
+  {{nop-uploader hint='Please submit in Adobe Portable Format (.pdf) or Word document (.doc, .docx) format'
+                 accept='.doc,.docx,.pdf'
+                 token=document.token
+                 name=document.name
+                 size=document.size
+                 extension=document.extension
+                 errors=document.errors
+                 errorKey='token'}}
+{{/unless}}

@@ -1,6 +1,7 @@
-{{#if label}}
-  <label class="{{if required 'required'}}">{{label}}</label>
-{{/if}}
+{{nop-label forElementId=(concat elementId '-' name)
+            label=label
+            required=required
+            errorMessage=errorMessage}}
 {{#if hint}}
   <div class='hint'>{{hint}}</div>
 {{/if}}
@@ -9,8 +10,8 @@
     {{nop-radio label=option.label value=option.value checked=value name=option.name disabled=option.disabled}}
   {{/each}}
 </div>
-{{#if errorMessage}}
+{{#if nonRequiredErrors}}
   <div class="error-message">
-    {{ errorMessage }}
+    {{ nonRequiredErrors }}
   </div>
 {{/if}}
