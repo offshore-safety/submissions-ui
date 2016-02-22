@@ -6,10 +6,6 @@ nop-radio-group {
     margin-top: 6px;
   }
   @include span-columns(12);
-
-  @include media($desktop) {
-    @include span-columns(10);
-  }
 }
 
 nop-radio-group {

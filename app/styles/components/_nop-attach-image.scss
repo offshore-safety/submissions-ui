@@ -1,7 +1,7 @@
 $label-section-margin: 15px;
 
 nop-attach-image {
-  @include span-columns(10);
+  @include span-columns(12);
 
   margin-bottom: $base-input-margin-bottom;
   display: block;

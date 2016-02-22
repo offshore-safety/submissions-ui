@@ -3,7 +3,7 @@ nop-titleholder-details {
   .company-numbers {
     nop-input {
       @include media($desktop) {
-        @include span-columns(5);
+        @include span-columns(6);
         @include omega(2n);
       }
     }

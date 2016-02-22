@@ -8,7 +8,7 @@ nop-person-details {
     @include span-columns(12);
 
     @include media($desktop) {
-      @include span-columns(5);
+      @include span-columns(6);
     }
   }
 
@@ -21,13 +21,13 @@ nop-person-details {
     @include omega;
 
     @include media($desktop) {
-      @include span-columns(4);
+      @include span-columns(5);
     }
   }
 
   .person-last-name {
     @include media($desktop) {
-      @include span-columns(4);
+      @include span-columns(5);
       @include omega;
     }
   }
