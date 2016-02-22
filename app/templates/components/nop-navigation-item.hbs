@@ -1,9 +1,12 @@
 {{#link-to item.path}}
+  {{#if item.icon}}
+	{{fa-icon item.icon}}
+  {{/if}}
   {{#if complete}}
     {{fa-icon 'check'}}
   {{/if}}
   {{#if visitedWithErrors}}
-    {{fa-icon 'exclamation'}}
+    {{fa-icon 'warning'}}
   {{/if}}
   <div class='item-name'>{{item.label}}</div>
 {{/link-to}}

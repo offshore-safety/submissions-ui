@@ -7,7 +7,8 @@ nop-section-header {
   margin-top: 15px;
 
   .section-header {
-    margin-bottom: $header-margin-bottom;
+    margin: 8px 0 6px 0;
+    font-weight: 400;
   }
 
   .required {

@@ -5,13 +5,6 @@ input, textarea {
   padding-left: $side-padding;
   padding-right: $side-padding;
 
-  &:required {
-    ~label {
-      &:after {
-        content: '*';
-      }
-    }
-  }
 }
 
 nop-input, nop-textarea {
@@ -24,24 +17,52 @@ nop-input, nop-textarea {
   }
 }
 
+.error-message {
+  display: none;
+}
+.required-error-message {
+  display: none;
+  color: #ce465d;
+  font-size: 0.75rem;
+}
 
-$error-offset: 23px;
+
 .visited {
-  nop-input, nop-textarea {
-    &.errors {
-      textarea {
-        ~ .highlight {
-          bottom: 6px + $error-offset;
-        }
-      }
-
-      input {
-        ~ .highlight {
-          bottom: $error-offset;
-        }
-      }
+  .errors {
+    input, textarea {
+      background: #F9ECEC;    
+      border-bottom: $input-border-bottom solid #DDAAAA;
     }
   }
+  .error-message {
+    display: block;
+  }
+  .required-error-message {
+    display: inline;
+  }
+}
+
+
+
+.input-label.required:after {
+  content: '*';
+  margin-left: -4px;
+}
+
+.highlight-container {
+  position: relative
+}
+
+nop-label {
+  label {
+    color: $nopsema-grey;
+    margin-bottom: 4px;
+    white-space: nowrap;
+  }
+}
+
+.hint {
+  font-size: 0.8rem;
 }
 
 
@@ -49,38 +70,14 @@ nop-input, nop-textarea {
   position: relative;
   margin-bottom: $base-input-margin-bottom;
 
-  &.has-hint {
-    .hint {
-      margin-top: 30px;
-      font-size: $base-font-size * 0.8;
-    }
-
-    input, textarea {
-      margin-top: 5px;
-    }
-  }
-
-  label {
-    position: absolute;
-    top: 0;
-    display: block;
-    color: $nopsema-grey;
-    transition: color $base-transition-duration $base-transition-easing;
-  }
-
   input, textarea {
     @include appearance(none);
-    margin-top: 25px;
     border: none;
     border-bottom: $input-border-bottom solid $extra-light-grey;
     width: 100%;
 
     &:focus {
       outline: none;
-
-      ~label {
-        color: $highlight-color;
-      }
 
       ~ .highlight {
         transform: scaleX(1);
@@ -89,11 +86,12 @@ nop-input, nop-textarea {
   }
 
   input {
-    height: $base-input-height;
+    padding: 10px 14px;
   }
 
   textarea {
     min-height: $base-input-height;
+    padding: 10px 14px;
     resize: vertical;
     ~ .highlight {
       bottom: 6px;

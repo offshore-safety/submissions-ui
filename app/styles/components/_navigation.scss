@@ -5,6 +5,7 @@ nop-navigation {
 
   .nav-items {
     margin: 20px auto;
+    font-size: 0;
   }
 }
 
@@ -12,13 +13,13 @@ $nav-item-dimensions: 90px;
 nop-navigation-item {
   display: inline-block;
   background-color: $nopsema-grey;
-  margin: 0 5px;
-  height: $nav-item-dimensions;
+  margin: 0 1px 0 0;
+  height: 70px;
   width: $nav-item-dimensions;
 
   transition: all 0.5s ease;
-  @include shadow-depth1(transparentize(black, 0.5));
-  font-size: 0.8 * $base-font-size;
+  font-size: 0.75rem;
+  line-height: 1.2em;
 
   position: relative;
 
@@ -31,12 +32,13 @@ nop-navigation-item {
 
   .item-name {
     bottom: 0;
-    padding: 5px;
+    padding: 10px;
   }
 
   .fa {
-    top: 8px;
-    font-size: 3em;
+    top: 10px;
+    font-size: 1.5em;
+    opacity: 0.5;
   }
 
   &.complete {
@@ -69,7 +71,7 @@ nop-navigation-item {
     text-decoration: none;
     color: $off-white;
 
-    &:hover, &:focus {
+    &:hover:not(.current), &:focus:not(.current) {
       color: darken($off-white, 10%);
     }
 

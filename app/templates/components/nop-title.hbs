@@ -12,21 +12,21 @@
   {{#if showRemove}}
     {{nop-remove action='remove'}}
   {{/if}}
-  <h5 class='title-title'>Title {{counter index}}</h5>
-  {{nop-input label='Title number (or application number)'
+  <h4 class='section-header'>Title {{counter index}}</h4>
+  {{nop-input label='Title or application number'
               required=true
               value=title.titleOrApplicationNumber
               errors=title.errors
               errorKey='titleOrApplicationNumber'}}
   {{nop-select label='Commonwealth waters adjacent to'
-               content=commonwealthWaters
+               content=commonwealthWatersSorted
                required=true
                value=title.commonwealthWaters
                optionValuePath='text'
                errors=title.errors
                errorKey='commonwealthWaters'}}
   {{nop-select label='Region'
-               content=regions
+               content=regionsSorted
                required=true
                value=title.region
                optionValuePath='text'

@@ -13,9 +13,33 @@ select {
   }
 }
 
+
 nop-select {
   @include span-columns(12);
+  label {
+    color: $nopsema-grey;
+  }
 }
+
+.select-container {
+  margin: 0;
+  &.required {
+    label {
+      .input-label:after {
+        content: '*';
+        margin-left: -4px;
+      }
+    }  
+  }
+  &.errors {
+    .select2-choice,.select2-choices {
+      background: #F9ECEC;    
+      border-bottom: $input-border-bottom solid #DDAAAA;
+    }
+  }
+}
+
+
 
 @include media($desktop) {
   nop-select {
@@ -23,19 +47,9 @@ nop-select {
   }
 }
 
-.visited {
-  nop-select {
-    &.errors {
-      .highlight {
-        bottom: 23px;
-      }
-    }
-  }
-}
-
 nop-select {
   position: relative;
-  margin-bottom: $base-input-margin-bottom;
+  margin-bottom: 20px;
 
   .select2-container-active {
     ~ .highlight {
@@ -62,9 +76,10 @@ nop-select {
         border: none;
         background: transparent;
         top: 10px;
+        right: 4px;
 
         b {
-          transform: scale(2);
+          transform: scale(1.5);
         }
       }
     }
@@ -84,6 +99,7 @@ nop-select {
 
     .select2-chosen {
       @include form-input;
+      background: none;
     }
   }
 
@@ -104,6 +120,13 @@ nop-select {
   }
 }
 
+.select2-no-results {
+  text-align: center;
+  padding: 10px;
+  font-size: 0.8rem;
+  opacity: 0.5;
+}
+
 .select2-search {
   input {
     height: $base-input-height !important;
@@ -111,18 +134,18 @@ nop-select {
 }
 
 .select2-results {
-  $border-width: 5px;
+  max-height: 280px;
+  margin: 0;
+  padding: 0;
 
   .select2-result {
-    border-left: $border-width solid transparent;
-    padding: 3px;
+    padding: 1px;
     font-size: $select-font-size;
-    border-bottom: $input-border-bottom solid $extra-light-grey;
+    border-bottom: 1px solid $extra-light-grey;
 
     &.select2-highlighted {
       background: $white;
       color: black;
-      border-left: $border-width solid $highlight-color;
     }
 
     &:last-child {
@@ -140,10 +163,10 @@ nop-select {
 
   &.select2-drop-active {
     &.select2-drop-above {
-      border: none;
+      border: 1px solid $highlight-color;
       border-radius: $base-border-radius;
     }
-    border: none;
+    border: 1px solid $highlight-color;
     border-radius: $base-border-radius;
   }
 }

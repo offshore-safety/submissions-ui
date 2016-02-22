@@ -13,15 +13,15 @@ export default Ember.Object.extend(Errors, Serializable, {
     const errors = {};
 
     if (Ember.isBlank(this.get('titleOrApplicationNumber'))) {
-      errors['titleOrApplicationNumber'] = 'Title or application number required';
+      errors['titleOrApplicationNumber'] = 'Required';
     }
 
     if (Ember.isBlank(this.get('commonwealthWaters'))) {
-      errors['commonwealthWaters'] = 'Commonwealth waters adjacent to required';
+      errors['commonwealthWaters'] = 'Required';
     }
 
     if (Ember.isBlank(this.get('region'))) {
-      errors['region'] = 'Region required';
+      errors['region'] = 'Required';
     }
 
     return errors;

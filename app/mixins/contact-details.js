@@ -27,23 +27,23 @@ export default Ember.Mixin.create(Errors, Serializable, {
     const errors = {};
 
     if (Ember.isBlank(this.get('title')) || Ember.isBlank(this.get('firstName')) || Ember.isBlank(this.get('lastName'))) {
-      errors['fullName'] = 'Title, first name and last name are all required';
+      errors['fullName'] = 'Required';
     }
 
     if (Ember.isBlank(this.get('title'))) {
-      errors['title'] = 'Title is required';
+      errors['title'] = 'Required';
     }
 
     if (Ember.isBlank(this.get('firstName'))) {
-      errors['firstName'] = 'First name is required';
+      errors['firstName'] = 'Required';
     }
 
     if (Ember.isBlank(this.get('lastName'))) {
-      errors['lastName'] = 'Last name is required';
+      errors['lastName'] = 'Required';
     }
 
     if (Ember.isBlank(this.get('position'))) {
-      errors['position'] = 'Position is required';
+      errors['position'] = 'Required';
     }
 
     if (Ember.isBlank(this.get('phone')) && Ember.isBlank(this.get('mobile'))) {
@@ -51,7 +51,7 @@ export default Ember.Mixin.create(Errors, Serializable, {
     }
 
     if (Ember.isBlank(this.get('email'))) {
-      errors['email'] = 'Email address is required';
+      errors['email'] = 'Required';
     }
 
     const emailRegex = /.+@.+\..+/i;

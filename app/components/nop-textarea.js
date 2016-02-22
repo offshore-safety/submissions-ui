@@ -7,5 +7,8 @@ export default Ember.Component.extend({
     if (this.get('errors') && this.get('errorKey')) {
       return this.get('errors')[this.get('errorKey')];
     }
-  })
+  }),
+  nonRequiredErrors: Ember.computed('errorMessage', function() {
+    return this.get('errorMessage') !== 'Required' ? this.get('errorMessage') : null;
+  }) 
 });

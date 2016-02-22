@@ -26,17 +26,17 @@ export default Ember.Object.extend(Errors, Serializable, {
     const errors = {};
 
     if (Ember.isBlank(this.get('previousDeclaration'))) {
-      errors['previousDeclaration'] = 'You must specify whether you have previously submitted an FA Declaration';
+      errors['previousDeclaration'] = 'Required';
     } else {
       if (this.get('previousDeclaration') === false) {
         if (Ember.isBlank(this.get('includeDeclaration'))) {
-          errors['includeDeclaration'] = 'You must specify whether you are going to provide an FA Declaration with this submission';
+          errors['includeDeclaration'] = 'Required';
         }
       }
     }
 
     if (Ember.isBlank(this.get('includeConfirmation'))) {
-      errors['includeConfirmation'] = 'You must specify whether you are going to provide an FA Confirmation with this submission';
+      errors['includeConfirmation'] = 'Required';
     }
 
     if (Ember.isPresent(this.get('includeDeclaration')) && this.get('includeDeclaration')) {

@@ -1,0 +1,17 @@
+.activity-details-page {
+  nop-activity-types {
+    margin-bottom: 1rem;  
+    nop-list-item {
+      border: 0;
+      padding: 4px 4px 4px 54px;
+      nop-remove div i {
+        top: 12px;
+        left: 18px;
+        transform: none;
+      }
+      nop-select {
+        margin-bottom: 0;
+      }
+    }
+  }
+}

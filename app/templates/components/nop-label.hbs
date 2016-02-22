@@ -1,0 +1,12 @@
+{{#if label}}
+  <label for="{{forElementId}}">
+    <span class='input-label {{if required 'required'}}'>
+      {{label}}
+    </span>
+    {{#if requiredErrorMessage}}
+      <span class='required-error-message'>
+        {{ requiredErrorMessage }}
+      </span>
+    {{/if}}
+  </label>
+{{/if}}
