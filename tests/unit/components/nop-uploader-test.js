@@ -47,7 +47,12 @@ test('_fileValid is false if filename does not match one of those accepted', fun
 test('_fileAdded sets everything correctly when a valid file is added and returns true', function(assert) {
   const component = this.subject({_fileValid: () => true});
 
-  const result = component._fileAdded();
+  const file = {
+    size: 213113221,
+    name: 'Bobson.pdf'
+  };
+
+  const result = component._fileAdded(file);
 
   assert.equal(component.complete, false);
   assert.equal(component.progress, 0);
@@ -59,12 +64,17 @@ test('_fileAdded sets everything correctly when a valid file is added and return
 test('_fileAdded sets everything correctly when an invalid file is added and returns false', function(assert) {
   const component = this.subject({_fileValid: () => false});
 
-  const result = component._fileAdded('monkeys.doc');
+  const file = {
+    size: 213113221,
+    name: 'Bobson.pdf'
+  };
+
+  const result = component._fileAdded(file);
 
   assert.equal(component.complete, false);
   assert.equal(component.progress, 0);
   assert.equal(component.showProgress, false);
-  assert.equal(component.instruction, "'monkeys.doc' is not a valid file type");
+  assert.equal(component.instruction, "'Bobson.pdf' is not a valid file type");
   assert.notOk(result);
 });
 

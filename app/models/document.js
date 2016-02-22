@@ -1,5 +1,5 @@
 import Ember from 'ember';
-import numeral from 'numeral'
+import numeral from 'numeral';
 import Errors from '../mixins/errors';
 import Serializable from '../mixins/serializable';
 
