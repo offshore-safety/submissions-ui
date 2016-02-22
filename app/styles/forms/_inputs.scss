@@ -17,10 +17,32 @@ nop-input, nop-textarea {
   }
 }
 
+.error-message {
+  display: none;
+}
 .required-error-message {
+  display: none;
   color: #ce465d;
   font-size: 0.75rem;
 }
+
+
+.visited {
+  .errors {
+    input, textarea {
+      background: #F9ECEC;    
+      border-bottom: $input-border-bottom solid #DDAAAA;
+    }
+  }
+  .error-message {
+    display: block;
+  }
+  .required-error-message {
+    display: inline;
+  }
+}
+
+
 
 .input-label.required:after {
   content: '*';
@@ -60,13 +82,6 @@ nop-input, nop-textarea {
       ~ .highlight {
         transform: scaleX(1);
       }
-    }
-  }
-
-  &.errors {
-    input, textarea {
-      background: #F9ECEC;    
-      border-bottom: $input-border-bottom solid #DDAAAA;
     }
   }
 
