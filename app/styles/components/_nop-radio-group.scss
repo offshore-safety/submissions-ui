@@ -1,6 +1,10 @@
 $label-section-margin: 15px;
 
 nop-radio-group {
+  margin-bottom: $base-input-margin-bottom;
+  > div {
+    margin-top: 6px;
+  }
   @include span-columns(12);
 
   @include media($desktop) {

@@ -13,6 +13,7 @@ select {
   }
 }
 
+
 nop-select {
   @include span-columns(12);
   label {
@@ -20,19 +21,29 @@ nop-select {
   }
 }
 
-@include media($desktop) {
-  nop-select {
-    @include span-columns($main-content-columns/2);
+.select-container {
+  margin: 0;
+  &.required {
+    label {
+      .input-label:after {
+        content: '*';
+        margin-left: -4px;
+      }
+    }  
+  }
+  &.errors {
+    .select2-choice,.select2-choices {
+      background: #F9ECEC;    
+      border-bottom: $input-border-bottom solid #DDAAAA;
+    }
   }
 }
 
-.visited {
+
+
+@include media($desktop) {
   nop-select {
-    &.errors {
-      .highlight {
-        bottom: 23px;
-      }
-    }
+    @include span-columns($main-content-columns/2);
   }
 }
 
@@ -88,6 +99,7 @@ nop-select {
 
     .select2-chosen {
       @include form-input;
+      background: none;
     }
   }
 

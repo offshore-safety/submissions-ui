@@ -16,11 +16,11 @@ export default Ember.Object.extend(Errors, Serializable, {
     const errors = {};
 
     if (Ember.isBlank(this.get('name'))) {
-      errors['name'] = 'The document name must be specified';
+      errors['name'] = 'Required';
     }
 
     if (Ember.isBlank(this.get('token'))) {
-      errors['token'] = 'You must upload a file';
+      errors['token'] = 'Required';
     }
 
     return errors;

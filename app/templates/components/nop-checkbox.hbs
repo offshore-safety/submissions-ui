@@ -1,3 +1,6 @@
 {{input id=(concat elementId '-' name) type='checkbox' name=name checked=checked disabled=disabled}}
-<label for="{{concat elementId '-' name}}">{{label}}</label>
+{{nop-label forElementId=(concat elementId '-' name)
+            label=label
+            required=required
+            errorMessage=errorMessage}}
 <div class="check"></div>

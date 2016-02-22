@@ -85,9 +85,10 @@ nop-checkbox {
   }
 
   label {
-    position: relative;
     padding: 6px 6px 6px 36px;
-    font-size: 1.2em;
+    font-size: 1em;
+    font-weight: 300;
+    color: #6B6D70;
     cursor: pointer;
     transition: color $base-transition-duration $base-transition-easing;
     border: 1px solid transparent;
@@ -97,8 +98,8 @@ nop-checkbox {
   .check {
     position: absolute;
     border: 3px solid $nopsema-grey;
-    width: 30px;
-    height: 30px;
+    width: 26px;
+    height: 26px;
     top: 0;
     left: 0;
     transition: border-color $base-transition-duration $base-transition-easing;
@@ -108,12 +109,12 @@ nop-checkbox {
       position: absolute;
       opacity: 0;
       content: '\f00c';
-      font-size: 1.4*$base-font-size;
+      font-size: 1.1em;
       font-family: FontAwesome;
       color: $checked-color;
       height: 16px;
       width: 16px;
-      top: -4px;
+      top: -2px;
       left: 1px;
       margin: auto;
       transition: all $base-transition-duration $base-transition-easing;

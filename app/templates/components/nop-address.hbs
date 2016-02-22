@@ -12,25 +12,28 @@
                 label=addressLabel
                 name='address'
                 value=address.street
+                required=true
                 errors=address.errors
-                errorKey='street'
-                }}
+                errorKey='street'}}
     {{nop-input class='locality'
                 label='Suburb / Locality'
                 name='locality'
                 value=address.locality
+                required=true
                 errors=address.errors
                 errorKey='locality'}}
     {{nop-input class='state'
                 label='State / Territory'
                 name='state'
                 value=address.state
+                required=true
                 errors=address.errors
                 errorKey='state'}}
     {{nop-input class='postcode'
                 label='Postcode'
                 name='postcode'
                 value=address.postcode
+                required=true
                 errors=address.errors
                 errorKey='postcode'}}
     {{nop-select class='country'
@@ -39,6 +42,7 @@
                  value=address.country
                  content=countryOptions
                  optionValuePath='id'
+                 required=true
                  errors=address.country
                  errorKey='country'}}
   </section>

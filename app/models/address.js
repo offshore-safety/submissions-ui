@@ -21,27 +21,27 @@ export default Ember.Object.extend(Errors, Serializable, Ember.Copyable, {
 
     const fullAddressComponents = ['street', 'locality', 'state', 'postcode', 'country'];
     if (_.some(fullAddressComponents, (c) => Ember.isBlank(this.get(c)))) {
-      errors['fullAddress'] = 'All address components are required';
+      errors['fullAddress'] = 'Required';
     }
 
     if (Ember.isBlank(this.get('street'))) {
-      errors['street'] = 'Address is required';
+      errors['street'] = 'Required';
     }
 
     if (Ember.isBlank(this.get('locality'))) {
-      errors['locality'] = 'Suburb/Locality is required';
+      errors['locality'] = 'Required';
     }
 
     if (Ember.isBlank(this.get('state'))) {
-      errors['state'] = 'State required';
+      errors['state'] = 'Required';
     }
 
     if (Ember.isBlank(this.get('postcode'))) {
-      errors['postcode'] = 'Postcode required';
+      errors['postcode'] = 'Required';
     }
 
     if (Ember.isBlank(this.get('country'))) {
-      errors['country'] = 'Country required';
+      errors['country'] = 'Required';
     }
 
     return errors;
