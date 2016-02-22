@@ -84,9 +84,10 @@ nop-radio {
   label {
     position: relative;
     padding: 6px 6px 6px 32px;
-    font-size: 1.2em;
+    font-size: 1em;
+    font-weight: 300;
+    color: #6B6D70;
     cursor: pointer;
-    transition: color $base-transition-duration $base-transition-easing;
     z-index: 9;
     border: 1px solid transparent;
   }

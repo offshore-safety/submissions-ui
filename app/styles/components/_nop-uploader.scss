@@ -59,14 +59,9 @@ nop-uploader {
   }
 
   .file-picker {
-    @include span-columns(12);
-
-    @include media($desktop) {
-      @include span-columns(10);
-    }
-
     height: 140px;
     padding: 5px;
+    width: 100%;
     background: $off-white;
     color: $nopsema-grey;
     cursor: pointer;
@@ -111,11 +106,6 @@ nop-uploader {
       height: 100%;
       max-height: 500px;
     }
-  }
-
-  .hint {
-    @include span-columns(12);
-    font-size: $base-font-size * 0.8;
   }
 
   .errors {
