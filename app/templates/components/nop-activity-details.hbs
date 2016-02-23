@@ -18,8 +18,12 @@
   {{nop-activity-types activityTypes=activityDetails.activityTypes readonly=true}}
   {{#if activityDetails.hasOffshoreProject}}
     <div>
-      {{nop-text-field class='has-opp' label='Accepted Offshort Project Proposal (OPP)?' value=(boolean-to-yes-no activityDetails.hasOPP)}}
-      {{nop-text-field class='has-minister-decision' label='Environment Minister Decision?' value=(boolean-to-yes-no activityDetails.hasEnvironmentMinisterDecision)}}
+      {{nop-text-field class='has-opp' 
+                       label='Accepted Offshort Project Proposal (OPP)?' 
+                       value=(boolean-to-yes-no activityDetails.hasOPP)}}
+      {{nop-text-field class='has-minister-decision' 
+                       label='Environment Minister Decision?' 
+                       value=(boolean-to-yes-no activityDetails.hasEnvironmentMinisterDecision)}}
     </div>
     {{#if showReferenceNumber}}
       {{nop-text-field label='OPP Document Reference or EPBC reference number' value=activityDetails.OPPOrEPBCReferenceNumber}}
@@ -32,27 +36,28 @@
               value=activityDetails.name
               errors=activityDetails.errors
               errorKey='name'}}
-  {{nop-textarea class='activity-description' label='Activity Description'
-                                              name='activity-description'
-                                              value=activityDetails.description
-                                              required=true
-                                              rows=10
-                                              hint='Describe the activity in 200 to 500 words. This information will be published on the NOPSEMA website'
-                                              errors=activityDetails.errors
-                                              errorKey='description'}}
+  {{nop-textarea class='activity-description' 
+                 label='Activity Description'
+                 name='activity-description'
+                 value=activityDetails.description
+                 required=true
+                 rows=10
+                 hint='Describe the activity in 200 to 500 words. This information will be published on the NOPSEMA website'
+                 errors=activityDetails.errors
+                 errorKey='description'}}
   {{nop-attach-image label='Location of Activity' 
                      hint='Attach location map' 
                      required=true
                      document=activityDetails.locationMap}}
 
   {{nop-section-header title='Activity Types'}}
-  {{nop-radio-group class='activity-regulation-type' label='Is this a petroleum or greenhouse gas activity?'
-                                                     value=activityDetails.regulationType
-                                                     required=true
-                                                     options=regulationTypes
-                                                     errors=activityDetails.errors
-                                                     errorKey='regulationType'
-                                                   }}
+  {{nop-radio-group class='activity-regulation-type' 
+                    label='Is this a petroleum or greenhouse gas activity?'
+                    value=activityDetails.regulationType
+                    required=true
+                    options=regulationTypes
+                    errors=activityDetails.errors
+                    errorKey='regulationType'}}
   {{nop-activity-types activityTypes=activityDetails.activityTypes regulationType=activityDetails.regulationType}}
 
   {{nop-section-header title='Offshore Project'}}
