@@ -13,7 +13,10 @@ export default Ember.Controller.extend({
       // this.get('model').set('responseDue', `${due.format('dddd, MMMM Do YYYY')}`);
       // this.transitionToRoute('environment-plan.new.confirmation');
       const onSuccess = (response) => {
-        console.log(response);
+        const model = this.get('model');
+        model.set('receiptNumber', response.receiptNumber);
+        model.set('submissionReceived', response.submissionReceived);
+        model.set('responseDue', response.responseDue);
         this.transitionToRoute('environment-plan.new.confirmation');
       };
       const onFailure = (result) => {
