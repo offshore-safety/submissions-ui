@@ -65,10 +65,6 @@ nop-uploader {
     margin-bottom: 0px;
     border: 2px dashed #DDD;
 
-    &:focus {
-      @include shadow-depth1;
-    }
-
     &.drag-over {
       transform: scale(1.01);
       border-color: black;

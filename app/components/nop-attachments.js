@@ -7,9 +7,9 @@ export default Ember.Component.extend({
   classNameBindings: ['hasErrors', 'readonly'],
   readonly: false,
   actions: {
-    addAttachment() {
-      const newAttachment = Document.create();
-      this.get('attachments').pushObject(newAttachment);
+    addAttachment(attachment) {
+      console.log("addAttachment");
+      this.get('attachments').pushObject(attachment);
     },
     removeAttachment(attachment) {
       this.get('attachments').removeObject(attachment);

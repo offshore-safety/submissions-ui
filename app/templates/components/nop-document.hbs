@@ -1,9 +1,15 @@
 {{#if document.token}}
 <section class='document'>
+  {{#if canRemove}}
+  {{nop-remove action='removeDocument'}}
+  {{/if}}
   <figure class='document-icon'>
     <figcaption class='document-extension'>{{document.extension}}</figcaption>
     <div class='document-size'>{{document.sizeFormatted}}</div>
   </figure>
-  <div class='document-name'>{{document.name}}</div>
+  <div class='document-details'>
+    <div class='document-name'>{{document.name}}</div>
+    {{yield}}
+  </div>
 </section>
 {{/if}}

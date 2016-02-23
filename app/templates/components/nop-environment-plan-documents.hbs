@@ -1,5 +1,5 @@
 {{#if readonly}}
-  <h5>Environment Plan</h5>
+  <div class="label">Environment Plan</div>
   {{#if documents.environmentPlan.token}}
     You provided the following file:
     <ul class='bullets'>
@@ -9,17 +9,17 @@
     Environment Plan not provided
   {{/if}}
 
-  <h5>Supporting Documentation</h5>
-    {{#if documents.attachments}}
-      You provided the following files:
-      <ul class='bullets'>
-        {{#each documents.attachments as |attachment|}}
-          <li>{{or attachment.name '-'}}</li>
-        {{/each}}
-      </ul>
-    {{else}}
-      No other documents provided
-    {{/if}}
+  <div class="label">Supporting Documentation</div>
+  {{#if documents.attachments}}
+    You provided the following files:
+    <ul class='bullets'>
+      {{#each documents.attachments as |attachment|}}
+        <li>{{or attachment.name '-'}}</li>
+      {{/each}}
+    </ul>
+  {{else}}
+    <div class="blank">No other documents provided</div>
+  {{/if}}
 
   {{nop-text-field label='Documents Already Supplied To NOPSEMA'
                    value=documents.reg31Documents
@@ -28,7 +28,8 @@
   {{nop-section-header title='Environment Plan'}}
   {{nop-attach-document document=documents.environmentPlan}}
 
-  {{nop-section-header title='Supporting Documentation' hint='Attach any supporting documents'}}
+  {{nop-section-header title='Supporting Documentation' 
+                       hint='Attach any supporting documents'}}
   {{nop-attachments attachments=documents.attachments}}
 
   {{nop-textarea label='Documents Already Supplied to NOPSEMA'
