@@ -9,6 +9,12 @@ export default Ember.Object.extend(Errors, Serializable, {
   titleOrApplicationNumber: null,
   commonwealthWaters: null,
   region: null,
+  copyLocationFrom(otherTitle) {
+    this.set('commonwealthWaters', otherTitle.get('commonwealthWaters'));
+    this.set('region', otherTitle.get('region'));
+
+    return this;
+  },
   errors: Ember.computed('titleOrApplicationNumber', 'commonwealthWaters', 'region', function() {
     const errors = {};
 
