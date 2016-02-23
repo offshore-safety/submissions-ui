@@ -81,6 +81,8 @@ nop-checkbox {
   }
 
   label {
+    position: relative;
+    z-index: 1;
     padding: 6px 6px 6px 36px;
     font-size: 1em;
     font-weight: 300;
