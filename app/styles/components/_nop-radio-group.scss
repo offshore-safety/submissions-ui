@@ -37,15 +37,4 @@ nop-radio-group {
       }
     }
   }
-
-  &.has-hint {
-    > label {
-      margin-bottom: 0px;
-    }
-
-    .hint {
-      margin-bottom: 6px;
-      font-size: $base-font-size * 0.8;
-    }
-  }
 }
