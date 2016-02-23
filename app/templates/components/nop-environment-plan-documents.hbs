@@ -26,11 +26,12 @@
                    rows=5}}
 {{else}}
   {{nop-section-header title='Environment Plan'}}
-  {{nop-attach-document document=documents.environmentPlan}}
+  {{nop-attach-document document=documents.environmentPlan
+                        dropZoneInstruction='Drop environment plan here or click to upload'}}
 
-  {{nop-section-header title='Supporting Documentation' 
-                       hint='Attach any supporting documents'}}
-  {{nop-attachments attachments=documents.attachments}}
+  {{nop-section-header title='Supporting Documentation'}}
+  {{nop-attachments attachments=documents.attachments 
+                    dropZoneInstruction='Drop supporting documents here or click to upload'}}
 
   {{nop-textarea label='Documents Already Supplied to NOPSEMA'
                  hint='List any documents already supplied to NOPSEMA under Regulation 31'

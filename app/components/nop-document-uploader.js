@@ -46,8 +46,7 @@ export default Ember.Component.extend({
     newDocument.set("token", token);
     newDocument.set("name", file.name);
     newDocument.set("size", file.size);
-    newDocument.set("preview", file.preview ? file.preview.toDataURL() : null);
-    console.log(newDocument);
+    newDocument.set("preview", file.preview ? file.preview.toDataURL('image/jpeg', 0.5) : null);
     this.sendAction('documentAdded', newDocument);
   },
   _uploadFailed(file) {
@@ -138,6 +137,8 @@ export default Ember.Component.extend({
     fileDropZone.on('dragleave drop', function() {
       fileDropZone.removeClass('drag-over');
     });
+
+    this.set('instruction', this.get('defaultInstruction'));
 
   }.on('didInsertElement')
 });

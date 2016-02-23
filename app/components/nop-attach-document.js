@@ -1,9 +1,8 @@
 import Ember from 'ember';
 
 export default Ember.Component.extend({
-  tagName: 'nop-attach-image',
+  tagName: 'nop-attach-document',
   hint: '',
-  dropZoneInstruction: '',
   actions: {
     addDocument(document) {
       this.set('document', document);

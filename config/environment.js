@@ -17,7 +17,7 @@ module.exports = function(environment) {
       'script-src': "'self'",
       'font-src': "'self'",
       'connect-src': "'self' http://ec2-54-206-7-128.ap-southeast-2.compute.amazonaws.com",
-      'img-src': "'self'",
+      'img-src': "'self' 'unsafe-inline'",
       'style-src': "'self' 'unsafe-inline'",
       'media-src': "'self'"
     },

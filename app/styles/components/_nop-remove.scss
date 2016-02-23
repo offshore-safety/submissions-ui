@@ -1,29 +1,15 @@
-nop-titles nop-remove div i {
-  top: 26px;
-}
-
-nop-remove {
+.nop-remove {
   margin: 0px;
-
-  div {
-    height: 100%;
-    vertical-align: middle;
-    line-height: normal;
-    text-align: center;
-
-    .fa {
-      font-size: 25px;
-    }
-
-    a {
-      color: $nopsema-grey;
-    }
-
-    i {
-      position: absolute;
-      top: 50%;
-      left: 25px;
-      transform: translate(-50%, -50%);
-    }
+  line-height: normal;
+  text-align: center;
+  background: transparent;
+  box-shadow: none;
+  color: $nopsema-grey;
+  font-size: 25px;
+  padding: 0 4px;
+  &:hover, &:active, &:focus {
+    background: transparent;
+    color: black;
+    box-shadow: none;
   }
 }

@@ -5,6 +5,7 @@ export default Ember.Component.extend({
   tagName: 'nop-attachments',
   store: Ember.inject.service(),
   classNameBindings: ['hasErrors', 'readonly'],
+  label: 'Drop file or click here to upload',
   readonly: false,
   actions: {
     addAttachment(attachment) {

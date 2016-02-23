@@ -15,6 +15,10 @@
                    value=activityDetails.description
                    errors=activityDetails.errors
                    errorKey='description'}}
+  <div class="label">Location</div>
+  {{#if activityDetails.locationMap}}
+  <img class="image-preview" src="{{activityDetails.locationMap.preview}}"/>
+  {{/if}}
   {{nop-activity-types activityTypes=activityDetails.activityTypes readonly=true}}
   {{#if activityDetails.hasOffshoreProject}}
     <div>
@@ -45,8 +49,9 @@
                  hint='Describe the activity in 200 to 500 words. This information will be published on the NOPSEMA website'
                  errors=activityDetails.errors
                  errorKey='description'}}
-  {{nop-attach-image label='Location of Activity' 
-                     hint='Attach location map' 
+  {{nop-attach-image label='Location of Activity'
+                     dropZoneInstruction='Drop map image here or click here to upload'
+                     dropZoneHint=''
                      required=true
                      document=activityDetails.locationMap}}
 
