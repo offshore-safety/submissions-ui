@@ -3,7 +3,7 @@
             required=required
             errorMessage=errorMessage}}
 {{#if document}}
-  {{#nop-document document=document 
+  {{#nop-document document=document
                  canRemove=true
                  showIcon=false
                  removeDocument="removeDocument"}}
@@ -15,5 +15,5 @@
                  defaultInstruction=dropZoneInstruction
                  hint='Please submit in Adobe Portable Format (.pdf) or Word document (.doc, .docx) format'
                  documentAdded="addDocument"
-                 accept='.jpg,.jpeg,.png'}}
+                 accept='.pdf,.doc,.docx'}}
 {{/unless}}
