@@ -11,7 +11,7 @@ export default Ember.Controller.extend({
       // const due = now.add(32, 'days');
       // this.get('model').set('responseDue', `${due.format('dddd, MMMM Do YYYY')}`);
       // this.transitionToRoute('environment-plan.new.confirmation');
-      const onSuccess = (response) => {
+      const onSuccess = () => {
         this.transitionToRoute('environment-plan.new.confirmation');
       };
       const onFailure = (result) => {

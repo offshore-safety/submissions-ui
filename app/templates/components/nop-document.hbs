@@ -1,17 +1,16 @@
-{{#if document}}
-<section class='document'>
-  {{#if canRemove}}
+{{#if canRemove}}
   {{nop-remove action='removeDocument'}}
-  {{/if}}
-  {{#if showIcon}}
-    <figure class='document-icon'>
-      <figcaption class='document-extension'>{{document.extension}}</figcaption>
-      <div class='document-size'>{{document.sizeFormatted}}</div>
-    </figure>
-  {{/if}}
- <div class='document-details'>
-    <div class='document-name'>{{document.name}}</div>
-    {{yield}}
-  </div>
-</section>
 {{/if}}
+{{#unless hasPreview}}
+  <figure class='document-icon'>
+    <figcaption class='document-extension'>{{document.extension}}</figcaption>
+    <div class='document-size'>{{document.sizeFormatted}}</div>
+  </figure>
+{{/unless}}
+<div class='document-details'>
+  {{#if hasPreview}}
+    <img class="image-preview" src="{{document.preview}}"/>
+  {{/if}}
+  <div class='document-name'>{{document.name}}</div>
+  {{yield}}
+</div>

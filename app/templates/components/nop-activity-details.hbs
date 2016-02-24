@@ -17,7 +17,8 @@
                    errorKey='description'}}
   <div class="label">Location</div>
   {{#if activityDetails.locationMap}}
-  <img class="image-preview" src="{{activityDetails.locationMap.preview}}"/>
+    {{nop-document document=activityDetails.locationMap
+                   showPreview=true}}
   {{/if}}
   {{nop-activity-types activityTypes=activityDetails.activityTypes readonly=true}}
   {{#if activityDetails.hasOffshoreProject}}
@@ -49,12 +50,15 @@
                  hint='Describe the activity in 200 to 500 words. This information will be published on the NOPSEMA website'
                  errors=activityDetails.errors
                  errorKey='description'}}
-  {{nop-attach-image label='Location of Activity'
-                     dropZoneInstruction='Drop map image here or click here to upload'
-                     dropZoneHint=''
-                     required=true
-                     document=activityDetails.locationMap}}
-
+  {{nop-attach-document document=activityDetails.locationMap
+                        label='Location of Activity'
+                        instruction='Drop map image here or click here to upload'
+                        hint='Please submit a file in the JPEG (.jpg, .jpeg) or PNG (.png) formats.'
+                        accepts='.jpg,.jpeg,.png'
+                        showPreview=true
+                        errors=activityDetails.errors
+                        errorKey='locationMap'
+                        required=true}}
   {{nop-section-header title='Activity Types'}}
   {{nop-radio-group class='activity-regulation-type' 
                     label='Is this a petroleum or greenhouse gas activity?'

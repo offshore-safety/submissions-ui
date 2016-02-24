@@ -1,6 +1,4 @@
-{{#if showRemove}}
-  {{nop-remove action='remove'}}
-{{/if}}
+{{nop-remove action='remove' enabled=showRemove}}
 {{nop-select placeholder='Select activity type' 
              name='activity-type'
              content=activityTypeOptions

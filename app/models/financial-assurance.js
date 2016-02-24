@@ -39,12 +39,12 @@ export default Ember.Object.extend(Errors, Serializable, {
       errors['includeConfirmation'] = 'Required';
     }
 
-    if (Ember.isPresent(this.get('includeDeclaration')) && this.get('includeDeclaration')) {
-      errors.faDeclaration = this.get('faDeclaration').get('errors');
+    if (!this.get('faDeclaration') && this.get('includeDeclaration')) {
+      errors['faDeclaration'] = 'Required';
     }
 
-    if (Ember.isPresent(this.get('includeConfirmation')) && this.get('includeConfirmation')) {
-      errors.faConfirmation = this.get('faConfirmation').get('errors');
+    if (!this.get('faConfirmation') && this.get('includeConfirmation')) {
+      errors['faConfirmation'] = 'Required';
     }
 
     return errors;

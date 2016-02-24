@@ -5,32 +5,32 @@ import $ from 'jquery';
 import Document from '../models/document';
 
 export default Ember.Component.extend({
-  tagName: 'nop-uploader',
-  accept: null,
-  name: null,
-  defaultInstruction: 'Drop file or click here to upload',
-  instruction: 'Drop file or click here to upload',
-  showProgress: false,
-  progress: 0,
+  tagName: 'nop-document-uploader',
+  descriptionRequired: false,
+  accepts: null,
+  message: null,
+  progress: null,
   progressStyle: Ember.computed('progress', function() {
     return new Ember.Handlebars.SafeString(`width: ${this.get('progress')}%`);
   }),
+  showProgress: Ember.computed('progress', function() {
+    return this.get('progress') !== null;
+  }),
 
   _fileValid(fileName) {
-    const accept = this.get('accept');
-    return accept === null || _.any(accept.split(','), function(docType) {
+    const accepts = this.get('accepts');
+    return accepts === null || _.any(accepts.split(','), function(docType) {
       return _.endsWith(fileName.toLowerCase(), docType);
     });
   },
   _fileAdded(file) {
     if (this._fileValid(file.name)) {
-      this.set('name', file.name);
-      this.set('showProgress', true);
-      this.set('instruction', 'Currently uploading, please wait…');
+      this.set('progress', 0);
+      this.set('message', 'Currently uploading, please wait…');
       return true;
     } else {
-      this.set('showProgress', false);
-      this.set('instruction', `'${file.name}' is not a valid file type`);
+      this.set('progress', null);
+      this.set('message', `'${file.name}' is not a valid file type`);
       return false;
     }
   },
@@ -38,21 +38,20 @@ export default Ember.Component.extend({
     this.set('progress', file.progress() * 100);
   },
   _uploadCompleted(file, token) {
-    this.set('instruction', this.get('defaultInstruction'));
-    this.set('progress', 0);
-    this.set('showProgress', false);
+    this.set('message', null);
+    this.set('progress', null);
 
     const newDocument = Document.create();
     newDocument.set("token", token);
     newDocument.set("name", file.name);
     newDocument.set("size", file.size);
     newDocument.set("preview", file.preview ? file.preview.toDataURL('image/jpeg', 0.5) : null);
+    newDocument.set("descriptionRequired", this.get("descriptionRequired"));
     this.sendAction('documentAdded', newDocument);
   },
   _uploadFailed(file) {
-    this.set('progress', 0);
-    this.set('showProgress', false);
-    this.set('instruction', `Upload failed for '${file.name}'. Please check your connection and try again`);
+    this.set('progress', null);
+    this.set('message', `Upload failed for '${file.name}'. Please check your connection and try again`);
   },
   _initialiseUploader: function() {
     const self = this;
@@ -61,11 +60,11 @@ export default Ember.Component.extend({
     const fileInput = this.$().find('input:file');
     const signatureEndpoint = `${ENV.APP.API_ENDPOINT}/api/v1/submissions/file/sign`;
 
-    const getPresignedPostUrl = function(callback) {
+    function getPresignedPostUrl(callback) {
       $.get(signatureEndpoint)
        .done(callback)
        .fail(function() {
-        self.set('instruction', "We're having trouble preparing to upload. Please check your connection");
+        self.set('message', "We're having trouble preparing to upload. Please check your connection");
         setTimeout(getPresignedPostUrl, 1000, callback);
       });
     }
@@ -73,12 +72,13 @@ export default Ember.Component.extend({
     function onFileUploadAdd(e, data) {
       const file = data.files[0];
       if (self._fileAdded(file)) {
-        self.set('instruction', `Preparing to upload '${file.name}'...`)
+        self.set('message', `Preparing to upload '${file.name}'...`);
+        self.set('progress', 0);
         getPresignedPostUrl(function (presignedData) {
           data.url = presignedData.url;
           data.formData = presignedData.formData;
           data.submit();
-          self.set('instruction', `Uploading '${file.name}'...`)
+          self.set('message', `Uploading '${file.name}'...`);
         });
       }
     }
@@ -89,7 +89,6 @@ export default Ember.Component.extend({
 
     function onFileUploadAddOne(e, data) {
       const token = data.response().result.getElementsByTagName('Key')[0].childNodes[0].nodeValue;
-      console.log(data);
       self._uploadCompleted(data.files[0], token);
       // reset file input
       fileInput.wrap('<form>').parent('form').trigger('reset');
@@ -137,8 +136,6 @@ export default Ember.Component.extend({
     fileDropZone.on('dragleave drop', function() {
       fileDropZone.removeClass('drag-over');
     });
-
-    this.set('instruction', this.get('defaultInstruction'));
 
   }.on('didInsertElement')
 });

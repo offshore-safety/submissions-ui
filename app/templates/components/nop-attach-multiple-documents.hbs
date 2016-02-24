@@ -1,0 +1,32 @@
+{{nop-label label=label required=required}}
+{{#each documents as |document index|}}
+  {{#nop-document document=document
+                  canRemove=true
+                  showRemove=true
+                  removeDocument='removeDocument'}}
+    {{#if document.descriptionRequired}}
+      {{nop-input label=descriptionLabel
+                  value=document.description
+                  errors=document.errors
+                  errorKey='description'
+                  required=true}}
+    {{/if}}
+  {{/nop-document}}
+{{/each}}
+{{#nop-document-uploader documentAdded="addDocument"
+                         descriptionRequired=descriptionRequired
+                         accepts=accepts}}
+  <div class='instruction'>
+    {{instruction}}
+    {{#if requiredErrorMessage}}
+      <span class='required-error-message'>{{ requiredErrorMessage }}</span>
+    {{/if}}
+  </div>
+  {{#if notRequiredErrorMessage}}
+    <span class='error-message'>{{ notRequiredErrorMessage }}</span>
+  {{/if}}
+  {{#if hint}}
+    <div class='hint'>{{hint}}</div>
+  {{/if}}
+{{/nop-document-uploader}}
+

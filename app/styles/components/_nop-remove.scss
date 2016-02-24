@@ -7,9 +7,14 @@
   color: $nopsema-grey;
   font-size: 25px;
   padding: 0 4px;
-  &:hover, &:active, &:focus {
+  &:not(:disabled) {
+    &:hover, &:active, &:focus {
+      background: transparent;
+      color: black;
+      box-shadow: none;
+    }
+  }
+  &:disabled {
     background: transparent;
-    color: black;
-    box-shadow: none;
   }
 }

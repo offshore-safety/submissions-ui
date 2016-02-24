@@ -1,10 +1,9 @@
 import Ember from 'ember';
 
 export default Ember.Component.extend({
-  tagName: 'nop-attach-document',
+  tagName: 'nop-attach-multiple-documents',
   classNameBindings: ['errorMessage:errors'],
-  document: null,
-  showPreview: false,
+  documents: null,
   descriptionLabel: null,
   descriptionRequired: false,
   instruction: '',
@@ -25,10 +24,10 @@ export default Ember.Component.extend({
   }), 
   actions: {
     addDocument(document) {
-      this.set('document', document);
+      this.get('documents').pushObject(document);
     },
-    removeDocument() {
-      this.set('document', null);
+    removeDocument(document) {
+      this.get('documents').removeObject(document);
     }
   }
 });

@@ -1,6 +1,15 @@
-.document {
+img.image-preview {
+  display: block;
+  margin: 0 0 auto 0;
+  max-height: 300px;
+  max-width: 100%; 
+}
+
+nop-document {
+  @include clearfix();
+  display: block;
   position: relative;
-  margin: 10px 0;
+  margin: 20px 0;
   .document-icon {
     position: relative;
     display: inline-block;
@@ -49,7 +58,14 @@
     display: inline-block;
     vertical-align: middle;
   }
-  .document-name {
-    font-weight: bold;
+  &.has-preview .document-details {
+    padding: 8px;
+    border: 1px solid #AAA;
+    background: #F9F9F9;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.25);
+  }
+  &.has-preview .document-name {
+    text-align: center;
+    margin-top: 6px;    
   }
 }
