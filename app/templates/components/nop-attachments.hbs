@@ -9,14 +9,17 @@
   {{else}}
     You have chosen not to provide any additional attachments with this submission
   {{/if}}
-
   {{nop-errors errors=errors}}
 {{else}}
   {{#each attachments as |document index|}}
-    {{#nop-list-item}}
-      {{nop-attach-file document=document showRemove=true removeAttachment=(action 'removeAttachment')}}
-    {{/nop-list-item}}
+    {{#nop-document document=document
+                    canRemove=true
+                    showRemove=true 
+                    removeDocument='removeAttachment'}}
+      {{nop-input label='How is this document related to the Environment Plan?'
+                  value=document.relationship
+                  required=true}}
+    {{/nop-document}}
   {{/each}}
-
-  {{nop-add-another action='addAttachment' text='Add attachment' class='add-attachment'}}
+  {{nop-document-uploader documentAdded="addAttachment"}}
 {{/if}}

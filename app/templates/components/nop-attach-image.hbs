@@ -2,12 +2,18 @@
             label=label
             required=required
             errorMessage=errorMessage}}
-{{#if hint}}
-  <div class='hint'>{{hint}}</div>
+{{#if document}}
+  {{#nop-document document=document 
+                 canRemove=true
+                 showIcon=false
+                 removeDocument="removeDocument"}}
+    <img class="image-preview" src="{{document.preview}}"/>
+  {{/nop-document}}
 {{/if}}
-{{nop-uploader token=document.token
-               hasPreview=true
-               hint='Please submit a file in the JPEG (.jpg, .jpeg) or PNG (.png) formats.'
-               accept='.jpg,.jpeg,.png'
-               errors=document.errors
-               errorKey='token'}}
+{{#unless document}}
+  {{nop-document-uploader
+                 defaultInstruction=dropZoneInstruction
+                 hint='Please submit a file in the JPEG (.jpg, .jpeg) or PNG (.png) formats.'
+                 documentAdded="addDocument"
+                 accept='.jpg,.jpeg,.png'}}
+{{/unless}}

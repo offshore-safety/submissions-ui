@@ -1,4 +1,5 @@
 .document {
+  position: relative;
   margin: 10px 0;
   .document-icon {
     position: relative;
@@ -44,8 +45,11 @@
     text-align: center;
     color: #999;
   }
-  .document-name {
+  .document-details {
     display: inline-block;
+    vertical-align: middle;
+  }
+  .document-name {
     font-weight: bold;
   }
 }

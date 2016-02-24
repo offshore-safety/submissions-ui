@@ -15,11 +15,19 @@
                    value=activityDetails.description
                    errors=activityDetails.errors
                    errorKey='description'}}
+  <div class="label">Location</div>
+  {{#if activityDetails.locationMap}}
+  <img class="image-preview" src="{{activityDetails.locationMap.preview}}"/>
+  {{/if}}
   {{nop-activity-types activityTypes=activityDetails.activityTypes readonly=true}}
   {{#if activityDetails.hasOffshoreProject}}
     <div>
-      {{nop-text-field class='has-opp' label='Accepted Offshort Project Proposal (OPP)?' value=(boolean-to-yes-no activityDetails.hasOPP)}}
-      {{nop-text-field class='has-minister-decision' label='Environment Minister Decision?' value=(boolean-to-yes-no activityDetails.hasEnvironmentMinisterDecision)}}
+      {{nop-text-field class='has-opp' 
+                       label='Accepted Offshort Project Proposal (OPP)?' 
+                       value=(boolean-to-yes-no activityDetails.hasOPP)}}
+      {{nop-text-field class='has-minister-decision' 
+                       label='Environment Minister Decision?' 
+                       value=(boolean-to-yes-no activityDetails.hasEnvironmentMinisterDecision)}}
     </div>
     {{#if showReferenceNumber}}
       {{nop-text-field label='OPP Document Reference or EPBC reference number' value=activityDetails.OPPOrEPBCReferenceNumber}}
@@ -32,58 +40,71 @@
               value=activityDetails.name
               errors=activityDetails.errors
               errorKey='name'}}
-  {{nop-textarea class='activity-description' label='Activity Description'
-                                              name='activity-description'
-                                              value=activityDetails.description
-                                              required=true
-                                              rows=10
-                                              hint='Describe the activity in 200 to 500 words. This information will be published on the NOPSEMA website'
-                                              errors=activityDetails.errors
-                                              errorKey='description'}}
-  {{nop-attach-image label='Location of Activity' hint='Attach location map' document=activityDetails.locationMap}}
+  {{nop-textarea class='activity-description' 
+                 label='Activity Description'
+                 name='activity-description'
+                 value=activityDetails.description
+                 required=true
+                 rows=10
+                 hint='Describe the activity in 200 to 500 words. This information will be published on the NOPSEMA website'
+                 errors=activityDetails.errors
+                 errorKey='description'}}
+  {{nop-attach-image label='Location of Activity'
+                     dropZoneInstruction='Drop map image here or click here to upload'
+                     dropZoneHint=''
+                     required=true
+                     document=activityDetails.locationMap}}
 
   {{nop-section-header title='Activity Types'}}
-  {{nop-radio-group class='activity-regulation-type' label='Is this a petroleum or greenhouse gas activity?'
-                                                     value=activityDetails.regulationType
-                                                     required=true
-                                                     options=regulationTypes
-                                                     errors=activityDetails.errors
-                                                     errorKey='regulationType'
-                                                   }}
+  {{nop-radio-group class='activity-regulation-type' 
+                    label='Is this a petroleum or greenhouse gas activity?'
+                    value=activityDetails.regulationType
+                    required=true
+                    options=regulationTypes
+                    errors=activityDetails.errors
+                    errorKey='regulationType'}}
   {{nop-activity-types activityTypes=activityDetails.activityTypes regulationType=activityDetails.regulationType}}
 
   {{nop-section-header title='Offshore Project'}}
-  {{nop-radio-group class='offshore-project' label='Is any part of the activity an offshore project?'
-                                             value=activityDetails.hasOffshoreProject
-                                             options=trueOrFalse
-                                             errors=activityDetails.errors
-                                             errorKey='hasOffshoreProject'}}
+  {{nop-radio-group class='offshore-project' 
+                    label='Is any part of the activity an offshore project?'
+                    value=activityDetails.hasOffshoreProject
+                    options=trueOrFalse
+                    required=true
+                    errors=activityDetails.errors
+                    errorKey='hasOffshoreProject'}}
   {{#if activityDetails.hasOffshoreProject}}
-    {{nop-radio-group class='opp' label='Is there an accepted Offshore Project Proposal (OPP)?'
-                                                 hint='(As accepted under regulation 5D)'
-                                                 value=activityDetails.hasOPP
-                                                 options=trueOrFalse
-                                                 errors=activityDetails.errors
-                                                 errorKey='hasOPP'}}
+    {{nop-radio-group class='opp' 
+                      label='Is there an accepted Offshore Project Proposal (OPP)?'
+                      hint='(As accepted under regulation 5D)'
+                      value=activityDetails.hasOPP
+                      options=trueOrFalse
+                      required=true
+                      errors=activityDetails.errors
+                      errorKey='hasOPP'}}
     {{#if showOPPReference}}
       {{nop-input class='reference-number'
                   label='Please provide OPP document reference'
                   value=activityDetails.oppDocumentReference
+                  required=true
                   errors=activityDetails.errors
                   errorKey='oppDocumentReference'}}
     {{/if}}
 
     {{#if showMinisterQuestion}}
-      {{nop-radio-group class='environment-minister-decision' label='Is there a decision by the Environment Minister for the activity?'
-                                           hint='As per sub-regulations 9(3) and 17(3)'
-                                           value=activityDetails.hasMinisterDecision
-                                           options=trueOrFalse
-                                           errors=activityDetails.errors
-                                           errorKey='hasMinisterDecision'}}
+      {{nop-radio-group class='environment-minister-decision' 
+                        label='Is there a decision by the Environment Minister for the activity?'
+                        hint='As per sub-regulations 9(3) and 17(3)'
+                        value=activityDetails.hasMinisterDecision
+                        options=trueOrFalse
+                        required=true
+                        errors=activityDetails.errors
+                        errorKey='hasMinisterDecision'}}
       {{#if showEPBCReference}}
         {{nop-input class='reference-number'
                     label='Please provide the EPBC reference number'
                     value=activityDetails.epbcReferenceNumber
+                    required=true
                     errors=activityDetails.errors
                     errorKey='epbcReferenceNumber'}}
       {{/if}}

@@ -11,12 +11,6 @@ nop-input, nop-textarea {
   @include span-columns(12);
 }
 
-@include media($desktop) {
-  nop-input, nop-textarea {
-    @include span-columns(10);
-  }
-}
-
 .error-message {
   display: none;
 }

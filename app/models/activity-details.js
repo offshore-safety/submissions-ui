@@ -41,7 +41,7 @@ export default Ember.Object.extend(Errors, Serializable, {
       errors['description'] = 'Required';
     }
 
-    if (Ember.isBlank(this.get('locationMap').get('token'))) {
+    if (Ember.isBlank(this.get('locationMap'))) {
       errors['locationMap'] = 'Required';
     }
 
