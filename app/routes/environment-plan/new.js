@@ -16,10 +16,7 @@ import AdditionalInfo from '../../models/additional-info';
 export default Ember.Route.extend({
   submissionStore: Ember.inject.service(),
   _activityDetails() {
-    const locationMap = Document.create();
-    const activityDetails = ActivityDetails.create({
-      locationMap
-    });
+    const activityDetails = ActivityDetails.create();
 
     return activityDetails;
   },
@@ -65,20 +62,12 @@ export default Ember.Route.extend({
     return contact;
   },
   _documents() {
-    const environmentPlan = Document.create();
-    const environmentPlanDocuments = EnvironmentPlanDocuments.create({
-      environmentPlan
-    });
+    const environmentPlanDocuments = EnvironmentPlanDocuments.create();
 
     return environmentPlanDocuments;
   },
   _financialAssurance() {
-    const faDeclaration = Document.create();
-    const faConfirmation = Document.create();
-    const financialAssurance = FinancialAssurance.create({
-      faDeclaration,
-      faConfirmation
-    });
+    const financialAssurance = FinancialAssurance.create();
 
     return financialAssurance;
   },

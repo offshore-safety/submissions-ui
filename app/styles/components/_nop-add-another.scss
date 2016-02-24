@@ -2,18 +2,11 @@ nop-add-another {
   @include span-columns(12);
 }
 
-@include media($desktop) {
-  nop-add-another {
-    @include span-columns(10);
-  }
-}
-
 nop-add-another button {
   @include button-color(white);
   padding: 8px;
   box-shadow: none;
   margin-top: 5px;
-  margin-left: 53px;
   font-family: $base-font-family;
   font-size: $base-input-font-size;
   font-weight: $base-font-weight;

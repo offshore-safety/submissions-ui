@@ -3,7 +3,9 @@
   <p class='content'>{{line}}</p>
 {{/each}}
 {{#unless value}}
-  <span class='blank'>Not specified</span>
+  {{#unless errorMessage}}
+    <span class='blank'>Not specified</span>
+  {{/unless}}
 {{/unless}}
 {{#if errorMessage}}
   <div class="error-message">

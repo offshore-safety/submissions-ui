@@ -1,7 +1,7 @@
 nop-address {
   .locality {
     @include media($desktop) {
-      @include span-columns(5);
+      @include span-columns(6);
     }
   }
 
@@ -9,7 +9,7 @@ nop-address {
     @include span-columns(6);
 
     @include media($desktop) {
-      @include span-columns(3);
+      @include span-columns(4);
     }
   }
 
@@ -19,14 +19,11 @@ nop-address {
 
     @include media($desktop) {
       @include span-columns(2);
+      @include omega;
     }
   }
 
   .country {
     @include span-columns(12);
-
-    @include media($desktop) {
-      @include span-columns(10);
-    }
   }
 }

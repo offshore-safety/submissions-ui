@@ -1,0 +1,19 @@
+<section class='upload-section'>
+  <button class='file-picker'>
+    <div class='instruction'>
+      {{fa-icon 'cloud-upload'}}<br/>
+      {{instruction}}
+    </div>
+    {{#if showProgress}}
+    <div class='progress'>
+      <div class="progress-inner" style={{progressStyle}}></div>
+    </div>
+    {{/if}}
+    {{#unless showProgress}}
+      {{#if hint}}
+        <div class='hint'>{{hint}}</div>
+      {{/if}}
+    {{/unless}}
+  </button>
+  <input type='file' class='file-input' />
+</section>
