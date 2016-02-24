@@ -2,7 +2,11 @@
             class='activity-details-page'}}
   {{nop-activity-details activityDetails=model.activityDetails}}
   {{#nop-actions}}
-    <button {{action 'goBack'}}>Back</button>
-    <button class='primary' {{action 'goNext'}}>Next</button>
+    {{#link-to back}}
+      <button>Back</button>
+    {{/link-to}}
+    {{#link-to next}}
+      <button class='primary'>Next</button>
+    {{/link-to}}
   {{/nop-actions}}
 {{/nop-page}}

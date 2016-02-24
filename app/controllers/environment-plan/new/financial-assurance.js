@@ -1,12 +1,6 @@
 import Ember from 'ember';
 
 export default Ember.Controller.extend({
-  actions: {
-    goNext() {
-      this.transitionToRoute('environment-plan.new.additional-info');
-    },
-    goBack() {
-      this.transitionToRoute('environment-plan.new.documents');
-    }
-  }
+  next: 'environment-plan.new.additional-info',
+  back: 'environment-plan.new.documents'
 });

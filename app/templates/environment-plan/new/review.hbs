@@ -48,7 +48,9 @@
     {{/nop-review-component}}
   </section>
   {{#nop-actions}}
-    <button {{action 'goBack'}}>Back</button>
+    {{#link-to back}}
+      <button>Back</button>
+    {{/link-to}}
     <button class='primary' {{action 'submit'}}>Submit</button>
   {{/nop-actions}}
 {{/nop-page}}

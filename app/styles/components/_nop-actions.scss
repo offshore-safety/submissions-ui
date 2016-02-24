@@ -1,7 +1,13 @@
 nop-actions {
   @include span-columns(12);
   margin-top: 25px;
+
   text-align: center;
+
+  a {
+    text-decoration: none;
+  }
+
   button {
     font-size: 1.2rem;
     text-align: center;

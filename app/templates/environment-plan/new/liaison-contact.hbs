@@ -2,7 +2,11 @@
             hint='This is the person whose contact details will be published on NOPSEMA’s website as a point of contact for any stakeholders who wish to get in touch with you about your activity'}}
   {{nop-liaison-contact contact=model.liaisonContact}}
   {{#nop-actions}}
-    <button {{action 'goBack'}}>Back</button>
-    <button class='primary' {{action 'goNext'}}>Next</button>
+    {{#link-to back}}
+      <button>Back</button>
+    {{/link-to}}
+    {{#link-to next}}
+      <button class='primary'>Next</button>
+    {{/link-to}}
   {{/nop-actions}}
 {{/nop-page}}

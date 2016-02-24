@@ -10,7 +10,7 @@ test('next route should be nominated liaison when neither contact same', functio
   const parent = Ember.Object.create({submissionContact: contact});
   controller.set('model', parent);
 
-  assert.equal(controller._nextRoute(), 'environment-plan.new.liaison-contact');
+  assert.equal(controller.get('next'), 'environment-plan.new.liaison-contact');
   assert.ok(controller);
 });
 
@@ -20,7 +20,7 @@ test('next route should be activity contact when nominated liaison same', functi
   const parent = Ember.Object.create({submissionContact: contact});
   controller.set('model', parent);
 
-  assert.equal(controller._nextRoute(), 'environment-plan.new.activity-contact');
+  assert.equal(controller.get('next'), 'environment-plan.new.activity-contact');
   assert.ok(controller);
 });
 
@@ -30,6 +30,6 @@ test('next route should be attach environment plan when both contacts same', fun
   const parent = Ember.Object.create({submissionContact: contact});
   controller.set('model', parent);
 
-  assert.equal(controller._nextRoute(), 'environment-plan.new.documents');
+  assert.equal(controller.get('next'), 'environment-plan.new.documents');
   assert.ok(controller);
 });

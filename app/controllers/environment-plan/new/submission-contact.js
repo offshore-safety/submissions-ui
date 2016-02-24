@@ -1,7 +1,7 @@
 import Ember from 'ember';
 
 export default Ember.Controller.extend({
-  _nextRoute() {
+  next: Ember.computed('model.submissionContact.sameAsLiaison', 'model.submissionContact.sameAsActivity', function() {
     const routePrefix = 'environment-plan.new';
 
     if (this.get('model').get('submissionContact').get('sameAsLiaison')) {
@@ -11,13 +11,6 @@ export default Ember.Controller.extend({
       return `${routePrefix}.activity-contact`;
     }
     return `${routePrefix}.liaison-contact`;
-  },
-  actions: {
-    goNext() {
-      this.transitionToRoute(this._nextRoute());
-    },
-    goBack() {
-      this.transitionToRoute('environment-plan.new.titleholder-details');
-    }
-  }
+  }),
+  back: 'environment-plan.new.titleholder-details'
 });

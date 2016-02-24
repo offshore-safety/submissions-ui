@@ -13,7 +13,7 @@ import AdditionalInfo from './additional-info';
 export default Ember.Object.extend(Serializable, {
   _serializableProperties: [
     'id', 'activityDetails', 'titles', 'titleholderDetails', 'submissionContact', 'liaisonContact', 'activityContact',
-    'documents', 'financialAssurance', 'additionalInfo', 'receiptNumber', 'timestamp', 'responseDue'
+    'documents', 'financialAssurance', 'additionalInfo', 'receiptNumber', 'submissionReceived', 'responseDue'
   ],
   _relationshipTypes: {
     'activityDetails': ActivityDetails,

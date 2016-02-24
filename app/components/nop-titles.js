@@ -14,7 +14,9 @@ export default Ember.Component.extend({
   }),
   actions: {
     addTitle() {
-      const newTitle = Title.create();
+      const titles = this.get('titles').get('titles');
+      const firstTitle = titles[0];
+      const newTitle = Title.create().copyLocationFrom(firstTitle);
       this.get('titles').get('titles').pushObject(newTitle);
     },
     removeTitle(title) {
