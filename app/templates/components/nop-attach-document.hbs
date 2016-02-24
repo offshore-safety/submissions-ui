@@ -1,19 +1,27 @@
-{{nop-label forElementId=(concat elementId '-' name)
-            label=label
-            required=required
-            errorMessage=errorMessage}}
+{{nop-label label=label
+            required=required}}
 {{#if document}}
-  {{#nop-document document=document
-                 canRemove=true
-                 showIcon=false
-                 removeDocument="removeDocument"}}
-    <img class="image-preview" src="{{document.preview}}"/>
+  {{#nop-document document=document 
+                  canRemove=true
+                  showPreview=showPreview
+                  removeDocument="removeDocument"}}
+    {{yield}}
   {{/nop-document}}
+{{else}}
+  {{#nop-document-uploader documentAdded="addDocument"
+                           descriptionRequired=descriptionRequired
+                           accepts=accepts}}
+    <div class='instruction'>
+      {{instruction}}
+      {{#if requiredErrorMessage}}
+        <span class='required-error-message'>{{ requiredErrorMessage }}</span>
+      {{/if}}
+    </div>
+    {{#if notRequiredErrorMessage}}
+      <span class='error-message'>{{ notRequiredErrorMessage }}</span>
+    {{/if}}
+    {{#if hint}}
+      <div class='hint'>{{hint}}</div>
+    {{/if}}
+  {{/nop-document-uploader}}
 {{/if}}
-{{#unless document}}
-  {{nop-document-uploader
-                 defaultInstruction=dropZoneInstruction
-                 hint='Please submit in Adobe Portable Format (.pdf) or Word document (.doc, .docx) format'
-                 documentAdded="addDocument"
-                 accept='.pdf,.doc,.docx'}}
-{{/unless}}

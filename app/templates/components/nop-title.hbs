@@ -9,9 +9,7 @@
                    label='Region'
                    value=title.region}}
 {{else}}
-  {{#if showRemove}}
-    {{nop-remove action='remove'}}
-  {{/if}}
+  {{nop-remove action='remove' enabled=showRemove}}
   {{nop-input label='Title or application number'
               required=true
               value=title.titleOrApplicationNumber

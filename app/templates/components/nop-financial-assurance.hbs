@@ -2,10 +2,9 @@
   <h5>Financial Assurance Declaration</h5>
   {{#if noPreviousDeclaration}}
     {{#if assurance.includeDeclaration}}
-      You have provided the following file:
-      <ul class='bullets'>
-        <li>{{assurance.faDeclaration.name}}</li>
-      </ul>
+      {{#if assurance.faDeclaration}}
+        {{nop-document document=assurance.faDeclaration}}
+      {{/if}}
     {{else}}
       You have declined to provide a Financial Assurance declaration with this submission
     {{/if}}
@@ -15,10 +14,9 @@
 
   <h5>Financial Assurance Confirmation</h5>
   {{#if assurance.includeConfirmation}}
-    You have provided the following file:
-    <ul class='bullets'>
-      <li>{{assurance.faConfirmation.name}}</li>
-    </ul>
+    {{#if assurance.faConfirmation}}
+      {{nop-document document=assurance.faConfirmation}}
+    {{/if}}
   {{else}}
     You have declined to provide a Financial Assurance confirmation with this submission
   {{/if}}
@@ -32,25 +30,36 @@
                     errors=assurance.errors
                     errorKey='previousDeclaration'}}
   {{#if noPreviousDeclaration}}
-    {{nop-radio-group class='include-fa' label='Do you want to submit a Financial Assurance Declaration with this submission?'
-                                               value=assurance.includeDeclaration
-                                               options=trueOrFalse
-                                               required=true
-                                               errors=assurance.errors
-                                               errorKey='includeDeclaration'}}
+    {{nop-radio-group class='include-fa' 
+                      label='Do you want to submit a Financial Assurance Declaration with this submission?'
+                      value=assurance.includeDeclaration
+                      options=trueOrFalse
+                      required=true
+                      errors=assurance.errors
+                      errorKey='includeDeclaration'}}
     {{#if assurance.includeDeclaration}}
-      {{nop-attach-file document=assurance.faDeclaration}}
+      {{nop-attach-document document=assurance.faDeclaration
+                            instruction="Drop financial assurance declaration here or click to upload"
+                            errors=assurance.errors
+                            errorKey='faDeclaration'
+                            required=true}}
     {{/if}}
   {{/if}}
 
   {{nop-section-header title='Financial Assurance Confirmation'}}
-  {{nop-radio-group class='include-fa' label='Do you want to submit a Financial Assurance Confirmation with this submission?'
-                                             value=assurance.includeConfirmation
-                                             options=trueOrFalse
-                                             errors=assurance.errors
-                                             errorKey='includeConfirmation'}}
+  {{nop-radio-group class='include-fa' 
+                    label='Do you want to submit a Financial Assurance Confirmation with this submission?'
+                    value=assurance.includeConfirmation
+                    required=true
+                    options=trueOrFalse
+                    errors=assurance.errors
+                    errorKey='includeConfirmation'}}
 
   {{#if assurance.includeConfirmation}}
-    {{nop-attach-file document=assurance.faConfirmation}}
+    {{nop-attach-document document=assurance.faConfirmation
+                          instruction="Drop financial assurance confirmation here or click to upload"
+                          errors=assurance.errors
+                          errorKey='faConfirmation'
+                          required=true}}
   {{/if}}
 {{/if}}

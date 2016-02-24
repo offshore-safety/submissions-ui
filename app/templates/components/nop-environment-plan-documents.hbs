@@ -1,22 +1,19 @@
 {{#if readonly}}
   <div class="label">Environment Plan</div>
-  {{#if documents.environmentPlan.token}}
-    You provided the following file:
-    <ul class='bullets'>
-      <li>{{or documents.environmentPlan.name '-'}}</li>
-    </ul>
-  {{else}}
-    Environment Plan not provided
+  {{#if documents.environmentPlan}}
+    {{nop-document document=documents.environmentPlan}}
   {{/if}}
 
   <div class="label">Supporting Documentation</div>
-  {{#if documents.attachments}}
-    You provided the following files:
-    <ul class='bullets'>
-      {{#each documents.attachments as |attachment|}}
-        <li>{{or attachment.name '-'}}</li>
-      {{/each}}
-    </ul>
+  {{#if documents.attachments.length}}
+    {{#each documents.attachments as |document|}}
+      {{#nop-document document=document}}
+        {{nop-text-field label='How is this document related to the Environment Plan?'
+                         value=document.description
+                         errors=document.errors
+                         errorKey='description'}}
+      {{/nop-document}}
+    {{/each}}
   {{else}}
     <div class="blank">No other documents provided</div>
   {{/if}}
@@ -27,11 +24,18 @@
 {{else}}
   {{nop-section-header title='Environment Plan'}}
   {{nop-attach-document document=documents.environmentPlan
-                        dropZoneInstruction='Drop environment plan here or click to upload'}}
+                        instruction='Drop environment plan here or click to upload'
+                        hint='Please submit in Adobe Portable Format (.pdf) or Word document (.doc, .docx) format'
+                        accepts='.pdf,.doc,.docx'
+                        errors=documents.errors
+                        errorKey='environmentPlan'
+                        required=true}}
 
   {{nop-section-header title='Supporting Documentation'}}
-  {{nop-attachments attachments=documents.attachments 
-                    dropZoneInstruction='Drop supporting documents here or click to upload'}}
+  {{nop-attach-multiple-documents documents=documents.attachments 
+                                  descriptionLabel='How is this document related to the Environment Plan?'
+                                  descriptionRequired=true
+                                  instruction='Drop supporting documents here or click to upload'}}
 
   {{nop-textarea label='Documents Already Supplied to NOPSEMA'
                  hint='List any documents already supplied to NOPSEMA under Regulation 31'
