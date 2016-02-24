@@ -6,7 +6,7 @@ import Serializable from './serializable';
 export default Ember.Mixin.create(Errors, Serializable, {
   _serializableProperties: [
     'title', 'firstName', 'lastName', 'position', 'employer', 'phone',
-    'mobile', 'email', 'postalAddress', 'sameAsLiaison', 'sameAsActivity', 'visited'
+    'mobile', 'email', 'postalAddress', 'sameAsSubmissionContact', 'visited'
   ],
   _relationshipTypes: {
     'postalAddress': Address
@@ -21,9 +21,13 @@ export default Ember.Mixin.create(Errors, Serializable, {
   mobile: null,
   email: null,
   postalAddress: null,
-  sameAsLiaison: false,
-  sameAsActivity: false,
-  errors: Ember.computed('title', 'firstName', 'lastName', 'position', 'phone', 'mobile', 'email', 'postalAddress.errors', function() {
+  sameAsSubmissionContact: false,
+  errors: Ember.computed('title', 'firstName', 'lastName', 'position', 'phone', 'mobile', 'email', 'postalAddress.errors', 'sameAsSubmissionContact', function() {
+
+    if (this.get('sameAsSubmissionContact')) {
+      return {};
+    }
+
     const errors = {};
 
     if (Ember.isBlank(this.get('title')) || Ember.isBlank(this.get('firstName')) || Ember.isBlank(this.get('lastName'))) {
