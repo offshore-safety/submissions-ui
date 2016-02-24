@@ -7,7 +7,7 @@ export default Ember.Component.extend({
     addDocument(document) {
       this.set('document', document);
     },
-    removeDocument(document) {
+    removeDocument() {
       this.set('document', null);
     }
   }

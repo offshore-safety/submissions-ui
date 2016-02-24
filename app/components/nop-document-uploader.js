@@ -68,17 +68,17 @@ export default Ember.Component.extend({
         self.set('instruction', "We're having trouble preparing to upload. Please check your connection");
         setTimeout(getPresignedPostUrl, 1000, callback);
       });
-    }
+    };
 
     function onFileUploadAdd(e, data) {
       const file = data.files[0];
       if (self._fileAdded(file)) {
-        self.set('instruction', `Preparing to upload '${file.name}'...`)
+        self.set('instruction', `Preparing to upload '${file.name}'...`);
         getPresignedPostUrl(function (presignedData) {
           data.url = presignedData.url;
           data.formData = presignedData.formData;
           data.submit();
-          self.set('instruction', `Uploading '${file.name}'...`)
+          self.set('instruction', `Uploading '${file.name}'...`);
         });
       }
     }

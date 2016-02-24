@@ -1,5 +1,4 @@
 import Ember from 'ember';
-import Document from '../models/document';
 
 export default Ember.Component.extend({
   tagName: 'nop-attachments',

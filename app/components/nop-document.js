@@ -5,7 +5,7 @@ export default Ember.Component.extend({
   canRemove: false,
   showIcon: true,
   actions: {
-    removeDocument(document) {
+    removeDocument() {
       this.sendAction('removeDocument', this.get('document'));
     }
   }
