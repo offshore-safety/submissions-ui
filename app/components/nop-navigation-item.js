@@ -11,7 +11,7 @@ export default Ember.Component.extend({
       const pageModel = this.get('model').get(keyName);
       return pageModel ? pageModel.get('hasErrors') : false;
     }));
-  }.on('init'),
+  }.on('didInsertElement'),
   tagName: 'nop-navigation-item',
   submissionStatus: Ember.inject.service(),
   classNameBindings: ['current', 'complete', 'errors', 'inverted'],

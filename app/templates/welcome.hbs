@@ -1,0 +1,40 @@
+{{#nop-page title='Welcome to Online Submissions' class='welcome-page'}}
+
+  <h3>I would like to submit...</h3>
+
+  <section class='ep-section'>
+    {{nop-radio label='Environment Plan' value='ep' name='submission-type' checked=submissionType}}
+    {{#if submittingEP}}
+      <div class='question-section'>
+        <p>What type of submission is this?</p>
+        <button {{action 'submitEPNew'}}>New</button>
+        <button {{action 'unavailableType'}}>Revision</button>
+        <button {{action 'unavailableType'}}>Resubmission</button>
+      </div>
+      {{nop-unavailable visible=unavailable}}
+    {{/if}}
+  </section>
+  <section class='fa-section'>
+    {{nop-radio label='Financial Assurance' value='fa' name='submission-type' checked=submissionType}}
+    {{#if submittingFA}}
+      <div class='question-section'>
+        <p>What type of submission is this?</p>
+        <button {{action 'unavailableType'}}>Financial Assurance Declaration</button>
+        <button {{action 'unavailableType'}}>Financial Assurance Confirmation</button>
+      </div>
+      {{nop-unavailable visible=unavailable}}
+    {{/if}}
+  </section>
+  <section class='opp-section'>
+    {{nop-radio label='Offshore Project Proposal' value='opp' name='submission-type' checked=submissionType}}
+    {{#if submittingOPP}}
+      <div class='question-section'>
+        <p>What type of submission is this?</p>
+        <button {{action 'unavailableType'}}>New</button>
+        <button {{action 'unavailableType'}}>Revision</button>
+        <button {{action 'unavailableType'}}>Resubmission</button>
+      </div>
+      {{nop-unavailable visible=unavailable}}
+    {{/if}}
+  </section>
+{{/nop-page}}

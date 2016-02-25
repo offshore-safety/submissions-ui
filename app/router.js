@@ -8,6 +8,8 @@ const Router = Ember.Router.extend({
 Router.map(function() {
   this.route('styleguide');
 
+  this.route('welcome', { path: '/' });
+
   this.route('environment-plan', function() {
     this.route('new', { path: '/new/:submissionId' }, function() {
       this.route('before-you-start');
