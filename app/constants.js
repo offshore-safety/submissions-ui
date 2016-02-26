@@ -1,6 +1,6 @@
 const REGULATION_TYPES = {
   'petroleum': 'Petroleum',
-  'greenhouse_gas': 'Greenhouse Gas'
+  'greenhouse_gas': 'Greenhouse gas'
 };
 
 const PETROLEUM_ACTIVITY_TYPES = {

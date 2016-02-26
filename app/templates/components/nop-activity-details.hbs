@@ -6,7 +6,7 @@
                      errors=activityDetails.errors
                      errorKey='name'}}
     {{nop-text-field class='regulation-type'
-                     label='Petroleum or Greenhouse Gas?'
+                     label='Petroleum or greenhouse gas?'
                      value=(regulation-type-from-id activityDetails.regulationType)
                      errors=activityDetails.errors
                      errorKey='regulationType'}}
@@ -36,13 +36,13 @@
   {{/if}}
 {{else}}
   {{nop-input class='activity-name'
-              label='Activity Name'
+              label='Activity name'
               required=true
               value=activityDetails.name
               errors=activityDetails.errors
               errorKey='name'}}
   {{nop-textarea class='activity-description' 
-                 label='Activity Description'
+                 label='Activity description'
                  name='activity-description'
                  value=activityDetails.description
                  required=true
@@ -51,7 +51,7 @@
                  errors=activityDetails.errors
                  errorKey='description'}}
   {{nop-attach-document document=activityDetails.locationMap
-                        label='Location of Activity'
+                        label='Location of activity'
                         instruction='Drop map image here or click here to upload'
                         hint='Please submit a file in the JPEG (.jpg, .jpeg) or PNG (.png) formats.'
                         accepts='.jpg,.jpeg,.png'
@@ -59,7 +59,7 @@
                         errors=activityDetails.errors
                         errorKey='locationMap'
                         required=true}}
-  {{nop-section-header title='Activity Types'}}
+  {{nop-section-header title='Activity types'}}
   {{nop-radio-group class='activity-regulation-type' 
                     label='Is this a petroleum or greenhouse gas activity?'
                     value=activityDetails.regulationType
@@ -69,9 +69,9 @@
                     errorKey='regulationType'}}
   {{nop-activity-types activityTypes=activityDetails.activityTypes regulationType=activityDetails.regulationType}}
 
-  {{nop-section-header title='Offshore Project'}}
+  {{nop-section-header title='Offshore project'}}
   {{nop-radio-group class='offshore-project' 
-                    label='Is any part of the activity an offshore project?'
+                    label='Is the activity part of an offshore project?'
                     value=activityDetails.hasOffshoreProject
                     options=trueOrFalse
                     required=true
@@ -79,7 +79,7 @@
                     errorKey='hasOffshoreProject'}}
   {{#if activityDetails.hasOffshoreProject}}
     {{nop-radio-group class='opp' 
-                      label='Is there an accepted Offshore Project Proposal (OPP)?'
+                      label='Is there an accepted Offshore Project Proposal (OPP) for this project?'
                       hint='(As accepted under regulation 5D)'
                       value=activityDetails.hasOPP
                       options=trueOrFalse
@@ -97,7 +97,7 @@
 
     {{#if showMinisterQuestion}}
       {{nop-radio-group class='environment-minister-decision' 
-                        label='Is there a decision by the Environment Minister for the activity?'
+                        label='Is there a decision by the Environment Minister relevant to the activity?'
                         hint='As per sub-regulations 9(3) and 17(3)'
                         value=activityDetails.hasMinisterDecision
                         options=trueOrFalse
@@ -106,7 +106,7 @@
                         errorKey='hasMinisterDecision'}}
       {{#if showEPBCReference}}
         {{nop-input class='reference-number'
-                    label='Please provide the EPBC reference number'
+                    label='Please provide the EPBC reference number or other reference to the relevant decision'
                     value=activityDetails.epbcReferenceNumber
                     required=true
                     errors=activityDetails.errors

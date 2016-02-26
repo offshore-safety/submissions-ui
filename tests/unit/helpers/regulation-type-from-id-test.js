@@ -8,5 +8,5 @@ test('it maps the value to the textual representation', function(assert) {
   assert.equal(result, 'Petroleum');
 
   result = regulationTypeFromId(['greenhouse_gas']);
-  assert.equal(result, 'Greenhouse Gas');
+  assert.equal(result, 'Greenhouse gas');
 });
