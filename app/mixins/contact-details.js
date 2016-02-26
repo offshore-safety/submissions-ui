@@ -51,7 +51,7 @@ export default Ember.Mixin.create(Errors, Serializable, {
     }
 
     if (Ember.isBlank(this.get('phone')) && Ember.isBlank(this.get('mobile'))) {
-      errors['phoneNumber'] = 'Either a landline or mobile number is required';
+      errors['phoneNumber'] = 'Phone or mobile number required';
     }
 
     if (Ember.isBlank(this.get('email'))) {

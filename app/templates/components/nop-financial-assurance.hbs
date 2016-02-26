@@ -1,29 +1,29 @@
 {{#if readonly}}
-  <h5>Financial Assurance Declaration</h5>
+  <h5>Financial assurance declaration</h5>
   {{#if noPreviousDeclaration}}
     {{#if assurance.includeDeclaration}}
       {{#if assurance.faDeclaration}}
         {{nop-document document=assurance.faDeclaration}}
       {{/if}}
     {{else}}
-      You have declined to provide a Financial Assurance declaration with this submission
+      You have declined to provide a financial assurance declaration with this submission
     {{/if}}
   {{else}}
-    You have indicated that there is an existing Financial Assurance declaration for these titles
+    You have indicated that there is an existing financial assurance declaration for these titles
   {{/if}}
 
-  <h5>Financial Assurance Confirmation</h5>
+  <h5>Financial assurance confirmation</h5>
   {{#if assurance.includeConfirmation}}
     {{#if assurance.faConfirmation}}
       {{nop-document document=assurance.faConfirmation}}
     {{/if}}
   {{else}}
-    You have declined to provide a Financial Assurance confirmation with this submission
+    You have declined to provide a financial assurance confirmation with this submission
   {{/if}}
 {{else}}
-  {{nop-section-header title='Financial Assurance Declaration'}}
+  {{nop-section-header title='Financial assurance declaration'}}
   {{nop-radio-group class='already-submitted'
-                    label='Have you previously submitted a Financial Assurance Declaration for these titles?'
+                    label='Have you previously submitted a financial assurance declaration for these titles?'
                     value=assurance.previousDeclaration
                     options=trueOrFalse
                     required=true
@@ -31,7 +31,7 @@
                     errorKey='previousDeclaration'}}
   {{#if noPreviousDeclaration}}
     {{nop-radio-group class='include-fa' 
-                      label='Do you want to submit a Financial Assurance Declaration with this submission?'
+                      label='Do you want to submit a financial assurance declaration with this submission?'
                       value=assurance.includeDeclaration
                       options=trueOrFalse
                       required=true
@@ -46,9 +46,9 @@
     {{/if}}
   {{/if}}
 
-  {{nop-section-header title='Financial Assurance Confirmation'}}
+  {{nop-section-header title='Financial assurance confirmation'}}
   {{nop-radio-group class='include-fa' 
-                    label='Do you want to submit a Financial Assurance Confirmation with this submission?'
+                    label='Do you want to submit a financial assurance confirmation with this submission?'
                     value=assurance.includeConfirmation
                     required=true
                     options=trueOrFalse

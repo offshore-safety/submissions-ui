@@ -1,12 +1,12 @@
 {{#if readonly}}
   <div>
-    {{nop-text-field class='titleholder-detail_name' label='Business Name' value=titleholder.name}}
+    {{nop-text-field class='titleholder-detail_name' label='Business name' value=titleholder.name}}
     {{nop-text-field class='titleholder-detail_abn' label='ABN' value=titleholder.abn}}
     {{nop-text-field class='titleholder-detail_acn' label='ACN' value=titleholder.acn}}
   </div>
   <div>
-    {{nop-address title='Registered Business Address' address=titleholder.businessAddress readonly=true}}
-    {{nop-address title='Postal Address' address=titleholder.postalAddress readonly=true}}
+    {{nop-address title='Registered business address' address=titleholder.businessAddress readonly=true}}
+    {{nop-address title='Postal address' address=titleholder.postalAddress readonly=true}}
   </div>
 {{else}}
   {{nop-input label='Business name'
