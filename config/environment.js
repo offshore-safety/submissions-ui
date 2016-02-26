@@ -50,7 +50,7 @@ module.exports = function(environment) {
   }
 
   if (environment === 'production') {
-    ENV.APP.API_ENDPOINT = 'http:/10.44.1.248'
+    ENV.APP.API_ENDPOINT = 'http://10.44.1.248'
     ENV.locationType = 'hash';
   }
 
