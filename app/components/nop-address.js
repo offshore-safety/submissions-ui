@@ -10,7 +10,7 @@ export default Ember.Component.extend({
   }),
   allowPOBox: true,
   addressLabel: Ember.computed('allowPOBox', function() {
-    return this.get('allowPOBox') ? 'Street / PO Box Address' : 'Street Address';
+    return this.get('allowPOBox') ? 'Street / P.O. box address' : 'Street address';
   }),
   fullAddress: Ember.computed('address.street', 'address.locality', 'address.state', 'address.postcode', 'address.country', function() {
     const address = this.get('address');
