@@ -4,7 +4,6 @@
                    errors=person.errors
                    errorKey='fullName'}}
   <div>
-    {{nop-text-field class='person-employer' label='Employer' value=person.employer errors=person.errors errorKey='employer'}}
     {{nop-text-field class='person-position' label='Position' value=person.position errors=person.errors
     errorKey='position'}}
   </div>
@@ -28,7 +27,7 @@
                        errors=person.errors
                        errorKey='email'}}
     </div>
-    {{nop-address class='person-postal' title='Postal Address' address=person.postalAddress readonly=true}}
+    {{nop-address class='person-postal' title='Postal address' address=person.postalAddress readonly=true}}
   </div>
 {{else}}
   {{nop-input label='Title'
@@ -38,14 +37,14 @@
               value=person.title
               errors=person.errors
               errorKey='title'}}
-  {{nop-input label='First Name'
+  {{nop-input label='First name'
               class='person-first-name'
               name='person-details-first-name'
               required=true
               value=person.firstName
               errors=person.errors
               errorKey='firstName'}}
-  {{nop-input label='Last Name'
+  {{nop-input label='Last name'
               class='person-last-name'
               name='person-details-last-name'
               required=true
@@ -58,9 +57,8 @@
               required=true
               errors=person.errors
               errorKey='position'}}
-  {{nop-input label='Employer' name='person-details-employer' value=person.employer hint='Assumed the same as the Titleholder if not supplied'}}
   <section>
-    {{nop-section-header title='Phone Numbers' hint='At least one phone number is required' required=true}}
+    {{nop-section-header title='Phone numbers' hint='At least one phone number is required' required=true}}
     <div>
       {{nop-input label='Phone'
                   name='person-details-phone'
@@ -76,12 +74,12 @@
                   errorKey='phoneNumber'}}
     </div>
   </section>
-  {{nop-input label='Email Address'
+  {{nop-input label='Email address'
               name='person-details-email'
               type='email'
               value=person.email
               required=true
               errors=person.errors
               errorKey='email'}}
-  {{nop-address title='Postal Address' hint='Required if different from Titleholder' address=person.postalAddress allowPOBox=true}}
+  {{nop-address title='Postal address' hint='Required if different from titleholder' address=person.postalAddress allowPOBox=true}}
 {{/if}}

@@ -1,14 +1,14 @@
 {{#if readonly}}
-  <div class="label">Environment Plan</div>
+  <div class="label">Environment plan</div>
   {{#if documents.environmentPlan}}
     {{nop-document document=documents.environmentPlan}}
   {{/if}}
 
-  <div class="label">Supporting Documentation</div>
+  <div class="label">Supporting documentation</div>
   {{#if documents.attachments.length}}
     {{#each documents.attachments as |document|}}
       {{#nop-document document=document}}
-        {{nop-text-field label='How is this document related to the Environment Plan?'
+        {{nop-text-field label='How is this document related to the environment plan?'
                          value=document.description
                          errors=document.errors
                          errorKey='description'}}
@@ -18,11 +18,11 @@
     <div class="blank">No other documents provided</div>
   {{/if}}
 
-  {{nop-text-field label='Documents Already Supplied To NOPSEMA'
+  {{nop-text-field label='Documents already supplied to NOPSEMA'
                    value=documents.reg31Documents
                    rows=5}}
 {{else}}
-  {{nop-section-header title='Environment Plan'}}
+  {{nop-section-header title='Environment plan'}}
   {{nop-attach-document document=documents.environmentPlan
                         instruction='Drop environment plan here or click to upload'
                         hint='Please submit in Adobe Portable Format (.pdf) or Word document (.doc, .docx) format'
@@ -31,14 +31,14 @@
                         errorKey='environmentPlan'
                         required=true}}
 
-  {{nop-section-header title='Supporting Documentation'}}
+  {{nop-section-header title='Supporting documentation'}}
   {{nop-attach-multiple-documents documents=documents.attachments 
-                                  descriptionLabel='How is this document related to the Environment Plan?'
+                                  descriptionLabel='How is this document related to the environment plan?'
                                   descriptionRequired=true
                                   instruction='Drop supporting documents here or click to upload'}}
 
-  {{nop-textarea label='Documents Already Supplied to NOPSEMA'
-                 hint='List any documents already supplied to NOPSEMA under Regulation 31'
+  {{nop-textarea label='Documents already supplied to NOPSEMA'
+                 hint='List any documents or information already supplied to NOPSEMA under Regulation 31 that you wish to include in this submission'
                  value=documents.reg31Documents
                  rows=5}}
 {{/if}}

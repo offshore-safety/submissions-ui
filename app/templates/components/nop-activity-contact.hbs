@@ -1,11 +1,11 @@
 {{#if readonly}}
   {{#if contact.sameAsSubmissionContact}}
-    Same as Submission Contact
+    Same as submission contact
   {{else}}
     {{nop-person-details person=contact readonly=true}}
   {{/if}}
 {{else}}
-  {{nop-checkbox label='Same as Submission Contact' 
+  {{nop-checkbox label='Same as submission contact' 
                  checked=contact.sameAsSubmissionContact}}
   {{#unless contact.sameAsSubmissionContact}}
     {{nop-person-details person=contact}}
