@@ -53,20 +53,24 @@ export default Ember.Object.extend(Errors, Serializable, {
       errors['hasOffshoreProject'] = 'Required';
     }
 
-    if (this.get('hasOffshoreProject') && Ember.isBlank(this.get('hasOPP'))) {
-      errors['hasOPP'] = 'Required';
-    }
 
-    if (this.get('hasOPP') === false && Ember.isBlank(this.get('hasMinisterDecision'))) {
-      errors['hasMinisterDecision'] = 'Required';
-    }
+    if (this.get('hasOffshoreProject')) {
+      if (this.get('hasOffshoreProject') && Ember.isBlank(this.get('hasOPP'))) {
+        errors['hasOPP'] = 'Required';
+      }
+      if (this.get('hasOPP') && Ember.isBlank(this.get('oppDocumentReference'))) {
+        errors['oppDocumentReference'] = 'Required';
+      }
 
-    if (this.get('hasOPP') && Ember.isBlank(this.get('oppDocumentReference'))) {
-      errors['oppDocumentReference'] = 'Required';
-    }
+      if (this.get('hasOPP') === false) {
+        if (Ember.isBlank(this.get('hasMinisterDecision'))) {
+          errors['hasMinisterDecision'] = 'Required';
+        }
 
-    if (this.get('hasMinisterDecision') && Ember.isBlank(this.get('epbcReferenceNumber'))) {
-      errors['epbcReferenceNumber'] = 'Required';
+        if (this.get('hasMinisterDecision') && Ember.isBlank(this.get('epbcReferenceNumber'))) {
+          errors['epbcReferenceNumber'] = 'Required';
+        }
+      }
     }
     
     errors['activityTypes'] = this.get('activityTypes').map((at) => at.get('errors'));
