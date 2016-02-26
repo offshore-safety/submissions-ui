@@ -21,6 +21,8 @@
     You have declined to provide a financial assurance confirmation with this submission
   {{/if}}
 {{else}}
+  <!-- Financial assurance not required at this time --> 
+  <!-- Please note that should your title(s) be granted during the assessment of this environment plan you must provide financial assurance to NOPSEMA before we can accept the EP -->
   {{nop-section-header title='Financial assurance declaration'}}
   {{nop-radio-group class='already-submitted'
                     label='Have you previously submitted a financial assurance declaration for these titles?'
@@ -44,22 +46,29 @@
                             errorKey='faDeclaration'
                             required=true}}
     {{/if}}
+    {{#if excludeDeclaration}}
+      <p class="hint">You can submit your financial assurance declaration during the assessment period via NOPSEMA Online Submissions</p>
+    {{/if}}
   {{/if}}
+  {{#if assurance.includeDeclaration}}
+    {{nop-section-header title='Financial assurance confirmation'}}
+    {{nop-radio-group class='include-fa' 
+                      label='Do you want to submit a financial assurance confirmation with this submission?'
+                      value=assurance.includeConfirmation
+                      required=true
+                      options=trueOrFalse
+                      errors=assurance.errors
+                      errorKey='includeConfirmation'}}
 
-  {{nop-section-header title='Financial assurance confirmation'}}
-  {{nop-radio-group class='include-fa' 
-                    label='Do you want to submit a financial assurance confirmation with this submission?'
-                    value=assurance.includeConfirmation
-                    required=true
-                    options=trueOrFalse
-                    errors=assurance.errors
-                    errorKey='includeConfirmation'}}
-
-  {{#if assurance.includeConfirmation}}
-    {{nop-attach-document document=assurance.faConfirmation
-                          instruction="Drop financial assurance confirmation here or click to upload"
-                          errors=assurance.errors
-                          errorKey='faConfirmation'
-                          required=true}}
+    {{#if assurance.includeConfirmation}}
+      {{nop-attach-document document=assurance.faConfirmation
+                            instruction="Drop financial assurance confirmation here or click to upload"
+                            errors=assurance.errors
+                            errorKey='faConfirmation'
+                            required=true}}
+    {{/if}}
+    {{#if excludeConfirmation}}
+      <p class="hint">You can submit your financial assurance confirmation during the assessment period via NOPSEMA Online Submissions</p>
+    {{/if}}
   {{/if}}
 {{/if}}
