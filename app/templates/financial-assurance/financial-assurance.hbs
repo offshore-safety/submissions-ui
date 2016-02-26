@@ -1,0 +1,15 @@
+{{#nop-page title='Financial Assurance'
+            hint='These are both required for acceptance of an Environment Plan'
+            class='financial-assurance-page'}}
+
+  {{nop-financial-assurance assurance=model.financialAssurance}}
+
+  {{#nop-actions}}
+    {{#link-to back}}
+      <button>Back</button>
+    {{/link-to}}
+    {{#link-to next}}
+      <button class='primary'>Next</button>
+    {{/link-to}}
+  {{/nop-actions}}
+{{/nop-page}}

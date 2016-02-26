@@ -1,0 +1,34 @@
+{{#nop-page title='Review Your Submission & Submit' class='review-page'}}
+  <section>
+    {{#nop-review-component title='Titles' editLink='financial-assurance.titles' errors=model.titles.hasErrors}}
+      {{nop-titles titles=model.titles readonly=true}}
+    {{/nop-review-component}}
+  </section>
+  <section>
+    {{#nop-review-component title='Titleholder Details' editLink='financial-assurance.titleholder-details' errors=model.titleholderDetails.hasErrors}}
+      {{nop-titleholder-details titleholder=model.titleholderDetails readonly=true}}
+    {{/nop-review-component}}
+  </section>
+  <section>
+    {{#nop-review-component title='Submission Contact' editLink='financial-assurance.submission-contact' errors=model.submissionContact.hasErrors}}
+    {{nop-submission-contact contact=model.submissionContact readonly=true}}
+    {{/nop-review-component}}
+  </section>
+  <section>
+    {{#nop-review-component title='Financial Assurance Documents' editLink='financial-assurance.financial-assurance' errors=model.financialAssurance.hasErrors}}
+      {{nop-financial-assurance assurance=model.financialAssurance readonly=true}}
+    {{/nop-review-component}}
+  </section>
+  <div class='page-break' />
+  <section>
+    {{#nop-review-component title='Additional Info' editLink='financial-assurance.additional-info' errors=model.additionalInfo.hasErrors}}
+      {{nop-additional-info additionalInfo=model.additionalInfo readonly=true}}
+    {{/nop-review-component}}
+  </section>
+  {{#nop-actions}}
+    {{#link-to back}}
+      <button>Back</button>
+    {{/link-to}}
+    <button class='primary' {{action 'submit'}}>Submit</button>
+  {{/nop-actions}}
+{{/nop-page}}

@@ -1,0 +1,12 @@
+{{#nop-page title='Additional Information' class='additional-info-page'}}
+  {{nop-additional-info additionalInfo=model.additionalInfo uniqueEmailAddresses=uniqueEmailAddresses}}
+
+  {{#nop-actions}}
+    {{#link-to back}}
+      <button>Back</button>
+    {{/link-to}}
+    {{#link-to next}}
+      <button class='primary'>Next</button>
+    {{/link-to}}
+  {{/nop-actions}}
+{{/nop-page}}

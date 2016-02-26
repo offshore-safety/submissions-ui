@@ -26,6 +26,17 @@ Router.map(function() {
       this.route('confirmation');
     });
   });
+
+  this.route('financial-assurance', { path: '/financial-assurance/:submissionId' }, function() {
+    this.route('before-you-start');
+    this.route('titles');
+    this.route('titleholder-details');
+    this.route('submission-contact');
+    this.route('financial-assurance');
+    this.route('additional-info');
+    this.route('review');
+    this.route('confirmation');
+  });
 });
 
 export default Router;

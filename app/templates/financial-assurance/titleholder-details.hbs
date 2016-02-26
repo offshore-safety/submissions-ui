@@ -1,0 +1,14 @@
+{{#nop-page title='Titleholder Details'
+            class='titleholder-details-page'
+            hint='This is the titleholder submitting this FA Declaration'}}
+  {{nop-titleholders titleholderDetails=model.titleholderDetails}}
+
+  {{#nop-actions}}
+    {{#link-to back}}
+      <button>Back</button>
+    {{/link-to}}
+    {{#link-to next}}
+      <button class='primary'>Next</button>
+    {{/link-to}}
+  {{/nop-actions}}
+{{/nop-page}}

@@ -18,9 +18,7 @@
     {{nop-radio label='Financial Assurance' value='fa' name='submission-type' checked=submissionType}}
     {{#if submittingFA}}
       <div class='question-section'>
-        <p>What type of submission is this?</p>
-        <button {{action 'unavailableType'}}>Declaration</button>
-        <button {{action 'unavailableType'}}>Confirmation</button>
+        <button {{action 'submitFinancialAssurance'}}>Get started</button>
       </div>
       {{nop-unavailable visible=unavailable}}
     {{/if}}

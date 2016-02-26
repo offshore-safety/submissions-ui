@@ -19,6 +19,10 @@ export default Ember.Controller.extend({
       const randomId = Math.floor(Math.random() * 1000000000);
       window.location.href = `/environment-plan/new/${randomId}/before-you-start`;
     },
+    submitFinancialAssurance() {
+      const randomId = Math.floor(Math.random() * 1000000000);
+      window.location.href = `/financial-assurance/${randomId}/before-you-start`;
+    },
     unavailableType() {
       this.set('unavailable', true);
     }
