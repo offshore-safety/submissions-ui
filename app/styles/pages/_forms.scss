@@ -1,0 +1,85 @@
+@mixin large-layout {
+  .activity-name, .regulation-type, .has-opp, .has-minister-decision {
+    @include span-columns(6);
+  }
+
+  .title-number, .title-region, .title-commonwealth-waters {
+    @include span-columns(4);
+  }
+
+  .titleholder-detail_name {
+    @include span-columns(6);
+    @include omega;
+  }
+
+  .titleholder-detail_abn, .titleholder-detail_acn {
+    @include span-columns(3);
+  }
+
+  .full-address {
+    @include span-columns(6);
+  }
+}
+
+.form-page {
+  @include large-layout;
+
+  h3 {
+    margin-bottom: 0;
+  }
+
+  .declaration-option, .signatory-type {
+    margin: 20px 0 30px 0;
+
+    nop-radio {
+      @include span-columns(12);
+    }
+  }
+
+  .signatory-type {
+    &:last-child {
+      margin-top: 95px;
+    }
+  }
+
+  .signature-section {
+    .signature-block {
+      @include span-columns(6);
+      @include omega(2n);
+    }
+
+    nop-input {
+      @include span-columns(12);
+    }
+
+    nop-radio {
+      margin-bottom: 10px;
+    }
+  }
+}
+
+@media print {
+  .form-page {
+    .hint {
+      font-size: 0.6em;
+    }
+
+    nop-radio {
+      .check {
+        width: 20px;
+        height: 20px;
+      }
+
+      input[type=radio]:checked {
+        ~ .check {
+          background-color: $nopsema-blue;
+          border: 10px solid $nopsema-blue;
+
+          &:before {
+            display: none;
+          }
+        }
+      }
+    }
+  }
+}

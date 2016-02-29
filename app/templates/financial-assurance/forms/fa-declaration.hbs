@@ -1,0 +1,96 @@
+{{#nop-page title='Financial Assurance Declaration' class='form-page'}}
+  <section>
+    {{#nop-review-component title='Titles' editLink='financial-assurance.titles' errors=model.titles.hasErrors}}
+      {{nop-titles titles=model.titles readonly=true}}
+    {{/nop-review-component}}
+  </section>
+  <section>
+    {{#nop-review-component title='Titleholder details' editLink='financial-assurance.titleholder-details' errors=model.titleholderDetails.hasErrors}}
+      {{nop-titleholder-details titleholder=model.titleholderDetails readonly=true}}
+    {{/nop-review-component}}
+  </section>
+
+  <section>
+    {{#nop-review-component title='Declaration'}}
+    <p>This Declaration must be signed by individuals who;</p>
+    <ul class='bullets'>
+      <li>are the registered holder of the titles which the declaration relates; or</li>
+      <li>are acting with the registered titleholders express or implied authority and on behalf of the titleholder; or</li>
+      <li>are acting with power of attorney on behalf of the titleholder</li>
+    </ul>
+    <p>I acknowledge that I understand that supplying false or misleading information to a Commonwealth entity is an offence under the criminal code Act 1995.</p>
+    {{/nop-review-component}}
+  </section>
+
+  <div class='page-break' />
+
+  <section>
+    {{#nop-review-component title='Select declaration option'}}
+      <div class='declaration-option'>
+        {{nop-radio checked=declarationOption value='a' name='declaration-option' label='A: Only one registered titleholder'}}
+        <p class='hint'>For use where there is a single entity or an individual person is listed as the only registered titleholder of the title(s)</p>
+      </div>
+      <div class='declaration-option'>
+        {{nop-radio checked=declarationOption value='b' name='declaration-option' label='B:  Multiple titleholders'}}
+        <p class='hint'>
+          For use where more than one invididual and/or entity are listed as the registered holders of the title(s) and the titleholders wish to discharge
+          a proportion of the financial assurance obligation that represents their interest in the title. For further information on Financial Assurance
+          Declarations for multiple titleholders please see NOPSEMA's Financial Assurance for Petroleum Titles Guideline
+        </p>
+      </div>
+      <div class='declaration-option'>
+        {{nop-radio checked=declarationOption value='c' name='declaration-option' label='C:  Multiple titleholders and the financial assurance obligations are to be discharged by a single entity'}}
+        <p class='hint'>
+          For use where more than one individual and/or entity are listed as the registered holders of the title(s) and a single titleholder wishes to discharge
+          the entire financial assurance obligation on behalf of all other titleholders
+        </p>
+      </div>
+    {{/nop-review-component}}
+  </section>
+
+  {{#if showParties}}
+    <section>
+      {{#nop-review-component title='Parties signing the declaration' class='parties-section'}}
+
+        <div class='signatory-type'>
+          {{nop-radio checked=signatoryType value='1' name='signatory-type' label='1: A company director, authorised officer or individual with the registered titleholders express or implied authority and on behalf of the titleholder'}}
+
+        </div>
+
+        <div class='signatory-type'>
+          {{nop-radio checked=signatoryType value='2' name='signatory-type' label='2: A person appointed under power of attorney on behalf of the titleholder'}}
+
+        </div>
+
+      {{/nop-review-component}}
+    </section>
+  {{/if}}
+
+  {{#if showCompanyDirector}}
+    <section>
+      {{#nop-review-component title='Signatures' class='signature-section'}}
+        <div>
+          {{nop-signature-director class='signature-block'}}
+          {{nop-signature-director class='signature-block'}}
+        </div>
+      {{/nop-review-component}}
+    </section>
+  {{/if}}
+
+  {{#if showPowerOfAttorney}}
+    <section>
+      {{#nop-review-component title='Signatures' class='signature-section'}}
+        <div>
+          {{nop-signature-power-of-attorney class='signature-block'}}
+          {{nop-signature-power-of-attorney class='signature-block'}}
+        </div>
+      {{/nop-review-component}}
+    </section>
+  {{/if}}
+
+  {{#if showPrint}}
+    {{#nop-actions}}
+      <button class='primary' {{action 'print'}}>Print</button>
+    {{/nop-actions}}
+  {{/if}}
+{{/nop-page}}

@@ -34,3 +34,10 @@ nop-topbar {
     line-height: $topbar-height;
   }
 }
+
+
+@media print {
+  nop-topbar {
+    display: none;
+  }
+}

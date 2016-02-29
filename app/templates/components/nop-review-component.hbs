@@ -5,7 +5,9 @@
   {{#link-to editLink class='navigate-to-section'}}
     <h3>
       {{title}}
-      {{fa-icon 'edit'}}
+      {{#if editLink}}
+        {{fa-icon 'edit'}}
+      {{/if}}
     </h3>
   {{/link-to}}
   {{yield}}
