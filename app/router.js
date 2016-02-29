@@ -38,7 +38,8 @@ Router.map(function() {
     this.route('confirmation');
     this.route('forms', function() {
       this.route('fa-declaration');
-    })
+      this.route('fa-confirmation');
+    });
   });
 });
 
