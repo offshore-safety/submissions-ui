@@ -25,7 +25,7 @@
   <!-- Please note that should your title(s) be granted during the assessment of this environment plan you must provide financial assurance to NOPSEMA before we can accept the EP -->
   {{nop-section-header title='Financial assurance declaration'}}
   {{nop-radio-group class='already-submitted'
-                    label='Have you previously submitted a financial assurance declaration for these titles?'
+                    label='Have financial assurance declaration(s) for these title(s) previously been submitted to NOPSEMA?'
                     value=assurance.previousDeclaration
                     options=trueOrFalse
                     required=true
@@ -33,7 +33,7 @@
                     errorKey='previousDeclaration'}}
   {{#if noPreviousDeclaration}}
     {{nop-radio-group class='include-fa'
-                      label='Do you want to submit a financial assurance declaration with this submission?'
+                      label='Do you want to submit financial assurance declaration(s) with this submission?'
                       value=assurance.includeDeclaration
                       options=trueOrFalse
                       required=true
@@ -57,7 +57,7 @@
 
   {{nop-section-header title='Financial assurance confirmation'}}
   {{nop-radio-group class='include-fa'
-                    label='Do you want to submit a financial assurance confirmation with this submission?'
+                    label='Do you want to submit financial assurance confirmation(s) with this submission?'
                     value=assurance.includeConfirmation
                     required=true
                     options=trueOrFalse
