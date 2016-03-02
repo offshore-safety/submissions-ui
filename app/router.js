@@ -36,6 +36,10 @@ Router.map(function() {
     this.route('additional-info');
     this.route('review');
     this.route('confirmation');
+    this.route('forms', function() {
+      this.route('fa-declaration');
+      this.route('fa-confirmation');
+    });
   });
 });
 

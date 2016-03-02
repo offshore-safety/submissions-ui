@@ -1,0 +1,25 @@
+nop-page {
+  .logo {
+    display: none;
+  }
+}
+
+@media print {
+  nop-page {
+
+    h2, .logo {
+      display: inline-block;
+      line-height: 50px;
+      vertical-align: middle;
+    }
+
+    h2 {
+      font-size: 2.5em;
+      margin-bottom: 0;
+    }
+
+    .logo {
+      width: 50px;
+    }
+  }
+}
