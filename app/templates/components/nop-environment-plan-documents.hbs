@@ -37,8 +37,8 @@
                                   descriptionRequired=true
                                   instruction='Drop supporting documents here or click to upload'}}
 
-  {{nop-textarea label='Documents already supplied to NOPSEMA'
-                 hint='List any documents or information already supplied to NOPSEMA under Regulation 31 that you wish to include in this submission. Titleholders should ensure that the relevance of any referenced information to the EP is clearly explained and ensure that references to previously submitted information are clear (i.e., include the ddocument name, number, revision number and/or date and, where relevant, refer to the specific section(s), pages or similar where the specific information is contained). NOPSEMA will assess the referenced information as though it is part of the EP submission.'
-                 value=documents.reg31Documents
+  {{nop-section-header title='Documents already supplied to NOPSEMA'
+                       hint='List any documents or information already supplied to NOPSEMA under Regulation 31 that you wish to include in this submission. Titleholders should ensure that the relevance of any referenced information to the EP is clearly explained and ensure that references to previously submitted information are clear (i.e., include the ddocument name, number, revision number and/or date and, where relevant, refer to the specific section(s), pages or similar where the specific information is contained). NOPSEMA will assess the referenced information as though it is part of the EP submission.'}}
+  {{nop-textarea value=documents.reg31Documents
                  rows=5}}
 {{/if}}
