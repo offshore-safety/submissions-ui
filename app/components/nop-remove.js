@@ -9,6 +9,6 @@ export default Ember.Component.extend({
   	return !this.get('enabled');
   }),
   click() {
-  	this.sendAction();
+    this.sendAction();
   }
 });

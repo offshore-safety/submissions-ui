@@ -1,4 +1,5 @@
 {{nop-label label=label
+            hint=hint
             required=required}}
 {{#if document}}
   {{#nop-document document=document 
@@ -20,8 +21,6 @@
     {{#if notRequiredErrorMessage}}
       <span class='error-message'>{{ notRequiredErrorMessage }}</span>
     {{/if}}
-    {{#if hint}}
-      <div class='hint'>{{hint}}</div>
-    {{/if}}
+    {{nop-hint hint=instructionHint}}
   {{/nop-document-uploader}}
 {{/if}}

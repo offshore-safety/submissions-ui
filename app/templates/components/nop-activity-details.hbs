@@ -52,14 +52,16 @@
                  errorKey='description'}}
   {{nop-attach-document document=activityDetails.locationMap
                         label='Location of activity'
+                        hint='Please attach a map at a suitable size and scale to show the activity within its regional context (i.e., showing the nearest coastal areas or other environmentally sensitive locations). The map should include a scale bar, legend, information caption and labels as required in legible fonts, depth contours and important or relevant locations/places/features referred to in the EP. The map should be of publishing quality (150 dpi or greater), a preferable file size no larger than 2MB, and in JPEG (.jpg, .jpeg) or PNG (.png) format.'
                         instruction='Drop map image here or click here to upload'
-                        hint='Please submit a file in the JPEG (.jpg, .jpeg) or PNG (.png) formats.'
+                        instructionHint='Please submit a map image in JPEG (.jpg, .jpeg) or PNG (.png) format.'
                         accepts='.jpg,.jpeg,.png'
                         showPreview=true
                         errors=activityDetails.errors
                         errorKey='locationMap'
                         required=true}}
-  {{nop-section-header title='Activity types'}}
+  {{nop-section-header title='Activity types'
+                       hint='This refers to the type of petroleum or greenhouse gas activity you are undertaking, such as a seismic survey, drilling activity, construction of a petroleum pipeline, operation of a facility, injection and storage of greenhouse gas etc. Further information on what constitutes a petroleum activity is available on the <a href="http://www.nopsema.gov.au/" target="_blank">NOPSEMA website</a>. If you have any questions regarding a greenhouse gas activity, please contact NOPSEMA for specific advice.'}}
   {{nop-radio-group class='activity-regulation-type' 
                     label='Is this a petroleum or greenhouse gas activity?'
                     value=activityDetails.regulationType
@@ -72,6 +74,7 @@
   {{nop-section-header title='Offshore project'}}
   {{nop-radio-group class='offshore-project' 
                     label='Is the activity part of an offshore project?'
+                    hint='What is an offshore project? An offshore project is one or more activities that are undertaken for the purpose of the recovery of petroleum, other than on an appraisal basis, including any conveyance of recovered petroleum by pipeline (whether or not the activity is undertaken for other purposes). Further information on offshore project proposals (OPP) can be found on the <a href="http://www.nopsema.gov.au/" target="_blank">NOPSEMA website</a>.'
                     value=activityDetails.hasOffshoreProject
                     options=trueOrFalse
                     required=true
@@ -107,6 +110,7 @@
       {{#if showEPBCReference}}
         {{nop-input class='reference-number'
                     label='Please provide the EPBC reference number or other reference to the relevant decision'
+                    hint='What is an EPBC approval reference number? All referrals under the EPBC Act from 1999 onward are given a reference number in the form EPBCYYYY/XXXX where YYYY is the year that the referral was submitted and XXXX is a unique four-digit identification number. For example EPBC2011/4513. For activities that were subject to a different approval process prior to 1999 please provide a brief description or link to the relevant approval document.'
                     value=activityDetails.epbcReferenceNumber
                     required=true
                     errors=activityDetails.errors

@@ -8,6 +8,7 @@ export default Ember.Component.extend({
   descriptionLabel: null,
   descriptionRequired: false,
   instruction: '',
+  instructionHint: '',
   accepts: '',
   hint: '',
   errors: null,

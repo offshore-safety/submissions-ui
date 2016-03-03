@@ -20,12 +20,4 @@ body {
   -webkit-tap-highlight-color: transparent;
   padding: 0;
   margin: 0;
-
-  // TODO This does not belong here
-  .hint {
-    font-style: italic;
-    color: $hint-color;
-    margin: 0 0 6px 0;
-    white-space: normal;
-  }
 }
