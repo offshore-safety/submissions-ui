@@ -13,8 +13,27 @@ export default Ember.Controller.extend({
   documentNames: Ember.computed('model.activityDetails', 'model.documents', 'model.financialAssurance', function() {
     const documents = this.get('model').get('documents');
 
-    return [documents.get('environmentPlan').get('name')]
-             .concat(documents.get('attachments').map((d) => d.get('name')));
+    const documentNames = [];
+
+    documentNames.push(`${documents.get('environmentPlan').get('name')} (Environment Plan)`);
+    documents.get('attachments').forEach((d) => documentNames.push(`${d.get('name')} (Attachment)`));
+
+    const activityDetails = this.get('model').get('activityDetails');
+    documentNames.push(`${activityDetails.get('locationMap').get('name')} (Location Map)`);
+
+    const financialAssurance = this.get('model').get('financialAssurance');
+
+    if (financialAssurance.get('includeDeclaration')) {
+      documentNames.push(`${financialAssurance.get('faDeclaration').get('name')} (FA Declaration)`);
+    }
+
+    if (financialAssurance.get('includeConfirmation')) {
+      documentNames.push(`${financialAssurance.get('faConfirmation').get('name')} (FA Confirmation)`);
+    }
+
+
+
+    return documentNames;
   }),
   actions: {
     goHome() {
