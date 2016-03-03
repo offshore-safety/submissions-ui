@@ -13,4 +13,8 @@
     font-size: $base-font-size * 0.75;
     color: $nopsema-grey;
   }
+
+  button {
+    display: block;
+  }
 }
