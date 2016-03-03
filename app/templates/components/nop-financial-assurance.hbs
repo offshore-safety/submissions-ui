@@ -40,10 +40,10 @@
                       errors=assurance.errors
                       errorKey='includeDeclaration'}}
     {{#if assurance.includeDeclaration}}
-      {{#link-to 'financial-assurance.forms.fa-declaration' class='download-link' target='window'}}
+      <!-- {{#link-to 'fa-declaration.form.forms.fa-declaration' class='download-link' target='window'}}
         {{fa-icon 'download'}}
         Download and print form
-      {{/link-to}}
+      {{/link-to}} -->
       {{nop-attach-document document=assurance.faDeclaration
                             instruction="Drop financial assurance declaration here or click to upload"
                             errors=assurance.errors
@@ -65,16 +65,16 @@
                     errorKey='includeConfirmation'}}
 
   {{#if assurance.includeConfirmation}}
-    {{#link-to 'financial-assurance.forms.fa-confirmation' class='download-link' target='window'}}
+    <!-- {{#link-to 'fa-declaration.form.forms.fa-confirmation' class='download-link' target='window'}}
       {{fa-icon 'download'}}
       Download and print form
-    {{/link-to}}
+    {{/link-to}} -->
     {{nop-attach-document document=assurance.faConfirmation
                           instruction="Drop financial assurance confirmation here or click to upload"
                           errors=assurance.errors
                           errorKey='faConfirmation'
                           required=true}}
-                          
+
     {{#if excludeConfirmation}}
       <p class="hint">You can submit your financial assurance confirmation during the assessment period via NOPSEMA Online Submissions</p>
     {{/if}}

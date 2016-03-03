@@ -1,0 +1,18 @@
+{{#nop-page title='Review your submission & submit' class='review-page'}}
+  <section>
+    {{#nop-review-component title='Titles' editLink='fa-declaration.form.titles' errors=model.titles.hasErrors}}
+      {{nop-titles titles=model.titles readonly=true}}
+    {{/nop-review-component}}
+  </section>
+  <section>
+    {{#nop-review-component title='Titleholder details' editLink='fa-declaration.form.titleholder-details' errors=model.titleholderDetails.hasErrors}}
+      {{nop-titleholder-details titleholder=model.titleholderDetails readonly=true}}
+    {{/nop-review-component}}
+  </section>
+  {{#nop-actions}}
+    {{#link-to back}}
+      <button>Back</button>
+    {{/link-to}}
+    <button class='primary' {{action 'submit'}}>Submit</button>
+  {{/nop-actions}}
+{{/nop-page}}

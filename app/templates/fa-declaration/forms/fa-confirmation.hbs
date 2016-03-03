@@ -1,17 +1,17 @@
 {{#nop-page title='Financial Assurance Confirmation' class='form-page'}}
   <section>
-    {{#nop-review-component title='Titles' editLink='financial-assurance.titles' errors=model.titles.hasErrors}}
+    {{#nop-review-component title='Titles' editLink='fa-declaration.form.titles' errors=model.titles.hasErrors}}
       {{nop-titles titles=model.titles readonly=true}}
     {{/nop-review-component}}
   </section>
   <section>
-    {{#nop-review-component title='Titleholder details' editLink='financial-assurance.titleholder-details' errors=model.titleholderDetails.hasErrors}}
+    {{#nop-review-component title='Titleholder details' editLink='fa-declaration.form.titleholder-details' errors=model.titleholderDetails.hasErrors}}
       {{nop-titleholder-details titleholder=model.titleholderDetails readonly=true}}
     {{/nop-review-component}}
   </section>
 
   <section>
-    {{#nop-review-component title='Confirmation' editLink='financial-assurance.submission-contact' errors=model.submissionContact.hasErrors}}
+    {{#nop-review-component title='Confirmation' editLink='fa-declaration.form.submission-contact' errors=model.submissionContact.hasErrors}}
     <p>
       I, {{submitterName}} as the representative of the titleholder submitting the environment plan, confirm that financial assurance
       declaration have been provided to NOPSEMA by the titleholder(s) of all titles which authorise the petroleum activities included in the

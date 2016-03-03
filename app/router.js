@@ -27,19 +27,13 @@ Router.map(function() {
     });
   });
 
-  this.route('financial-assurance', { path: '/financial-assurance/:submissionId' }, function() {
-    this.route('before-you-start');
-    this.route('titles');
-    this.route('titleholder-details');
-    this.route('submission-contact');
-    this.route('financial-assurance');
-    this.route('additional-info');
-    this.route('review');
-    this.route('confirmation');
-    this.route('forms', function() {
-      this.route('fa-declaration');
-      this.route('fa-confirmation');
-    });
+  this.route('fa-declaration', function() {
+    this.route('form', { path: '/form/:submissionId' }, function() {
+      this.route('before-you-start');
+      this.route('titles');
+      this.route('titleholder-details');
+      this.route('review');
+    })
   });
 });
 
