@@ -21,3 +21,26 @@ body {
   padding: 0;
   margin: 0;
 }
+
+.notice {
+  position: relative;
+  background: #FFFFDD;
+  border: 1px solid #EEEEDD;
+  padding: 10px 16px 10px 46px;
+  font-size: 0.8rem;
+  p {
+    margin: 0;
+  }
+  ul {
+    margin: 4px 0;
+    list-style-type: disc;
+    padding-left: 20px;
+  }
+  .fa {
+    position: absolute;
+    top: 8px;
+    left: 16px;
+    font-size: 1.4rem;    
+    opacity: 0.15;
+  }
+}
