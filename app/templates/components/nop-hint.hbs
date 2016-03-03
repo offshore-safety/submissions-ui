@@ -1,0 +1,8 @@
+{{#if expanded}}
+  {{hint}}
+{{else}}
+  {{hintTruncated}}
+  {{#if canExpand}}
+    <a action="expand" href="javascript:;">More</a>
+  {{/if}}
+{{/if}}

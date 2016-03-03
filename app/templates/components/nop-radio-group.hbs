@@ -2,9 +2,7 @@
             label=label
             required=required
             errorMessage=errorMessage}}
-{{#if hint}}
-  <div class='hint'>{{hint}}</div>
-{{/if}}
+{{nop-hint hint=hint}}
 <div>
   {{#each options as |option index|}}
     {{nop-radio label=option.label value=option.value checked=value name=option.name disabled=option.disabled}}

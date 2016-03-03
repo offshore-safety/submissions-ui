@@ -2,9 +2,7 @@
             label=label
             required=required
             errorMessage=errorMessage}}
-{{#if hint}}
-  <div class='hint'>{{hint}}</div>
-{{/if}}
+{{nop-hint hint=hint}}
 <div class="highlight-container">
   {{input id=(concat elementId '-' name) required=required type=type value=value}}
   <span class="highlight" />
