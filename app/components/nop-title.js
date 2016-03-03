@@ -38,17 +38,17 @@ export default Ember.Component.extend({
     {
       id: 7, 
       text: 'Victoria',
-      regions: [{ id: 3, text: 'Gippsland' },
-                { id: 5, text: 'Otway' }]
+      regions: [{ id: 3, text: 'Otway' },
+                { id: 5, text: 'Gippsland' }]
     },
     {
       id: 8, 
       text: 'Western Australia',
-      regions: [{ id: 8, text: 'South West' },
-                { id: 7, text: 'Great Southern' },
+      regions: [{ id: 7, text: 'North West' },
+                { id: 8, text: 'Pilbara' },
                 { id: 9, text: 'Midwest' },
-                { id: 10, text: 'Pilbara' },
-                { id: 11, text: 'North West' }]
+                { id: 10, text: 'South West' },
+                { id: 11, text: 'Great Southern' }]
     },
   ],
   commonwealthWatersSorted: Ember.computed('commonwealthWaters', function() {
@@ -59,7 +59,7 @@ export default Ember.Component.extend({
     return _(this.commonwealthWaters).where({ text: commonwealthWaters })
                                      .map('regions')
                                      .flatten()
-                                     .sortBy('text')
+                                     .sortBy('id')
                                      .value();
   }),
   commonwealthWatersObserver: Ember.observer('title.commonwealthWaters', function() {
@@ -68,7 +68,7 @@ export default Ember.Component.extend({
     let regions = _(this.commonwealthWaters).where({ text: commonwealthWaters })
                                             .map('regions')
                                             .flatten()
-                                            .sortBy('text')
+                                            .sortBy('id')
                                             .value();
     if (regions.length === 0) {
       return;
