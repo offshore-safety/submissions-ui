@@ -1,0 +1,14 @@
+{{#nop-page title='Titleholder details'
+            class='titleholder-details-page'
+            hint='This is the titleholder submitting this financial assurance declaration'}}
+  {{nop-titleholders titleholderDetails=model.titleholderDetails}}
+
+  {{#nop-actions}}
+    {{#link-to back}}
+      <button>Back</button>
+    {{/link-to}}
+    {{#link-to next}}
+      <button class='primary'>Next</button>
+    {{/link-to}}
+  {{/nop-actions}}
+{{/nop-page}}

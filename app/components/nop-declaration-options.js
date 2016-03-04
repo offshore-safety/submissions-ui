@@ -2,7 +2,10 @@ import Ember from 'ember';
 
 export default Ember.Component.extend({
   tagName: 'nop-declaration-options',
-  classNameBindings: ['readonly'],
+  classNameBindings: ['readonly', 'visited'],
+  visited: Ember.computed('declarationOptions.visited', function() {
+    return this.get('declarationOptions').get('visited');
+  }),
   showSingleDeclaration: Ember.computed('declarationOptions.declarationOption', function() {
     return this.get('declarationOptions').get('declarationOption') === 'declarationOption1';
   }),

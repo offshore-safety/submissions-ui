@@ -36,6 +36,16 @@ Router.map(function() {
       this.route('review');
     });
   });
+
+  this.route('fa-confirmation', function() {
+    this.route('form', { path: '/form/:submissionId' }, function() {
+      this.route('before-you-start');
+      this.route('titles');
+      this.route('titleholder-details');
+      this.route('confirmation-details');
+      this.route('review');
+    });
+  });
 });
 
 export default Router;

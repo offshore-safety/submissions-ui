@@ -1,0 +1,11 @@
+nop-confirmation-details {
+  .calculation-types {
+    @include span-columns(12);
+  }
+
+  &.readonly {
+    .hint {
+      display: none;
+    }
+  }
+}

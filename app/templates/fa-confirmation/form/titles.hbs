@@ -1,0 +1,14 @@
+{{#nop-page title='Titles'
+            class='titles-page'
+            hint='These are the titles pertaining to this submission'}}
+  {{nop-titles titles=model.titles}}
+
+  {{#nop-actions}}
+    {{#link-to back}}
+      <button>Back</button>
+    {{/link-to}}
+    {{#link-to next}}
+      <button class='primary'>Next</button>
+    {{/link-to}}
+  {{/nop-actions}}
+{{/nop-page}}

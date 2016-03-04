@@ -1,0 +1,49 @@
+{{#nop-page title='Financial assurance confirmation' hint='Review your submission & print' class='review-page'}}
+  <section>
+    {{#nop-review-component title='Titles' editLink='fa-confirmation.form.titles' errors=model.titles.hasErrors}}
+      {{nop-titles titles=model.titles readonly=true}}
+    {{/nop-review-component}}
+  </section>
+  <section>
+    {{#nop-review-component title='Titleholder details' editLink='fa-confirmation.form.titleholder-details' errors=model.titleholderDetails.hasErrors}}
+      {{nop-titleholder-details titleholder=model.titleholderDetails readonly=true}}
+    {{/nop-review-component}}
+  </section>
+  <section>
+    {{#nop-review-component title='Confirmation Details' editLink='fa-confirmation.form.confirmation-details' errors=model.confirmationDetails.hasErrors}}
+      {{nop-confirmation-details confirmationDetails=model.confirmationDetails readonly=true}}
+    {{/nop-review-component}}
+  </section>
+
+  <div class='page-break' />
+
+  <section>
+    {{#nop-review-component title='Confirmation'}}
+      <div class='notice'>
+        {{fa-icon 'eye'}}
+        <p>I/We, as the representative(s) of the titleholder submitting the environment plan referenced in this form,
+          confirm that financial assurance declarations have been provided to NOPSEMA by the titleholder(s) of all titles
+          which authorise the petroleum activities included in this environment plan</p>
+
+        <p class='misleading-info'>I acknowledge that I understand that supplying false or misleading information to a Commonwealth entity is an offence under the criminal code Act 1995.</p>
+      </div>
+    {{/nop-review-component}}
+  </section>
+
+  <section>
+    {{#nop-review-component title='Executed by' class='signature-section'}}
+      {{nop-signature-director class='signature-block'}}
+      {{nop-signature-director class='signature-block'}}
+    {{/nop-review-component}}
+  </section>
+  {{#nop-actions}}
+    {{#link-to back}}
+      <button>Back</button>
+    {{/link-to}}
+    {{#if canPrint}}
+      <button class='primary' {{action 'print'}}>Print</button>
+    {{else}}
+      <button class='primary' disabled=true>Print</button>
+    {{/if}}
+  {{/nop-actions}}
+{{/nop-page}}

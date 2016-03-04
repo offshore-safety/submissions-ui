@@ -1,0 +1,14 @@
+{{#nop-page title='Confirmation Details'
+            class='confirmation-details-page'}}
+
+  {{nop-confirmation-details confirmationDetails=model.confirmationDetails}}
+
+  {{#nop-actions}}
+    {{#link-to back}}
+      <button>Back</button>
+    {{/link-to}}
+    {{#link-to next}}
+      <button class='primary'>Next</button>
+    {{/link-to}}
+  {{/nop-actions}}
+{{/nop-page}}

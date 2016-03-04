@@ -1,0 +1,57 @@
+{{#if readonly}}
+
+  {{nop-text-field label='EP document title to which this confirmation applies'
+                   value=confirmationDetails.epDocumentTitle}}
+
+  <section class='calculation-types'>
+    {{nop-section-header title='Under what method was this calculated?'}}
+    <div class='calculation-type'>
+      {{nop-radio checked=confirmationDetails.calculationMethod value='calculationMethod1' name='calculation-type' label='APPEA method' readonly=true}}
+      <p class='hint'>
+        Financial assurance for the activities under this EP was calculated in accordance with the APPEA method and is within the limitations
+        of use of that method
+      </p>
+    </div>
+    <div class='calculation-type'>
+      {{nop-radio checked=confirmationDetails.calculationMethod value='calculationMethod2' name='calculation-type' label='Other endorsed method' readonly=true}}
+      <p class='hint'>
+        Financial assurance for the activities under this EP was calculated in accordance with another method endorsed by NOPSEMA and is within
+        the limitations of use of that method
+      </p>
+
+      {{#if otherEndorsedType}}
+        {{nop-text-field label='Date of endorsement' value=confirmationDetails.endorsementDate}}
+      {{/if}}
+    </div>
+  </section>
+{{else}}
+  {{nop-input label='EP document title to which this confirmation applies'
+              hint='Include revision number'
+              value=confirmationDetails.epDocumentTitle
+              errors=confirmationDetails.errors
+              errorKey='epDocumentTitle'}}
+
+  <section class='calculation-types'>
+    {{nop-section-header title='Under what method was this calculated?'}}
+    <div class='calculation-type'>
+      {{nop-radio checked=confirmationDetails.calculationMethod value='calculationMethod1' name='calculation-type' label='APPEA method'}}
+      <p class='hint'>
+        Financial assurance for the activities under this EP was calculated in accordance with the APPEA method and is within the limitations
+        of use of that method
+      </p>
+    </div>
+    <div class='calculation-type'>
+      {{nop-radio checked=confirmationDetails.calculationMethod value='calculationMethod2' name='calculation-type' label='Other endorsed method'}}
+      <p class='hint'>
+        Financial assurance for the activities under this EP was calculated in accordance with another method endorsed by NOPSEMA and is within
+        the limitations of use of that method
+      </p>
+      {{#if otherEndorsedType}}
+        {{nop-input label='Date of endorsement'
+                    value=confirmationDetails.endorsementDate
+                    errors=confirmationDetails.errors
+                    errorKey='endorsementDate'}}
+      {{/if}}
+    </div>
+  </section>
+{{/if}}

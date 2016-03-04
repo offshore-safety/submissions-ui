@@ -3,7 +3,7 @@ import Errors from '../mixins/errors';
 import Serializable from '../mixins/serializable';
 
 export default Ember.Object.extend(Errors, Serializable, {
-  _serializableProperties: ['declarationOption', 'signatoryType'],
+  _serializableProperties: ['declarationOption', 'signatoryType', 'visited'],
   declarationOption: null,
   signatoryType: null,
   errors: Ember.computed('declarationOption', 'signatoryType', function() {
