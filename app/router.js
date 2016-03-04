@@ -32,8 +32,9 @@ Router.map(function() {
       this.route('before-you-start');
       this.route('titles');
       this.route('titleholder-details');
+      this.route('declaration-options');
       this.route('review');
-    })
+    });
   });
 });
 

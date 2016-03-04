@@ -2,6 +2,36 @@ nop-radio {
   position: relative;
   margin-bottom: 10px;
 
+  $checked-width: 40px;
+  &.readonly {
+    position: relative;
+
+    .selection-indicator, .label {
+      display: inline-block;
+    }
+
+    .selection-indicator {
+      position: absolute;
+      width: $checked-width;
+      text-align: center;
+      visibility: hidden;
+    }
+
+    .label {
+      padding-left: $checked-width;
+    }
+
+    &.selected {
+      .selection-indicator {
+        visibility: visible;
+      }
+
+      .label {
+        font-weight: 700;
+      }
+    }
+  }
+
   input[type=radio] {
     position: absolute;
     display: block;

@@ -1,3 +1,12 @@
-{{radio-button id=(concat elementId '-' name) value=value checked=checked disabled=disabled}}
-<label for="{{concat elementId '-' name}}">{{label}}</label>
-<div class="check"></div>
+{{#if readonly}}
+  <div class='selection-indicator'>
+    {{fa-icon 'check'}}
+  </div>
+  <div class='label'>
+    {{label}}
+  </div>
+{{else}}
+  {{radio-button id=(concat elementId '-' name) value=value checked=checked disabled=disabled}}
+  <label for="{{concat elementId '-' name}}">{{label}}</label>
+  <div class="check"></div>
+{{/if}}

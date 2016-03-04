@@ -29,7 +29,7 @@ module.exports = function(environment) {
   };
 
   if (environment === 'development') {
-    ENV.APP.API_ENDPOINT = 'http://10.0.1.243'
+    ENV.APP.API_ENDPOINT = 'http://nopsema-api.dev'
     // ENV.APP.LOG_RESOLVER = true;
     // ENV.APP.LOG_ACTIVE_GENERATION = true;
     // ENV.APP.LOG_TRANSITIONS = true;

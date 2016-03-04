@@ -20,6 +20,11 @@ export default Ember.Controller.extend({
       key: 'titleholderDetails'
     },
     {
+      label: 'Declaration Options',
+      path: 'fa-declaration.form.declaration-options',
+      key: 'declarationOptions'
+    },
+    {
       label: 'Review & Print',
       icon: 'share',
       path: 'fa-declaration.form.review',

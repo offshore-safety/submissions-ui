@@ -4,6 +4,7 @@ import Title from '../../models/title';
 import TitleList from '../../models/title-list';
 import Address from '../../models/address';
 import TitleholderDetails from '../../models/titleholder-details';
+import DeclarationOptions from '../../models/declaration-options';
 
 export default Ember.Route.extend({
   submissionStore: Ember.inject.service(),
@@ -24,6 +25,11 @@ export default Ember.Route.extend({
 
     return titleholderDetails;
   },
+  _declarationOptions() {
+    const declarationOptions = DeclarationOptions.create({});
+
+    return declarationOptions;
+  },
   model(params) {
     let existing = this.get('submissionStore').retrieve(params.submissionId);
 
@@ -33,13 +39,14 @@ export default Ember.Route.extend({
       return existingFASubmission;
     } else {
       console.log(`Creating a new Financial Assurance Declaration form`);
-      const newFADelaration = FADeclarationForm.create({
+      const newFASubmission = FADeclarationForm.create({
         id: params.submissionId,
         titles: this._titles(),
         titleholderDetails: this._titleholderDetails(),
+        declarationOptions: this._declarationOptions()
       });
 
-      return newFADelaration;
+      return newFASubmission;
     }
   },
   renderTemplate(controller, model) {

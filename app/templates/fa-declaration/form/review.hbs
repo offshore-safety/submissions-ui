@@ -1,4 +1,4 @@
-{{#nop-page title='Review your submission & submit' class='review-page'}}
+{{#nop-page title='Financial assurance declaration' hint='Review your submission & print' class='review-page'}}
   <section>
     {{#nop-review-component title='Titles' editLink='fa-declaration.form.titles' errors=model.titles.hasErrors}}
       {{nop-titles titles=model.titles readonly=true}}
@@ -9,10 +9,15 @@
       {{nop-titleholder-details titleholder=model.titleholderDetails readonly=true}}
     {{/nop-review-component}}
   </section>
+  <section>
+    {{#nop-review-component title='Declaration Options' editLink='fa-declaration.form.declaration-options' errors=model.declarationOptions.hasErrors}}
+      {{nop-declaration-options declarationOptions=model.declarationOptions readonly=true}}
+    {{/nop-review-component}}
+  </section>
   {{#nop-actions}}
     {{#link-to back}}
       <button>Back</button>
     {{/link-to}}
-    <button class='primary' {{action 'submit'}}>Submit</button>
+    <button class='primary' {{action 'print'}}>Print</button>
   {{/nop-actions}}
 {{/nop-page}}

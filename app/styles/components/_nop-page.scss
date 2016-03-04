@@ -7,6 +7,12 @@ nop-page {
 @media print {
   nop-page {
 
+    > .page-section {
+      .hint {
+        display: none;
+      }
+    }
+
     h2, .logo {
       display: inline-block;
       line-height: 50px;

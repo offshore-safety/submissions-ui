@@ -1,0 +1,39 @@
+nop-declaration-options {
+  &.readonly {
+    nop-radio {
+      margin: 5px 0;
+    }
+
+    .declaration-option, .signatory-type {
+      margin: 0;
+    }
+  }
+
+  .declaration-option, .signatory-type, .calculation-type {
+    margin: 20px 0 30px 0;
+
+    nop-radio {
+      @include span-columns(12);
+    }
+  }
+
+  ul {
+    list-style-type: lower-roman;
+    margin: 5px;
+  }
+
+  .signature-section {
+    .signature-block {
+      @include span-columns(6);
+      @include omega(2n);
+    }
+
+    nop-input {
+      @include span-columns(12);
+    }
+
+    nop-radio {
+      margin-bottom: 10px;
+    }
+  }
+}
