@@ -12,7 +12,7 @@
   </div>
 </section>
 
-<section>
+<section class='signatory-types'>
   {{nop-section-header title='Parties signing the declaration'}}
   <div class='signatory-type'>
     {{nop-radio checked=declarationOptions.signatoryType
@@ -34,13 +34,16 @@
 
 {{else}}
 <section>
-  {{nop-section-header title='Select declaration option'}}
+  {{nop-section-header title='What type of declaration is this?'}}
   <div class='declaration-option'>
     {{nop-radio checked=declarationOptions.declarationOption value='declarationOption1' name='declaration-option' label='Only one registered titleholder'}}
     <p class='hint'>For use where there is a single entity or an individual person is listed as the only registered titleholder of the title(s)</p>
     {{#if showSingleDeclaration}}
-      I/We (the undersigned) certify for all titles to which this Declaration relates, that ??? is in and will maintain compliance
-      with the requirements of section 571(2) of the <i>Offshore Petroleum and Greenhouse Gas Storage Act 2006</i>.
+      <div class='notice'>
+        {{fa-icon 'eye'}}
+        I/We (the undersigned) certify for all titles to which this Declaration relates, that ??? is in and will maintain compliance
+        with the requirements of section 571(2) of the <i>Offshore Petroleum and Greenhouse Gas Storage Act 2006</i>.
+      </div>
     {{/if}}
   </div>
   <div class='declaration-option'>
@@ -51,8 +54,11 @@
       Declarations for multiple titleholders please see NOPSEMA's Financial Assurance for Petroleum Titles Guideline
     </p>
     {{#if showMultipleDeclaration}}
-      I/We (the undersigned) certify for all titles to which this Declaration relates, that ??? is in and will maintain compliance
-      with the requirements of section 571(2) of the <i>Offshore Petroleum and Greenhouse Gas Storage Act 2006</i>.
+      <div class='notice'>
+        {{fa-icon 'eye'}}
+        I/We (the undersigned) certify for all titles to which this Declaration relates, that ??? is in and will maintain compliance
+        with the requirements of section 571(2) of the <i>Offshore Petroleum and Greenhouse Gas Storage Act 2006</i>.
+      </div>
     {{/if}}
   </div>
   <div class='declaration-option'>
@@ -62,17 +68,20 @@
       the entire financial assurance obligation on behalf of all other titleholders
     </p>
     {{#if showMultiSingleDeclaration}}
-      I/We (the undersigned) certify in respect of the obligations for all titles for which this Declaration relates that ???
-      <ul>
-        <li>is in and will maintain compliance with the requirements of section 571(2) of the <i>Offshore Petroleum and Greenhouse Gas Storage Act 2006</i>; and</li>
-        <li>discharges the entire obligation on behalf of all registered titleholders in accordance with section 775D of the <i>Offshore Petroleum and Greenhouse Gas Storage Act 2006</i>.</li>
-      </ul>
+      <div class='notice'>
+        {{fa-icon 'eye'}}
+        I/We (the undersigned) certify in respect of the obligations for all titles for which this Declaration relates that ???
+        <ul>
+          <li>is in and will maintain compliance with the requirements of section 571(2) of the <i>Offshore Petroleum and Greenhouse Gas Storage Act 2006</i>; and</li>
+          <li>discharges the entire obligation on behalf of all registered titleholders in accordance with section 775D of the <i>Offshore Petroleum and Greenhouse Gas Storage Act 2006</i>.</li>
+        </ul>
+      </div>
     {{/if}}
   </div>
 </section>
 
-<section>
-  {{nop-section-header title='Parties signing the declaration'}}
+<section class='signatory-types'>
+  {{nop-section-header title='Who will be signing this declaration?'}}
   <div class='signatory-type'>
     {{nop-radio checked=declarationOptions.signatoryType
                 value='signatoryType1'

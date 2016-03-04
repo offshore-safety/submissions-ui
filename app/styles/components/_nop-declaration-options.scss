@@ -7,6 +7,10 @@ nop-declaration-options {
     .declaration-option, .signatory-type {
       margin: 0;
     }
+
+    .signatory-types {
+      margin-top: 30px;
+    }
   }
 
   .declaration-option, .signatory-type, .calculation-type {
@@ -17,9 +21,13 @@ nop-declaration-options {
     }
   }
 
-  ul {
-    list-style-type: lower-roman;
-    margin: 5px;
+  .notice {
+    @include span-columns(12);
+
+    ul {
+      list-style-type: lower-roman;
+      margin: 5px;
+    }
   }
 
   .signature-section {

@@ -39,8 +39,18 @@
 }
 
 .review-page {
-  section {
-    margin-top: 30px;
+   .page-section {
+     > section {
+      margin-top: 30px;
+    }
+  }
+
+  nop-signature-director, nop-signature-power-of-attorney {
+    @include span-columns(6);
+  }
+
+  nop-section-header {
+    margin-top: 10px;
   }
 
   .has-errors {
@@ -70,6 +80,10 @@
 
   ul {
     margin: 0;
+  }
+
+  .misleading-info {
+    margin-top: 10px;
   }
 }
 

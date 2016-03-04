@@ -14,10 +14,58 @@
       {{nop-declaration-options declarationOptions=model.declarationOptions readonly=true}}
     {{/nop-review-component}}
   </section>
+
+  <div class='page-break' />
+
+  <section>
+    {{#nop-review-component title='Declaration'}}
+    <div class='notice'>
+      {{#if (eq model.declarationOptions.declarationOption 'declarationOption1')}}
+          {{fa-icon 'eye'}}
+          <p>I/We (the undersigned) certify for all titles to which this Declaration relates, that ??? is in and will maintain compliance
+          with the requirements of section 571(2) of the <i>Offshore Petroleum and Greenhouse Gas Storage Act 2006</i>.</p>
+      {{/if}}
+      {{#if (eq model.declarationOptions.declarationOption 'declarationOption2')}}
+          {{fa-icon 'eye'}}
+          <p>I/We (the undersigned) certify for all titles to which this Declaration relates, that ??? is in and will maintain compliance
+          with the requirements of section 571(2) of the <i>Offshore Petroleum and Greenhouse Gas Storage Act 2006</i>.</p>
+      {{/if}}
+      {{#if (eq model.declarationOptions.declarationOption 'declarationOption3')}}
+          {{fa-icon 'eye'}}
+          <p>
+            I/We (the undersigned) certify in respect of the obligations for all titles for which this Declaration relates that ???
+            <ul>
+              <li>is in and will maintain compliance with the requirements of section 571(2) of the <i>Offshore Petroleum and Greenhouse Gas Storage Act 2006</i>; and</li>
+              <li>discharges the entire obligation on behalf of all registered titleholders in accordance with section 775D of the <i>Offshore Petroleum and Greenhouse Gas Storage Act 2006</i>.</li>
+            </ul>
+          </p>
+      {{/if}}
+      <p class='misleading-info'>I acknowledge that I understand that supplying false or misleading information to a Commonwealth entity is an offence under the criminal code Act 1995.</p>
+    </div>
+    {{/nop-review-component}}
+  </section>
+
+  <section>
+    {{#nop-review-component title='Executed by' class='signature-section'}}
+      <div>
+        {{#if (eq model.declarationOptions.signatoryType 'signatoryType1')}}
+          {{nop-signature-director class='signature-block'}}
+          {{nop-signature-director class='signature-block'}}
+        {{else}}
+          {{nop-signature-power-of-attorney class='signature-block'}}
+          {{nop-signature-power-of-attorney class='signature-block'}}
+        {{/if}}
+      </div>
+    {{/nop-review-component}}
+  </section>
   {{#nop-actions}}
     {{#link-to back}}
       <button>Back</button>
     {{/link-to}}
-    <button class='primary' {{action 'print'}}>Print</button>
+    {{#if canPrint}}
+      <button class='primary' {{action 'print'}}>Print</button>
+    {{else}}
+      <button class='primary' disabled=true>Print</button>
+    {{/if}}
   {{/nop-actions}}
 {{/nop-page}}
