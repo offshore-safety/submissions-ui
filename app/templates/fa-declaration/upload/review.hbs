@@ -1,0 +1,23 @@
+{{#nop-page title='Review your submission & submit' class='review-page'}}
+  <section>
+    {{#nop-review-component title='Submission contact' editLink='fa-declaration.upload.submission-contact' errors=model.submissionContact.hasErrors}}
+      {{nop-submission-contact contact=model.submissionContact readonly=true}}
+    {{/nop-review-component}}
+  </section>
+  <section>
+    {{#nop-review-component title='Attachment' editLink='fa-declaration.upload.attachment' errors=model.attachment.hasErrors}}
+      {{nop-fa-attachment attachment=model.attachment type='declaration' readonly=true}}
+    {{/nop-review-component}}
+  </section>
+  <section>
+    {{#nop-review-component title='Additional info' editLink='fa-declaration.upload.additional-info' errors=model.additionalInfo.hasErrors}}
+      {{nop-additional-info additionalInfo=model.additionalInfo readonly=true}}
+    {{/nop-review-component}}
+  </section>
+  {{#nop-actions}}
+    {{#link-to back}}
+      <button>Back</button>
+    {{/link-to}}
+    <button class='primary' {{action 'submit'}}>Submit</button>
+  {{/nop-actions}}
+{{/nop-page}}

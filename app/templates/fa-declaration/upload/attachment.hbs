@@ -1,0 +1,14 @@
+{{#nop-page title='Attach declaration'
+            class='attach-fa-declaration-page'}}
+
+  {{nop-fa-attachment attachment=model.attachment type='declaration'}}
+
+  {{#nop-actions}}
+    {{#link-to back}}
+      <button>Back</button>
+    {{/link-to}}
+    {{#link-to next}}
+      <button class='primary'>Next</button>
+    {{/link-to}}
+  {{/nop-actions}}
+{{/nop-page}}

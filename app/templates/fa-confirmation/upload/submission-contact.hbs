@@ -1,0 +1,12 @@
+{{#nop-page title='Person submitting this confirmation'
+            hint='This is the person who we will contact if there are any administrative issues with your submission that arise during our checks'}}
+  {{nop-submission-contact contact=model.submissionContact}}
+  {{#nop-actions}}
+    {{#link-to back}}
+      <button>Back</button>
+    {{/link-to}}
+    {{#link-to next}}
+      <button class='primary'>Next</button>
+    {{/link-to}}
+  {{/nop-actions}}
+{{/nop-page}}

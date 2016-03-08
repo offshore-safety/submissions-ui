@@ -35,6 +35,14 @@ Router.map(function() {
       this.route('declaration-options');
       this.route('review');
     });
+
+    this.route('upload', { path: '/upload/:submissionId' }, function() {
+      this.route('before-you-start');
+      this.route('submission-contact');
+      this.route('attachment');
+      this.route('additional-info');
+      this.route('review');
+    });
   });
 
   this.route('fa-confirmation', function() {
@@ -43,6 +51,14 @@ Router.map(function() {
       this.route('titles');
       this.route('titleholder-details');
       this.route('confirmation-details');
+      this.route('review');
+    });
+
+    this.route('upload', { path: '/upload/:submissionId' }, function() {
+      this.route('before-you-start');
+      this.route('submission-contact');
+      this.route('attachment');
+      this.route('additional-info');
       this.route('review');
     });
   });
