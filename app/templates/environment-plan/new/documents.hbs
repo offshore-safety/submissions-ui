@@ -6,10 +6,10 @@
 
   {{#nop-actions}}
     {{#link-to back}}
-      <button>Back</button>
+      <button disabled={{navigationDisabled}}>Back</button>
     {{/link-to}}
     {{#link-to next}}
-      <button class='primary'>Next</button>
+      <button class='primary' disabled={{navigationDisabled}}>Next</button>
     {{/link-to}}
   {{/nop-actions}}
 {{/nop-page}}

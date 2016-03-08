@@ -1,6 +1,7 @@
 import Ember from 'ember';
+import NavigationControl from '../mixins/navigation-control';
 
-export default Ember.Component.extend({
+export default Ember.Component.extend(NavigationControl, {
   initialiseProperties: function() {
     const keyName = this.get('item').key;
     this.set('visited', Ember.computed(`model.${keyName}.visited`, function () {

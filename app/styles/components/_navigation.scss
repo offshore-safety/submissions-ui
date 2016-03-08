@@ -71,6 +71,11 @@ nop-navigation-item {
     text-decoration: none;
     color: $off-white;
 
+    &.disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
+
     &:hover:not(.current), &:focus:not(.current) {
       color: darken($off-white, 10%);
     }

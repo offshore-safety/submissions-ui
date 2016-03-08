@@ -6,6 +6,7 @@ import Document from '../models/document';
 
 export default Ember.Component.extend({
   tagName: 'nop-document-uploader',
+  uploadStatus: Ember.inject.service(),
   descriptionRequired: false,
   accepts: null,
   message: null,
@@ -27,6 +28,7 @@ export default Ember.Component.extend({
     if (this._fileValid(file.name)) {
       this.set('progress', 0);
       this.set('message', 'Currently uploading, please wait…');
+      this.get('uploadStatus').uploadStarted();
       return true;
     } else {
       this.set('progress', null);
@@ -48,10 +50,12 @@ export default Ember.Component.extend({
     newDocument.set("preview", file.preview ? file.preview.toDataURL('image/jpeg', 0.5) : null);
     newDocument.set("descriptionRequired", this.get("descriptionRequired"));
     this.sendAction('documentAdded', newDocument);
+    this.get('uploadStatus').uploadComplete();
   },
   _uploadFailed(file) {
     this.set('progress', null);
     this.set('message', `Upload failed for '${file.name}'. Please check your connection and try again`);
+    this.get('uploadStatus').uploadCancelled();
   },
   _initialiseUploader: function() {
     const self = this;

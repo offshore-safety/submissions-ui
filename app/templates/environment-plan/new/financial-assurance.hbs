@@ -7,8 +7,8 @@
     <p><strong>Please note</strong>, your financial assurance declaration and confirmation:</p>
     <ul>
       <li>is not required in order to submit your environment plan</li>
-      <li>is not required for title applicants prior to titles being issued</li> 
-      <li>must be submitted in order for your environment plan to be accepted</li> 
+      <li>is not required for title applicants prior to titles being issued</li>
+      <li>must be submitted in order for your environment plan to be accepted</li>
     </ul>
     <p>You may submit these during the assessment period via the <a href="http://www.nopsema.gov.au/">NOPSEMA Online Submissions</a> site.</p>
   </div>
@@ -16,10 +16,10 @@
 
   {{#nop-actions}}
     {{#link-to back}}
-      <button>Back</button>
+      <button disabled={{navigationDisabled}}>Back</button>
     {{/link-to}}
     {{#link-to next}}
-      <button class='primary'>Next</button>
+      <button class='primary' disabled={{navigationDisabled}}>Next</button>
     {{/link-to}}
   {{/nop-actions}}
 {{/nop-page}}
