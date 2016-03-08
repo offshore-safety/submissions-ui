@@ -2,6 +2,8 @@
   <div class="label">Environment plan</div>
   {{#if documents.environmentPlan}}
     {{nop-document document=documents.environmentPlan}}
+  {{else}}
+    <div class='error-message'>Required</div>
   {{/if}}
 
   <div class="label">Supporting documentation</div>
@@ -32,7 +34,7 @@
                         required=true}}
 
   {{nop-section-header title='Supporting documentation'}}
-  {{nop-attach-multiple-documents documents=documents.attachments 
+  {{nop-attach-multiple-documents documents=documents.attachments
                                   descriptionLabel='How is this document related to the environment plan?'
                                   descriptionRequired=true
                                   instruction='Drop supporting documents here or click to upload'}}

@@ -34,7 +34,13 @@ nop-review-component {
     }
 
     .error-message {
-      display: block;
+      display:initial;
+    }
+
+    li {
+      &.error-message {
+        display: list-item;
+      }
     }
   }
 }

@@ -1,8 +1,16 @@
 {{#if readonly}}
   <div>
-    {{nop-text-field class='titleholder-detail_name' label='Business name' value=titleholder.name}}
-    {{nop-text-field class='titleholder-detail_abn' label='ABN' value=titleholder.abn}}
-    {{nop-text-field class='titleholder-detail_acn' label='ACN' value=titleholder.acn}}
+    {{nop-text-field class='titleholder-detail_name'
+                     label='Business name'
+                     value=titleholder.name
+                     errors=titleholder.errors
+                     errorKey='name'}}
+    {{nop-text-field class='titleholder-detail_abn'
+                     label='ABN'
+                     value=titleholder.abn}}
+    {{nop-text-field class='titleholder-detail_acn'
+                     label='ACN'
+                     value=titleholder.acn}}
   </div>
   <div>
     {{nop-address title='Registered business address' address=titleholder.businessAddress readonly=true}}
@@ -27,9 +35,9 @@
                 errors=titleholder.errors
                 errorKey='acn'}}
   </div>
-  {{nop-address title='Registered business address' 
-                required=true 
-                address=titleholder.businessAddress 
+  {{nop-address title='Registered business address'
+                required=true
+                address=titleholder.businessAddress
                 allowPOBox=false}}
   {{nop-section-header title='Postal address' required=true}}
   {{nop-checkbox label='Same as business address?' checked=titleholder.sameAsBusiness}}

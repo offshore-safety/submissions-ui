@@ -1,13 +1,22 @@
 {{#if readonly}}
   {{nop-text-field class='title-number'
                    label='Title or application number'
-                   value=title.titleOrApplicationNumber}}
+                   value=title.titleOrApplicationNumber
+                   required=true
+                   errors=title.errors
+                   errorKey='titleOrApplicationNumber'}}
   {{nop-text-field class='title-commonwealth-waters'
                    label='Commonwealth waters adjacent to'
-                   value=title.commonwealthWaters}}
+                   value=title.commonwealthWaters
+                   required=true
+                   errors=title.errors
+                   errorKey='commonwealthWaters'}}
   {{nop-text-field class='title-region'
                    label='Region'
-                   value=title.region}}
+                   value=title.region
+                   required=true
+                   errors=title.errors
+                   errorKey='region'}}
 {{else}}
   {{nop-remove action='remove' enabled=showRemove}}
   {{nop-input label='Title or application number'

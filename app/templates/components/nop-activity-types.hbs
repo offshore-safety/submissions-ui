@@ -1,15 +1,19 @@
 {{#if readonly}}
   {{nop-section-header title='Activity types'}}
   You have specified the following activity types to be undertaken:
-  <ul class='bullets'>
-    {{#each activityTypes as |activityType|}}
-      {{#if activityType.type}}
-        <li>{{activity-type-from-id activityType.type}}</li>
-      {{else}}
-        <li class='blank'>Not specified</li>
-      {{/if}}
-    {{/each}}
-  </ul>
+  {{#if activityTypes}}
+    <ul class='bullets'>
+      {{#each activityTypes as |activityType|}}
+        {{#if activityType.type}}
+          <li>{{activity-type-from-id activityType.type}}</li>
+        {{else}}
+          <li class='error-message'>Type required</li>
+        {{/if}}
+      {{/each}}
+    </ul>
+  {{else}}
+    <div class='error-message'>Required</div>
+  {{/if}}
 {{else}}
   {{#if regulationType}}
     {{nop-label label='What activity types will be undertaken?'
