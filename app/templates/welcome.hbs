@@ -17,10 +17,10 @@
     {{nop-radio label='Financial Assurance (FA)' value='fa' name='submission-type' checked=submissionType}}
     {{#if submittingFA}}
       <div class='question-section'>
-        <button {{action 'unavailableType'}}>Submit Declaration</button>
-        <button {{action 'unavailableType'}}>Generate Declaration Form</button>
-        <button {{action 'unavailableType'}}>Submit Confirmation</button>
-        <button {{action 'unavailableType'}}>Generate Confirmation Form</button>
+        <button {{action 'submitFADeclaration'}}>Submit Declaration</button>
+        <button {{action 'generateFADeclaration'}}>Generate Declaration Form</button>
+        <button {{action 'submitFAConfirmation'}}>Submit Confirmation</button>
+        <button {{action 'generateFAConfirmation'}}>Generate Confirmation Form</button>
       </div>
       {{nop-unavailable visible=unavailable}}
     {{/if}}

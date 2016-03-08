@@ -14,14 +14,24 @@ export default Ember.Controller.extend({
   _typeChanged: Ember.observer('submissionType', function() {
     this.set('unavailable', false);
   }),
+  _generateRandomId() {
+    return Math.floor(Math.random() * 1000000000);
+  },
   actions: {
     submitEPNew() {
-      const randomId = Math.floor(Math.random() * 1000000000);
-      window.location.href = `/environment-plan/new/${randomId}/before-you-start`;
+      window.location.href = `/environment-plan/new/${this._generateRandomId()}/before-you-start`;
     },
-    submitFinancialAssurance() {
-      const randomId = Math.floor(Math.random() * 1000000000);
-      window.location.href = `/financial-assurance/${randomId}/before-you-start`;
+    submitFAConfirmation() {
+      window.location.href = `/fa-confirmation/upload/${this._generateRandomId()}/before-you-start`;
+    },
+    submitFADeclaration() {
+      window.location.href = `/fa-declaration/upload/${this._generateRandomId()}/before-you-start`;
+    },
+    generateFAConfirmation() {
+      window.location.href = `/fa-confirmation/form/${this._generateRandomId()}/before-you-start`;
+    },
+    generateFADeclaration() {
+      window.location.href = `/fa-declaration/form/${this._generateRandomId()}/before-you-start`;
     },
     unavailableType() {
       this.set('unavailable', true);
