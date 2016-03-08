@@ -22,7 +22,7 @@ export default Ember.Controller.extend({
       const onFailure = (result) => {
         alert(result.responseText);
       };
-      this.get('submitatron').submit(this.get('model')).then(onSuccess, onFailure);
+      this.get('submitatron').submitEP(this.get('model')).then(onSuccess, onFailure);
     }
   }
 });
