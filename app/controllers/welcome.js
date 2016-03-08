@@ -19,19 +19,19 @@ export default Ember.Controller.extend({
   },
   actions: {
     submitEPNew() {
-      window.location.href = `/environment-plan/new/${this._generateRandomId()}/before-you-start`;
+      this.transitionToRoute('environment-plan.new.before-you-start', this._generateRandomId());
     },
     submitFAConfirmation() {
-      window.location.href = `/fa-confirmation/upload/${this._generateRandomId()}/before-you-start`;
+      this.transitionToRoute('fa-confirmation.upload.before-you-start', this._generateRandomId());
     },
     submitFADeclaration() {
-      window.location.href = `/fa-declaration/upload/${this._generateRandomId()}/before-you-start`;
+      this.transitionToRoute('fa-declaration.upload.before-you-start', this._generateRandomId());
     },
     generateFAConfirmation() {
-      window.location.href = `/fa-confirmation/form/${this._generateRandomId()}/before-you-start`;
+      this.transitionToRoute('fa-confirmation.form.before-you-start', this._generateRandomId());
     },
     generateFADeclaration() {
-      window.location.href = `/fa-declaration/form/${this._generateRandomId()}/before-you-start`;
+      this.transitionToRoute('fa-declaration.form.before-you-start', this._generateRandomId());
     },
     unavailableType() {
       this.set('unavailable', true);
