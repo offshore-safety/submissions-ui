@@ -12,16 +12,6 @@ module.exports = function(environment) {
         // e.g. 'with-controller': true
       }
     },
-    contentSecurityPolicy: {
-      'default-src': "'none'",
-      'script-src': "'self'",
-      'font-src': "'self'",
-      'connect-src': "'self' http://ec2-54-206-7-128.ap-southeast-2.compute.amazonaws.com",
-      'img-src': "'self' 'unsafe-inline'",
-      'style-src': "'self' 'unsafe-inline'",
-      'media-src': "'self'"
-    },
-
     APP: {
       // Here you can pass flags/options to your application instance
       // when it is created
