@@ -1,7 +1,14 @@
 .activity-details-page {
+  .ep-duration {
+    @include span-columns(12);
+
+    @include media($desktop) {
+      @include span-columns(5);
+    }
+  }
+
   nop-activity-types {
     margin-bottom: 1rem;
-
 
     nop-list-item {
       border: 0;

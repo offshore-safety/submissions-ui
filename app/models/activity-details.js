@@ -8,7 +8,7 @@ export default Ember.Object.extend(Errors, Serializable, {
   _serializableProperties: [
     'name', 'description', 'locationMap', 'regulationType', 'hasOffshoreProject',
     'hasOPP', 'oppDocumentReference', 'hasMinisterDecision', 'epbcReferenceNumber',
-    'activityTypes', 'visited'
+    'activityTypes', 'epDuration', 'visited'
   ],
   _relationshipTypes: {
     'locationMap': Document,
@@ -18,6 +18,7 @@ export default Ember.Object.extend(Errors, Serializable, {
   name: null,
   description: null,
   locationMap: null,
+  epDuration: null,
   regulationType: null,
   hasOffshoreProject: null,
   hasOPP: null,
@@ -26,7 +27,7 @@ export default Ember.Object.extend(Errors, Serializable, {
   epbcReferenceNumber: null,
   activityTypes: [],
   errors: Ember.computed('name', 'description', 'locationMap.token', 'hasOffshoreProject', 'hasOPP', 'locationMap.errors',
-                         'oppDocumentReference', 'hasMinisterDecision', 'epbcReferenceNumber', 'activityTypes.@each.errors', function() {
+                         'oppDocumentReference', 'hasMinisterDecision', 'epbcReferenceNumber', 'epDuration', 'activityTypes.@each.errors', function() {
     const errors = {};
 
     if (Ember.isBlank(this.get('name'))) {
@@ -53,6 +54,14 @@ export default Ember.Object.extend(Errors, Serializable, {
       errors['hasOffshoreProject'] = 'Required';
     }
 
+    const epDuration = this.get('epDuration');
+    if (Ember.isBlank(epDuration)) {
+      errors['epDuration'] = 'Required';
+    } else {
+      if (isNaN(epDuration) || epDuration < 1 || epDuration > 5) {
+        errors['epDuration'] = 'Duration must be a number between 1 and 5';
+      }
+    }
 
     if (this.get('hasOffshoreProject')) {
       if (this.get('hasOffshoreProject') && Ember.isBlank(this.get('hasOPP'))) {
@@ -72,7 +81,7 @@ export default Ember.Object.extend(Errors, Serializable, {
         }
       }
     }
-    
+
     errors['activityTypes'] = this.get('activityTypes').map((at) => at.get('errors'));
 
     return errors;
