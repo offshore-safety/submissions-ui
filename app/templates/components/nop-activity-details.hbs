@@ -15,23 +15,38 @@
                    value=activityDetails.description
                    errors=activityDetails.errors
                    errorKey='description'}}
-  <div class="label">Location</div>
+  {{nop-section-header title='Location map'}}
   {{#if activityDetails.locationMap}}
     {{nop-document document=activityDetails.locationMap
                    showPreview=true}}
+  {{else}}
+    <div class='error-message'>Required</div>
   {{/if}}
   {{nop-activity-types activityTypes=activityDetails.activityTypes readonly=true}}
+  {{nop-section-header title='Offshore project'}}
+  {{nop-text-field label='Part of offshore project?'
+                   value=(boolean-to-yes-no activityDetails.hasOffshoreProject)}}
   {{#if activityDetails.hasOffshoreProject}}
-    <div>
-      {{nop-text-field class='has-opp' 
-                       label='Accepted Offshort Project Proposal (OPP)?' 
-                       value=(boolean-to-yes-no activityDetails.hasOPP)}}
-      {{nop-text-field class='has-minister-decision' 
-                       label='Environment Minister decision?' 
-                       value=(boolean-to-yes-no activityDetails.hasEnvironmentMinisterDecision)}}
-    </div>
-    {{#if showReferenceNumber}}
-      {{nop-text-field label='OPP Document Reference or EPBC reference number' value=activityDetails.OPPOrEPBCReferenceNumber}}
+  {{nop-text-field label='Accepted OPP?'
+                   value=(boolean-to-yes-no activityDetails.hasOPP)}}
+    {{#if showOPPReference}}
+      {{nop-text-field label='OPP document reference'
+                       value=activityDetails.oppDocumentReference
+                       errors=activityDetails.errors
+                       errorKey='oppDocumentReference'}}
+    {{/if}}
+
+    {{#if showMinisterQuestion}}
+      {{nop-text-field label='Environment minister decision'
+                       value=(boolean-to-yes-no activityDetails.hasMinisterDecision)
+                       errors=activityDetails.errors
+                       errorKey='hasMinisterDecision'}}
+      {{#if showEPBCReference}}
+        {{nop-text-field label='EPBC reference number'
+                         value=activityDetails.epbcReferenceNumber
+                         errors=activityDetails.errors
+                         errorKey='epbcReferenceNumber'}}
+      {{/if}}
     {{/if}}
   {{/if}}
 {{else}}
@@ -41,7 +56,7 @@
               value=activityDetails.name
               errors=activityDetails.errors
               errorKey='name'}}
-  {{nop-textarea class='activity-description' 
+  {{nop-textarea class='activity-description'
                  label='Activity description'
                  name='activity-description'
                  value=activityDetails.description
@@ -62,7 +77,7 @@
                         required=true}}
   {{nop-section-header title='Activity types'
                        hint='This refers to the type of petroleum or greenhouse gas activity you are undertaking, such as a seismic survey, drilling activity, construction of a petroleum pipeline, operation of a facility, injection and storage of greenhouse gas etc. Further information on what constitutes a petroleum activity is available on the <a href="http://www.nopsema.gov.au/" target="_blank">NOPSEMA website</a>. If you have any questions regarding a greenhouse gas activity, please contact NOPSEMA for specific advice.'}}
-  {{nop-radio-group class='activity-regulation-type' 
+  {{nop-radio-group class='activity-regulation-type'
                     label='Is this a petroleum or greenhouse gas activity?'
                     value=activityDetails.regulationType
                     required=true
@@ -72,7 +87,7 @@
   {{nop-activity-types activityTypes=activityDetails.activityTypes regulationType=activityDetails.regulationType}}
 
   {{nop-section-header title='Offshore project'}}
-  {{nop-radio-group class='offshore-project' 
+  {{nop-radio-group class='offshore-project'
                     label='Is the activity part of an offshore project?'
                     hint='What is an offshore project? An offshore project is one or more activities that are undertaken for the purpose of the recovery of petroleum, other than on an appraisal basis, including any conveyance of recovered petroleum by pipeline (whether or not the activity is undertaken for other purposes). Further information on offshore project proposals (OPP) can be found on the <a href="http://www.nopsema.gov.au/" target="_blank">NOPSEMA website</a>.'
                     value=activityDetails.hasOffshoreProject
@@ -81,7 +96,7 @@
                     errors=activityDetails.errors
                     errorKey='hasOffshoreProject'}}
   {{#if activityDetails.hasOffshoreProject}}
-    {{nop-radio-group class='opp' 
+    {{nop-radio-group class='opp'
                       label='Is there an accepted Offshore Project Proposal (OPP) for this project?'
                       hint='(As accepted under regulation 5D)'
                       value=activityDetails.hasOPP
@@ -99,7 +114,7 @@
     {{/if}}
 
     {{#if showMinisterQuestion}}
-      {{nop-radio-group class='environment-minister-decision' 
+      {{nop-radio-group class='environment-minister-decision'
                         label='Is there a decision by the Environment Minister relevant to the activity?'
                         hint='As per sub-regulations 9(3) and 17(3)'
                         value=activityDetails.hasMinisterDecision
