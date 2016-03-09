@@ -2,7 +2,7 @@ import Ember from 'ember';
 import NavigationControl from '../mixins/navigation-control';
 
 export default Ember.Component.extend(NavigationControl, {
-  initialiseProperties: function() {
+  init () {
     const keyName = this.get('item').key;
     this.set('visited', Ember.computed(`model.${keyName}.visited`, function () {
       const pageModel = this.get('model').get(keyName);
@@ -12,7 +12,8 @@ export default Ember.Component.extend(NavigationControl, {
       const pageModel = this.get('model').get(keyName);
       return pageModel ? pageModel.get('hasErrors') : false;
     }));
-  }.on('init'),
+    this._super(...arguments);
+  },
   tagName: 'nop-navigation-item',
   submissionStatus: Ember.inject.service(),
   classNameBindings: ['current', 'complete', 'errors', 'inverted'],
