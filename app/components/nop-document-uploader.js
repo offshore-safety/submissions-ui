@@ -17,7 +17,9 @@ export default Ember.Component.extend({
   showProgress: Ember.computed('progress', function() {
     return this.get('progress') !== null;
   }),
-
+  showCancel: Ember.computed('_xhr', function() {
+    return Ember.isPresent(this.get('_xhr'));
+  }),
   _fileValid(fileName) {
     const accepts = this.get('accepts');
     return accepts === null || _.any(accepts.split(','), function(docType) {
@@ -51,11 +53,13 @@ export default Ember.Component.extend({
     newDocument.set("descriptionRequired", this.get("descriptionRequired"));
     this.sendAction('documentAdded', newDocument);
     this.get('uploadStatus').uploadComplete();
+    this.set('_xhr', null);
   },
   _uploadFailed(file) {
     this.set('progress', null);
     this.set('message', `Upload failed for '${file.name}'. Please check your connection and try again`);
     this.get('uploadStatus').uploadCancelled();
+    this.set('_xhr', null);
   },
   _initialiseUploader: function() {
     const self = this;
@@ -81,7 +85,8 @@ export default Ember.Component.extend({
         getPresignedPostUrl(function (presignedData) {
           data.url = presignedData.url;
           data.formData = presignedData.formData;
-          data.submit();
+          const xhr = data.submit();
+          self.set('_xhr', xhr);
           self.set('message', `Uploading '${file.name}'...`);
         });
       }
@@ -141,5 +146,14 @@ export default Ember.Component.extend({
       fileDropZone.removeClass('drag-over');
     });
 
-  }.on('didInsertElement')
+  }.on('didInsertElement'),
+  actions: {
+    cancelUpload() {
+      const xhr = this.get('_xhr');
+
+      if (xhr) {
+        xhr.abort();
+      }
+    }
+  }
 });

@@ -4,9 +4,24 @@ $preview-height: 525px;
 
 nop-document-uploader {
   clear: both;
+  display: block;
   position: relative;
   min-height: $base-uploader-height;
 
+  .cancel-button {
+    position: absolute;
+    right: 30px;
+    top: 42%;
+    background: transparent;
+    font-size: 25px;
+    color: $nopsema-grey;
+    box-shadow: none;
+    transform: translateY(-45%);
+
+    &:hover {
+      color: darken($nopsema-grey, 20%);
+    }
+  }
 
   .instruction {
     pointer-events: none;

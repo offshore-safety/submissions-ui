@@ -1,3 +1,8 @@
+{{#if showCancel}}
+  <button class='cancel-button' {{action 'cancelUpload'}}>
+    {{fa-icon 'times-circle'}}
+  </button>
+{{/if}}
 <button class='file-picker'>
   <div class='instruction'>
     {{fa-icon 'cloud-upload'}}<br/>

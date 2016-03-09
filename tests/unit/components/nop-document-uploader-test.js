@@ -43,7 +43,13 @@ test('_fileValid is false if filename does not match one of those accepted', fun
 });
 
 test('_fileAdded sets everything correctly when a valid file is added and returns true', function(assert) {
-  const component = this.subject({_fileValid: () => true});
+  let uploadEventReceived = false;
+  const uploadStatus = {
+    uploadStarted() {
+      uploadEventReceived = true;
+    }
+  };
+  const component = this.subject({_fileValid: () => true, uploadStatus});
 
   const result = component._fileAdded({});
 
@@ -51,6 +57,7 @@ test('_fileAdded sets everything correctly when a valid file is added and return
   assert.equal(component.get('showProgress'), true);
   assert.equal(component.message, 'Currently uploading, please wait…');
   assert.ok(result);
+  assert.ok(uploadEventReceived);
 });
 
 test('_fileAdded sets everything correctly when an invalid file is added and returns false', function(assert) {
@@ -76,19 +83,33 @@ test('_progressUpdated should update progress as a percentage', function(assert)
   assert.equal(component.progress, 10);
 });
 
-test('_uploadCompleted should sets everything correctly', function(assert) {
-  const component = this.subject();
+test('_uploadCompleted should set everything correctly', function(assert) {
+  let uploadEventReceived = false;
+  const uploadStatus = {
+    uploadComplete() {
+      uploadEventReceived = true;
+    }
+  };
+  const component = this.subject({uploadStatus});
 
   component._uploadCompleted('o2719832njkj');
 
   assert.equal(component.progress, null);
+  assert.ok(uploadEventReceived);
 });
 
 test('_uploadFailed should show an error message', function(assert) {
-  const component = this.subject();
+  let uploadEventReceived = false;
+  const uploadStatus = {
+    uploadCancelled() {
+      uploadEventReceived = true;
+    }
+  };
+  const component = this.subject({uploadStatus});
   const fileName = 'monkeys.doc';
 
   component._uploadFailed({ name: fileName });
 
   assert.equal(component.message, "Upload failed for 'monkeys.doc'. Please check your connection and try again");
+  assert.ok(uploadEventReceived);
 });
