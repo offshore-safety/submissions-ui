@@ -3,6 +3,66 @@ const REGULATION_TYPES = {
   'greenhouse_gas': 'Greenhouse gas'
 };
 
+const LEVY_UNIT_VALUE = 3600;
+
+const ACTIVITY_RATINGS = {
+  '1001': 25,
+  '1002': 14,
+  '1003': 6,
+  '1004': 25,
+  '1005': 16,
+  '1006': 22,
+  '1007': 16,
+  '1008': 23,
+  '1009': 16,
+  '1010': 27,
+  '1011': 17,
+  '1012': 10,
+  '1013': 9,
+  '2001': 0,
+  '2002': 0,
+  '2003': 0,
+  '2004': 0,
+  '2005': 0,
+  '2006': 0,
+  '2007': 0,
+  '2008': 0,
+  '2009': 0,
+  '2010': 0,
+  '2011': 0,
+  '2012': 0,
+  '2013': 0
+};
+
+const COMPLIANCE_RATINGS = {
+  '1001': 22,
+  '1002': 9,
+  '1003': 3,
+  '1004': 18,
+  '1005': 13,
+  '1006': 14,
+  '1007': 14,
+  '1008': 17,
+  '1009': 13,
+  '1010': 14,
+  '1011': 9,
+  '1012': 3,
+  '1013': 3,
+  '2001': 0,
+  '2002': 0,
+  '2003': 0,
+  '2004': 0,
+  '2005': 0,
+  '2006': 0,
+  '2007': 0,
+  '2008': 0,
+  '2009': 0,
+  '2010': 0,
+  '2011': 0,
+  '2012': 0,
+  '2013': 0
+};
+
 const PETROLEUM_ACTIVITY_TYPES = {
   '1001': 'Operation of a facility',
   '1002': 'Storage, processing or transport of petroleum',
@@ -288,8 +348,11 @@ const COUNTRIES = {
 };
 
 export default {
-  REGULATION_TYPES: REGULATION_TYPES,
-  PETROLEUM_ACTIVITY_TYPES: PETROLEUM_ACTIVITY_TYPES,
-  GREENHOUSE_GAS_ACTIVITY_TYPES: GREENHOUSE_GAS_ACTIVITY_TYPES,
-  COUNTRIES: COUNTRIES
+  REGULATION_TYPES,
+  PETROLEUM_ACTIVITY_TYPES,
+  GREENHOUSE_GAS_ACTIVITY_TYPES,
+  COUNTRIES,
+  ACTIVITY_RATINGS,
+  COMPLIANCE_RATINGS,
+  LEVY_UNIT_VALUE
 };

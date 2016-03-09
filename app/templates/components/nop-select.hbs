@@ -7,12 +7,13 @@
     <div class='hint'>{{hint}}</div>
   {{/if}}
   <div class="highlight-container">
-    {{select-2 content=content 
+    {{select-2 content=content
                placeholder=placeholder
-               multiple=multiple 
-               required=required 
-               value=value 
-               optionValuePath=optionValuePath 
+               multiple=multiple
+               required=required
+               value=value
+               optionValuePath=optionValuePath
+               searchEnabled=searchEnabled
                id=(concat elementId '-' name)}}
     <span class="highlight" />
   </div>

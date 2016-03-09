@@ -1,0 +1,18 @@
+nop-title {
+  .type-duration {
+    @include span-columns(6);
+  }
+
+  .type-duration-units {
+    @include span-columns(3);
+  }
+
+  .type-duration-fields {
+    @include span-columns(8);
+  }
+
+  .levy-calculation {
+    @include span-columns(4);
+    @include omega;
+  }
+}

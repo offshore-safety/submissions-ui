@@ -6,43 +6,43 @@ export default Ember.Component.extend({
   readonly: false,
   commonwealthWaters: [
     {
-      id: 1, 
+      id: 1,
       text: 'Ashmore Cartier Island',
       regions: [{ id: 12, text: 'Nothern Territory' }]
     },
     {
-      id: 2, 
+      id: 2,
       text: 'New South Wales',
       regions: [{ id: 2, text: 'New South Wales' }]
     },
     {
-      id: 3, 
+      id: 3,
       text: 'Northern Territory',
       regions: [{ id: 12, text: 'Nothern Territory' }]
     },
     {
-      id: 4, 
+      id: 4,
       text: 'Queensland',
       regions: [{ id: 1, text: 'Queensland' }]
     },
     {
-      id: 5, 
+      id: 5,
       text: 'South Australia',
       regions: [{ id: 6, text: 'South Australia' }]
     },
     {
-      id: 6, 
+      id: 6,
       text: 'Tasmania',
       regions: [{ id: 4, text: 'Tasmania' }]
     },
     {
-      id: 7, 
+      id: 7,
       text: 'Victoria',
       regions: [{ id: 3, text: 'Otway' },
                 { id: 5, text: 'Gippsland' }]
     },
     {
-      id: 8, 
+      id: 8,
       text: 'Western Australia',
       regions: [{ id: 7, text: 'North West' },
                 { id: 8, text: 'Pilbara' },
@@ -50,6 +50,11 @@ export default Ember.Component.extend({
                 { id: 10, text: 'South West' },
                 { id: 11, text: 'Great Southern' }]
     },
+  ],
+  durationUnits: [
+    {id: 1, text: 'years'},
+    {id: 2, text: 'months'},
+    {id: 3, text: 'days'},
   ],
   commonwealthWatersSorted: Ember.computed('commonwealthWaters', function() {
     return _.sortBy(this.get('commonwealthWaters'), 'text');
@@ -79,6 +84,17 @@ export default Ember.Component.extend({
     if (regions.length === 1) {
       title.set('region', regions[0].text);
     }
+  }),
+  linkedActivityTypes: Ember.computed('activityTypes', function() {
+    return this.get('activityTypes').map(function(at) {
+      return Ember.Object.create({type: at.type, selected: true, expectedDuration: null, durationUnits: 'years'});
+    });
+  }),
+  _showRemoveChanged: Ember.observer('showRemove', function() {
+    this.get('linkedActivityTypes').forEach((at) => at.set('selected', true));
+  }),
+  disableActivityTypes: Ember.computed('activityTypes', 'showRemove', function() {
+    return !(Ember.isPresent(this.get('activityTypes')) && this.get('activityTypes').length > 1 && this.get('showRemove'));
   }),
   actions: {
     remove() {

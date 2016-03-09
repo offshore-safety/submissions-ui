@@ -8,7 +8,9 @@
       {{nop-title title=title
                   index=index
                   showRemove=multipleTitles
-                  removeTitle=(action 'removeTitle')}}
+                  activityTypes=activityTypes
+                  removeTitle=(action 'removeTitle')
+                  linkedTypesChanged=(action 'linkedTypesChanged')}}
     {{/nop-list-item}}
   {{/each}}
 
