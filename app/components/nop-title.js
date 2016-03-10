@@ -103,7 +103,7 @@ export default Ember.Component.extend({
     return currentActivityMappings;
   },
   _setupActivityTypes: function() {
-    if (Ember.isPresent(this.get('activityType'))) {
+    if (Ember.isPresent(this.get('activityTypes'))) {
       const title = this.get('title');
       title.set('activityMappings', this._mergedActivityMappings(this.get('activityTypes'), title.get('activityMappings')));
     }
