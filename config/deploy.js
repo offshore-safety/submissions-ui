@@ -7,11 +7,12 @@ module.exports = function(deployTarget) {
   var ENV = {
     build: {},
     s3: {
-      filePattern: '**/*.{js,css,png,gif,ico,jpg,map,xml,txt,svg,swf,eot,ttf,woff,woff2}',
       // prefix: 'submissions-ui',
       region: 'ap-southeast-2'
     },
-    's3-index': {},
+    's3-index': {
+      region: 'ap-southeast-2'
+    },
     cloudfront: {}
   };
   if (VALID_DEPLOY_TARGETS.indexOf(deployTarget) === -1) {
