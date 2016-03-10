@@ -31,13 +31,11 @@ export default Ember.Controller.extend({
       documentNames.push(`${financialAssurance.get('faConfirmation').get('name')} (FA Confirmation)`);
     }
 
-
-
     return documentNames;
   }),
   actions: {
     goHome() {
-      this.transitionToRoute('environment-plan.new.before-you-start');
+      this.transitionToRoute('welcome');
     }
   }
 });

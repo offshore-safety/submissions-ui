@@ -18,7 +18,7 @@ export default Ember.Controller.extend({
   }),
   actions: {
     goHome() {
-      this.transitionToRoute('environment-plan.new.before-you-start');
+      this.transitionToRoute('welcome');
     }
   }
 });
