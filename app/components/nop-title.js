@@ -103,9 +103,10 @@ export default Ember.Component.extend({
     return currentActivityMappings;
   },
   _setupActivityTypes: function() {
-    const title = this.get('title');
-
-    title.set('activityMappings', this._mergedActivityMappings(this.get('activityTypes'), title.get('activityMappings')));
+    if (Ember.isPresent(this.get('activityType'))) {
+      const title = this.get('title');
+      title.set('activityMappings', this._mergedActivityMappings(this.get('activityTypes'), title.get('activityMappings')));
+    }
   }.on('init'),
   _showRemoveChanged: Ember.observer('showRemove', function() {
     this.get('title').get('activityMappings').forEach((at) => at.set('selected', true));
