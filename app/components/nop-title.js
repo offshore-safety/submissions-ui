@@ -107,6 +107,9 @@ export default Ember.Component.extend({
 
     title.set('activityMappings', this._mergedActivityMappings(this.get('activityTypes'), title.get('activityMappings')));
   }.on('init'),
+  _showRemoveChanged: Ember.observer('showRemove', function() {
+    this.get('title').get('activityMappings').forEach((at) => at.set('selected', true));
+  }),
   disableActivityTypes: Ember.computed('activityTypes', 'showRemove', function() {
     return !(Ember.isPresent(this.get('activityTypes')) && this.get('activityTypes').length > 1 && this.get('showRemove'));
   }),
