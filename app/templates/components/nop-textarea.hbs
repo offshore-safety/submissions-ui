@@ -1,10 +1,10 @@
-{{nop-label forElementId=(concat elementId '-' name)
+{{nop-label forElementId=inputId
             label=label
             required=required
             hint=hint
             errorMessage=errorMessage}}
 <div class="highlight-container">
-  {{textarea id=(concat elementId '-' name) rows=rows required=required value=value}}
+  {{textarea id=inputId rows=rows required=required value=value}}
   <span class="highlight" />
 </div>
 <div class="error-message">

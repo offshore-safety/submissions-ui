@@ -20,13 +20,16 @@ nop-input, nop-textarea {
   font-size: 0.75rem;
 }
 
+@mixin error-style {
+  input, textarea {
+    background: #F9ECEC;
+    border-bottom: $input-border-bottom solid #DDAAAA;
+  }
+}
 
 .visited {
-  .errors {
-    input, textarea {
-      background: #F9ECEC;    
-      border-bottom: $input-border-bottom solid #DDAAAA;
-    }
+  .errors, &.errors {
+    @include error-style;
   }
   .error-message {
     display: block;

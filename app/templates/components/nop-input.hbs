@@ -1,10 +1,10 @@
-{{nop-label forElementId=(concat elementId '-' name)
+{{nop-label forElementId=inputId
             label=label
             required=required
             hint=hint
             errorMessage=errorMessage}}
 <div class="highlight-container">
-  {{input id=(concat elementId '-' name) required=required type=type value=value}}
+  {{input id=inputId required=required type=type value=value}}
   <span class="highlight" />
 </div>
 {{#if nonRequiredErrors}}
