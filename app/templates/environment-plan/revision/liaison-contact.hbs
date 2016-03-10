@@ -1,0 +1,12 @@
+{{#nop-page title='Nominated liaison person'
+            hint='This is the person who\'s contact details will be published on NOPSEMA\'s website as a point of contact for any stakeholders who wish to get in touch with you about your activity.'}}
+  {{nop-liaison-contact contact=model.liaisonContact}}
+  {{#nop-actions}}
+    {{#link-to back}}
+      <button>Back</button>
+    {{/link-to}}
+    {{#link-to next}}
+      <button class='primary'>Next</button>
+    {{/link-to}}
+  {{/nop-actions}}
+{{/nop-page}}

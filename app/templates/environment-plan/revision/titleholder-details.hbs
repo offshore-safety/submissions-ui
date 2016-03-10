@@ -1,0 +1,14 @@
+{{#nop-page title='Titleholder details'
+            class='titleholder-details-page'
+            hint='Please provide the name, Australian company or business number and registered business address for the titleholder or title applicant submitting this EP. The business must be authorized via a title (or will be authorized if the title application is accepted) to undertake this activity and will remain responsible for the environmental management of the activity under the OPGGS Act 2006 and associated regulations - including during an emergency event.'}}
+  {{nop-titleholders titleholderDetails=model.titleholderDetails}}
+
+  {{#nop-actions}}
+    {{#link-to back}}
+      <button>Back</button>
+    {{/link-to}}
+    {{#link-to next}}
+      <button class='primary'>Next</button>
+    {{/link-to}}
+  {{/nop-actions}}
+{{/nop-page}}

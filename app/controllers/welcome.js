@@ -21,6 +21,9 @@ export default Ember.Controller.extend({
     submitEPNew() {
       this.transitionToRoute('environment-plan.new.before-you-start', this._generateRandomId());
     },
+    submitEPRevision() {
+      this.transitionToRoute('environment-plan.revision.before-you-start', this._generateRandomId());
+    },
     submitFAConfirmation() {
       this.transitionToRoute('fa-confirmation.upload.before-you-start', this._generateRandomId());
     },

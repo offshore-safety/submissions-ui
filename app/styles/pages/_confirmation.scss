@@ -1,5 +1,14 @@
 .confirmation-page {
-  .receipt-number, .timestamp-value, .response-value, .document-name, .reg31-documents {
+  .receipt-number, .timestamp-value, .response-value {
     font-size: $base-font-size * 1.2;
+  }
+
+  .label {
+    font-size: $base-font-size * 0.8;
+    color: $nopsema-grey;
+  }
+
+  .document-list {
+    margin-top: 0;
   }
 }

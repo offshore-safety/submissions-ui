@@ -1,0 +1,15 @@
+{{#nop-page title='Environment plan documents'
+            class='attach-environment-plan-page'
+            hint='Attach your environment plan documents'}}
+
+  {{nop-environment-plan-documents documents=model.documents}}
+
+  {{#nop-actions}}
+    {{#link-to back}}
+      <button disabled={{navigationDisabled}}>Back</button>
+    {{/link-to}}
+    {{#link-to next}}
+      <button class='primary' disabled={{navigationDisabled}}>Next</button>
+    {{/link-to}}
+  {{/nop-actions}}
+{{/nop-page}}

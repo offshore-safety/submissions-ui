@@ -3,6 +3,14 @@ const REGULATION_TYPES = {
   'greenhouse_gas': 'Greenhouse gas'
 };
 
+const REVISION_TYPES = {
+  '1': 'Significant modification or new stage of the activity (Regulation 17(5))',
+  '2': 'New or increased environmental impact or risk (Regulation 17(6))',
+  '3': 'Change in titleholder (Regulation 17(7))',
+  '4': 'Revision on request of NOPSEMA (Regulation 18)',
+  '5': 'Revision after a period of 5 years (Regulation 19)'
+};
+
 const LEVY_UNIT_VALUE = 3600;
 
 const ACTIVITY_RATINGS = {
@@ -349,6 +357,7 @@ const COUNTRIES = {
 
 export default {
   REGULATION_TYPES,
+  REVISION_TYPES,
   PETROLEUM_ACTIVITY_TYPES,
   GREENHOUSE_GAS_ACTIVITY_TYPES,
   COUNTRIES,

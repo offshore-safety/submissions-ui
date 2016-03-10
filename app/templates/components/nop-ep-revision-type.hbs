@@ -1,0 +1,11 @@
+{{#if readonly}}
+  {{nop-text-field label='Regulation this revision is being submitted under'
+                   value=chosenRevisionType}}
+{{else}}
+  {{nop-radio-group label='Which regulation is this revision being submitted under?'
+                    options=revisionTypes
+                    value=revisionType.revisionType
+                    errors=revisionType.errors
+                    required=true
+                    errorKey='revisionType'}}
+{{/if}}

@@ -1,0 +1,9 @@
+{{#nop-page title='Comments'
+            class='comments-page'
+            hint='Anything else that you need to support your submission'}}
+  {{nop-comments comments=model.comments}}
+  {{#nop-actions}}
+    <button {{action 'goBack'}}>Back</button>
+    <button class='primary' {{action 'goNext'}}>Next</button>
+  {{/nop-actions}}
+{{/nop-page}}

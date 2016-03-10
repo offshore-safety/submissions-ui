@@ -1,0 +1,12 @@
+{{#nop-page title='Revision type'
+            class='revision-type-page'}}
+  {{nop-ep-revision-type revisionType=model.revisionType}}
+  {{#nop-actions}}
+    {{#link-to back}}
+      <button disabled={{navigationDisabled}}>Back</button>
+    {{/link-to}}
+    {{#link-to next}}
+      <button class='primary' disabled={{navigationDisabled}}>Next</button>
+    {{/link-to}}
+  {{/nop-actions}}
+{{/nop-page}}

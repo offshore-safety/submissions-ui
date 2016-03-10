@@ -1,0 +1,14 @@
+{{#nop-page title='Titles'
+            class='titles-page'
+            hint='Please enter all titles that authorize the activity described in the EP. Underlying titles that do not directly authorize the activity need not be entered. If the title is currently under application with NOPTA, the application number must be provided to confirm that the application has been made.'}}
+  {{nop-titles titles=model.titles activityTypes=model.activityDetails.activityTypes}}
+
+  {{#nop-actions}}
+    {{#link-to back}}
+      <button>Back</button>
+    {{/link-to}}
+    {{#link-to next}}
+      <button class='primary'>Next</button>
+    {{/link-to}}
+  {{/nop-actions}}
+{{/nop-page}}
