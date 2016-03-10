@@ -10,7 +10,8 @@ module.exports = function(deployTarget) {
       filePattern: '**/*.{js,css,png,gif,ico,jpg,map,xml,txt,svg,swf,eot,ttf,woff,woff2,html}',
       // prefix: 'submissions-ui',
       region: 'ap-southeast-2'
-    }
+    },
+    cloudfront: {}
   };
   if (VALID_DEPLOY_TARGETS.indexOf(deployTarget) === -1) {
     throw new Error('Invalid deployTarget ' + deployTarget);
@@ -25,6 +26,9 @@ module.exports = function(deployTarget) {
     ENV.s3.accessKeyId = process.env.AWS_ACCESS_KEY_ID;
     ENV.s3.secretAccessKey = process.env.AWS_SECRET_ACCESS_KEY;
     ENV.s3.bucket = process.env.S3_BUCKET;
+    ENV.cloudfront.accessKeyId = process.env.AWS_ACCESS_KEY_ID;
+    ENV.cloudfront.secretAccessKey = process.env.AWS_SECRET_ACCESS_KEY;
+    ENV.cloudfront.distribution = process.env.AWS_CLOUDFRONT_DISTRIBUTION_ID;
   }
 
   return ENV;
