@@ -8,6 +8,10 @@ import ConfirmationDetails from '../../models/confirmation-details';
 
 export default Ember.Route.extend({
   submissionStore: Ember.inject.service(),
+  pageTitleList: Ember.inject.service(),
+  _initPageTitle: function() {
+    this.get('pageTitleList').push({title: 'FA Confirmation', replace: true});
+  }.on('init'),
   _titles() {
     const title = Title.create();
     const titleList = TitleList.create();

@@ -7,6 +7,10 @@ import AdditionalInfo from '../../models/additional-info';
 
 export default Ember.Route.extend({
   submissionStore: Ember.inject.service(),
+  pageTitleList: Ember.inject.service(),
+  _initPageTitle: function() {
+    this.get('pageTitleList').push({title: 'FA Confirmation', replace: true});
+  }.on('init'),
   _submissionContact() {
     const postalAddress = Address.create();
     const contact = SubmissionContact.create({

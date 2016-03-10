@@ -15,6 +15,10 @@ import AdditionalInfo from '../../models/additional-info';
 
 export default Ember.Route.extend({
   submissionStore: Ember.inject.service(),
+  pageTitleList: Ember.inject.service(),
+  _initPageTitle: function() {
+    this.get('pageTitleList').push({title: 'EP Revision', replace: true});
+  }.on('init'),
   _revisionType() {
     const revisionType = RevisionType.create();
 
