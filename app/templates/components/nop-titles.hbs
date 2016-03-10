@@ -17,4 +17,8 @@
   {{nop-add-another action='addTitle'
                     text='Add another title'
                     class='add-another-title'}}
+
+  {{#if activityTypes}}
+    {{nop-levies titles=titles.titles}}
+  {{/if}}
 {{/if}}

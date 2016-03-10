@@ -43,13 +43,19 @@
 
   {{#if activityTypes}}
     {{nop-section-header title='Activities that will be undertaken on this title'}}
-    {{#each linkedActivityTypes as |at|}}
+    {{#each title.activityMappings as |at|}}
       {{nop-checkbox checked=at.selected
                      disabled=disableActivityTypes
                      label=(activity-type-from-id at.type)}}
       {{#if at.selected}}
         <div class='type-duration-fields'>
-          {{nop-input class='type-duration' label='Duration' value=at.expectedDuration type='number'}}
+          {{nop-input class='type-duration'
+                      label='Duration'
+                      value=at.expectedDuration
+                      type='number'
+                      required=true
+                      errors=at.errors
+                      errorKey='expectedDuration'}}
           {{nop-select class='type-duration-units'
                        label='Units'
                        searchEnabled=false
@@ -57,7 +63,7 @@
                        content=durationUnits
                        optionValuePath='text'}}
         </div>
-        {{nop-levies activityType=at}}
+        {{nop-title-levies activityType=at}}
       {{/if}}
     {{/each}}
   {{/if}}

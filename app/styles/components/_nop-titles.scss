@@ -1,0 +1,14 @@
+nop-titles {
+  .estimated-levies {
+    li {
+      text-align: center;
+      font-size: $base-font-size * 1.3;
+      @include span-columns(12);
+
+      @include media($desktop) {
+        @include span-columns(4);
+        @include omega(3n);
+      }
+    }
+  }
+}

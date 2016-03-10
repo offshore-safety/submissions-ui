@@ -1,5 +1,6 @@
 import Ember from 'ember';
 import _ from 'lodash/lodash';
+import ActivityMapping from '../models/activity-mapping';
 
 export default Ember.Component.extend({
   tagName: 'nop-title',
@@ -85,14 +86,27 @@ export default Ember.Component.extend({
       title.set('region', regions[0].text);
     }
   }),
-  linkedActivityTypes: Ember.computed('activityTypes', function() {
-    return this.get('activityTypes').map(function(at) {
-      return Ember.Object.create({type: at.type, selected: true, expectedDuration: null, durationUnits: 'years'});
+  _mergedActivityMappings(activityTypes, currentActivityMappings) {
+    const availableTypes = activityTypes.map((at) => at.type);
+
+    currentActivityMappings = currentActivityMappings.filter((cam) => {
+      return availableTypes.indexOf(cam.type) !== -1;
     });
-  }),
-  _showRemoveChanged: Ember.observer('showRemove', function() {
-    this.get('linkedActivityTypes').forEach((at) => at.set('selected', true));
-  }),
+
+    const currentTypes = currentActivityMappings.map((ct) => ct.type);
+    activityTypes.forEach((at) => {
+      if (currentTypes.indexOf(at.type) === -1) {
+        currentActivityMappings.pushObject(ActivityMapping.create({type: at.type}));
+      }
+    });
+
+    return currentActivityMappings;
+  },
+  _setupActivityTypes: function() {
+    const title = this.get('title');
+
+    title.set('activityMappings', this._mergedActivityMappings(this.get('activityTypes'), title.get('activityMappings')));
+  }.on('init'),
   disableActivityTypes: Ember.computed('activityTypes', 'showRemove', function() {
     return !(Ember.isPresent(this.get('activityTypes')) && this.get('activityTypes').length > 1 && this.get('showRemove'));
   }),
