@@ -7,10 +7,11 @@ module.exports = function(deployTarget) {
   var ENV = {
     build: {},
     s3: {
-      filePattern: '**/*.{js,css,png,gif,ico,jpg,map,xml,txt,svg,swf,eot,ttf,woff,woff2,html}',
+      filePattern: '**/*.{js,css,png,gif,ico,jpg,map,xml,txt,svg,swf,eot,ttf,woff,woff2}',
       // prefix: 'submissions-ui',
       region: 'ap-southeast-2'
     },
+    's3-index': {},
     cloudfront: {}
   };
   if (VALID_DEPLOY_TARGETS.indexOf(deployTarget) === -1) {
@@ -26,6 +27,9 @@ module.exports = function(deployTarget) {
     ENV.s3.accessKeyId = process.env.AWS_ACCESS_KEY_ID;
     ENV.s3.secretAccessKey = process.env.AWS_SECRET_ACCESS_KEY;
     ENV.s3.bucket = process.env.S3_BUCKET;
+    ENV['s3-index'].accessKeyId = process.env.AWS_ACCESS_KEY_ID;
+    ENV['s3-index'].secretAccessKey = process.env.AWS_SECRET_ACCESS_KEY;
+    ENV['s3-index'].bucket = process.env.S3_BUCKET;
     ENV.cloudfront.accessKeyId = process.env.AWS_ACCESS_KEY_ID;
     ENV.cloudfront.secretAccessKey = process.env.AWS_SECRET_ACCESS_KEY;
     ENV.cloudfront.distribution = process.env.AWS_CLOUDFRONT_DISTRIBUTION_ID;
