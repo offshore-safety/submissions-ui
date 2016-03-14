@@ -84,12 +84,13 @@
   </section>
 
   <section>
-    {{nop-section-header title='Activity time period' hint='This refers to the length of time (in whole years) over which your activity may occur. Your activity may not necessarily take place during the entire perioid but could take place at any time within that period. The maximum time period allowed is 5 years. After this time you must submit, and have accepted, a revision to the EP under REgulation 19 if you wish to continue the activity.'}}
+    {{nop-section-header title='Activity time period' hint='This refers to the length of time (in whole years) over which your activity may occur. Your activity may not necessarily take place during the entire perioid but could take place at any time within that period. The maximum time period allowed is 5 years. After this time you must submit, and have accepted, a revision to the EP under Regulation 19 if you wish to continue the activity.'}}
     {{nop-input label='How long does the EP need to be in force?'
                 class='ep-duration'
                 type='number'
                 hint='Enter between 1 and 5 years'
                 value=activityDetails.epDuration
+                required=true
                 errors=activityDetails.errors
                 errorKey='epDuration'}}
   </section>
