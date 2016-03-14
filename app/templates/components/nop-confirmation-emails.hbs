@@ -1,30 +1,18 @@
 {{#if readonly}}
-  <!-- TODO We should be showing the contact addresses here too -->
-  The following people will receive confirmation emails upon submission:
-  <ul class="bullets">
-    {{#each uniqueEmailMessages as |email|}}
-      <li>{{email}}</li>
-    {{/each}}
-    {{#each additionalInfo.confirmationEmails as |other|}}
-      <li>{{other.email}}</li>
-    {{/each}}
-  </ul>
-
-  {{nop-errors errors=errors}}
+  {{#if showEmails}}
+    The following people will receive confirmation emails upon submission:
+    <ul class="bullets">
+      {{#each additionalInfo.confirmationEmails as |other|}}
+        <li>{{other.email}}</li>
+      {{/each}}
+    </ul>
+  {{/if}}
 {{else}}
-  The following people will receive confirmation emails upon submission:
-  <ul class="bullets">
-    {{#each uniqueEmailMessages as |email|}}
-        <li>{{email}}</li>
-    {{/each}}
-  </ul>
-  {{nop-hint hint='Provide email addresses of others who need to receive confirmation of this submission'}}
-  <section>
-    {{#each additionalInfo.confirmationEmails as |email|}}
-      {{#nop-list-item}}
-        {{nop-confirmation-email email=email showRemove=true removeEmail=(action 'removeConfirmationEmail')}}
-      {{/nop-list-item}}
-    {{/each}}
-  </section>
+  {{nop-section-header title='Additional confirmation emails' hint='Provide email addresses of others who need to receive confirmation of this submission'}}
+  {{#each additionalInfo.confirmationEmails as |email|}}
+    {{#nop-list-item}}
+      {{nop-confirmation-email email=email showRemove=true removeEmail=(action 'removeConfirmationEmail')}}
+    {{/nop-list-item}}
+  {{/each}}
   {{nop-add-another action='addConfirmationEmail' text='Add email address' class='add-another-confirmation-email'}}
 {{/if}}
