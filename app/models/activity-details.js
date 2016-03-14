@@ -26,6 +26,25 @@ export default Ember.Object.extend(Errors, Serializable, {
   hasMinisterDecision: null,
   epbcReferenceNumber: null,
   activityTypes: [],
+  _oppSectionChanged: Ember.observer('hasMinisterDecision', 'hasOPP', 'hasOffshoreProject', function() {
+    if (Ember.isPresent(this.get('hasOffshoreProject')) && !this.get('hasOffshoreProject')) {
+      this.set('oppDocumentReference', null);
+      this.set('epbcReferenceNumber', null);
+      this.set('hasMinisterDecision', null);
+      this.set('hasOPP', null);
+    } else {
+      if (Ember.isPresent(this.get('hasOPP')) && !this.get('hasOPP')) {
+        this.set('oppDocumentReference', null);
+      } else {
+        this.set('hasMinisterDecision', null);
+        this.set('epbcReferenceNumber', null);
+      }
+
+      if (Ember.isPresent(this.get('hasMinisterDecision')) && !this.get('hasMinisterDecision')) {
+        this.set('epbcReferenceNumber', null);
+      }
+    }
+  }),
   errors: Ember.computed('name', 'description', 'locationMap.token', 'hasOffshoreProject', 'hasOPP', 'locationMap.errors',
                          'oppDocumentReference', 'hasMinisterDecision', 'epbcReferenceNumber', 'epDuration', 'activityTypes.@each.errors', function() {
     const errors = {};
