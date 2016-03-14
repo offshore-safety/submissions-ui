@@ -9,7 +9,6 @@
 
   <section>
     {{nop-text-field label='Submission Received At' value=submissionReceived}}
-    {{nop-text-field label='NOPSEMA Response Due' value=responseDue}}
   </section>
 
   <section class='documents'>
@@ -19,10 +18,6 @@
         <li class='document-name'>{{name}}</li>
       {{/each}}
     </ul>
-    {{#if model.documents.reg31Documents}}
-      <div class='label'>You have already supplied the following information under Regulation 31</div>
-      <p class='reg31-documents'>{{model.documents.reg31Documents}}</p>
-    {{/if}}
   </section>
   {{#nop-actions}}
     <button class='primary' {{action 'goHome'}}>Back to Home</button>

@@ -58,6 +58,7 @@ Router.map(function() {
       this.route('attachment');
       this.route('additional-info');
       this.route('review');
+      this.route('confirmation');
     });
   });
 
@@ -76,6 +77,7 @@ Router.map(function() {
       this.route('attachment');
       this.route('additional-info');
       this.route('review');
+      this.route('confirmation');
     });
   });
 });

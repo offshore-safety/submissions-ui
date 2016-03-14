@@ -7,7 +7,7 @@ export default Ember.Controller.extend({
   submissionReceived: Ember.computed('model.submissionReceived', function() {
     return moment(this.get('model').get('submissionReceived')).format(`${dateFormat}, h:mm:ss a`);
   }),
-  responseDue: Ember.computed('model.submissionReceived', function() {
+  responseDue: Ember.computed('model.responseDue', function() {
     return moment(this.get('model').get('responseDue')).format(dateFormat);
   }),
   documentNames: Ember.computed('model.activityDetails', 'model.documents', 'model.financialAssurance', function() {

@@ -12,7 +12,7 @@ export default Ember.Service.extend({
     );
   },
   submitFADeclaration(submission) {
-    return Ember.$.ajax(`${ENV.APP.API_ENDPOINT}/api/v1/submissions/fa_declaration`,
+    return Ember.$.ajax(`${ENV.APP.API_ENDPOINT}/api/v1/submissions/fa_declarations`,
       {
         method: 'post',
         contentType: 'application/json',
@@ -21,7 +21,7 @@ export default Ember.Service.extend({
     );
   },
   submitFAConfirmation(submission) {
-    return Ember.$.ajax(`${ENV.APP.API_ENDPOINT}/api/v1/submissions/fa_confirmation`,
+    return Ember.$.ajax(`${ENV.APP.API_ENDPOINT}/api/v1/submissions/fa_confirmations`,
       {
         method: 'post',
         contentType: 'application/json',
