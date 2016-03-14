@@ -41,7 +41,7 @@
                  errorKey='region'}}
   </section>
 
-  {{#if activityTypes}}
+  {{#if showActivityTypes}}
     {{nop-section-header title='Activities that will be undertaken on this title'}}
     {{#each title.activityMappings as |at|}}
       {{nop-checkbox checked=at.selected

@@ -86,6 +86,9 @@ export default Ember.Component.extend({
       title.set('region', regions[0].text);
     }
   }),
+  showActivityTypes: Ember.computed('activityTypes', 'activityTypes.@each.type', function() {
+    return Ember.isPresent(this.get('activityTypes')) && _.all(this.get('activityTypes'), (at) => at.type);
+  }),
   _mergedActivityMappings(activityTypes, currentActivityMappings) {
     const availableTypes = activityTypes.map((at) => at.type);
 
