@@ -32,7 +32,10 @@
               errorKey='epDocumentTitle'}}
 
   <section class='calculation-types'>
-    {{nop-section-header title='Under what method was this calculated?'}}
+    {{nop-section-header title='Under what method was this calculated?' required=true}}
+    {{#unless confirmationDetails.calculationMethod}}
+      <div class='error-message'>Required</div>
+    {{/unless}}
     <div class='calculation-type'>
       {{nop-radio checked=confirmationDetails.calculationMethod value='calculationMethod1' name='calculation-type' label='APPEA method'}}
       <p class='hint'>
@@ -49,6 +52,7 @@
       {{#if otherEndorsedType}}
         {{nop-input label='Date of endorsement'
                     value=confirmationDetails.endorsementDate
+                    required=true
                     errors=confirmationDetails.errors
                     errorKey='endorsementDate'}}
       {{/if}}
