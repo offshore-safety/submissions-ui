@@ -17,4 +17,9 @@
   button {
     display: block;
   }
+
+  nop-unavailable {
+    @include span-columns(12);
+    margin-top: 20px;
+  }
 }

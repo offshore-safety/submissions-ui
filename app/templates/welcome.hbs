@@ -30,12 +30,7 @@
   <section class='opp-section'>
     {{nop-radio label='Offshore Project Proposal (OPP)' value='opp' name='submission-type' checked=submissionType}}
     {{#if submittingOPP}}
-      <div class='question-section'>
-        <button {{action 'unavailableType'}}>Submit New OPP</button>
-        <button {{action 'unavailableType'}}>Submit OPP Revision</button>
-        <button {{action 'unavailableType'}}>Resubmit OPP</button>
-      </div>
-      {{nop-unavailable visible=unavailable}}
+      {{nop-unavailable visible=true}}
     {{/if}}
   </section>
   <section class='privacy-notice'>
