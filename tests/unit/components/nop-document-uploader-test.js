@@ -110,6 +110,6 @@ test('_uploadFailed should show an error message', function(assert) {
 
   component._uploadFailed({ name: fileName });
 
-  assert.equal(component.message, "Upload failed for 'monkeys.doc'. Please check your connection and try again");
+  assert.equal(component.message, "Upload failed for 'monkeys.doc'. Please check your connection and try again. Please note there is a size limit of 100MB per file");
   assert.ok(uploadEventReceived);
 });
