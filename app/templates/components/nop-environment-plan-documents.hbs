@@ -27,7 +27,7 @@
   {{nop-section-header title='Environment plan'}}
   {{nop-attach-document document=documents.environmentPlan
                         instruction='Drop environment plan here or click to upload'
-                        instructionHint='Please submit in Adobe Portable Format (.pdf) or Word document (.doc, .docx) format'
+                        instructionHint='Please submit in Adobe Portable Format (.pdf) or Word document (.doc, .docx) format. Max 100MB.'
                         accepts='.pdf,.doc,.docx'
                         errors=documents.errors
                         errorKey='environmentPlan'
@@ -37,7 +37,8 @@
   {{nop-attach-multiple-documents documents=documents.attachments
                                   descriptionLabel='How is this document related to the environment plan?'
                                   descriptionRequired=true
-                                  instruction='Drop supporting documents here or click to upload'}}
+                                  instruction='Drop supporting documents here or click to upload'
+                                  instructionHint='Max 100MB per file'}}
 
   {{nop-section-header title='Documents already supplied to NOPSEMA'
                        hint='List any documents or information already supplied to NOPSEMA under Regulation 31 that you wish to include in this submission. Titleholders should ensure that the relevance of any referenced information to the EP is clearly explained and ensure that references to previously submitted information are clear (i.e., include the document name, number, revision number and/or date and, where relevant, refer to the specific section(s), pages or similar where the specific information is contained). NOPSEMA will assess the referenced information as though it is part of the EP submission.'}}
