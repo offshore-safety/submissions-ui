@@ -56,6 +56,6 @@
     {{#link-to back}}
       <button>Back</button>
     {{/link-to}}
-    <button class='primary' {{action 'submit'}}>Submit</button>
+    <button class='primary' {{action 'submit'}} disabled={{model.hasErrors}}>Submit</button>
   {{/nop-actions}}
 {{/nop-page}}

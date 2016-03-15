@@ -62,10 +62,6 @@
     {{#link-to back}}
       <button>Back</button>
     {{/link-to}}
-    {{#if canPrint}}
-      <button class='primary' {{action 'print'}}>Print</button>
-    {{else}}
-      <button class='primary' disabled=true>Print</button>
-    {{/if}}
+    <button class='primary' {{action 'print'}} disabled={{model.hasErrors}}>Print</button>
   {{/nop-actions}}
 {{/nop-page}}
