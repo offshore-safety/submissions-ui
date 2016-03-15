@@ -1,12 +1,14 @@
 {{#link-to item.path disabled=navigationDisabled}}
-  {{#if item.icon}}
-	{{fa-icon item.icon}}
-  {{/if}}
-  {{#if complete}}
-    {{fa-icon 'check'}}
-  {{/if}}
-  {{#if visitedWithErrors}}
-    {{fa-icon 'warning'}}
-  {{/if}}
-  <div class='item-name'>{{item.label}}</div>
+  <div class='touch-target'>
+    {{#if item.icon}}
+  	{{fa-icon item.icon}}
+    {{/if}}
+    {{#if complete}}
+      {{fa-icon 'check'}}
+    {{/if}}
+    {{#if visitedWithErrors}}
+      {{fa-icon 'warning'}}
+    {{/if}}
+    <div class='item-name'>{{item.label}}</div>
+  </div>
 {{/link-to}}

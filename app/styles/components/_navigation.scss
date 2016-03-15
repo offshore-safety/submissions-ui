@@ -1,7 +1,14 @@
+$border-width: 5px;
+
 nop-navigation {
   display: block;
   text-align: center;
   width: 100%;
+
+  .touch-target {
+    width: 100%;
+    height: 100%;
+  }
 
   .nav-items {
     margin: 20px auto;
@@ -12,16 +19,17 @@ nop-navigation {
 $nav-item-dimensions: 90px;
 nop-navigation-item {
   display: inline-block;
-  background-color: $nopsema-grey;
-  margin: 0 1px 0 0;
+  margin: 0 1px;
   height: 70px;
   width: $nav-item-dimensions;
 
   transition: all 0.5s ease;
-  font-size: 0.75rem;
+  font-size: 0.8rem;
   line-height: 1.2em;
 
   position: relative;
+
+  border-bottom: $border-width solid transparent;
 
   .item-name, .fa {
     position: absolute;
@@ -32,13 +40,24 @@ nop-navigation-item {
 
   .item-name {
     bottom: 0;
-    padding: 10px;
+    padding: 5px;
   }
 
   .fa {
-    top: 10px;
+    top: 8px;
     font-size: 1.5em;
     opacity: 0.5;
+  }
+
+  background-color: $nopsema-grey;
+  color: $white;
+
+  a {
+    color: $white;
+
+    &:hover, &:focus, &:active, &:visited {
+      color: $white;
+    }
   }
 
   &.complete {
@@ -47,41 +66,30 @@ nop-navigation-item {
 
   &.inverted {
     background-color: $white;
+    color: invert($white);
 
     a {
-      color: $base-font-color;
+      color: invert($white);
+
+      &:hover, &:focus, &:active, &:visited {
+        color: invert($white);
+      }
     }
   }
 
   &.current {
     @include shadow-depth3(transparentize(black, 0.5));
-    transform: scale(1.15);
-    background-color: $nopsema-orange;
+    transform: scale(1.2);
     z-index: 10;
 
-    a {
-      color: $white;
-    }
-  }
-
-  a {
-    display: inline-block;
-    width: 100%;
-    height: 100%;
-    text-decoration: none;
-    color: $off-white;
-
-    &.disabled {
-      opacity: 0.5;
-      cursor: not-allowed;
-    }
-
-    &:hover:not(.current), &:focus:not(.current) {
-      color: darken($off-white, 10%);
-    }
-
-    &:active {
-      color: $white;
-    }
+    // background-color: darken($nopsema-orange, 5%);
+    border-bottom: $border-width solid $nopsema-orange;
+    // a {
+    //   color: $white;
+    //
+    //   &:hover, &:focus, &:active, &:visited {
+    //     color: $white;
+    //   }
+    // }
   }
 }
