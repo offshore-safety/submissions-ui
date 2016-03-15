@@ -35,7 +35,7 @@ nop-select {
 
 .visited .select-container.errors {
   .select2-choice,.select2-choices {
-    background: #F9ECEC;    
+    background: $error-background;    
     border-bottom: $input-border-bottom solid #DDAAAA;
   }
 }

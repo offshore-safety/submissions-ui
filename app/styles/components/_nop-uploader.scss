@@ -71,6 +71,6 @@ nop-document-uploader {
 }
 
 .visited .errors nop-document-uploader .file-picker {
-  background: #F9ECEC;
+  background: $error-background;
   border-color: #DDAAAA;
 }

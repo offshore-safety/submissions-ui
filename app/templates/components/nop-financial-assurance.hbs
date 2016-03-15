@@ -1,5 +1,5 @@
 {{#if readonly}}
-  <h5>Financial assurance declaration</h5>
+  {{nop-section-header title='Financial assurance declaration'}}
   {{#if noPreviousDeclaration}}
     {{#if assurance.includeDeclaration}}
       {{#if assurance.faDeclaration}}
@@ -12,7 +12,7 @@
     You have indicated that there is an existing financial assurance declaration for these titles
   {{/if}}
 
-  <h5>Financial assurance confirmation</h5>
+  {{nop-section-header title='Financial assurance confirmation'}}
   {{#if assurance.includeConfirmation}}
     {{#if assurance.faConfirmation}}
       {{nop-document document=assurance.faConfirmation}}

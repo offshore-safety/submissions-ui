@@ -7,5 +7,8 @@ $white: lighten($nopsema-grey, 58%);
 $off-white: lighten($nopsema-grey, 54%);
 $dark-grey: darken($nopsema-grey, 20%);
 $grey-mask: transparentize($nopsema-grey, 0.6);
+
+
 $error-red: rgba(200,50,75, 1);
+$error-background: lighten(#F9ECEC, 2%);
 $error-mask: transparentize($error-red, 0.7);

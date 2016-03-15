@@ -16,13 +16,13 @@ nop-input, nop-textarea {
 }
 .required-error-message {
   display: none;
-  color: #ce465d;
+  color: $error-red;
   font-size: 0.75rem;
 }
 
 @mixin error-style {
   input, textarea {
-    background: #F9ECEC;
+    background: $error-background;
     border-bottom: $input-border-bottom solid #DDAAAA;
   }
 }

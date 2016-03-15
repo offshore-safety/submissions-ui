@@ -25,9 +25,6 @@ export default Ember.Component.extend({
     },
     removeTitle(title) {
       this.get('titles').get('titles').removeObject(title);
-    },
-    linkedTypesChanged() {
-      console.log('Changed');
     }
   }
 });
