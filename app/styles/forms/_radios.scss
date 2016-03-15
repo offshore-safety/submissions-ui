@@ -128,8 +128,8 @@ nop-radio {
     border-radius: 100%;
     width: 26px;
     height: 26px;
-    top: 0;
-    left: 0;
+    top: -2px;
+    left: 2px;
     transition: border-color $base-transition-duration $base-transition-easing;
 
     &::before {
