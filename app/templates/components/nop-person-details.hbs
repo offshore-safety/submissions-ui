@@ -81,5 +81,8 @@
               required=true
               errors=person.errors
               errorKey='email'}}
-  {{nop-address title='Postal address' hint='Required if different from titleholder' address=person.postalAddress allowPOBox=true}}
+  {{nop-address title='Postal address'
+                hint=postalAddressHint
+                address=person.postalAddress
+                allowPOBox=true}}
 {{/if}}

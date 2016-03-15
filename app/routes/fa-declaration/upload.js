@@ -12,7 +12,7 @@ export default Ember.Route.extend({
     this.get('pageTitleList').push({title: 'FA Declaration', replace: true});
   }.on('init'),
   _submissionContact() {
-    const postalAddress = Address.create();
+    const postalAddress = Address.create({required: true});
     const contact = SubmissionContact.create({
       postalAddress
     });

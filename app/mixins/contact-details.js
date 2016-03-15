@@ -5,7 +5,7 @@ import Serializable from './serializable';
 
 export default Ember.Mixin.create(Errors, Serializable, {
   _serializableProperties: [
-    'title', 'firstName', 'lastName', 'position', 'phone',
+    'title', 'firstName', 'lastName', 'position', 'phone', 'postalAddressRequired',
     'mobile', 'email', 'postalAddress', 'sameAsSubmissionContact', 'visited'
   ],
   _relationshipTypes: {
@@ -22,7 +22,6 @@ export default Ember.Mixin.create(Errors, Serializable, {
   postalAddress: null,
   sameAsSubmissionContact: false,
   errors: Ember.computed('title', 'firstName', 'lastName', 'position', 'phone', 'mobile', 'email', 'postalAddress.errors', 'sameAsSubmissionContact', function() {
-
     if (this.get('sameAsSubmissionContact')) {
       return {};
     }
@@ -62,7 +61,9 @@ export default Ember.Mixin.create(Errors, Serializable, {
       errors['email'] = 'Please specify a valid email address';
     }
 
-    errors.postalAddress = this.get('postalAddress').get('errors');
+    if (this.get('postalAddress').get('required')) {
+      errors.postalAddress = this.get('postalAddress').get('errors');
+    }
 
     return errors;
   })
