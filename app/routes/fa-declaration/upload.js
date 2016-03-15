@@ -2,7 +2,7 @@ import Ember from 'ember';
 import FADeclarationUpload from '../../models/flows/fa-declaration-upload';
 import Address from '../../models/address';
 import SubmissionContact from '../../models/submission-contact';
-import FAAttachment from '../../models/fa-attachment';
+import FAAttachments from '../../models/fa-attachments';
 import AdditionalInfo from '../../models/additional-info';
 
 export default Ember.Route.extend({
@@ -19,8 +19,8 @@ export default Ember.Route.extend({
 
     return contact;
   },
-  _attachment() {
-    const attachment = FAAttachment.create();
+  _attachments() {
+    const attachment = FAAttachments.create();
 
     return attachment;
   },
@@ -41,7 +41,7 @@ export default Ember.Route.extend({
       const newFASubmission = FADeclarationUpload.create({
         id: params.submissionId,
         submissionContact: this._submissionContact(),
-        attachment: this._attachment(),
+        attachments: this._attachments(),
         additionalInfo: this._additionalInfo()
       });
 

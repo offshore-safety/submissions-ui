@@ -1,0 +1,14 @@
+{{#if readonly}}
+  {{#if attachments.attachments.length}}
+    {{#each attachments.attachments as |document|}}
+      {{#nop-document document=document}}
+      {{/nop-document}}
+    {{/each}}
+  {{else}}
+    <div class='error-message'>Required</div>
+  {{/if}}
+{{else}}
+  {{nop-attach-multiple-documents documents=attachments.attachments
+                                  descriptionRequired=false
+                                  instruction=instruction}}
+{{/if}}

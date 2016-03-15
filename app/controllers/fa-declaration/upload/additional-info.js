@@ -25,5 +25,5 @@ export default Ember.Controller.extend({
     return _.uniq(displayEmails);
   }),
   next: 'fa-declaration.upload.review',
-  back: 'fa-declaration.upload.attachment'
+  back: 'fa-declaration.upload.attachments'
 });

@@ -55,7 +55,7 @@ Router.map(function() {
     this.route('upload', { path: '/upload/:submissionId' }, function() {
       this.route('before-you-start');
       this.route('submission-contact');
-      this.route('attachment');
+      this.route('attachments');
       this.route('additional-info');
       this.route('review');
       this.route('confirmation');

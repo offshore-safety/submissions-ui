@@ -15,9 +15,9 @@ export default Ember.Controller.extend({
       key: 'submissionContact'
     },
     {
-      label: 'Attachment',
-      path: 'fa-declaration.upload.attachment',
-      key: 'attachment'
+      label: 'Attachments',
+      path: 'fa-declaration.upload.attachments',
+      key: 'attachments'
     },
     {
       label: 'Additional Info',
