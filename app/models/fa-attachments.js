@@ -15,7 +15,11 @@ export default Ember.Object.extend(Errors, Serializable, {
   errors: Ember.computed('attachments.@each.errors', function() {
     const errors = {};
 
-    errors['attachments'] = this.get('attachments').map((t) => t.get('errors'));
+    if (Ember.isBlank(this.get('attachments'))) {
+      errors['attachments'] = 'Required';
+    } else {
+      errors['attachments'] = this.get('attachments').map((t) => t.get('errors'));
+    }
 
     return errors;
   })

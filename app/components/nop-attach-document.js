@@ -17,13 +17,13 @@ export default Ember.Component.extend({
     if (this.get('errors') && this.get('errorKey')) {
       return this.get('errors')[this.get('errorKey')];
     }
-  }),  
+  }),
   requiredErrorMessage: Ember.computed('errorMessage', function() {
     return this.get('errorMessage') === 'Required' ? this.get('errorMessage') : null;
   }),
   nonRequiredErrorMessage: Ember.computed('errorMessage', function() {
     return this.get('errorMessage') !== 'Required' ? this.get('errorMessage') : null;
-  }), 
+  }),
   actions: {
     addDocument(document) {
       this.set('document', document);

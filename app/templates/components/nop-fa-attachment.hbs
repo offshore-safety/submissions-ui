@@ -6,12 +6,11 @@
     <div class='error-message'>Required</div>
   {{/if}}
 {{else}}
-  {{nop-section-header title='Attachment'}}
   {{nop-attach-document document=attachment.attachment
                         instruction=instruction
-                        instructionHint='Please submit in Adobe Portable Format (.pdf) image (.jpeg, .jpg, .png) format'
+                        instructionHint='Please submit in Adobe Portable Format (.pdf) or an image (.jpeg, .jpg, .png) format'
                         accepts='.pdf,.jpeg,.jpg,.png'
-                        errors=documents.errors
+                        errors=attachment.errors
                         errorKey='attachment'
                         required=true}}
 {{/if}}

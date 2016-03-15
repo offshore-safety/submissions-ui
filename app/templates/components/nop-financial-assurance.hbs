@@ -48,6 +48,8 @@
                             instruction="Drop financial assurance declaration here or click to upload"
                             errors=assurance.errors
                             errorKey='faDeclaration'
+                            instructionHint='Please submit in Adobe Portable Format (.pdf) image (.jpeg, .jpg, .png) format'
+                            accepts='.pdf,.jpeg,.jpg,.png'
                             required=true}}
     {{/if}}
     {{#if excludeDeclaration}}
@@ -73,6 +75,8 @@
                           instruction="Drop financial assurance confirmation here or click to upload"
                           errors=assurance.errors
                           errorKey='faConfirmation'
+                          instructionHint='Please submit in Adobe Portable Format (.pdf) image (.jpeg, .jpg, .png) format'
+                          accepts='.pdf,.jpeg,.jpg,.png'
                           required=true}}
 
     {{#if excludeConfirmation}}

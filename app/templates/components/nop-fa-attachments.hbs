@@ -10,5 +10,9 @@
 {{else}}
   {{nop-attach-multiple-documents documents=attachments.attachments
                                   descriptionRequired=false
+                                  instructionHint='Please submit in Adobe Portable Format (.pdf) or an image (.jpeg, .jpg, .png) format'
+                                  accepts='.pdf,.jpeg,.jpg,.png'
+                                  errors=attachments.errors
+                                  errorKey='attachments'
                                   instruction=instruction}}
 {{/if}}
