@@ -1,5 +1,5 @@
 import Ember from 'ember';
-import FAUpload from '../../models/fa-upload';
+import FADeclarationUpload from '../../models/flows/fa-declaration-upload';
 import Address from '../../models/address';
 import SubmissionContact from '../../models/submission-contact';
 import FAAttachment from '../../models/fa-attachment';
@@ -34,11 +34,11 @@ export default Ember.Route.extend({
 
     if (existing) {
       console.log(`Returning existing submission with id '${params.submissionId}'`);
-      const existingFASubmission = FAUpload.create().deserialize(existing);
+      const existingFASubmission = FADeclarationUpload.create().deserialize(existing);
       return existingFASubmission;
     } else {
-      console.log(`Creating a new FA upload submission`);
-      const newFASubmission = FAUpload.create({
+      console.log(`Creating a new FA Declaration upload submission`);
+      const newFASubmission = FADeclarationUpload.create({
         id: params.submissionId,
         submissionContact: this._submissionContact(),
         attachment: this._attachment(),

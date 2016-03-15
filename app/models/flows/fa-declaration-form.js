@@ -1,9 +1,9 @@
 import Ember from 'ember';
-import Serializable from '../mixins/serializable';
-import Errors from '../mixins/errors';
-import TitleList from './title-list';
-import TitleholderDetails from './titleholder-details';
-import DeclarationOptions from './declaration-options';
+import Serializable from '../../mixins/serializable';
+import Errors from '../../mixins/errors';
+import TitleList from '../title-list';
+import TitleholderDetails from '../titleholder-details';
+import DeclarationOptions from '../declaration-options';
 
 export default Ember.Object.extend(Serializable, Errors, {
   _serializableProperties: [

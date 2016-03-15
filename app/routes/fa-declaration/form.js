@@ -1,5 +1,5 @@
 import Ember from 'ember';
-import FADeclarationForm from '../../models/fa-declaration-form';
+import FADeclarationForm from '../../models/flows/fa-declaration-form';
 import Title from '../../models/title';
 import TitleList from '../../models/title-list';
 import Address from '../../models/address';

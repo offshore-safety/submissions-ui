@@ -1,9 +1,9 @@
 import Ember from 'ember';
-import Serializable from '../mixins/serializable';
-import Errors from '../mixins/errors';
-import SubmissionContact from './submission-contact';
-import FAAttachment from './fa-attachment';
-import AdditionalInfo from './additional-info';
+import Serializable from '../../mixins/serializable';
+import Errors from '../../mixins/errors';
+import SubmissionContact from '../submission-contact';
+import FAAttachment from '../fa-attachment';
+import AdditionalInfo from '../additional-info';
 
 export default Ember.Object.extend(Serializable, Errors, {
   _serializableProperties: [

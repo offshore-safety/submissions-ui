@@ -1,15 +1,15 @@
 import Ember from 'ember';
-import Serializable from '../mixins/serializable';
-import Errors from '../mixins/errors';
-import ActivityDetails from './activity-details';
-import TitleList from './title-list';
-import TitleholderDetails from './titleholder-details';
-import SubmissionContact from './submission-contact';
-import LiaisonContact from './liaison-contact';
-import ActivityContact from './activity-contact';
-import EnvironmentPlanDocuments from './environment-plan-documents';
-import FinancialAssurance from './financial-assurance';
-import AdditionalInfo from './additional-info';
+import Serializable from '../../mixins/serializable';
+import Errors from '../../mixins/errors';
+import ActivityDetails from '../activity-details';
+import TitleList from '../title-list';
+import TitleholderDetails from '../titleholder-details';
+import SubmissionContact from '../submission-contact';
+import LiaisonContact from '../liaison-contact';
+import ActivityContact from '../activity-contact';
+import EnvironmentPlanDocuments from '../environment-plan-documents';
+import FinancialAssurance from '../financial-assurance';
+import AdditionalInfo from '../additional-info';
 
 export default Ember.Object.extend(Serializable, Errors, {
   _serializableProperties: [

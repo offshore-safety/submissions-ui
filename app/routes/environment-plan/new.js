@@ -1,5 +1,5 @@
 import Ember from 'ember';
-import EnvironmentPlan from '../../models/environment-plan';
+import EPNew from '../../models/flows/ep-new';
 import ActivityDetails from '../../models/activity-details';
 import Title from '../../models/title';
 import TitleList from '../../models/title-list';
@@ -84,11 +84,11 @@ export default Ember.Route.extend({
 
     if (existing) {
       console.log(`Returning existing submission with id '${params.submissionId}'`);
-      const existingEnvironmentPlan = EnvironmentPlan.create().deserialize(existing);
+      const existingEnvironmentPlan = EPNew.create().deserialize(existing);
       return existingEnvironmentPlan;
     } else {
       console.log(`Creating a new Environment Plan`);
-      const newEnvironmentPlan = EnvironmentPlan.create({
+      const newEnvironmentPlan = EPNew.create({
         id: params.submissionId,
         activityDetails: this._activityDetails(),
         titles: this._titles(),

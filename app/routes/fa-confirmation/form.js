@@ -1,5 +1,5 @@
 import Ember from 'ember';
-import FAConfirmationForm from '../../models/fa-confirmation-form';
+import FAConfirmationForm from '../../models/flows/fa-confirmation-form';
 import Title from '../../models/title';
 import TitleList from '../../models/title-list';
 import Address from '../../models/address';

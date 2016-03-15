@@ -1,5 +1,5 @@
 import Ember from 'ember';
-import EPRevision from '../../models/ep-revision';
+import EPRevision from '../../models/flows/ep-revision';
 import RevisionType from '../../models/revision-type';
 import ActivityDetails from '../../models/activity-details';
 import Title from '../../models/title';
