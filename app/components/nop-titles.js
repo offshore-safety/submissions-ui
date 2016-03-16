@@ -1,5 +1,4 @@
 import Ember from 'ember';
-import _ from 'lodash/lodash';
 import Title from '../models/title';
 
 export default Ember.Component.extend({
@@ -12,9 +11,6 @@ export default Ember.Component.extend({
   readonly: false,
   multipleTitles: Ember.computed('titles.titles.length', function() {
     return this.get('titles').get('titles').length > 1;
-  }),
-  showLevies: Ember.computed('activityTypes', 'activityTypes.@each.type', function() {
-    return Ember.isPresent(this.get('activityTypes')) && _.all(this.get('activityTypes'), (at) => at.type);
   }),
   actions: {
     addTitle() {

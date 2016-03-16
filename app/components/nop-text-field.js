@@ -4,7 +4,7 @@ export default Ember.Component.extend({
   tagName: 'nop-text-field',
   valueLines: Ember.computed('value', function() {
     if(this.get('value')) {
-      return this.get('value').split('\r\n');
+      return this.get('value').toString().split('\r\n');
     }
   }),
   errorMessage: Ember.computed('errors', 'errorKey', function() {

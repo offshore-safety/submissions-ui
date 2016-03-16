@@ -1,0 +1,14 @@
+nop-levies {
+  nop-text-field {
+    @include span-columns(12);
+
+    @include media($desktop) {
+      @include span-columns(4);
+      @include omega(3n);
+    }
+  }
+
+  .content {
+    font-size: $base-font-size * 1.4;
+  }
+}

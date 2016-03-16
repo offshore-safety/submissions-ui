@@ -15,6 +15,19 @@
     {{/nop-review-component}}
   </section>
   <section>
+    {{#nop-review-component title='Estimated levies'}}
+      {{#if showLevies}}
+        {{nop-levies titles=model.titles.titles}}
+      {{else}}
+        {{#if greenhouseGasActivity}}
+          Currently levies do not apply to greenhouse gas activities
+        {{else}}
+          <div class='error-message'>Levies can only be calculated once errors are rectified</div>
+        {{/if}}
+      {{/if}}
+    {{/nop-review-component}}
+  </section>
+  <section>
     {{#nop-review-component title='Titleholder details' editLink='environment-plan.new.titleholder-details' errors=model.titleholderDetails.hasErrors}}
       {{nop-titleholder-details titleholder=model.titleholderDetails readonly=true}}
     {{/nop-review-component}}
