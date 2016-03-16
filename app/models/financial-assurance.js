@@ -5,10 +5,10 @@ import Document from './document';
 
 export default Ember.Object.extend(Errors, Serializable, {
   _serializableProperties: [
-    'previousDeclaration', 'includeDeclaration', 'faDeclaration', 'includeConfirmation', 'faConfirmation', 'visited'
+    'previousDeclaration', 'includeDeclaration', 'faDeclarations', 'includeConfirmation', 'faConfirmation', 'visited'
   ],
   _relationshipTypes: {
-    'faDeclaration': Document,
+    'faDeclarations': Document,
     'faConfirmation': Document
   },
   _previousChanged: Ember.observer('previousDeclaration', function() {
@@ -19,10 +19,10 @@ export default Ember.Object.extend(Errors, Serializable, {
   visited: false,
   previousDeclaration: null,
   includeDeclaration: null,
-  faDeclaration: null,
+  faDeclarations: [],
   includeConfirmation: null,
   faConfirmation: null,
-  errors: Ember.computed('previousDeclaration', 'includeDeclaration', 'faDeclaration.errors', 'includeConfirmation', 'faConfirmation.errors', function() {
+  errors: Ember.computed('previousDeclaration', 'includeDeclaration', 'faDeclarations.@each.errors', 'includeConfirmation', 'faConfirmation.errors', function() {
     const errors = {};
 
     if (Ember.isBlank(this.get('previousDeclaration'))) {
@@ -39,8 +39,8 @@ export default Ember.Object.extend(Errors, Serializable, {
       errors['includeConfirmation'] = 'Required';
     }
 
-    if (!this.get('faDeclaration') && this.get('includeDeclaration')) {
-      errors['faDeclaration'] = 'Required';
+    if (Ember.isBlank(this.get('faDeclarations')) && this.get('includeDeclaration')) {
+      errors['faDeclarations'] = 'Required';
     }
 
     if (!this.get('faConfirmation') && this.get('includeConfirmation')) {

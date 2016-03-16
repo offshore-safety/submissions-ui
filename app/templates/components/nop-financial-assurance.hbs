@@ -2,8 +2,12 @@
   {{nop-section-header title='Financial assurance declaration'}}
   {{#if noPreviousDeclaration}}
     {{#if assurance.includeDeclaration}}
-      {{#if assurance.faDeclaration}}
-        {{nop-document document=assurance.faDeclaration}}
+      {{#if assurance.faDeclarations.length}}
+        {{#each assurance.faDeclarations as |document|}}
+          {{nop-document document=document}}
+        {{/each}}
+      {{else}}
+        <div class="error-message">Required</div>
       {{/if}}
     {{else}}
       You have declined to provide a financial assurance declaration with this submission
@@ -44,13 +48,13 @@
         {{fa-icon 'download'}}
         Download and print form
       {{/link-to}} -->
-      {{nop-attach-document document=assurance.faDeclaration
-                            instruction="Drop financial assurance declaration here or click to upload"
-                            errors=assurance.errors
-                            errorKey='faDeclaration'
-                            instructionHint='Please submit in Adobe Portable Format (.pdf) image (.jpeg, .jpg, .png) format. Max 100MB.'
-                            accepts='.pdf,.jpeg,.jpg,.png'
-                            required=true}}
+      {{nop-attach-multiple-documents documents=assurance.faDeclarations
+                                      instruction="Drop financial assurance declaration here or click to upload"
+                                      errors=assurance.errors
+                                      errorKey='faDeclarations'
+                                      instructionHint='Please submit in Adobe Portable Format (.pdf) image (.jpeg, .jpg, .png) format. Max 100MB.'
+                                      accepts='.pdf,.jpeg,.jpg,.png'
+                                      required=true}}
     {{/if}}
     {{#if excludeDeclaration}}
       <p class="hint">You can submit your financial assurance declaration during the assessment period via NOPSEMA Online Submissions</p>

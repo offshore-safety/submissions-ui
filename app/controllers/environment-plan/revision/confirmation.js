@@ -24,7 +24,9 @@ export default Ember.Controller.extend({
     const financialAssurance = this.get('model').get('financialAssurance');
 
     if (financialAssurance.get('includeDeclaration')) {
-      documentNames.push(`${financialAssurance.get('faDeclaration').get('name')} (FA Declaration)`);
+      financialAssurance.get('faDeclarations').forEach(function(declaration) {
+        documentNames.push(`${declaration.get('name')} (FA Declaration)`);
+      })
     }
 
     if (financialAssurance.get('includeConfirmation')) {
