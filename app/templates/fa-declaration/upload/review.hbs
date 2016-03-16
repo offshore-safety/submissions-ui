@@ -16,8 +16,8 @@
   </section>
   {{#nop-actions}}
     {{#link-to back}}
-      <button>Back</button>
+      <button disabled={{navigationDisabled}}>Back</button>
     {{/link-to}}
-    <button class='primary' {{action 'submit'}} disabled={{model.hasErrors}}>Submit</button>
+    <button class='primary' {{action 'submit'}} disabled={{submitDisabled}}>Submit</button>
   {{/nop-actions}}
 {{/nop-page}}

@@ -1,6 +1,7 @@
 import Ember from 'ember';
+import NavigationControl from '../../../mixins/navigation-control';
 
-export default Ember.Controller.extend({
+export default Ember.Controller.extend(NavigationControl, {
   submitatron: Ember.inject.service(),
   submissionStore: Ember.inject.service(),
   back: 'environment-plan.new.additional-info',
