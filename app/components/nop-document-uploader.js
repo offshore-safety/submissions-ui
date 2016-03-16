@@ -56,11 +56,17 @@ export default Ember.Component.extend({
     this.set('_xhr', null);
   },
   _uploadFailed(file) {
-    this.set('progress', null);
-    // TODO I'm uncomfortable with this size limit being hard coded here but it makes sense for clarity for the user
-    this.set('message', `Upload failed for '${file.name}'. Please check your connection and try again. Please note there is a size limit of 100MB per file`);
-    this.get('uploadStatus').uploadCancelled();
+    const xhr = this.get('_xhr');
+
+    if (xhr && xhr.statusText === 'abort') {
+      this.set('message', `Upload cancelled`);
+    } else {
+      this.set('message', `Upload failed for '${file.name}'. Please check your connection and try again. Please note there is a size limit of 100MB per file`);
+    }
+
     this.set('_xhr', null);
+    this.get('uploadStatus').uploadCancelled();
+    this.set('progress', null);
   },
   _initialiseUploader: function() {
     const self = this;
