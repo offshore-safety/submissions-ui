@@ -364,7 +364,12 @@ const DECLARATION_OPTIONS = {
 const SIGNATORY_TYPES = {
   signatoryType1: 'A company director, authorised officer or individual with the registered titleholders express or implied authority and on behalf of the titleholder',
   signatoryType2: 'A person appointed under power of attorney on behalf of the titleholder'
-}
+};
+
+const CONFIRMATION_METHODS = {
+  calculationMethod1: 'APPEA method',
+  calculationMethod2: 'Other endorsed method'
+};
 
 export default {
   REGULATION_TYPES,
@@ -376,5 +381,6 @@ export default {
   COMPLIANCE_RATINGS,
   LEVY_UNIT_VALUE,
   DECLARATION_OPTIONS,
-  SIGNATORY_TYPES
+  SIGNATORY_TYPES,
+  CONFIRMATION_METHODS
 };

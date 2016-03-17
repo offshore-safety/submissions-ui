@@ -5,32 +5,11 @@
                    required=true
                    errors=confirmationDetails.errors
                    errorKey='epDocumentTitle'}}
+  {{nop-text-field label='Calculation method' value=selectedCalculationMethod}}
 
-  <section class='calculation-types'>
-    {{nop-section-header title='Under what method was this calculated?'}}
-    {{#if confirmationDetails.calculationMethod}}
-      <div class='calculation-type'>
-        {{nop-radio checked=confirmationDetails.calculationMethod value='calculationMethod1' name='calculation-type' label='APPEA method' readonly=true}}
-        <p class='hint'>
-          Financial assurance for the activities under this EP was calculated in accordance with the APPEA method and is within the limitations
-          of use of that method
-        </p>
-      </div>
-      <div class='calculation-type'>
-        {{nop-radio checked=confirmationDetails.calculationMethod value='calculationMethod2' name='calculation-type' label='Other endorsed method' readonly=true}}
-        <p class='hint'>
-          Financial assurance for the activities under this EP was calculated in accordance with another method endorsed by NOPSEMA and is within
-          the limitations of use of that method
-        </p>
-
-        {{#if otherEndorsedType}}
-          {{nop-text-field label='Date of endorsement' value=confirmationDetails.endorsementDate}}
-        {{/if}}
-      </div>
-    {{else}}
-      <div class='error-message'>Required</div>
-    {{/if}}
-  </section>
+  {{#if otherEndorsedType}}
+    {{nop-text-field label='Date of endorsement' value=confirmationDetails.endorsementDate}}
+  {{/if}}
 {{else}}
   {{nop-input label='EP document title to which this confirmation applies'
               hint='Include revision number'
