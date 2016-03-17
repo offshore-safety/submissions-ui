@@ -1,6 +1,13 @@
 nop-confirmation-details {
   .calculation-types {
     @include span-columns(12);
+
+    .calculation-type {
+      margin-bottom: 20px;
+    }
+    nop-radio {
+      @include span-columns(12);
+    }
   }
 
   &.readonly {

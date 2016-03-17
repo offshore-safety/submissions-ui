@@ -59,4 +59,10 @@
   button {
     margin-right: 10px;
   }
+
+  .radio-list {
+    nop-radio {
+      @include span-columns(12);
+    }
+  }
 }
