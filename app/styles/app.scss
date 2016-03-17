@@ -1,5 +1,7 @@
 @import "bourbon";
 @import "neat";
+@import "ember-modal-dialog/ember-modal-structure";
+@import "ember-modal-dialog/ember-modal-appearance";
 
 @import "colors";
 @import "variables";
@@ -10,6 +12,7 @@
 @import "forms/forms";
 @import "lists";
 @import "tables";
+@import "modals";
 
 @import "components/components";
 @import "pages/pages";
@@ -40,7 +43,7 @@ body {
     position: absolute;
     top: 8px;
     left: 16px;
-    font-size: 1.4rem;    
+    font-size: 1.4rem;
     opacity: 0.15;
   }
 }

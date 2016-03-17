@@ -77,4 +77,22 @@
       {{nop-add-another text='Add another'}}
     </section>
   </section>
+  <section>
+    <section>
+      <header>
+        <h2>Modals</h2>
+      </header>
+      <button {{action "toggleModal"}}>Toggle Modal</button>
+
+      {{#if isShowingModal}}
+        {{#modal-dialog close="toggleModal"
+                        targetAttachment="center"
+                        translucentOverlay=true}}
+          <h2>Title goes here</h2>
+          <p>Body goes here</p>
+          <button {{action 'toggleModal'}} class='primary'>Ok</button>
+        {{/modal-dialog}}
+      {{/if}}
+    </section>
+  </section>
 </div>

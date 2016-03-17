@@ -65,6 +65,8 @@
       {{/if}}
     {{/nop-review-component}}
   </section>
+
+  {{nop-modal title=modalTitle message=modalMessage visible=showErrorModal close='toggleErrorModal'}}
   {{#nop-actions}}
     {{#link-to back}}
       <button disabled={{navigationDisabled}}>Back</button>

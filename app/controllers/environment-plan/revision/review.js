@@ -1,7 +1,8 @@
 import Ember from 'ember';
 import NavigationControl from '../../../mixins/navigation-control';
+import SubmissionErrors from '../../../mixins/submission-errors';
 
-export default Ember.Controller.extend(NavigationControl, {
+export default Ember.Controller.extend(NavigationControl, SubmissionErrors, {
   submitatron: Ember.inject.service(),
   submissionStore: Ember.inject.service(),
   back: 'environment-plan.revision.additional-info',
@@ -22,10 +23,7 @@ export default Ember.Controller.extend(NavigationControl, {
         model.set('responseDue', response.responseDue);
         this.transitionToRoute('environment-plan.revision.confirmation');
       };
-      const onFailure = (result) => {
-        alert(result.responseText);
-      };
-      this.get('submitatron').submitEP(this.get('model')).then(onSuccess, onFailure);
+      this.get('submitatron').submitEP(this.get('model')).then(onSuccess, (result) => this._onFailure(result));
     }
   }
 });
