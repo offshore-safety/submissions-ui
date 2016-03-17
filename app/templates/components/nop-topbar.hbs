@@ -1,3 +1,25 @@
 <img src="/logo.png" alt="NOPSEMA logo" class="logo" />
 <img src="/logo-icon.png" alt="NOPSEMA icon for small screens" class="logo-icon" />
 <h1 class='page-title'>{{topbarTitle}}</h1>
+<span style='color: white'>{{showActions}}</span>
+{{#if showActions}}
+  <div class='page-actions'>
+    <a href='javascript:void(0)' {{action 'toggleSave'}}>
+      {{fa-icon 'save'}}
+    </a>
+    <a href='javascript:void(0)' {{action 'toggleCancel'}}>
+      {{fa-icon 'trash'}}
+    </a>
+  </div>
+{{/if}}
+
+{{#nop-modal title='Your submission is saved' visible=showSaveModal close='toggleSave'}}
+   <p>Your submission will remain valid in your browser for 5 days. You can either bookmark this page or save the following link:</p>
+   <p>{{#link-to submissionStatus.currentRoute}}Saved submission{{/link-to}}</p>
+{{/nop-modal}}
+
+{{#nop-modal title='Cancel this submission?' visible=showCancelModal close='toggleCancel' showOk=false}}
+   <p>This will cancel your submission. Are you sure you want to do this?</p>
+   <button {{action 'cancelYes'}}>Yes</button>
+   <button {{action 'toggleCancel'}}>No</button>
+{{/nop-modal}}
