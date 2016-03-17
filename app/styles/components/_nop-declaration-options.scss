@@ -13,8 +13,16 @@ nop-declaration-options {
     }
   }
 
+  .declaration-option {
+    @include span-columns(12);
+
+    .nop-radio, .hint, .notice {
+      @include span-columns(12);
+    }
+  }
+
   .declaration-option, .signatory-type, .calculation-type {
-    margin: 20px 0 30px 0;
+    margin: 10px 0;
 
     nop-radio {
       @include span-columns(12);
