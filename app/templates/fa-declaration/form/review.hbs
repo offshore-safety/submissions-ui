@@ -19,10 +19,10 @@
 
   <section>
     {{#nop-review-component title='Declaration'}}
-    <div class='notice'>
+    <div class='notice declaration-notice'>
       {{#if (eq model.declarationOptions.declarationOption 'declarationOption1')}}
           {{fa-icon 'eye'}}
-          <p>I/We (the undersigned) certify for all titles to which this Declaration relates, that ??? is in and will maintain compliance
+          <p>I/We (the undersigned) certify for all titles to which this Declaration relates, that {{model.titleholderDetails.name}} is in and will maintain compliance
           with the requirements of section 571(2) of the <i>Offshore Petroleum and Greenhouse Gas Storage Act 2006</i>.</p>
       {{/if}}
       {{#if (eq model.declarationOptions.declarationOption 'declarationOption2')}}

@@ -46,6 +46,10 @@
     }
   }
 
+  .declaration-notice, .confirmation-notice {
+    font-size: $base-font-size * 1.3;
+  }
+
   nop-signature-director, nop-signature-power-of-attorney {
     @include span-columns(6);
   }

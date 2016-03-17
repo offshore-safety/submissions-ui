@@ -1,37 +1,6 @@
 {{#if readonly}}
-<section>
-  {{nop-section-header title='Declaration option'}}
-  <div class='declaration-option'>
-    {{nop-radio checked=declarationOptions.declarationOption value='declarationOption1' name='declaration-option' label='Only one registered titleholder' readonly=true}}
-  </div>
-  <div class='declaration-option'>
-    {{nop-radio checked=declarationOptions.declarationOption value='declarationOption2' name='declaration-option' label='Multiple titleholders' readonly=true}}
-  </div>
-  <div class='declaration-option'>
-    {{nop-radio checked=declarationOptions.declarationOption value='declarationOption3' name='declaration-option' label='Multiple titleholders and the financial assurance obligations are to be discharged by a single entity' readonly=true}}
-  </div>
-</section>
-
-<section class='signatory-types'>
-  {{nop-section-header title='Parties signing the declaration'}}
-  <div class='signatory-type'>
-    {{nop-radio checked=declarationOptions.signatoryType
-                value='signatoryType1'
-                name='signatory-type'
-                readonly=true
-                label='A company director, authorised officer or individual with the registered titleholders express or
-                implied authority and on behalf of the titleholder'}}
-  </div>
-
-  <div class='signatory-type'>
-    {{nop-radio checked=declarationOptions.signatoryType
-                value='signatoryType2'
-                name='signatory-type'
-                readonly=true
-                label='A person appointed under power of attorney on behalf of the titleholder'}}
-  </div>
-</section>
-
+  {{nop-text-field label='Declaration option' value=selectedDeclarationOption}}
+  {{nop-text-field label='Signatory type' value=selectedSignatoryType}}
 {{else}}
 <section>
   {{nop-section-header title='What type of declaration is this?'}}
@@ -41,7 +10,7 @@
     {{#if showSingleDeclaration}}
       <div class='notice'>
         {{fa-icon 'eye'}}
-        I/We (the undersigned) certify for all titles to which this Declaration relates, that ??? is in and will maintain compliance
+        I/We (the undersigned) certify for all titles to which this Declaration relates, that titleholder is in and will maintain compliance
         with the requirements of section 571(2) of the <i>Offshore Petroleum and Greenhouse Gas Storage Act 2006</i>.
       </div>
     {{/if}}
@@ -56,7 +25,7 @@
     {{#if showMultipleDeclaration}}
       <div class='notice'>
         {{fa-icon 'eye'}}
-        I/We (the undersigned) certify for all titles to which this Declaration relates, that ??? is in and will maintain compliance
+        I/We (the undersigned) certify for all titles to which this Declaration relates, that titleholder is in and will maintain compliance
         with the requirements of section 571(2) of the <i>Offshore Petroleum and Greenhouse Gas Storage Act 2006</i>.
       </div>
     {{/if}}
@@ -70,7 +39,7 @@
     {{#if showMultiSingleDeclaration}}
       <div class='notice'>
         {{fa-icon 'eye'}}
-        I/We (the undersigned) certify in respect of the obligations for all titles for which this Declaration relates that ???
+        I/We (the undersigned) certify in respect of the obligations for all titles for which this Declaration relates that titleholder
         <ul>
           <li>is in and will maintain compliance with the requirements of section 571(2) of the <i>Offshore Petroleum and Greenhouse Gas Storage Act 2006</i>; and</li>
           <li>discharges the entire obligation on behalf of all registered titleholders in accordance with section 775D of the <i>Offshore Petroleum and Greenhouse Gas Storage Act 2006</i>.</li>

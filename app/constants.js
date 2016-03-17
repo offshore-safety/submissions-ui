@@ -355,6 +355,17 @@ const COUNTRIES = {
   "ZW": "Zimbabwe"
 };
 
+const DECLARATION_OPTIONS = {
+  declarationOption1: 'Only one registered titleholder',
+  declarationOption2: 'Multiple titleholders',
+  declarationOption3: 'Multiple titleholders and the financial assurance obligations are to be discharged by a single entity'
+};
+
+const SIGNATORY_TYPES = {
+  signatoryType1: 'A company director, authorised officer or individual with the registered titleholders express or implied authority and on behalf of the titleholder',
+  signatoryType2: 'A person appointed under power of attorney on behalf of the titleholder'
+}
+
 export default {
   REGULATION_TYPES,
   REVISION_TYPES,
@@ -363,5 +374,7 @@ export default {
   COUNTRIES,
   ACTIVITY_RATINGS,
   COMPLIANCE_RATINGS,
-  LEVY_UNIT_VALUE
+  LEVY_UNIT_VALUE,
+  DECLARATION_OPTIONS,
+  SIGNATORY_TYPES
 };

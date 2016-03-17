@@ -79,6 +79,10 @@ nop-input, nop-textarea {
         transform: scaleX(1);
       }
     }
+
+    &:disabled {
+      cursor: not-allowed;
+    }
   }
 
   input {
