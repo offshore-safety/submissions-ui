@@ -1,7 +1,7 @@
 import Ember from 'ember';
 
 export function formatMoney(params) {
-  const formattedNumber = params[0].toFixed(0).replace(/(\d)(?=(\d{3})+\.)/g, '$1,');
+  const formattedNumber = params[0].toFixed(0).replace(/\B(?=(\d{3})+(?!\d))/g, ",");
   return `$${formattedNumber}`;
 }
 
