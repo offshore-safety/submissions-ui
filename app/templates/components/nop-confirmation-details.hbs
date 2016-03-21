@@ -1,6 +1,6 @@
 {{#if readonly}}
 
-  {{nop-text-field label='EP document title to which this confirmation applies'
+  {{nop-text-field label='Activity to which this confirmation applies'
                    value=confirmationDetails.epDocumentTitle
                    required=true
                    errors=confirmationDetails.errors
@@ -11,15 +11,14 @@
     {{nop-text-field label='Date of endorsement' value=confirmationDetails.endorsementDate}}
   {{/if}}
 {{else}}
-  {{nop-input label='EP document title to which this confirmation applies'
-              hint='Include revision number'
+  {{nop-input label='Activity to which this confirmation applies'
               value=confirmationDetails.epDocumentTitle
               required=true
               errors=confirmationDetails.errors
               errorKey='epDocumentTitle'}}
 
   <section class='calculation-types'>
-    {{nop-section-header title='Under what method was this calculated?' required=true}}
+    {{nop-section-header title='Under what method was financial assurance for this activity calculated?' required=true}}
     {{#unless confirmationDetails.calculationMethod}}
       <div class='error-message'>Required</div>
     {{/unless}}

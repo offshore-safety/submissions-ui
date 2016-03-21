@@ -65,7 +65,7 @@
                    value=activityDetails.description
                    required=true
                    rows=10
-                   hint='Describe the activity in 200 to 500 words. This information will be published on the NOPSEMA website'
+                   hint="Describe the activity in 200 to 500 words. This information will be published on NOPSEMA's website"
                    errors=activityDetails.errors
                    errorKey='description'}}
   </section>
@@ -73,7 +73,10 @@
   <section>
     {{nop-attach-document document=activityDetails.locationMap
                           label='Location map'
-                          hint='Please attach a map at a suitable size and scale to show the activity within its regional context (i.e., showing the nearest coastal areas or other environmentally sensitive locations). The map should include a scale bar, legend, information caption and labels as required in legible fonts, depth contours and important or relevant locations/places/features referred to in the EP. The map should be of publishing quality (150 dpi or greater), a preferable file size no larger than 2MB, and in JPEG (.jpg, .jpeg) or PNG (.png) format.'
+                          hint="Please attach a map to show the activity within its regional context (i.e., showing the nearest coastal areas or other environmentally sensitive locations).
+                                The map should be at a suitable size and scale, include a scale bar, legend, information caption and labels as required in legible fonts, depth contours and
+                                important or relevant locations/places/features referred to in the EP. The map should be of publishing quality (150 dpi or greater), a preferable file size
+                                no larger than 2MB, and in JPEG (.jpg, .jpeg) or PNG (.png) format. This map will be published on NOPSEMA's website"
                           instruction='Drop map image here or click here to upload'
                           instructionHint='Please submit a map image in JPEG (.jpg, .jpeg) or PNG (.png) format. Max 100MB.'
                           accepts='.jpg,.jpeg,.png'
@@ -84,8 +87,11 @@
   </section>
 
   <section>
-    {{nop-section-header title='Activity time period' hint='This refers to the length of time (in whole years) over which your activity may occur. Your activity may not necessarily take place during the entire perioid but could take place at any time within that period. The maximum time period allowed is 5 years. After this time you must submit, and have accepted, a revision to the EP under Regulation 19 if you wish to continue the activity.'}}
-    {{nop-input label='How long does the EP need to be in force?'
+    {{nop-section-header title='Activity time period' hint='This refers to the length of time (in whole years) over which your activity may occur.
+                                Your activity may not necessarily take place during the entire period but could take place at any time within that period.
+                                The maximum time period allowed is 5 years. After this time you must submit, and have accepted, a revision to the EP under
+                                Regulation 19 if you wish to continue the activity.'}}
+    {{nop-input label='How long does the environment plan need to be in force?'
                 class='ep-duration'
                 type='number'
                 hint='Enter between 1 and 5 years'
@@ -97,7 +103,7 @@
 
   <section>
     {{nop-section-header title='Activity types'
-                       hint='This refers to the type of petroleum or greenhouse gas activity you are undertaking, such as a seismic survey, drilling activity, construction of a petroleum pipeline, operation of a facility, injection and storage of greenhouse gas etc. Further information on what constitutes a petroleum activity is available on the <a href="http://www.nopsema.gov.au/" target="_blank">NOPSEMA website</a>. If you have any questions regarding a greenhouse gas activity, please contact NOPSEMA for specific advice.'}}
+                       hint='This refers to the type of petroleum or greenhouse gas activity you are undertaking, such as a seismic survey, drilling activity, construction of a petroleum pipeline, operation of a facility, injection and storage of greenhouse gas etc. Further information on what constitutes a petroleum activity is available on <a href="http://www.nopsema.gov.au/" target="_blank">NOPSEMA\'s website</a>. If you have any questions regarding a greenhouse gas activity, please <a href="mailto:environment@nopsema.gov.au" target="_blank">contact NOPSEMA</a> for specific advice.'}}
     {{nop-radio-group class='activity-regulation-type'
                       label='Is this a petroleum or greenhouse gas activity?'
                       value=activityDetails.regulationType
