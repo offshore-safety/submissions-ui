@@ -1,7 +1,7 @@
 {{#nop-page title='Review your submission & submit' class='review-page'}}
   <section>
     {{#nop-review-component title='Submission contact' editLink='fa-confirmation.upload.submission-contact' errors=model.submissionContact.hasErrors}}
-      {{nop-submission-contact contact=model.submissionContact readonly=true}}
+      {{nop-submission-contact contact=model.submissionContact showPostalAddress=false readonly=true}}
     {{/nop-review-component}}
   </section>
   <section>

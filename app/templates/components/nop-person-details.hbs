@@ -27,7 +27,9 @@
                        errors=person.errors
                        errorKey='email'}}
     </div>
-    {{nop-address class='person-postal' title='Postal address' address=person.postalAddress readonly=true}}
+    {{#if showPostalAddress}}
+      {{nop-address class='person-postal' title='Postal address' address=person.postalAddress readonly=true}}
+    {{/if}}
   </div>
 {{else}}
   {{nop-input label='Title'
@@ -81,8 +83,10 @@
               required=true
               errors=person.errors
               errorKey='email'}}
-  {{nop-address title='Postal address'
-                hint=postalAddressHint
-                address=person.postalAddress
-                allowPOBox=true}}
+  {{#if showPostalAddress}}
+    {{nop-address title='Postal address'
+                  hint=postalAddressHint
+                  address=person.postalAddress
+                  allowPOBox=true}}
+  {{/if}}
 {{/if}}
