@@ -38,16 +38,17 @@ nop-topbar {
     position: absolute;
     display: inline-block;
     color: $white;
-    right: 10px;
+    right: 20px;
     line-height: $topbar-height;
 
-    a {
-      text-decoration: none;
+    button {
+      background: transparent;
+      border: none;
+      box-shadow: none;
       color: $white;
     }
 
     .fa {
-      width: 50px;
       font-size: $base-font-size * 1.5;
     }
   }

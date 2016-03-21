@@ -4,12 +4,12 @@
 <span style='color: white'>{{showActions}}</span>
 {{#if showActions}}
   <div class='page-actions'>
-    <a href='javascript:void(0)' {{action 'toggleSave'}}>
+    <button alt='Save submission' {{action 'toggleSave'}}>
       {{fa-icon 'save'}}
-    </a>
-    <a href='javascript:void(0)' {{action 'toggleCancel'}}>
+    </button>
+    <button alt='Cancel submission' {{action 'toggleCancel'}}>
       {{fa-icon 'trash'}}
-    </a>
+    </button>
   </div>
 {{/if}}
 
