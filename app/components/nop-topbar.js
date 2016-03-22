@@ -1,4 +1,5 @@
 import Ember from 'ember';
+import _ from 'lodash/lodash';
 
 export default Ember.Component.extend({
   tagName: 'nop-topbar',
@@ -8,7 +9,14 @@ export default Ember.Component.extend({
     return this.get('pageTitleList').toString();
   }),
   showActions: Ember.computed('submissionStatus.currentRoute', function() {
-    return this.get('submissionStatus').get('currentRoute') !== 'welcome';
+    const nonActionRoutes = [
+      'welcome',
+      'environment-plan.new.confirmation',
+      'environment-plan-revision.confirmation',
+      'fa-declaration.upload.confirmation',
+      'fa-declaration.upload.confirmation'
+    ];
+    return nonActionRoutes.indexOf(this.get('submissionStatus').get('currentRoute')) === -1;
   }),
   showSaveModal: false,
   showCancelModal: false,
