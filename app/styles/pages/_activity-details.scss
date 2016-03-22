@@ -2,8 +2,8 @@
   .ep-duration {
     @include span-columns(12);
 
-    @include media($desktop) {
-      @include span-columns(5);
+    input[type=number] {
+      width: 100px;
     }
   }
 
