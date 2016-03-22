@@ -8,6 +8,12 @@
     errorKey='position'}}
   </div>
   <div>
+    {{nop-text-field label='Titleholder name'
+                     value=person.titleholderName
+                     errors=person.errors
+                     errorKey='titleholderName'}}
+  </div>
+  <div>
     <div class='person-contacts'>
       <div class='person-numbers'>
         {{nop-text-field class='person-phone'
@@ -59,6 +65,14 @@
               required=true
               errors=person.errors
               errorKey='position'}}
+
+  {{#if person.titleholderNameRequired}}
+    {{nop-input label='Titleholder name'
+                value=person.titleholderName
+                required=true
+                errors=person.errors
+                errorKey='titleholderName'}}
+  {{/if}}
   <section>
     {{nop-section-header title='Phone numbers' hint='At least one phone number is required' required=true}}
     <div>

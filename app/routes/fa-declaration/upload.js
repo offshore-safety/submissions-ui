@@ -14,6 +14,7 @@ export default Ember.Route.extend({
   _submissionContact() {
     const postalAddress = Address.create();
     const contact = SubmissionContact.create({
+      titleholderNameRequired: true,
       postalAddress
     });
 

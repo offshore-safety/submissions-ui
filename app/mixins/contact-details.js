@@ -5,13 +5,15 @@ import Serializable from './serializable';
 
 export default Ember.Mixin.create(Errors, Serializable, {
   _serializableProperties: [
-    'title', 'firstName', 'lastName', 'position', 'phone', 'postalAddressRequired',
+    'titleholderName', 'titleholderNameRequired', 'title', 'firstName', 'lastName', 'position', 'phone', 'postalAddressRequired',
     'mobile', 'email', 'postalAddress', 'sameAsSubmissionContact', 'visited'
   ],
   _relationshipTypes: {
     'postalAddress': Address
   },
   visited: false,
+  titleholderName: null,
+  titleholderNameRequired: false,
   title: null,
   firstName: null,
   lastName: null,
@@ -21,7 +23,7 @@ export default Ember.Mixin.create(Errors, Serializable, {
   email: null,
   postalAddress: null,
   sameAsSubmissionContact: false,
-  errors: Ember.computed('title', 'firstName', 'lastName', 'position', 'phone', 'mobile', 'email', 'postalAddress.errors', 'sameAsSubmissionContact', function() {
+  errors: Ember.computed('titleholderName', 'title', 'firstName', 'lastName', 'position', 'phone', 'mobile', 'email', 'postalAddress.errors', 'sameAsSubmissionContact', function() {
     if (this.get('sameAsSubmissionContact')) {
       return {};
     }
@@ -63,6 +65,12 @@ export default Ember.Mixin.create(Errors, Serializable, {
 
     if (this.get('postalAddress').get('required')) {
       errors.postalAddress = this.get('postalAddress').get('errors');
+    }
+
+    if (this.get('titleholderNameRequired')) {
+      if (Ember.isBlank(this.get('titleholderName'))) {
+        errors['titleholderName'] = 'Required';
+      }
     }
 
     return errors;
