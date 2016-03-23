@@ -15,7 +15,6 @@ export default Ember.Service.extend({
     return this.get('localStorage').getItem(key);
   },
   clear(id) {
-    debugger;
     this.get('localStorage').setItem(`submission-${id}`, null);
   }
 });

@@ -27,7 +27,7 @@ nop-input, nop-textarea {
   }
 }
 
-.visited {
+.visited, nop-review-component {
   .errors, &.errors {
     @include error-style;
   }

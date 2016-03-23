@@ -1,7 +1,9 @@
 nop-review-component {
-  display: flex;
+  @include span-columns(12);
   min-height: 50px;
   border: 1px solid $extra-light-grey;
+  position: relative;
+  padding-bottom: 20px;
 
   &.errors {
     > .sidebar {
@@ -10,14 +12,16 @@ nop-review-component {
   }
 
   > .sidebar {
-    display: flex;
+    position: absolute;
+    left: 0;
     width: 20px;
+    height: 100%;
     background-color: $off-white;
   }
 
   > .content {
-    flex: 20;
     padding: 20px;
+    padding-left: 40px;
 
     a {
       text-decoration: none;

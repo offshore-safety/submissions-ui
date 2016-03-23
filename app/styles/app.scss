@@ -25,6 +25,15 @@ body {
   margin: 0;
 }
 
+@media print {
+  body {
+    width: 100%;
+  	margin: 0;
+    padding: 0;
+  	background: none;
+  }
+}
+
 .notice {
   position: relative;
   background: #FFFFDD;
