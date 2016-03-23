@@ -30,8 +30,8 @@ export default Ember.Route.extend({
     return activityDetails;
   },
   _titles() {
+    const titleList = TitleList.create({titles: []});
     const title = Title.create();
-    const titleList = TitleList.create();
     titleList.get('titles').pushObject(title);
 
     return titleList;

@@ -13,8 +13,8 @@ export default Ember.Route.extend({
     this.get('pageTitleList').push({title: 'FA Declaration', replace: true});
   }.on('init'),
   _titles() {
+    const titleList = TitleList.create({titles: []});
     const title = Title.create();
-    const titleList = TitleList.create();
     titleList.get('titles').pushObject(title);
 
     return titleList;
