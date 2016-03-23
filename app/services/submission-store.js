@@ -8,7 +8,7 @@ export default Ember.Service.extend({
   retrieve(id) {
     const key = `submission-${id}`;
     if (this.get('localStorage').keyExpired(key)) {
-      console.log(`Key has expired for '${id}'`);
+      console.log(`Key has expired or no entry for '${id}'`);
       return null;
     }
 
