@@ -11,7 +11,8 @@ module.exports = function(deployTarget) {
       region: 'ap-southeast-2'
     },
     's3-index': {
-      region: 'ap-southeast-2'
+      region: 'ap-southeast-2',
+      allowOverwrite: true
     },
     cloudfront: {}
   };
