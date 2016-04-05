@@ -14,7 +14,6 @@ module.exports = function(deployTarget) {
       region: 'ap-southeast-2',
       allowOverwrite: true
     },
-    cloudfront: {}
   };
   if (VALID_DEPLOY_TARGETS.indexOf(deployTarget) === -1) {
     throw new Error('Invalid deployTarget ' + deployTarget);
@@ -32,9 +31,6 @@ module.exports = function(deployTarget) {
     ENV['s3-index'].accessKeyId = process.env.AWS_ACCESS_KEY_ID;
     ENV['s3-index'].secretAccessKey = process.env.AWS_SECRET_ACCESS_KEY;
     ENV['s3-index'].bucket = process.env.S3_BUCKET;
-    ENV.cloudfront.accessKeyId = process.env.AWS_ACCESS_KEY_ID;
-    ENV.cloudfront.secretAccessKey = process.env.AWS_SECRET_ACCESS_KEY;
-    ENV.cloudfront.distribution = process.env.AWS_CLOUDFRONT_DISTRIBUTION_ID;
   }
 
   return ENV;
