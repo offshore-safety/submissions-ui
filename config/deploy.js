@@ -14,7 +14,11 @@ module.exports = function(deployTarget) {
       region: 'ap-southeast-2',
       allowOverwrite: true
     },
+    pipeline: {
+      activateOnDeploy: true
+    }
   };
+
   if (VALID_DEPLOY_TARGETS.indexOf(deployTarget) === -1) {
     throw new Error('Invalid deployTarget ' + deployTarget);
   }
