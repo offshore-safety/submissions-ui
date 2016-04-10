@@ -18,13 +18,9 @@ module.exports = function(environment) {
     }
   };
 
+
   if (environment === 'development') {
     ENV.APP.API_ENDPOINT = 'http://nopsema-api.dev'
-    // ENV.APP.LOG_RESOLVER = true;
-    // ENV.APP.LOG_ACTIVE_GENERATION = true;
-    // ENV.APP.LOG_TRANSITIONS = true;
-    // ENV.APP.LOG_TRANSITIONS_INTERNAL = true;
-    // ENV.APP.LOG_VIEW_LOOKUPS = true;
   }
 
   if (environment === 'test') {
@@ -40,8 +36,20 @@ module.exports = function(environment) {
   }
 
   if (environment === 'production') {
-    ENV.APP.API_ENDPOINT = 'http://10.0.1.243'
     ENV.locationType = 'hash';
+  }
+
+  var deployTarget = process.env.DEPLOY_TARGET;
+  if (deployTarget === 'prototype') {
+    ENV.APP.API_ENDPOINT = 'http://10.0.1.243'
+  }
+
+  if (deployTarget === 'uat') {
+    ENV.APP.API_ENDPOINT = 'http://54.206.78.36'
+  }
+
+  if (deployTarget === 'production') {
+    ENV.APP.API_ENDPOINT = 'http://54.206.4.147'
   }
 
   return ENV;
