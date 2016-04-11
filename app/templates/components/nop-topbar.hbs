@@ -3,10 +3,10 @@
 <h1 class='page-title'>{{topbarTitle}}</h1>
 {{#if showActions}}
   <div class='page-actions'>
-    <button alt='Save submission' {{action 'toggleSave'}}>
+    <button alt='Save submission' {{action 'toggleSave'}} aria-label='Save submission'>
       {{fa-icon 'save'}}
     </button>
-    <button alt='Cancel submission' {{action 'toggleCancel'}}>
+    <button alt='Cancel submission' {{action 'toggleCancel' aria-label='Cancel submission'}}>
       {{fa-icon 'trash'}}
     </button>
   </div>
