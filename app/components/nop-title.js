@@ -111,6 +111,9 @@ export default Ember.Component.extend({
       title.set('activityMappings', this._mergedActivityMappings(this.get('activityTypes'), title.get('activityMappings')));
     }
   }.on('init'),
+  _addAriaLabel: function() {
+    Ember.$('.select2-choice').attr('aria-label', 'Click to select option');
+  }.on('didInsertElement'),
   _showRemoveChanged: Ember.observer('showRemove', function() {
     this.get('title').get('activityMappings').forEach((at) => at.set('selected', true));
   }),
