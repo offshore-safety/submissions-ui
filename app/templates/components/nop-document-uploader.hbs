@@ -3,7 +3,7 @@
     {{fa-icon 'times-circle'}}
   </button>
 {{/if}}
-<button class='file-picker'>
+<button class='file-picker' aria-label='Click to upload file'>
   <div class='instruction'>
     {{fa-icon 'cloud-upload'}}<br/>
     {{#if message}}
@@ -18,4 +18,4 @@
   </div>
   {{/if}}
 </button>
-<input type='file' class='file-input' />
+<input type='file' class='file-input' aria-label='Upload file' />
