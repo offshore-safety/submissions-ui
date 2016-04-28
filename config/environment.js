@@ -41,15 +41,15 @@ module.exports = function(environment) {
 
   var deployTarget = process.env.DEPLOY_TARGET;
   if (deployTarget === 'prototype') {
-    ENV.APP.API_ENDPOINT = 'http://10.0.1.243'
+    ENV.APP.API_ENDPOINT = 'http://onsub-api-proto.online.nopsema.gov.au'
   }
 
   if (deployTarget === 'uat') {
-    ENV.APP.API_ENDPOINT = 'http://54.206.78.36'
+    ENV.APP.API_ENDPOINT = 'https://onsub-api-uat.online.nopsema.gov.au'
   }
 
   if (deployTarget === 'production') {
-    ENV.APP.API_ENDPOINT = 'http://54.206.4.147'
+    ENV.APP.API_ENDPOINT = 'https://onsub-api-prod.online.nopsema.gov.au'
   }
 
   return ENV;
