@@ -9,7 +9,7 @@ export default Ember.Component.extend({
     {
       id: 1,
       text: 'Ashmore Cartier Island',
-      regions: [{ id: 12, text: 'Nothern Territory' }]
+      regions: [{ id: 12, text: 'Northern Territory' }]
     },
     {
       id: 2,
@@ -19,7 +19,7 @@ export default Ember.Component.extend({
     {
       id: 3,
       text: 'Northern Territory',
-      regions: [{ id: 12, text: 'Nothern Territory' }]
+      regions: [{ id: 12, text: 'Northern Territory' }]
     },
     {
       id: 4,
