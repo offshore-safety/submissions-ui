@@ -13,8 +13,9 @@ export default Ember.Mixin.create({
         break;
       case 500:
       case 502:
+      case 504:
         this.set('modalTitle', 'Sorry, we had a problem');
-        this.set('modalMessage', 'We are sorry for the inconvenience and will have the project sorted as soon as possible. Please try again soon.');
+        this.set('modalMessage', 'We are sorry for the inconvenience and will have the issue sorted as soon as possible. Please try again soon.');
         break;
       }
 
