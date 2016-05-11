@@ -4,6 +4,12 @@
     {{nop-text-field label='Compliance' value=(format-money levies.compliance)}}
     {{nop-text-field label='Total' value=(format-money levies.total)}}
   </div>
+  <div class='notice'>
+    {{fa-icon 'eye'}}
+    The estimated levies shown here are indicative only, based on the information provided in this form.
+    The Lead Assessor will be in contact if the activity types and timing listed on this form differ from
+    those described in the EP (and thus the levy amount is different to that shown here).
+  </div>
 {{else}}
   <div class='error-message'>Both activity types and titles must be specified before levies can be calculated</div>
 {{/if}}
