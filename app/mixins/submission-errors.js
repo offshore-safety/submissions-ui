@@ -11,9 +11,7 @@ export default Ember.Mixin.create({
         this.set('modalTitle', 'Connection error');
         this.set('modalMessage', 'It looks like there are some connection issues. Please check your connection and try again.');
         break;
-      case 500:
-      case 502:
-      case 504:
+      default:
         this.set('modalTitle', 'Sorry, we had a problem');
         this.set('modalMessage', 'We are sorry for the inconvenience and will have the issue sorted as soon as possible. Please try again soon.');
         break;
