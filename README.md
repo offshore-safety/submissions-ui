@@ -34,6 +34,8 @@ Make use of the many generators for code, try `ember help generate` for more det
 * `ember test`
 * `ember test --server`
 
+When changes are being made to the schema sent to nopsema-api you need to manually go through the UI and grab from the network tab the json POST sent. Then in the nopsema-api update the service_provider specs to help keep our apps in sync.
+
 ### Building
 
 * `ember build` (development)
