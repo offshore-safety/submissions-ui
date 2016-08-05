@@ -92,9 +92,11 @@ export default Ember.Component.extend({
         getPresignedPostUrl(function (presignedData) {
           data.url = presignedData.url;
           data.formData = presignedData.formData;
-          const xhr = data.submit();
-          self.set('_xhr', xhr);
-          self.set('message', `Uploading '${file.name}'...`);
+          data.process().done(function() {
+            const xhr = data.submit();
+            self.set('_xhr', xhr);
+            self.set('message', `Uploading '${file.name}'...`);
+          });
         });
       }
     }
