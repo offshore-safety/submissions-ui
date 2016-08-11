@@ -12,6 +12,7 @@ import ActivityContact from '../../models/activity-contact';
 import EnvironmentPlanDocuments from '../../models/environment-plan-documents';
 import FinancialAssurance from '../../models/financial-assurance';
 import AdditionalInfo from '../../models/additional-info';
+import Levies from '../../models/levies';
 
 export default Ember.Route.extend({
   submissionStore: Ember.inject.service(),
@@ -85,6 +86,11 @@ export default Ember.Route.extend({
 
     return additionalInfo;
   },
+  _levies() {
+    const levies = Levies.create();
+
+    return levies;
+  },
   model(params) {
     let existing = this.get('submissionStore').retrieve(params.submissionId);
 
@@ -105,7 +111,8 @@ export default Ember.Route.extend({
         activityContact: this._activityContact(),
         documents: this._documents(),
         financialAssurance: this._financialAssurance(),
-        additionalInfo: this._additionalInfo()
+        additionalInfo: this._additionalInfo(),
+        levies: this._levies()
       });
 
       return newEPRevision;

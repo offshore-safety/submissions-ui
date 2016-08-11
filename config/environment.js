@@ -20,7 +20,7 @@ module.exports = function(environment) {
 
 
   if (environment === 'development') {
-    ENV.APP.API_ENDPOINT = 'http://nopsema-api.dev'
+    ENV.APP.API_ENDPOINT = 'http://localhost:7000'
   }
 
   if (environment === 'test') {

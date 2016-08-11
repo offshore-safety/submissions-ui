@@ -10,11 +10,12 @@ import ActivityContact from '../activity-contact';
 import EnvironmentPlanDocuments from '../environment-plan-documents';
 import FinancialAssurance from '../financial-assurance';
 import AdditionalInfo from '../additional-info';
+import Levies from '../levies';
 
 export default Ember.Object.extend(Serializable, Errors, {
   _serializableProperties: [
     'id', 'type', 'activityDetails', 'titles', 'titleholderDetails', 'submissionContact', 'liaisonContact', 'activityContact',
-    'documents', 'financialAssurance', 'additionalInfo', 'receiptNumber', 'submissionReceived', 'responseDue'
+    'documents', 'financialAssurance', 'additionalInfo', 'receiptNumber', 'submissionReceived', 'responseDue', 'levies'
   ],
   _relationshipTypes: {
     'activityDetails': ActivityDetails,
@@ -25,7 +26,8 @@ export default Ember.Object.extend(Serializable, Errors, {
     'activityContact': ActivityContact,
     'documents': EnvironmentPlanDocuments,
     'financialAssurance': FinancialAssurance,
-    'additionalInfo': AdditionalInfo
+    'additionalInfo': AdditionalInfo,
+    'levies': Levies
   },
   id: null,
   type: 'new',
@@ -38,6 +40,7 @@ export default Ember.Object.extend(Serializable, Errors, {
   documents: null,
   financialAssurance: null,
   additionalInfo: null,
+  levies: null,
   errors: Ember.computed('activityDetails.errors', 'titles.errors', 'titleholderDetails.errors', 'submissionContact.errors', 'liaisonContact.errors',
                          'activityContact.errors', 'documents.errors', 'financialAssurance.errors', 'additionalInfo.errors', function() {
     const errors = {};

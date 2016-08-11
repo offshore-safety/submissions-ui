@@ -55,7 +55,7 @@
   <section>
     {{#nop-review-component title='Estimated levies'}}
       {{#if showLevies}}
-        {{nop-levies titles=model.titles.titles}}
+        {{nop-levies titles=model.titles.titles levies=model.levies}}
       {{else}}
         {{#if greenhouseGasActivity}}
           Currently levies do not apply to greenhouse gas activities
