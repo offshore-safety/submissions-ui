@@ -10,17 +10,18 @@ export default Ember.Component.extend({
     {label: 'Yes', value: true},
     {label: 'No', value: false}
   ],
+  oppOrEpbcOptions: [
+    {label: 'OPP', value: 'OPP'},
+    {label: 'EPBC', value: 'EPBC'}
+  ],
   readonly: false,
   visited: Ember.computed('activityDetails.visited', function() {
     return this.get('activityDetails').get('visited');
   }),
-  showOPPReference: Ember.computed('activityDetails.hasOPP', function() {
-    return this.get('activityDetails').get('hasOPP') === true;
+  showOPPReference: Ember.computed('activityDetails.oppOrEpbc', function() {
+    return this.get('activityDetails').get('oppOrEpbc') === 'OPP';
   }),
-  showMinisterQuestion: Ember.computed('activityDetails.hasOPP', function() {
-    return this.get('activityDetails').get('hasOPP') === false;
-  }),
-  showEPBCReference: Ember.computed('activityDetails.hasMinisterDecision', function() {
-    return this.get('activityDetails').get('hasMinisterDecision') === true;
+  showEPBCReference: Ember.computed('activityDetails.oppOrEpbc', function() {
+    return this.get('activityDetails').get('oppOrEpbc') === 'EPBC';
   })
 });

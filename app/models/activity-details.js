@@ -21,27 +21,35 @@ export default Ember.Object.extend(Errors, Serializable, {
   epDuration: null,
   regulationType: null,
   hasOffshoreProject: null,
+  oppOrEpbc: null,
   hasOPP: null,
   oppDocumentReference: null,
   hasMinisterDecision: null,
   epbcReferenceNumber: null,
   activityTypes: [],
-  _oppSectionChanged: Ember.observer('hasMinisterDecision', 'hasOPP', 'hasOffshoreProject', function() {
+  _oppSectionChanged: Ember.observer('oppOrEpbc', 'hasOffshoreProject', function() {
     if (Ember.isPresent(this.get('hasOffshoreProject')) && !this.get('hasOffshoreProject')) {
       this.set('oppDocumentReference', null);
       this.set('epbcReferenceNumber', null);
       this.set('hasMinisterDecision', null);
       this.set('hasOPP', null);
+      this.set('oppOrEpbc', null);
     } else {
-      if (Ember.isPresent(this.get('hasOPP')) && !this.get('hasOPP')) {
-        this.set('oppDocumentReference', null);
-      } else {
-        this.set('hasMinisterDecision', null);
-        this.set('epbcReferenceNumber', null);
-      }
-
-      if (Ember.isPresent(this.get('hasMinisterDecision')) && !this.get('hasMinisterDecision')) {
-        this.set('epbcReferenceNumber', null);
+      if (Ember.isPresent(this.get('oppOrEpbc'))) {
+        if (this.get('oppOrEpbc') === 'OPP') {
+          this.set('hasOPP', true);
+          this.set('hasMinisterDecision', false);
+          this.set('epbcReferenceNumber', null);
+        } else if (this.get('oppOrEpbc') === 'EPBC') {
+          this.set('hasMinisterDecision', true);
+          this.set('hasOPP', false);
+          this.set('oppDocumentReference', null);
+        } else {
+          this.set('oppDocumentReference', null);
+          this.set('epbcReferenceNumber', null);
+          this.set('hasMinisterDecision', null);
+          this.set('hasOPP', null);
+        }
       }
     }
   }),
@@ -83,21 +91,15 @@ export default Ember.Object.extend(Errors, Serializable, {
     }
 
     if (this.get('hasOffshoreProject')) {
-      if (this.get('hasOffshoreProject') && Ember.isBlank(this.get('hasOPP'))) {
-        errors['hasOPP'] = 'Required';
+      if (Ember.isBlank(this.get('oppOrEpbc'))) {
+        errors['oppOrEpbc'] = 'Required';
       }
       if (this.get('hasOPP') && Ember.isBlank(this.get('oppDocumentReference'))) {
         errors['oppDocumentReference'] = 'Required';
       }
 
-      if (this.get('hasOPP') === false) {
-        if (Ember.isBlank(this.get('hasMinisterDecision'))) {
-          errors['hasMinisterDecision'] = 'Required';
-        }
-
-        if (this.get('hasMinisterDecision') && Ember.isBlank(this.get('epbcReferenceNumber'))) {
-          errors['epbcReferenceNumber'] = 'Required';
-        }
+      if (this.get('hasMinisterDecision') && Ember.isBlank(this.get('epbcReferenceNumber'))) {
+        errors['epbcReferenceNumber'] = 'Required';
       }
     }
 

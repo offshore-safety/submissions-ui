@@ -117,21 +117,23 @@
   {{nop-section-header title='Offshore project'}}
   {{nop-radio-group class='offshore-project'
                     label='Is the activity part of an offshore project?'
-                    hint='What is an offshore project? An offshore project is one or more activities that are undertaken for the purpose of the recovery of petroleum, other than on an appraisal basis, including any conveyance of recovered petroleum by pipeline (whether or not the activity is undertaken for other purposes). Further information on offshore project proposals (OPP) can be found on the <a href="http://www.nopsema.gov.au/" target="_blank">NOPSEMA website</a>.'
+                    hint='What is an offshore project? An offshore project is where one or more petroleum activities are planned for the recovery of petroleum. Petroleum activities that comprise an offshore project include the construction, commissioning, operations and decommissioning of facilities and pipelines as well as production drilling and any other activity undertaken for the recovery of petroleum. It does not include drilling for exploration or appraisal purposes, or any other petroleum exploration activities such as seismic surveys.'
                     value=activityDetails.hasOffshoreProject
                     options=trueOrFalse
                     required=true
                     errors=activityDetails.errors
                     errorKey='hasOffshoreProject'}}
   {{#if activityDetails.hasOffshoreProject}}
-    {{nop-radio-group class='opp'
-                      label='Is there an accepted Offshore Project Proposal (OPP) for this project?'
-                      hint='(As accepted under regulation 5D)'
-                      value=activityDetails.hasOPP
-                      options=trueOrFalse
+
+    {{nop-radio-group class='oppOrEpbc'
+                      label='Is there an accepted Offshore Project Proposal (OPP) or a decision by the Environment Minister relevant to this activity?'
+                      hint='An accepted OPP under regulation 5D or a relevant decision by the Environment Minister as per sub-regulations 9(3) and 17(3) is required before you can submit this EP. If you have any questions regarding these requirements, please contact NOPSEMA for specific advice'
+                      value=activityDetails.oppOrEpbc
+                      options=oppOrEpbcOptions
                       required=true
                       errors=activityDetails.errors
-                      errorKey='hasOPP'}}
+                      errorKey='oppOrEpbc'}}
+
     {{#if showOPPReference}}
       {{nop-input class='reference-number'
                   label='Please provide OPP document reference'
@@ -141,24 +143,14 @@
                   errorKey='oppDocumentReference'}}
     {{/if}}
 
-    {{#if showMinisterQuestion}}
-      {{nop-radio-group class='environment-minister-decision'
-                        label='Is there a decision by the Environment Minister relevant to the activity?'
-                        hint='As per sub-regulations 9(3) and 17(3)'
-                        value=activityDetails.hasMinisterDecision
-                        options=trueOrFalse
-                        required=true
-                        errors=activityDetails.errors
-                        errorKey='hasMinisterDecision'}}
-      {{#if showEPBCReference}}
-        {{nop-input class='reference-number'
-                    label='Please provide the EPBC reference number or other reference to the relevant decision'
-                    hint='What is an EPBC approval reference number? All referrals under the EPBC Act from 1999 onward are given a reference number in the form EPBCYYYY/XXXX where YYYY is the year that the referral was submitted and XXXX is a unique four-digit identification number. For example EPBC2011/4513. For activities that were subject to a different approval process prior to 1999 please provide a brief description or link to the relevant approval document.'
-                    value=activityDetails.epbcReferenceNumber
-                    required=true
-                    errors=activityDetails.errors
-                    errorKey='epbcReferenceNumber'}}
-      {{/if}}
+    {{#if showEPBCReference}}
+      {{nop-input class='reference-number'
+                  label='Please provide the EPBC reference number or other reference to the relevant decision'
+                  hint='What is an EPBC approval reference number? All referrals under the EPBC Act from 1999 onward are given a reference number in the form EPBCYYYY/XXXX where YYYY is the year that the referral was submitted and XXXX is a unique four-digit identification number. For example EPBC2011/4513. For activities that were subject to a different approval process prior to 1999 please provide a brief description or link to the relevant approval document.'
+                  value=activityDetails.epbcReferenceNumber
+                  required=true
+                  errors=activityDetails.errors
+                  errorKey='epbcReferenceNumber'}}
     {{/if}}
   {{/if}}
 {{/if}}
