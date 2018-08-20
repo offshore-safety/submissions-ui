@@ -12,7 +12,7 @@ export default Ember.Component.extend({
   ],
   oppOrEpbcOptions: [
     {label: 'OPP', value: 'OPP'},
-    {label: 'EPBC', value: 'EPBC'}
+    {label: 'decision by Environment Minister', value: 'EPBC'}
   ],
   readonly: false,
   visited: Ember.computed('activityDetails.visited', function() {
