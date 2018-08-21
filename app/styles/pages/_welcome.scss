@@ -6,6 +6,12 @@
 
   .question-section {
     margin-top: 20px;
+    margin-left: 33px;
+  }
+
+  .explanatory-text {
+    font-size: 0.75em;
+    margin-bottom: 20px;
   }
 
   .privacy-notice {
@@ -21,5 +27,7 @@
   nop-unavailable {
     @include span-columns(12);
     margin-top: 20px;
+    font-size: 0.75em;
+    margin-left: 33px;
   }
 }
