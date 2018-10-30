@@ -12,7 +12,7 @@
                      errorKey='regulationType'}}
      {{nop-text-field class='exploration-development'
                       label='Exploration or Development EP?'
-                      value=activityDetails.explorationDevelopment
+                      value=(exploration-development-mapping activityDetails.explorationDevelopment)
                       errors=activityDetails.errors
                       errorKey='explorationDevelopment'}}  
   </div>
