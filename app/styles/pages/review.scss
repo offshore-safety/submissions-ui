@@ -1,6 +1,6 @@
 @mixin large-layout {
   .review-page {
-    .activity-name, .regulation-type, .has-opp, .has-minister-decision {
+    .regulation-type, .has-opp, .has-minister-decision, .exploration-development {
       @include span-columns(6);
     }
 

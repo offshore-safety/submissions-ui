@@ -8,7 +8,7 @@ export default Ember.Object.extend(Errors, Serializable, {
   _serializableProperties: [
     'name', 'description', 'locationMap', 'regulationType', 'hasOffshoreProject',
     'hasOPP', 'oppDocumentReference', 'hasMinisterDecision', 'epbcReferenceNumber',
-    'activityTypes', 'epDuration', 'visited'
+    'activityTypes', 'epDuration', 'visited', 'explorationDevelopment'
   ],
   _relationshipTypes: {
     'locationMap': Document,
@@ -20,6 +20,7 @@ export default Ember.Object.extend(Errors, Serializable, {
   locationMap: null,
   epDuration: null,
   regulationType: null,
+  explorationDevelopment: null,
   hasOffshoreProject: null,
   oppOrEpbc: null,
   hasOPP: null,
@@ -53,7 +54,7 @@ export default Ember.Object.extend(Errors, Serializable, {
       }
     }
   }),
-  errors: Ember.computed('name', 'description', 'locationMap.token', 'hasOffshoreProject', 'hasOPP', 'locationMap.errors',
+  errors: Ember.computed('name', 'description', 'locationMap.token', 'hasOffshoreProject', 'hasOPP', 'locationMap.errors', 'explorationDevelopment',
                          'oppDocumentReference', 'hasMinisterDecision', 'epbcReferenceNumber', 'epDuration', 'activityTypes.@each.errors', function() {
     const errors = {};
 
@@ -75,6 +76,10 @@ export default Ember.Object.extend(Errors, Serializable, {
 
     if (Ember.isBlank(this.get('regulationType'))) {
       errors['regulationType'] = 'Required';
+    }
+
+    if (Ember.isBlank(this.get('explorationDevelopment'))) {
+      errors['explorationDevelopment'] = 'Required';
     }
 
     if (Ember.isBlank(this.get('hasOffshoreProject'))) {

@@ -1,20 +1,28 @@
 {{#if readonly}}
+  {{nop-text-field class='activity-name'
+                   label='Name'
+                   value=activityDetails.name
+                   errors=activityDetails.errors
+                   errorKey='name'}}
   <div>
-    {{nop-text-field class='activity-name'
-                     label='Name'
-                     value=activityDetails.name
-                     errors=activityDetails.errors
-                     errorKey='name'}}
     {{nop-text-field class='regulation-type'
                      label='Petroleum or greenhouse gas?'
                      value=(regulation-type-from-id activityDetails.regulationType)
                      errors=activityDetails.errors
                      errorKey='regulationType'}}
+     {{nop-text-field class='exploration-development'
+                      label='Exploration or Development EP?'
+                      value=activityDetails.explorationDevelopment
+                      errors=activityDetails.errors
+                      errorKey='explorationDevelopment'}}  
   </div>
-  {{nop-text-field label='Description'
+  {{nop-text-field class='description'
+                   label='Description'
                    value=activityDetails.description
                    errors=activityDetails.errors
                    errorKey='description'}}
+  
+  
   {{nop-section-header title='Location map'}}
   {{#if activityDetails.locationMap}}
     {{nop-document document=activityDetails.locationMap
@@ -111,6 +119,15 @@
                       options=regulationTypes
                       errors=activityDetails.errors
                       errorKey='regulationType'}}
+    {{nop-radio-group class='activity-exploration-development'
+                      label='Is this Exploration or Development EP?'
+                      hint='Some helpful info'
+                      value=activityDetails.explorationDevelopment
+                      required=true
+                      options=explorationDevelopmentOptions
+                      errors=activityDetails.errors
+                      errorKey='explorationDevelopment'}}
+                      
     {{nop-activity-types activityTypes=activityDetails.activityTypes regulationType=activityDetails.regulationType}}
   </section>
 

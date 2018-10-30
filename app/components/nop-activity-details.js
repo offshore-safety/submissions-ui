@@ -14,6 +14,10 @@ export default Ember.Component.extend({
     {label: 'OPP', value: 'OPP'},
     {label: 'decision by Environment Minister', value: 'EPBC'}
   ],
+  explorationDevelopmentOptions: [
+    {label: 'Exploration', value: 'Exploration'},
+    {label: 'Development', value: 'Development'}
+  ],
   readonly: false,
   visited: Ember.computed('activityDetails.visited', function() {
     return this.get('activityDetails').get('visited');
