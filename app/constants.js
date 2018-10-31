@@ -3,6 +3,11 @@ const REGULATION_TYPES = {
   'greenhouse_gas': 'Greenhouse gas'
 };
 
+const EXPLORATION_DEVELOPMENT_OPTIONS = {
+  'exploration': 'Exploration',
+  'development': 'Development'
+};
+
 const REVISION_TYPES = {
   '1': 'Significant modification or new stage of the activity (Regulation 17(5))',
   '2': 'New or increased environmental impact or risk (Regulation 17(6))',
@@ -382,5 +387,6 @@ export default {
   LEVY_UNIT_VALUE,
   DECLARATION_OPTIONS,
   SIGNATORY_TYPES,
-  CONFIRMATION_METHODS
+  CONFIRMATION_METHODS,
+  EXPLORATION_DEVELOPMENT_OPTIONS
 };
