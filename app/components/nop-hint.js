@@ -11,8 +11,8 @@ export default Ember.Component.extend({
     return (this.get('hint') || '').replace(/<[^>]+\>/gi, "");
   }),
   hintTextTruncated: Ember.computed('hintText', function() {
-    return _.trunc(this.get('hintText'), { 
-      length: 135,
+    return _.trunc(this.get('hintText'), {
+      length: 300,
       separator: ' '
     });
   }),
