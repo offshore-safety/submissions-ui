@@ -12,7 +12,7 @@ export default Ember.Component.extend({
   }),
   hintTextTruncated: Ember.computed('hintText', function() {
     return _.trunc(this.get('hintText'), {
-      length: 300,
+      length: 3000,
       separator: ' '
     });
   }),
