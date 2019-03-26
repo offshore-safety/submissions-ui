@@ -27,7 +27,7 @@
   {{nop-section-header title='Environment plan'}}
   {{nop-attach-document document=documents.environmentPlan
                         instruction='Drop environment plan here or click to upload'
-                        instructionHint='Please submit in Adobe Portable Format (.pdf) or Word document (.doc, .docx) format. Max 100MB.'
+                        instructionHint='Please submit in Adobe Portable Format (.pdf) or Word document (.doc, .docx) format. Max 250MB.'
                         accepts='.pdf,.doc,.docx'
                         errors=documents.errors
                         errorKey='environmentPlan'
@@ -38,13 +38,16 @@
                                   descriptionLabel='How is this document related to the environment plan?'
                                   descriptionRequired=true
                                   instruction='Drop supporting documents here or click to upload'
-                                  instructionHint='Max 100MB per file'}}
+                                  instructionHint='Max 250MB per file'}}
 
   {{nop-textarea label='Documents already supplied to NOPSEMA'
-                 hint='List any documents or information already supplied to NOPSEMA under Regulation 31 of the Environment regulations that you wish to include in this submission.
-                       The relevance of any referenced information to the EP should be clearly explained. Ensure that the listed documents or information are clear (i.e., include
-                       the document name, number, revision number and/or date and, where relevant, refer to the specific section(s), pages or similar where the specific information
-                       is contained). NOPSEMA will assess the referenced information as though it is part of the environment plan submission.'
+                 hint='You may refer to information that you have previously given to NOPSEMA in your submission that directly relates
+                 to an EP content requirement. Information referred to in this way will be taken to be part of the submitted EP.
+                 <br/>
+                 You must ensure that identification of the source of this information is specific and unambiguous (i.e. include the
+                 document name, document reference number, revision number and/or date and where required, refer to the specific
+                 section(s), pages or similar where the information is contained), and the information is publicly available
+                 (for example, in an accepted EP published on the NOPSEMA website).'
                  value=documents.reg31Documents
                  ariaLabel='List documents already supplied to NOPSEMA'
                  rows=5}}

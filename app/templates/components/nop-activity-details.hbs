@@ -14,15 +14,15 @@
                      label='Exploration or Development EP?'
                      value=(exploration-development-mapping activityDetails.explorationDevelopment)
                      errors=activityDetails.errors
-                     errorKey='explorationDevelopment'}}  
+                     errorKey='explorationDevelopment'}}
   </div>
   {{nop-text-field class='description'
                    label='Description'
                    value=activityDetails.description
                    errors=activityDetails.errors
                    errorKey='description'}}
-  
-  
+
+
   {{nop-section-header title='Location map'}}
   {{#if activityDetails.locationMap}}
     {{nop-document document=activityDetails.locationMap
@@ -73,7 +73,7 @@
                    value=activityDetails.description
                    required=true
                    rows=10
-                   hint="Describe the activity in 200 to 500 words. This information will be published on NOPSEMA's website"
+                   hint="Please provide an overview of the activity description and activity location below for publication on NOPSEMA\'s website in accordance with regulation 9(8). This information should include: general details of the stages and aspects of the activity, an outline of the operational details, a proposed timetable (including seasonal timing and duration) and a written overview of the activity location with reference to particular landmarks (e.g. 100km north-west of Karratha and 70km north-east of the Montebello Islands). The activity description should be no more than 250-500 words. For further guidance on providing this information see NOPSEMA\'s Guideline: Making submissions to NOPSEMA (N-04000-GL0225)."
                    errors=activityDetails.errors
                    errorKey='description'}}
   </section>
@@ -81,12 +81,15 @@
   <section>
     {{nop-attach-document document=activityDetails.locationMap
                           label='Location map'
-                          hint="Please attach a map to show the activity within its regional context (i.e., showing the nearest coastal areas or other environmentally sensitive locations).
-                                The map should be at a suitable size and scale, include a scale bar, legend, information caption and labels as required in legible fonts, depth contours and
-                                important or relevant locations/places/features referred to in the EP. The map should be of publishing quality (150 dpi or greater), a preferable file size
-                                no larger than 2MB, and in JPEG (.jpg, .jpeg) or PNG (.png) format. This map will be published on NOPSEMA's website"
+                          hint="Please attach an activity location map for public disclosure on NOPSEMA’s website in accordance with regulation 9(8).
+                          This map must show the activity within its regional context including depth contours, important or relevant locations / places
+                          / features referred to in the EP including nearest coastal areas, environmental sensitive location(s), Commonwealth marine
+                          reserves with relevant zoning and state/Territory, Commonwealth and international boundaries where applicable. The map
+                          should be at a suitable size and scale, include a scale bar, legend, information caption and labels as required in legible
+                          fonts. In addition, the map should be of publishing quality (e.g. 150 dpi or greater), file size preferably no larger than 2MB
+                          and in JPG (.jpg, .jpeg) or PNG (.png) format."
                           instruction='Drop map image here or click here to upload'
-                          instructionHint='Please submit a map image in JPEG (.jpg, .jpeg) or PNG (.png) format. Max 100MB.'
+                          instructionHint='Please submit a map image in JPEG (.jpg, .jpeg) or PNG (.png) format. Max 2MB.'
                           accepts='.jpg,.jpeg,.png'
                           showPreview=true
                           errors=activityDetails.errors
@@ -120,14 +123,14 @@
                       errors=activityDetails.errors
                       errorKey='regulationType'}}
     {{nop-radio-group class='activity-exploration-development'
-                      label='Is this Exploration or Development EP?'
-                      hint='Some helpful info'
+                      label='Is this an Exploration or Development EP?'
+                      hint='Exploration EPs are those that contain a seismic or exploratory drilling activity defined under regulation 4 of the Environment Regulations. Production EPs are any other activity that does not fit within this definition.'
                       value=activityDetails.explorationDevelopment
                       required=true
                       options=explorationDevelopmentOptions
                       errors=activityDetails.errors
                       errorKey='explorationDevelopment'}}
-                      
+
     {{nop-activity-types activityTypes=activityDetails.activityTypes regulationType=activityDetails.regulationType}}
   </section>
 
