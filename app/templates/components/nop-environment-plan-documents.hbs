@@ -33,7 +33,8 @@
                         errorKey='environmentPlan'
                         required=true}}
 
-  {{nop-section-header title='Supporting documentation'}}
+  {{nop-section-header title='Supporting documentation'
+                       hint='Sensitive Information Part and OSMP (if required) or OPEP (if required).'}}
   {{nop-attach-multiple-documents documents=documents.attachments
                                   descriptionLabel='How is this document related to the environment plan?'
                                   descriptionRequired=true
@@ -43,7 +44,7 @@
   {{nop-textarea label='Documents already supplied to NOPSEMA'
                  hint='You may refer to information that you have previously given to NOPSEMA in your submission that directly relates
                  to an EP content requirement. Information referred to in this way will be taken to be part of the submitted EP.
-                 <br/>
+                 <br/><br />
                  You must ensure that identification of the source of this information is specific and unambiguous (i.e. include the
                  document name, document reference number, revision number and/or date and where required, refer to the specific
                  section(s), pages or similar where the information is contained), and the information is publicly available
