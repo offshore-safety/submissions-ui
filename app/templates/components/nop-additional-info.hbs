@@ -3,7 +3,8 @@
                             uniqueEmailMessages=uniqueEmailMessages
                             readonly=readonly}}
 </section>
-{{#if readonly}}
+{{#if !readonly}}
+{{else}}
   {{nop-section-header title='Titleholder contact details for access to public comments' hint='For Exploration EPs only, please provide titleholder contact details (name, phone number and email) in the comments section below. This person will be given access to public comments through a NOPSEMA Shared Folder. They will be able to share access with other users.'}}
 {{/if}}
 
