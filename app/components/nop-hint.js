@@ -6,7 +6,7 @@ export default Ember.Component.extend({
   classNames: ['hint'],
   classNameBindings: ['canExpand'],
   hint: null,
-  expanded: false,
+  expanded: true,
   hintText: Ember.computed('hint', function() {
     return (this.get('hint') || '').replace(/<[^>]+\>/gi, "");
   }),
