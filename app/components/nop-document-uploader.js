@@ -73,7 +73,7 @@ export default Ember.Component.extend({
     const uploader = this.$();
     const fileDropZone = this.$().find('.file-picker');
     const fileInput = this.$().find('input:file');
-    const signatureEndpoint = '${ENV.APP.API_ENDPOINT}/api/v1/submissions/file/sign';
+    const signatureEndpoint = `${ENV.APP.API_ENDPOINT}/api/v1/submissions/file/sign`;
     
     function getPresignedPostUrl(callback) {
       $.get(signatureEndpoint)
