@@ -20,7 +20,7 @@ module.exports = function(environment) {
 
 
   if (environment === 'development') {
-    ENV.APP.API_ENDPOINT = 'http://localhost:7000'
+    ENV.APP.API_ENDPOINT = 'http://52.220.243.241:60000'
   }
 
   if (environment === 'test') {
