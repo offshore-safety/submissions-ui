@@ -20,7 +20,8 @@ module.exports = function(environment) {
 
 
   if (environment === 'development') {
-    ENV.APP.API_ENDPOINT = 'http://52.220.243.241:60000'
+    // set this to your local dev environment address and port that the app is running on
+    ENV.APP.API_ENDPOINT = 'http://52.220.243.241:3000'
   }
 
   if (environment === 'test') {
