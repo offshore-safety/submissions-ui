@@ -21,7 +21,7 @@ test('it calculates the activity amount for a linkedActivityType', function(asse
   let service = this.subject({activityRatings, unitValue});
 
   let result = service.activityAmountFor(linkedActivityType);
-  assert.equal(result, 90000);
+  assert.equal(result, 99000);
 });
 
 test('it calculates the compliance amount for a linkedActivityType', function(assert) {
@@ -40,7 +40,7 @@ test('it calculates the compliance amount for a linkedActivityType', function(as
   let service = this.subject({complianceRatings, unitValue});
 
   let result = service.complianceAmountFor(linkedActivityType);
-  assert.equal(result, 316800);
+  assert.equal(result, 348480);
 });
 
 test('it rounds up months to the nearest whole year', function(assert) {
