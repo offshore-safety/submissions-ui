@@ -6,7 +6,7 @@ moduleFor('service:levy-calculation', 'Unit | Service | levy calculation', {
 });
 
 test('it calculates the activity amount for a linkedActivityType', function(assert) {
-  const unitValue = 3600;
+  const unitValue = 3960;
 
   const activityRatings = {
     '1001': 25
@@ -25,7 +25,7 @@ test('it calculates the activity amount for a linkedActivityType', function(asse
 });
 
 test('it calculates the compliance amount for a linkedActivityType', function(assert) {
-  const unitValue = 3600;
+  const unitValue = 3960;
 
   const complianceRatings = {
     '1001': 22

@@ -16,7 +16,7 @@ const REVISION_TYPES = {
   '5': 'Revision after a period of 5 years (Regulation 19)'
 };
 
-const LEVY_UNIT_VALUE = 3600;
+const LEVY_UNIT_VALUE = 3960;
 
 const ACTIVITY_RATINGS = {
   '1001': 25,
