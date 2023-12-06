@@ -73,7 +73,7 @@
                    value=activityDetails.description
                    required=true
                    rows=10
-                   hint="Please provide an overview of the activity description and activity location below for publication on NOPSEMA's website in accordance with regulation 9(8). This information should include: general details of the stages and aspects of the activity, an outline of the operational details, a proposed timetable (including seasonal timing and duration) and a written overview of the activity location with reference to particular landmarks (e.g. 100km north-west of Karratha and 70km north-east of the Montebello Islands). The activity description should be no more than 250-500 words. <br/><br/>For further guidance on providing this information see NOPSEMA's Guideline: <a href=\"https://www.nopsema.gov.au/assets/Guidelines/A15266.pdf\">Making submissions to NOPSEMA (N-04000-GL0225)</a>."
+                   hint="Please provide an overview of the activity description and activity location below for publication on NOPSEMA's website in accordance with regulation 28. This information should include: general details of the stages and aspects of the activity, an outline of the operational details, a proposed timetable (including seasonal timing and duration) and a written overview of the activity location with reference to particular landmarks (e.g. 100km north-west of Karratha and 70km north-east of the Montebello Islands). The activity description should be no more than 250-500 words. <br/><br/>For further guidance on providing this information see NOPSEMA's Guideline: <a href=\"https://www.nopsema.gov.au/assets/Guidelines/A15266.pdf\">Making submissions to NOPSEMA (N-04000-GL0225)</a>."
                    errors=activityDetails.errors
                    errorKey='description'}}
   </section>
@@ -81,7 +81,7 @@
   <section>
     {{nop-attach-document document=activityDetails.locationMap
                           label='Location map'
-                          hint="Please attach an activity location map for public disclosure on NOPSEMA’s website in accordance with regulation 9(8).
+                          hint="Please attach an activity location map for public disclosure on NOPSEMA’s website in accordance with regulation 28.
                           This map must show the activity within its regional context including depth contours, important or relevant locations / places
                           / features referred to in the EP including nearest coastal areas, environmental sensitive location(s), Commonwealth marine
                           reserves with relevant zoning and state/Territory, Commonwealth and international boundaries where applicable. The map
@@ -101,7 +101,7 @@
     {{nop-section-header title='Activity time period' hint='This refers to the length of time (in whole years) over which your activity may occur.
                                 Your activity may not necessarily take place during the entire period but could take place at any time within that period.
                                 The maximum time period allowed is 5 years. After this time you must submit, and have accepted, a revision to the EP under
-                                Regulation 19 if you wish to continue the activity.'}}
+                                Regulation 41 if you wish to continue the activity.'}}
     {{nop-input label='How long does the environment plan need to be in force?'
                 class='ep-duration'
                 type='number'
@@ -124,7 +124,7 @@
                       errorKey='regulationType'}}
     {{nop-radio-group class='activity-exploration-development'
                       label='Is this an Exploration or Development EP?'
-                      hint='Exploration EPs are those that contain a seismic or exploratory drilling activity defined under regulation 4 of the Environment Regulations. Production EPs are any other activity that does not fit within this definition.'
+                      hint='Exploration EPs are those that contain a seismic or exploratory drilling activity defined under regulation 5 of the Environment Regulations. Production EPs are any other activity that does not fit within this definition.'
                       value=activityDetails.explorationDevelopment
                       required=true
                       options=explorationDevelopmentOptions
@@ -147,7 +147,7 @@
 
     {{nop-radio-group class='oppOrEpbc'
                       label='Is there an accepted Offshore Project Proposal (OPP) or a decision by the Environment Minister relevant to this activity?'
-                      hint='An accepted OPP under regulation 5D or a relevant decision by the Environment Minister as per sub-regulations 9(3) and 17(3) is required before you can submit this EP. If you have any questions regarding these requirements, please <a href="mailto:environment@nopsema.gov.au" target="_blank">contact NOPSEMA</a> for specific advice.'
+                      hint='An accepted OPP under regulation 13 or a relevant decision by the Environment Minister as per sub-regulations 26(3) and 26(4) is required before you can submit this EP. If you have any questions regarding these requirements, please <a href="mailto:environment@nopsema.gov.au" target="_blank">contact NOPSEMA</a> for specific advice.'
                       value=activityDetails.oppOrEpbc
                       options=oppOrEpbcOptions
                       required=true
