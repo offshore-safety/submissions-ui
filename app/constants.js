@@ -9,11 +9,11 @@ const EXPLORATION_DEVELOPMENT_OPTIONS = {
 };
 
 const REVISION_TYPES = {
-  '1': 'Significant modification or new stage of the activity (Regulation 17(5))',
-  '2': 'New or increased environmental impact or risk (Regulation 17(6))',
-  '3': 'Change in titleholder (Regulation 17(7))',
-  '4': 'Revision on request of NOPSEMA (Regulation 18)',
-  '5': 'Revision after a period of 5 years (Regulation 19)'
+  '1': 'Significant modification or new stage of the activity (Regulation 39(1))',
+  '2': 'New or increased environmental impact or risk (Regulation 39(2))',
+  '3': 'Change in titleholder (Regulation 39(3))',
+  '4': 'Revision on request of NOPSEMA (Regulation 40)',
+  '5': 'Revision after a period of 5 years (Regulation 41)'
 };
 
 const LEVY_UNIT_VALUE = 4800;
