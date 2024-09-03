@@ -41,7 +41,7 @@ module.exports = function(environment) {
 
   var deployTarget = process.env.DEPLOY_TARGET;
   if (deployTarget === 'prototype') {
-    ENV.APP.API_ENDPOINT = 'http://onsub-api-proto.aws.internal.nopsema.gov.au'
+    ENV.APP.API_ENDPOINT = 'https://onsub-api-proto.aws.internal.nopsema.gov.au'
   }
 
   if (deployTarget === 'uat') {
